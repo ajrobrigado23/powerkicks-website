@@ -6,10 +6,9 @@ export default function NavBar() {
             <div className="flex h-full justify-between items-center text-white">
                 <h1 className="font-bold text-lg ms-6">Logo</h1>
                 <ul className="flex font-semibold text-sm tracking-wider gap-15 me-13">
-                    <li>About</li>
-                    <li>Schedule</li>
-                    <li>Contact</li>
-                    <SlideUpText></SlideUpText>
+                    <SlideUpText>About</SlideUpText>
+                    <SlideUpText>Schedule</SlideUpText>
+                    <SlideUpText>Contact</SlideUpText>
                 </ul>
             </div>
         </nav>

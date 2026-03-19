@@ -2,19 +2,20 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-export default function SlideUpText() {
+function split(text, className) {
+    return (
+        text.split("").map((char, i) => (
+            <span key={i} className={`${className} inline-block`}>
+                {char === " " ? "\u00A0" : char}
+            </span>
+        ))
+    );
+}
+
+export default function SlideUpText({ children }) {
 
     const containerRef = useRef(null);
     const tl = useRef(null);
-
-    const text = "Hover Me";
-
-    const split = (text, className) =>
-        text.split("").map((char, i) => (
-            <span key={i} className={`letter ${className}`}>
-                {char === " " ? "\u00A0" : char}
-            </span>
-        ));
 
     useGSAP(() => {
         tl.current = gsap.timeline({ paused: true });
@@ -43,14 +44,14 @@ export default function SlideUpText() {
         >
             {/* Top layer */}
             <div className="flex">
-                {split(text, "top")}
+                {split(children, "top")}
             </div>
 
             {/* Bottom layer */}
             <div
                 className="flex absolute top-full left-0"
             >
-                {split(text, "bottom")}
+                {split(children, "bottom")}
             </div>
         </div>
     );
