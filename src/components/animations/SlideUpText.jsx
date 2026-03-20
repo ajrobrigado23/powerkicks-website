@@ -2,37 +2,24 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-function split(text, className) {
-    return (
-        text.split("").map((char, i) => (
-            <span key={i} className={`${className} inline-block`}>
-                {char === " " ? "\u00A0" : char}
-            </span>
-        ))
-    );
-}
-
 export default function SlideUpText({ children }) {
-
     const containerRef = useRef(null);
     const tl = useRef(null);
 
     useGSAP(() => {
         tl.current = gsap.timeline({ paused: true });
 
-        tl.current
-            .to(".top", {
-                yPercent: -100,
-                stagger: 0.03,
-                duration: 0.3,
-                ease: "power3.out"
-            }, 0)
-            .to(".bottom", {
-                yPercent: -100,
-                stagger: 0.03,
-                duration: 0.3,
-                ease: "power3.out"
-            }, 0);
+        const tops = gsap.utils.toArray(".top", containerRef.current);
+        const bottoms = gsap.utils.toArray(".bottom", containerRef.current);
+        const stagger = Math.min(0.04, 0.8 / tops.length);
+
+        tops.forEach((top, i) => {
+            const offset = i * stagger;
+            tl.current
+                .to(top,        { yPercent: -100, duration: 0.4, ease: "power3.out" }, offset)
+                .to(bottoms[i], { yPercent: -100, duration: 0.4, ease: "power3.out" }, offset);
+        });
+
     }, { scope: containerRef });
 
     return (
@@ -44,14 +31,20 @@ export default function SlideUpText({ children }) {
         >
             {/* Top layer */}
             <div className="flex">
-                {split(children, "top")}
+                {children.split("").map((char, i) => (
+                    <span key={i} className="top inline-block">
+                        {char === " " ? "\u00A0" : char}
+                    </span>
+                ))}
             </div>
 
             {/* Bottom layer */}
-            <div
-                className="flex absolute top-full left-0"
-            >
-                {split(children, "bottom")}
+            <div className="flex absolute top-full left-0">
+                {children.split("").map((char, i) => (
+                    <span key={i} className="bottom inline-block">
+                        {char === " " ? "\u00A0" : char}
+                    </span>
+                ))}
             </div>
         </div>
     );
