@@ -3,7 +3,6 @@ import SlideUpText from "../animations/SlideUpText.jsx";
 export default function HeroSection({ children }) {
 
     return(
-
         <section className="relative grid grid-rows-[1fr_auto] w-full h-screen overflow-hidden">
             {/* Video Background */}
             <video
@@ -29,7 +28,10 @@ export default function HeroSection({ children }) {
                     <p className="text-sm tracking-[0.025rem] max-w-lg">The Best Taekwondo Club You’ll Ever Experience Proudly affiliated with the
                         Philippine Taekwondo Association. Where power, discipline,
                         and champions are built every single day.</p>
-                    <SlideUpText>Get free trial</SlideUpText>
+                    <p className="text-sm gap-1 self-end flex items-end font-bold tracking-wider me-3">
+                        <SlideUpText isButton={true}>Get free trial</SlideUpText>
+                    </p>
+
                 </div>
             </div>
 

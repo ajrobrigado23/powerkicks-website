@@ -1,8 +1,9 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ArrowDownRight } from "lucide-react";
 
-export default function SlideUpText({ children }) {
+export default function SlideUpText({ children, isButton }) {
     const containerRef = useRef(null);
     const tl = useRef(null);
 
@@ -11,13 +12,21 @@ export default function SlideUpText({ children }) {
 
         const tops = gsap.utils.toArray(".top", containerRef.current);
         const bottoms = gsap.utils.toArray(".bottom", containerRef.current);
-        const stagger = Math.min(0.04, 0.8 / tops.length);
+        const stagger = Math.min(0.03, 0.8 / tops.length);
 
         tops.forEach((top, i) => {
             const offset = i * stagger;
             tl.current
-                .to(top,        { yPercent: -100, duration: 0.4, ease: "power3.out" }, offset)
-                .to(bottoms[i], { yPercent: -100, duration: 0.4, ease: "power3.out" }, offset);
+                .to(top, {
+                    yPercent: -100,
+                    duration: 0.4,
+                    ease: "power3.out"
+                }, offset)
+                .to(bottoms[i], {
+                    yPercent: -100,
+                    duration: 0.4,
+                    ease: "power3.out"
+                }, offset);
         });
 
     }, { scope: containerRef });
@@ -36,6 +45,16 @@ export default function SlideUpText({ children }) {
                         {char === " " ? "\u00A0" : char}
                     </span>
                 ))}
+
+                {
+                    isButton &&
+                    (
+                        <span className="top inline-block ml-1">
+                            <ArrowDownRight size={20} />
+                        </span>
+                    )
+                }
+
             </div>
 
             {/* Bottom layer */}
@@ -45,6 +64,16 @@ export default function SlideUpText({ children }) {
                         {char === " " ? "\u00A0" : char}
                     </span>
                 ))}
+
+                {
+                    isButton &&
+                    (
+                        <span className="bottom inline-block ml-1">
+                            <ArrowDownRight size={20} />
+                        </span>
+                    )
+                }
+
             </div>
         </div>
     );
