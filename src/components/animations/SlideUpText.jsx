@@ -39,7 +39,7 @@ export default function SlideUpText({ children, isButton }) {
             className="inline-block overflow-hidden cursor-pointer relative"
         >
             {/* Top layer */}
-            <div className="flex">
+            <div className="flex items-end">
                 {children.split("").map((char, i) => (
                     <span key={i} className="top inline-block">
                         {char === " " ? "\u00A0" : char}
@@ -50,7 +50,7 @@ export default function SlideUpText({ children, isButton }) {
                     isButton &&
                     (
                         <span className="top inline-block ml-1">
-                            <ArrowDownRight size={20} />
+                            <ArrowDownRight size={18} strokeWidth={3}/>
                         </span>
                     )
                 }
@@ -68,8 +68,8 @@ export default function SlideUpText({ children, isButton }) {
                 {
                     isButton &&
                     (
-                        <span className="bottom inline-block ml-1">
-                            <ArrowDownRight size={20} />
+                        <span className="self-start bottom inline-block ml-1">
+                            <ArrowDownRight size={18} strokeWidth={3}/>
                         </span>
                     )
                 }
