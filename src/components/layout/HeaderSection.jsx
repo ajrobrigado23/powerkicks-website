@@ -3,12 +3,15 @@ import {useRef} from "react";
 import{ gsap } from "gsap";
 import {useGSAP} from "@gsap/react";
 
-export default function HeroSection({ children }) {
+export default function HeroSection() {
 
-    const headerRef = useRef(null);
+    const sectionRef = useRef(null);
 
     useGSAP(() => {
-        gsap.fromTo(".home-header", {
+
+        const tl = gsap.timeline();
+
+        tl.fromTo(".home-header", {
             opacity: 0,
             y: 20
         }, {
@@ -19,23 +22,22 @@ export default function HeroSection({ children }) {
             ease: "power1.inOut"
         });
 
-        gsap.fromTo(".home-para", {
+        tl.fromTo(".home-para", {
             opacity: 0,
             y: 20
         }, {
             opacity: 1,
             y: 0,
-            delay: 0.8,
             stagger: 0.5,
             ease: "power1.inOut"
         });
 
-    }, { scope: headerRef });
+    }, { scope: sectionRef });
 
     return(
         <section
-            ref={headerRef}
-            className="relative grid grid-rows-[1fr_auto] w-full h-screen overflow-hidden"
+            ref={sectionRef}
+            className="relative flex flex-col justify-end w-full h-screen overflow-hidden"
         >
             {/* Video Background */}
             <video
@@ -44,13 +46,8 @@ export default function HeroSection({ children }) {
                 autoPlay muted loop playsInline
             />
             {/* Adding gradient black at the bottom of the video */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-5" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10" />
 
-            {/* 1st row */}
-            <div className="relative z-10">
-                {/* Renders the nav passed from Header */}
-                {children}
-            </div>
             {/* Hero Content */}
             <div className="relative flex justify-around mb-10 z-10">
                 <div className="flex flex-col gap-1 font-bold text-[4.50rem] uppercase leading-none">

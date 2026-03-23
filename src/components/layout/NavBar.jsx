@@ -15,13 +15,17 @@ export default function NavBar() {
             opacity: 1,
             y: 0,
             delay: 0.3,
-            ease: "power1.inOut"
+            ease: "power1.inOut",
+            onComplete: () => {
+                // Clear GSAP inline transform after animation
+                gsap.set(navigationRef.current, { clearProps: "all" });
+            }
         });
 
     }, []);
 
     return(
-        <nav ref={navigationRef} className="fixed top-0 left-1/2 w-5xl h-13 rounded-xl -translate-x-1/2 bg-black mt-4">
+        <nav ref={navigationRef} className="w-full h-12 z-50 bg-black lg:fixed lg:top-0 lg:left-1/2 lg:w-[64rem] lg:rounded-xl lg:-translate-x-1/2 lg:mt-4">
             <div className="flex h-full justify-between items-center text-white">
                 <h1 className="font-bold text-lg ms-6">Logo</h1>
                 <ul className="flex font-semibold text-sm tracking-wider gap-15 me-13">
