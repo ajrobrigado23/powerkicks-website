@@ -3,12 +3,10 @@ import HeroSection from "./HeaderSection.jsx";
 
 export default function Header() {
     return(
-            <header className="w-screen h-screen bg-white relative">
+            <header className="w-full relative lg:h-screen">
                 {/* Navigation bar */}
-                <NavBar></NavBar>
-
-                <HeroSection>
-                </HeroSection>
+                <NavBar />
+                <HeroSection />
             </header>
     );
 }

@@ -25,10 +25,10 @@ export default function NavBar() {
     }, []);
 
     return(
-        <nav ref={navigationRef} className="w-full h-12 z-50 bg-black lg:fixed lg:top-0 lg:left-1/2 lg:w-[64rem] lg:rounded-xl lg:-translate-x-1/2 lg:mt-4">
+        <nav ref={navigationRef} className="fixed top-0 w-full h-12 z-50 bg-black lg:left-1/2 lg:w-[48rem] lg:rounded-xl lg:-translate-x-1/2 lg:mt-4 xl:w-[64rem]">
             <div className="flex h-full justify-between items-center text-white">
-                <h1 className="font-bold text-lg ms-6">Logo</h1>
-                <ul className="flex font-semibold text-sm tracking-wider gap-15 me-13">
+                <h1 className="font-bold text-lg ms-9 xl:ms-12" >Logo</h1>
+                <ul className="flex font-semibold text-sm tracking-wider gap-14 lg:me-9 xl:me-12">
                     <SlideUpText>About</SlideUpText>
                     <SlideUpText>Schedule</SlideUpText>
                     <SlideUpText>Contact</SlideUpText>
