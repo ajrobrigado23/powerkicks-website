@@ -9,80 +9,70 @@ export default function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const dropdownRef = useRef(null);
     const menuItemsRef = useRef([]);
+    const hasOpenedRef = useRef(false);
 
     // Animation for the navbar
     useGSAP(() => {
-            gsap.fromTo(navigationRef.current, {
-                opacity: 0,
-                y:-20
-            }, {
-                opacity: 1,
-                y: 0,
-                delay: 0.3,
-                ease: "power1.inOut",
-                onComplete: () => {
-                    // Clear GSAP inline transform after animation
-                    gsap.set(navigationRef.current, { clearProps: "all" });
-                }
+        gsap.fromTo(navigationRef.current, {
+            opacity: 0,
+            y: -20
+        }, {
+            opacity: 1,
+            y: 0,
+            delay: 0.3,
+            ease: "power1.inOut",
+            onComplete: () => {
+                gsap.set(navigationRef.current, {clearProps: "all"});
             }
-        );
-
+        });
     }, []);
 
     // Animation for the burger menu (dropdown on open/ close)
     useGSAP(() => {
 
         if (menuOpen) {
-            // Animate dropdown open
+            hasOpenedRef.current = true;
+            gsap.set(dropdownRef.current, { pointerEvents: "auto" });
+
+            // Reveal panel top to bottom
             gsap.fromTo(
                 dropdownRef.current,
+                {clipPath: "inset(0% 0 100% 0)"},
                 {
-                    height: 0,
-                    opacity: 0
-                },
-                {
-                    height: "100vh",
-                    opacity: 1,
-                    duration: 0.4,
-                    ease: "power3.out"
+                    clipPath: "inset(0% 0 0% 0)",
+                    duration: 1,
+                    ease: "power4.inOut"
                 }
             );
 
-            // Stagger menu items sliding up
+            // Stagger menu items using the curtain and mask animation
             gsap.fromTo(
                 menuItemsRef.current,
+                { y: "100%", opacity: 1 },   // starts fully below the mask
                 {
-                    y: 20,
-                    opacity: 0
-                },
-                {
-                    y: 0,
+                    y: "0%",
                     opacity: 1,
-                    duration: 0.3,
-                    stagger: 0.08,
-                    ease: "power2.out",
-                    delay: 0.1
+                    duration: 0.7,
+                    stagger: 0.1,
+                    ease: "power4.out",
+                    delay: 0.6
                 }
             );
         } else {
-            // Animate dropdown close
-            gsap.to(menuItemsRef.current, {
-                y: -10,
-                opacity: 0,
-                duration: 0.2,
-                stagger: 0.05,
-                ease: "power2.in",
-            });
+            if (!hasOpenedRef.current) return;
 
+            // Then panel clips back up
             gsap.to(dropdownRef.current, {
-                height: 0,
-                opacity: 0,
-                duration: 0.3,
-                ease: "power3.in",
-                delay: 0.1,
+                clipPath: "inset(0% 0 100% 0)",
+                duration: 0.7,
+                ease: "power4.inOut",
+                delay: 0.2,
+                onComplete: () => {
+                    gsap.set(dropdownRef.current, { pointerEvents: "none" });
+                }
             });
         }
-    }, { dependencies: [menuOpen], scope: navigationRef });
+    }, { dependencies: [menuOpen] });
 
     const handleToggle = () => {
         const opening = !menuOpen;
@@ -91,15 +81,15 @@ export default function NavBar() {
 
     return(
         <>
-            <nav ref={navigationRef} className="fixed top-0 w-full h-18 z-50 bg-black min-[900px]:h-14 min-[900px]:left-1/2 min-[900px]:w-[52rem] min-[900px]:rounded-xl min-[900px]:-translate-x-1/2 min-[900px]:mt-4 xl:w-[64rem]">
+            <nav ref={navigationRef} className="fixed top-0 w-full h-14 z-40 bg-black min-[900px]:h-14 min-[900px]:left-1/2 min-[900px]:w-[52rem] min-[900px]:rounded-xl min-[900px]:-translate-x-1/2 min-[900px]:mt-4 xl:w-[64rem]">
                 <div className="flex h-full justify-between items-center text-white">
-                    <h1 className="font-bold text-lg ms-8 " >Logo</h1>
-                    <ul className="flex font-semibold text-xs uppercase gap-12 min-[900px]:me-8 xl:me-8 max-[900px]:hidden">
+                    <h1 className="font-bold text-lg ms-8 uppercase tracking-wider">Powericks</h1>
+                    <ul className="flex font-bold text-xs uppercase tracking-wide gap-14 min-[900px]:me-8 xl:me-10 max-[900px]:hidden">
                         <SlideUpText>About</SlideUpText>
                         <SlideUpText>Schedule</SlideUpText>
                         <SlideUpText>Contact</SlideUpText>
                     </ul>
-                    {/* Burger button — visible only at 900px+ */}
+                    {/* Menu button */}
                     <button
                         className="hidden max-[900px]:flex flex-col justify-center items-center gap-1 me-8"
                         onClick={handleToggle}
@@ -110,33 +100,37 @@ export default function NavBar() {
                 </div>
             </nav>
 
-            {/* Dropdown — always mounted at 900px+, GSAP controls visibility */}
+            {/* Dropdown */}
             <div
                 ref={dropdownRef}
-                className="hidden max-[900px]:grid fixed top-0 left-0 min-w-full h-auto bg-white z-70 text-black overflow-hidden opacity-0"
+                className="hidden max-[900px]:grid fixed top-0 left-0 min-w-full h-screen bg-white z-50 text-black pointer-events-none"
+                style={{ clipPath: "inset(0% 0 100% 0)" }}
             >
-                {/* Grid layout */}
-                <div className="grid grid-cols-2 grid-rows-[auto_1fr_auto] p-8">
+                <div className="grid grid-cols-2 grid-rows-[auto_1fr_auto] p-8 h-full">
 
-                    <ul className="col-start-1 row-start-2 flex flex-col font-semibold text-sm tracking-wider gap-4">
+                    <ul className="col-start-1 row-start-2 flex flex-col justify-center font-bold tracking-tight text-5xl gap-1 uppercase">
                         {["About", "Schedule", "Contact"].map((item, i) => (
                             <li
                                 key={item}
-                                ref={(el) => (menuItemsRef.current[i] = el)}
-                                className="opacity-0"
+                                className="overflow-hidden"
                             >
-                                <SlideUpText>{item}</SlideUpText>
+                                <div
+                                    ref={(el) => (menuItemsRef.current[i] = el)}
+                                    className="opacity-0 translate-y-full"
+                                >
+                                    <SlideUpText>{item}</SlideUpText>
+                                </div>
                             </li>
                         ))}
                     </ul>
 
                     {/* Left column - row 1 */}
                     <div className="col-start-1 row-start-1 flex">
-                        <p>Powerkicks</p>
+                        <p className="font-bold uppercase text-2xl">Powerkicks</p>
                     </div>
 
-                    {/* Left column - row 3 (auto) */}
-                    <div className="col-start-1 row-start-3 flex flex-col">
+                    {/* Left column - row 3 */}
+                    <div className="col-start-1 row-start-3 flex flex-col uppercase text-sm font-semibold gap-8">
                         <div>
                             <p>Facebook</p>
                             <p>Instagram</p>
@@ -145,23 +139,16 @@ export default function NavBar() {
                             <p>Privacy Policy</p>
                             <p>Terms of Service</p>
                         </div>
-
                     </div>
 
                     <div className="col-start-2 row-start-1 row-span-3 flex justify-end items-start">
-                        {/* Burger button — visible only at 900px+ */}
-                        <button
-                            onClick={handleToggle}
-                            aria-label="Toggle menu"
-                        >
-                            <span className="font-semibold text-sm uppercase">Close</span>
+                        <button onClick={handleToggle} aria-label="Toggle menu">
+                            <span className="font-bold text-sm uppercase">Close</span>
                         </button>
                     </div>
 
                 </div>
-
             </div>
-
         </>
     );
 }
