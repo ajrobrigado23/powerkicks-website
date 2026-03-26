@@ -49,7 +49,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10" />
 
             {/* Hero Content */}
-            <div className="relative flex justify-around mb-10 z-10 max-[900px]:gap-6 max-[900px]:flex-col max-[900px]:m-10">
+            <div className="relative flex justify-around mb-10 z-10 max-[900px]:gap-6 max-[900px]:flex-col max-[900px]:m-8">
                 <div className="flex gap-1 font-bold uppercase leading-none max-[523px]:gap-0 min-[900px]:flex-col min-[900px]:text-[clamp(2.5rem,4.5vw,4.5rem)] max-[841px]:flex-col max-[900px]:text-[clamp(2rem,10vw,3rem)]">
                     <h2 className="home-header min-[900px]:leading-[0.725] text-white">The Powerkicks</h2>
                     <h2 className="home-header ml-2 text-[#6b6b6b] max-[841px]:ml-0 min-[900px]:ml-0">Difference</h2>
