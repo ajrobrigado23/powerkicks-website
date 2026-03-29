@@ -81,22 +81,22 @@ export default function NavBar() {
 
     return(
         <>
-            <nav ref={navigationRef} className="fixed top-0 w-full h-14 z-40 min-[900px]:h-14 min-[900px]:mt-2">
+            <nav ref={navigationRef} className="fixed top-0 w-full mt-4 z-40 min-[1100px]:mt-4">
                 <div className="flex h-full justify-between items-center text-white">
                     <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
-                    <ul className="flex font-semibold text-xs uppercase tracking-wide gap-16 max-[900px]:hidden">
+                    <ul className="flex font-semibold text-xs uppercase tracking-wide gap-16 max-[1101px]:hidden">
                         <SlideUpText>About</SlideUpText>
                         <SlideUpText>Schedule</SlideUpText>
                         <SlideUpText>Contact</SlideUpText>
                     </ul>
                     {/* Get Free Trial button */}
-                    <button className="me-10 font-bold tracking-wider text-sm uppercase">
+                    <button className="me-10 font-bold tracking-wider text-sm uppercase max-[1100px]:ml-auto max-[1100px]:me-4">
                         <SlideUpText isButton={true}>Get Free Trial</SlideUpText>
                     </button>
 
                     {/* Menu button */}
                     <button
-                        className="hidden max-[900px]:flex flex-col justify-center items-center gap-1 me-8"
+                        className="hidden max-[1100px]:flex flex-col justify-center items-center gap-1 me-8"
                         onClick={handleToggle}
                         aria-label="Toggle menu"
                     >
@@ -108,7 +108,7 @@ export default function NavBar() {
             {/* Dropdown */}
             <div
                 ref={dropdownRef}
-                className="hidden max-[900px]:grid fixed top-0 left-0 min-w-full h-screen bg-white z-50 text-black pointer-events-none"
+                className="hidden max-[1100px]:grid fixed top-0 left-0 min-w-full h-screen bg-white z-50 text-black pointer-events-none"
                 style={{ clipPath: "inset(0% 0 100% 0)" }}
             >
                 <div className="grid grid-cols-2 grid-rows-[auto_1fr_auto] p-8 h-full">
