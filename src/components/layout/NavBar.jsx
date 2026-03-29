@@ -84,7 +84,7 @@ export default function NavBar() {
             <nav ref={navigationRef} className="fixed top-0 w-full h-14 z-40 min-[900px]:h-14 min-[900px]:mt-2">
                 <div className="flex h-full justify-between items-center text-white">
                     <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
-                    <ul className="flex font-bold text-xs uppercase tracking-wide gap-14 min-[900px]:me-8 xl:me-10 max-[900px]:hidden">
+                    <ul className="flex font-semibold text-xs uppercase tracking-wide gap-16 max-[900px]:hidden">
                         <SlideUpText>About</SlideUpText>
                         <SlideUpText>Schedule</SlideUpText>
                         <SlideUpText>Contact</SlideUpText>
