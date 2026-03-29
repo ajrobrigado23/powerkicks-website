@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ArrowDownRight } from "lucide-react";
+import { Circle } from "lucide-react";
 
 export default function SlideUpText({ children, isButton }) {
     const containerRef = useRef(null);
@@ -49,8 +49,8 @@ export default function SlideUpText({ children, isButton }) {
                 {
                     isButton &&
                     (
-                        <span className="top inline-block ml-1">
-                            <ArrowDownRight size={18} strokeWidth={3}/>
+                        <span className="self-center inline-block pl-3">
+                            <Circle size={8} strokeWidth={2}/>
                         </span>
                     )
                 }
@@ -64,15 +64,6 @@ export default function SlideUpText({ children, isButton }) {
                         {char === " " ? "\u00A0" : char}
                     </span>
                 ))}
-
-                {
-                    isButton &&
-                    (
-                        <span className="self-start bottom inline-block ml-1">
-                            <ArrowDownRight size={18} strokeWidth={3}/>
-                        </span>
-                    )
-                }
 
             </div>
         </div>

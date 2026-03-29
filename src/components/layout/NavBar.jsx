@@ -81,14 +81,19 @@ export default function NavBar() {
 
     return(
         <>
-            <nav ref={navigationRef} className="fixed top-0 w-full h-14 z-40 bg-black min-[900px]:h-14 min-[900px]:left-1/2 min-[900px]:w-[52rem] min-[900px]:rounded-xl min-[900px]:-translate-x-1/2 min-[900px]:mt-4 xl:w-[64rem]">
+            <nav ref={navigationRef} className="fixed top-0 w-full h-14 z-40 min-[900px]:h-14 min-[900px]:mt-2">
                 <div className="flex h-full justify-between items-center text-white">
-                    <h1 className="font-bold text-lg ms-8 uppercase tracking-wider">Powericks</h1>
+                    <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
                     <ul className="flex font-bold text-xs uppercase tracking-wide gap-14 min-[900px]:me-8 xl:me-10 max-[900px]:hidden">
                         <SlideUpText>About</SlideUpText>
                         <SlideUpText>Schedule</SlideUpText>
                         <SlideUpText>Contact</SlideUpText>
                     </ul>
+                    {/* Get Free Trial button */}
+                    <button className="me-10 font-bold tracking-wider text-sm uppercase">
+                        <SlideUpText isButton={true}>Get Free Trial</SlideUpText>
+                    </button>
+
                     {/* Menu button */}
                     <button
                         className="hidden max-[900px]:flex flex-col justify-center items-center gap-1 me-8"
