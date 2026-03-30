@@ -35,24 +35,28 @@ export default function SlideUpText({ children, isButton }) {
     const handleMouseEnter = () => {
         tl.current.play();
 
-        gsap.to(circleRef.current, {
-            fill: "#ffffff",   // or any color
-            duration: 0.25,
-            ease: "power2.inOut",
-            scale: 0.65
-        });
+        if (isButton) {
+            gsap.to(circleRef.current, {
+                fill: "#ffffff",   // or any color
+                duration: 0.25,
+                ease: "power3.out",
+                scale: 0.60
+            });
+        }
 
     };
 
     const handleMouseLeave = () => {
         tl.current.reverse();
 
-        gsap.to(circleRef.current, {
-            fill: "transparent",
-            duration: 0.25,
-            ease: "power2.inOut",
-            scale: 1
-        });
+        if (isButton) {
+            gsap.to(circleRef.current, {
+                fill: "transparent",
+                duration: 0.25,
+                ease: "power3.out",
+                scale: 1
+            });
+        }
 
     };
 

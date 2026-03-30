@@ -3,10 +3,21 @@ import {useRef, useState} from "react";
 import{ gsap } from "gsap";
 import {useGSAP} from "@gsap/react";
 
+const MENU_ITEMS = [
+  "About",
+  "Schedule",
+  "Contact",
+  "Facebook",
+  "Instagram",
+  "Privacy Policy",
+  "Terms of Service"
+];
+
 export default function NavBar() {
 
     const navigationRef = useRef(null);
     const [menuOpen, setMenuOpen] = useState(false);
+    // Dropdown navigation
     const dropdownRef = useRef(null);
     const menuItemsRef = useRef([]);
     const hasOpenedRef = useRef(false);
@@ -37,7 +48,10 @@ export default function NavBar() {
             // Reveal panel top to bottom
             gsap.fromTo(
                 dropdownRef.current,
-                {clipPath: "inset(0% 0 100% 0)"},
+                {
+                    clipPath: "inset(0% 0 100% 0)"
+                },
+
                 {
                     clipPath: "inset(0% 0 0% 0)",
                     duration: 1,
@@ -48,7 +62,11 @@ export default function NavBar() {
             // Stagger menu items using the curtain and mask animation
             gsap.fromTo(
                 menuItemsRef.current,
-                { y: "100%", opacity: 1 },   // starts fully below the mask
+                {
+                    y: "100%",
+                    opacity: 1
+                },
+                // starts fully below the mask
                 {
                     y: "0%",
                     opacity: 1,
@@ -59,6 +77,7 @@ export default function NavBar() {
                 }
             );
         } else {
+
             if (!hasOpenedRef.current) return;
 
             // Then panel clips back up
@@ -96,7 +115,7 @@ export default function NavBar() {
 
                     {/* Menu button */}
                     <button
-                        className="hidden max-[1100px]:flex flex-col justify-center items-center gap-1 me-8"
+                        className="hidden max-[1100px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer"
                         onClick={handleToggle}
                         aria-label="Toggle menu"
                     >
@@ -114,19 +133,22 @@ export default function NavBar() {
                 <div className="grid grid-cols-2 grid-rows-[auto_1fr_auto] p-8 h-full">
 
                     <ul className="col-start-1 row-start-2 flex flex-col justify-center font-bold tracking-tight text-5xl gap-1 uppercase">
-                        {["About", "Schedule", "Contact"].map((item, i) => (
-                            <li
-                                key={item}
-                                className="overflow-hidden"
-                            >
-                                <div
-                                    ref={(el) => (menuItemsRef.current[i] = el)}
-                                    className="opacity-0 translate-y-full"
-                                >
-                                    <SlideUpText>{item}</SlideUpText>
-                                </div>
-                            </li>
-                        ))}
+                        {
+                            // It stops until Contact element
+                            MENU_ITEMS.slice(0, 3).map((item, i) => (
+                                    <li
+                                        key={item}
+                                        className="overflow-hidden"
+                                    >
+                                        <div
+                                            ref={(el) => (menuItemsRef.current[i] = el)}
+                                            className="opacity-0 translate-y-full"
+                                        >
+                                            <SlideUpText>{item}</SlideUpText>
+                                        </div>
+                                    </li>
+                                ))
+                        }
                     </ul>
 
                     {/* Left column - row 1 */}
@@ -137,17 +159,47 @@ export default function NavBar() {
                     {/* Left column - row 3 */}
                     <div className="col-start-1 row-start-3 flex flex-col uppercase text-sm font-semibold gap-8">
                         <div>
-                            <p>Facebook</p>
-                            <p>Instagram</p>
+                            {
+                                MENU_ITEMS.slice(3, 5).map((item, i) => {
+                                    // Starting from the Facebook until Instagram element
+                                    const currentLength = 3 + i;
+                                    return (
+                                        <div className="overflow-hidden"
+                                        key={currentLength}>
+                                            <div
+                                                ref={(el) => (menuItemsRef.current[currentLength] = el)}
+                                                className="opacity-0 translate-y-full"
+                                            >
+                                                <p>{item}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                         <div>
-                            <p>Privacy Policy</p>
-                            <p>Terms of Service</p>
+                            {
+                                MENU_ITEMS.slice(5, MENU_ITEMS.length).map((item, i) => {
+                                    // Starting from the Privacy Policy until Terms of Service
+                                    const currentLength = 5 + i;
+                                    return (
+                                        <div className="overflow-hidden"
+                                             key={currentLength}>
+                                            <div
+                                                ref={(el) => (menuItemsRef.current[currentLength] = el)}
+                                                className="opacity-0 translate-y-full"
+                                            >
+                                                <p>{item}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
 
                     <div className="col-start-2 row-start-1 row-span-3 flex justify-end items-start">
-                        <button onClick={handleToggle} aria-label="Toggle menu">
+                        <button onClick={handleToggle} aria-label="Toggle menu" className="cursor-pointer">
                             <span className="font-bold text-sm uppercase">Close</span>
                         </button>
                     </div>
