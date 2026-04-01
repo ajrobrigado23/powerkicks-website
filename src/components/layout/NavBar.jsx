@@ -100,10 +100,10 @@ export default function NavBar() {
 
     return(
         <>
-            <nav ref={navigationRef} className="fixed top-0 w-full mt-4 z-40 min-[1100px]:mt-4">
+            <nav ref={navigationRef} className="fixed top-0 w-full mt-4 z-40">
                 <div className="flex h-full justify-between items-center text-white">
                     <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
-                    <ul className="flex font-semibold text-xs uppercase tracking-wide gap-16 max-[1101px]:hidden">
+                    <ul className="ms-16 flex font-semibold text-xs uppercase tracking-wide gap-20 max-[1101px]:hidden">
                         <SlideUpText>About</SlideUpText>
                         <SlideUpText>Schedule</SlideUpText>
                         <SlideUpText>Contact</SlideUpText>
