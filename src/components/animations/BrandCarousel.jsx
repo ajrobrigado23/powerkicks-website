@@ -73,7 +73,7 @@ export default function BrandCarousel() {
                     repellat repellendus rerum sunt veritatis voluptatem? Quod, voluptatum.</p>
                 <div
                     ref={containerRef}
-                    className="overflow-hidden w-3/4"
+                    className="overflow-hidden w-5/6"
                     style={{
                         // Fade in ends later — logos visible sooner
                         maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
