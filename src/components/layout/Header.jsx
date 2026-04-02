@@ -1,19 +1,15 @@
 import NavBar from "./NavBar.jsx";
 import HeroSection from "./HeaderSection.jsx";
-import BrandCarousel from "../animations/BrandCarousel.jsx";
+import { forwardRef } from "react";
 
-export default function Header() {
-    return(
-        <>
-            <header className="w-full relative">
-                {/* Navigation bar */}
-                <NavBar/>
-                <HeroSection/>
-            </header>
-            <section className="w-full pt-8 pb-12">
-                <BrandCarousel></BrandCarousel>
-            </section>
-        </>
-
+const Header = forwardRef((props, ref) => {
+    return (
+        <header ref={ref} className="w-full relative">
+            <NavBar />
+            <HeroSection />
+        </header>
     );
-}
+});
+
+Header.displayName = "Header";
+export default Header;

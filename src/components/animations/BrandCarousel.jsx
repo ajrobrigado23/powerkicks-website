@@ -25,29 +25,24 @@ export default function BrandCarousel() {
         const startAnimation = () => {
             const singleWidth = track.scrollWidth / 4;
 
-            const animate = () => {
-                gsap.fromTo(track,
-                            { x: 0 },
-                            {
-                                x: -singleWidth,
-                                duration: 30,
-                                ease: "none",
-                                onComplete: () => {
-                                    gsap.set(track, { x: 0 });
-                                    animate(); // restart cleanly
-                                }
-                            }
-                );
-            };
-
-            animate();
+            gsap.fromTo(track,
+                        { x: 0 },
+                        {
+                            x: -singleWidth,
+                            duration: 30,
+                            ease: "none",
+                            repeat: -1,  // ✅ no recursion, no drift
+                        }
+            );
         };
 
+        // No images edge case
         if (images.length === 0) {
             startAnimation();
             return;
         }
 
+        // Wait for all images to load before measuring width
         images.forEach((img) => {
             if (img.complete) {
                 loaded++;
