@@ -1,42 +1,132 @@
 import Header from "./components/layout/Header.jsx";
 import BrandCarousel from "./components/animations/BrandCarousel.jsx";
-import { useRef } from "react";
+import {useRef, useState} from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const App = () => {
 
     const headerRef = useRef(null);
     const panelRef = useRef(null);
+    const [navScrolled, setNavScrolled] = useState(false);
+    const navScrolledRef = useRef(false);
 
     useGSAP(() => {
 
         const header = headerRef.current;
         const panel = panelRef.current;
 
-        if (!header || !panel)
-            return;
+        if (!header || !panel) return;
 
-        // white panel slides up over the hero
+        gsap.set(panel, { y: 200 });
+
+        // panel animation
         gsap.fromTo(panel,
-                    { y: 100 },
+                    { y: 200 },
                     {
                         y: 0,
                         ease: "none",
                         scrollTrigger: {
                             trigger: header,
-                            start: "bottom 90%",  // starts just before hero bottom hits viewport
-                            end: "bottom 50%",
+                            start: "top bottom",
+                            end: "bottom 20%",
                             scrub: 1,
                         },
                     }
         );
 
-    }, { dependencies: [] });
+        // ✅ 1. Hide nav when scrolling starts (ONLY if not in "scrolled nav" mode)
+        ScrollTrigger.create({
+                                 trigger: header,
+                                 start: "top top",
+
+                                 onEnter: () => {
+                                     if (navScrolledRef.current) return;
+
+                                     gsap.to("nav", {
+                                         opacity: 0,
+                                         y: -20,
+                                         duration: 0.3,
+                                         ease: "power2.in"
+                                     });
+                                 },
+
+                                 // ✅ Back to very top → restore ORIGINAL nav
+                                 onLeaveBack: () => {
+                                     if (window.scrollY <= 10) {
+                                         navScrolledRef.current = false;
+                                         setNavScrolled(false);
+
+                                         gsap.fromTo("nav", {
+                                                         opacity: 0,
+                                                         y: -20
+                                                     }, {
+                                                         opacity: 1,
+                                                         y: 0,
+                                                         duration: 0.3,
+                                                         ease: "power2.out"
+                                                     }
+                                         );
+                                     }
+                                 }
+                             });
+
+        // ✅ 2. Switch to "scrolled nav" at 85%
+        ScrollTrigger.create({
+                                 trigger: header,
+                                 start: "85% top",
+
+                                 // ✅ scrolling DOWN → show new nav
+                                 onEnter: () => {
+                                     navScrolledRef.current = true;
+                                     setNavScrolled(true);
+
+                                     gsap.fromTo("nav",
+                                                 {
+                                                     opacity: 0,
+                                                     y: -20
+                                                 },
+                                                 {
+                                                     opacity: 1,
+                                                     y: 0,
+                                                     duration: 0.3,
+                                                     ease: "power2.out"
+                                                 }
+                                     );
+                                 },
+
+                                 // ❌ scrolling UP → hide it (do NOT restore original here)
+                                 onEnterBack: () => {
+                                     gsap.to("nav", {
+                                         opacity: 0,
+                                         y: -20,
+                                         duration: 0.3,
+                                         ease: "power2.in"
+                                     });
+                                 },
+
+                                 // ✅ keep new nav when scrolling further down
+                                 onLeave: () => {
+                                     // DO NOTHING → this is the key fix
+                                 },
+
+                                 // ❌ still hidden when going up
+                                 onLeaveBack: () => {
+                                     gsap.to("nav", {
+                                         opacity: 0,
+                                         y: -20,
+                                         duration: 0.3,
+                                         ease: "power2.in"
+                                     });
+                                 }
+                             });
+
+    }, []);
 
     return (
         <>
-            <Header ref={headerRef}/>
+            <Header ref={headerRef} navScrolled={navScrolled}/>
             <section
                 ref={panelRef}
                 className="relative z-20 w-full bg-white -mt-16 pt-8 pb-12"

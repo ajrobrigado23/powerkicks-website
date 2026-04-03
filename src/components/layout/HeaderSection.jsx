@@ -1,6 +1,6 @@
-import {useRef} from "react";
+import { useRef } from "react";
 import{ gsap } from "gsap";
-import {useGSAP} from "@gsap/react";
+import { useGSAP } from "@gsap/react";
 
 export default function HeroSection() {
 
@@ -36,11 +36,11 @@ export default function HeroSection() {
     return(
         <section
             ref={sectionRef}
-            className="relative flex flex-col justify-end w-full h-screen overflow-hidden"
+            className="relative flex flex-col justify-end w-full h-screen"
         >
             {/* Video Background */}
             <video
-                className="hero-parallax absolute inset-0 w-full h-full object-cover z-0"
+                className="hero-parallax absolute inset-0 w-full h-full object-cover z-0 overflow-hidden"
                 src="/videos/Powerkicks-Video-compress.mp4"
                 autoPlay muted loop playsInline
             />

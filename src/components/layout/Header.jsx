@@ -3,9 +3,12 @@ import HeroSection from "./HeaderSection.jsx";
 import { forwardRef } from "react";
 
 const Header = forwardRef((props, ref) => {
+
+    const { navScrolled } = props
+
     return (
         <header ref={ref} className="w-full relative">
-            <NavBar />
+            <NavBar navScrolled={navScrolled}/>
             <HeroSection />
         </header>
     );
