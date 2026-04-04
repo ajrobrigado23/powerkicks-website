@@ -5,6 +5,12 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+/*
+    IMPORTANT TIPS - (When using React + GSAP)
+    1. ❌ Don’t animate elements that mount/unmount
+    2. ✅ Animate stable elements and change state inside them
+ */
+
 const App = () => {
 
     const headerRef = useRef(null);
@@ -49,7 +55,7 @@ const App = () => {
 
                                      gsap.to("#main-nav", {
                                          opacity: 0,
-                                         y: -20,
+                                         y: 20,
                                          duration: 0.3,
                                          ease: "power2.in"
                                      });

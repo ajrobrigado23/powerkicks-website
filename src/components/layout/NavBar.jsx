@@ -101,26 +101,35 @@ export default function NavBar({ navScrolled }) {
     return(
         <>
             <nav id="main-nav" ref={navigationRef}
-                 className={`fixed top-0 w-full z-40 ${
+                 className={`fixed top-0 w-full bg-transparent z-40 ${
                      navScrolled
-                         ? "bg-black py-4"
-                         : "bg-transparent text-white mt-4"}`
+                         ? "py-4"
+                         : "text-white mt-4"}`
                 }>
                 <div className="flex h-full justify-between items-center text-white">
                     <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
-                    <ul className="ms-16 flex font-semibold text-xs uppercase tracking-wide gap-20 max-[1101px]:hidden">
+                    <ul
+                        className={`ms-16 flex font-semibold text-xs uppercase tracking-wide gap-20 max-[1101px]:hidden
+                        ${navScrolled && "hidden"}
+                    `}>
                         <SlideUpText>About</SlideUpText>
                         <SlideUpText>Schedule</SlideUpText>
                         <SlideUpText>Contact</SlideUpText>
                     </ul>
                     {/* Get Free Trial button */}
-                    <button className="me-10 font-bold tracking-wider text-sm uppercase max-[1100px]:ml-auto max-[1100px]:me-4">
+                    <button
+                        className={`me-10 font-bold tracking-wider text-sm uppercase max-[1100px]:ml-auto max-[1100px]:me-4
+                            ${navScrolled && "ml-auto"}
+                        `}>
                         <SlideUpText isButton={true}>Get Free Trial</SlideUpText>
                     </button>
 
                     {/* Menu button */}
                     <button
-                        className="hidden max-[1100px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer"
+                        className={`
+                        ${ navScrolled 
+                            ? "flex flex-col justify-center items-center gap-1 me-8 cursor-pointer text-black"
+                            : "hidden max-[1100px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer"}`}
                         onClick={handleToggle}
                         aria-label="Toggle menu"
                     >
