@@ -17,8 +17,10 @@ const App = () => {
         const header = headerRef.current;
         const panel = panelRef.current;
 
+        // Prevents GSAP from running if refs aren’t ready
         if (!header || !panel) return;
 
+        // Initial state before animation
         gsap.set(panel, { y: 200 });
 
         // panel animation
@@ -36,15 +38,16 @@ const App = () => {
                     }
         );
 
-        // ✅ 1. Hide nav when scrolling starts (ONLY if not in "scrolled nav" mode)
+        // 1. Hide nav when scrolling starts (ONLY if not in "scrolled nav" mode)
         ScrollTrigger.create({
                                  trigger: header,
                                  start: "top top",
 
                                  onEnter: () => {
+                                     // Prevents conflict with second trigger
                                      if (navScrolledRef.current) return;
 
-                                     gsap.to("nav", {
+                                     gsap.to("#main-nav", {
                                          opacity: 0,
                                          y: -20,
                                          duration: 0.3,
@@ -54,25 +57,25 @@ const App = () => {
 
                                  // ✅ Back to very top → restore ORIGINAL nav
                                  onLeaveBack: () => {
+                                     // Only run when very close to top
                                      if (window.scrollY <= 10) {
                                          navScrolledRef.current = false;
                                          setNavScrolled(false);
 
-                                         gsap.fromTo("nav", {
-                                                         opacity: 0,
-                                                         y: -20
-                                                     }, {
-                                                         opacity: 1,
-                                                         y: 0,
-                                                         duration: 0.3,
-                                                         ease: "power2.out"
-                                                     }
-                                         );
+                                         gsap.fromTo("#main-nav", {
+                                             opacity: 0,
+                                             y: -20
+                                         }, {
+                                             opacity: 1,
+                                             y: 0,
+                                             duration: 0.3,
+                                             ease: "power2.out"
+                                         });
                                      }
                                  }
                              });
 
-        // ✅ 2. Switch to "scrolled nav" at 85%
+        // 2. Switch to "scrolled nav" at 85%
         ScrollTrigger.create({
                                  trigger: header,
                                  start: "85% top",
@@ -82,23 +85,22 @@ const App = () => {
                                      navScrolledRef.current = true;
                                      setNavScrolled(true);
 
-                                     gsap.fromTo("nav",
-                                                 {
+                                     gsap.fromTo("#main-nav", {
                                                      opacity: 0,
-                                                     y: -20
+                                                     y: 20
                                                  },
                                                  {
                                                      opacity: 1,
                                                      y: 0,
                                                      duration: 0.3,
-                                                     ease: "power2.out"
+                                                     ease: "power2.out",
                                                  }
                                      );
                                  },
 
                                  // ❌ scrolling UP → hide it (do NOT restore original here)
                                  onEnterBack: () => {
-                                     gsap.to("nav", {
+                                     gsap.to("#main-nav", {
                                          opacity: 0,
                                          y: -20,
                                          duration: 0.3,
@@ -113,7 +115,7 @@ const App = () => {
 
                                  // ❌ still hidden when going up
                                  onLeaveBack: () => {
-                                     gsap.to("nav", {
+                                     gsap.to("#main-nav", {
                                          opacity: 0,
                                          y: -20,
                                          duration: 0.3,
