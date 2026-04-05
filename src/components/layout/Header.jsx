@@ -7,10 +7,12 @@ const Header = forwardRef((props, ref) => {
     const { navScrolled } = props
 
     return (
-        <header ref={ref} className="w-full relative">
+        <>
             <NavBar navScrolled={navScrolled}/>
-            <HeroSection />
-        </header>
+            <header ref={ref} className="relative w-full h-screen overflow-hidden">
+                <HeroSection />
+            </header>
+        </>
     );
 });
 

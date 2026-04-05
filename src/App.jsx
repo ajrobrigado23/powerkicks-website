@@ -26,20 +26,17 @@ const App = () => {
         // Prevents GSAP from running if refs aren’t ready
         if (!header || !panel) return;
 
-        // Initial state before animation
-        gsap.set(panel, { y: 200 });
-
         // panel animation
         gsap.fromTo(panel,
-                    { y: 200 },
+                    { y: "80vh" },
                     {
-                        y: 0,
+                        y: "0vh",
                         ease: "none",
                         scrollTrigger: {
                             trigger: header,
-                            start: "top bottom",
-                            end: "bottom 20%",
-                            scrub: 1,
+                            start: "top top",
+                            end: "bottom top",
+                            scrub: true,
                         },
                     }
         );
@@ -84,7 +81,7 @@ const App = () => {
         // 2. Switch to "scrolled nav" at 85%
         ScrollTrigger.create({
                                  trigger: header,
-                                 start: "85% top",
+                                 start: "45% top",
 
                                  // ✅ scrolling DOWN → show new nav
                                  onEnter: () => {
@@ -137,7 +134,7 @@ const App = () => {
             <Header ref={headerRef} navScrolled={navScrolled}/>
             <section
                 ref={panelRef}
-                className="relative z-20 w-full bg-white -mt-16 pt-8 pb-12"
+                className="relative z-20 -mt-[80vh] bg-white pt-8 pb-12"
             >
                 <BrandCarousel />
             </section>

@@ -41,56 +41,62 @@ export default function NavBar({ navScrolled }) {
     // Animation for the burger menu (dropdown on open/ close)
     useGSAP(() => {
 
-        if (menuOpen) {
-            hasOpenedRef.current = true;
-            gsap.set(dropdownRef.current, { pointerEvents: "auto" });
+        // add gsap context
+        const ctx = gsap.context(() =>{
+            if (menuOpen) {
+                hasOpenedRef.current = true;
+                gsap.set(dropdownRef.current, { pointerEvents: "auto" });
 
-            // Reveal panel top to bottom
-            gsap.fromTo(
-                dropdownRef.current,
-                {
-                    clipPath: "inset(0% 0 100% 0)"
-                },
+                // Reveal panel top to bottom
+                gsap.fromTo(
+                    dropdownRef.current,
+                    {
+                        clipPath: "inset(0% 0 100% 0)"
+                    },
 
-                {
-                    clipPath: "inset(0% 0 0% 0)",
-                    duration: 1,
-                    ease: "power4.inOut"
-                }
-            );
+                    {
+                        clipPath: "inset(0% 0 0% 0)",
+                        duration: 1,
+                        ease: "power4.inOut"
+                    }
+                );
 
-            // Stagger menu items using the curtain and mask animation
-            gsap.fromTo(
-                menuItemsRef.current,
-                {
-                    y: "100%",
-                    opacity: 1
-                },
-                // starts fully below the mask
-                {
-                    y: "0%",
-                    opacity: 1,
+                // Stagger menu items using the curtain and mask animation
+                gsap.fromTo(
+                    menuItemsRef.current,
+                    {
+                        y: "100%",
+                        opacity: 1
+                    },
+                    // starts fully below the mask
+                    {
+                        y: "0%",
+                        opacity: 1,
+                        duration: 0.7,
+                        stagger: 0.1,
+                        ease: "power4.out",
+                        delay: 0.6
+                    }
+                );
+            } else {
+
+                if (!hasOpenedRef.current) return;
+
+                // Then panel clips back up
+                gsap.to(dropdownRef.current, {
+                    clipPath: "inset(0% 0 100% 0)",
                     duration: 0.7,
-                    stagger: 0.1,
-                    ease: "power4.out",
-                    delay: 0.6
-                }
-            );
-        } else {
+                    ease: "power4.inOut",
+                    delay: 0.2,
+                    onComplete: () => {
+                        gsap.set(dropdownRef.current, { pointerEvents: "none" });
+                    }
+                });
+            }
+        });
 
-            if (!hasOpenedRef.current) return;
+        return () => ctx.revert();
 
-            // Then panel clips back up
-            gsap.to(dropdownRef.current, {
-                clipPath: "inset(0% 0 100% 0)",
-                duration: 0.7,
-                ease: "power4.inOut",
-                delay: 0.2,
-                onComplete: () => {
-                    gsap.set(dropdownRef.current, { pointerEvents: "none" });
-                }
-            });
-        }
     }, { dependencies: [menuOpen] });
 
     const handleToggle = () => {
@@ -101,10 +107,10 @@ export default function NavBar({ navScrolled }) {
     return(
         <>
             <nav id="main-nav" ref={navigationRef}
-                 className={`fixed top-0 w-full bg-transparent z-40 ${
+                 className={`fixed top-0 w-full bg-transparent z-40 text-white ${
                      navScrolled
                          ? "py-4"
-                         : "text-white mt-4"}`
+                         : "py-4 mt-4"}`
                 }>
                 <div className="flex h-full justify-between items-center text-white">
                     <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
