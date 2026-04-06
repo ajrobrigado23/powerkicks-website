@@ -26,20 +26,21 @@ const App = () => {
         // Prevents GSAP from running if refs aren’t ready
         if (!header || !panel) return;
 
+        // ✅ Make sure it starts exactly below hero
+        gsap.set(panel, { y: 0 });
+
         // panel animation
-        gsap.fromTo(panel,
-                    { y: "80vh" },
-                    {
-                        y: "0vh",
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: header,
-                            start: "top top",
-                            end: "bottom top",
-                            scrub: true,
-                        },
-                    }
-        );
+        gsap.to(panel, {
+            y: -window.innerHeight, // moves panel up over hero
+            ease: "none",
+            scrollTrigger: {
+                trigger: header,
+                start: "top top",
+                end: "bottom top",
+                scrub: 1.2,
+                invalidateOnRefresh: true
+            },
+        });
 
         // 1. Hide nav when scrolling starts (ONLY if not in "scrolled nav" mode)
         ScrollTrigger.create({
@@ -131,13 +132,16 @@ const App = () => {
 
     return (
         <>
-            <Header ref={headerRef} navScrolled={navScrolled}/>
-            <section
-                ref={panelRef}
-                className="relative z-20 -mt-[80vh] bg-white pt-8 pb-12"
-            >
-                <BrandCarousel />
-            </section>
+            <div className="relative">
+                <Header ref={headerRef} navScrolled={navScrolled}/>
+                <section
+                    ref={panelRef}
+                    className="absolute top-full left-0 w-full z-20 bg-white pt-8 pb-12 will-change-transform"
+                >
+                    <BrandCarousel />
+                </section>
+            </div>
+
 
             {/* 👇 temporary — just to test scrolling */}
             <div style={{ height: "100vh", background: "lightgray" }}>
