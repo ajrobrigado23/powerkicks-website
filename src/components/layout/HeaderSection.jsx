@@ -55,7 +55,7 @@ export default function HeroSection() {
                 <div
                     className="flex gap-1 font-bold uppercase leading-none max-[523px]:gap-0 min-[900px]:flex-col min-[900px]:text-[clamp(2.5rem,4.5vw,4.5rem)] max-[841px]:flex-col max-[900px]:text-[clamp(2rem,10vw,3rem)]">
                     <h2 className="home-header min-[900px]:leading-[0.725] text-white">The Powerkicks</h2>
-                    <h2 className="home-header ml-2 text-[#6b6b6b] max-[841px]:ml-0 min-[900px]:ml-0">Difference</h2>
+                    <h2 className="home-header ml-2 text-[#e3b23c] max-[841px]:ml-0 min-[900px]:ml-0">Difference</h2>
                 </div>
                 <div className="flex flex-col justify-end text-white max-[900px]:self-start max-[900px]:gap-2">
                     <p className="home-para tracking-[0.025rem] max-w-md max-[900px]:max-w-full lg:max-w-md xl:max-w-lg text-[clamp(0.75rem,1.0vw,0.875rem)]">

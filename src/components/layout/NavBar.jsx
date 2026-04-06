@@ -124,8 +124,8 @@ export default function NavBar({ navScrolled }) {
                     </ul>
                     {/* Get Free Trial button */}
                     <button
-                        className={`me-10 font-bold tracking-wider text-sm uppercase max-[1100px]:ml-auto max-[1100px]:me-4
-                            ${navScrolled && "ml-auto"}
+                        className={`font-bold tracking-wider text-sm uppercase max-[1100px]:ml-auto max-[1100px]:me-4
+                            ${navScrolled ? "ml-auto me-2" : "me-10"}
                         `}>
                         <SlideUpText isButton={true}>Get Free Trial</SlideUpText>
                     </button>
@@ -134,7 +134,7 @@ export default function NavBar({ navScrolled }) {
                     <button
                         className={`
                         ${ navScrolled 
-                            ? "flex flex-col justify-center items-center gap-1 me-8 cursor-pointer text-black"
+                            ? "flex flex-col justify-center items-center gap-1 me-8 cursor-pointer text-black px-3 py-3 bg-[#dee2e6] rounded-4xl"
                             : "hidden max-[1100px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer"}`}
                         onClick={handleToggle}
                         aria-label="Toggle menu"

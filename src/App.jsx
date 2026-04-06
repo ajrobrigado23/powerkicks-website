@@ -32,18 +32,26 @@ const App = () => {
         });
 
         // panel animation
-        gsap.to(panel, {
-            // moves panel up over hero
-            // panel doesn’t travel full height
-            y:  () => -window.innerHeight * 0.8,
-            ease: "none",
-            scrollTrigger: {
-                    trigger: header,
-                    start: "top top",
-                    end: "+=250%",
-                    scrub: 1.2,
-                    invalidateOnRefresh: true
-            },
+        const tl = gsap.timeline({
+                                     scrollTrigger: {
+                                         trigger: header,
+                                         start: "top top",
+                                         end: "+=350%",
+                                         scrub: 1,
+                                         invalidateOnRefresh: true
+                                     }
+                                 });
+
+        // Stage 1 → fast move to middle
+        tl.to(panel, {
+            y: () => -window.innerHeight * 0.1, // middle
+            ease: "power3.out",
+        });
+
+        // Stage 2 → slow subtle move to near top
+        tl.to(panel, {
+            y: () => -window.innerHeight * 0.025, // slightly higher than before
+            ease: "power3.out",
         });
 
         // 1. Hide nav when scrolling starts (ONLY if not in "scrolled nav" mode)
@@ -86,7 +94,7 @@ const App = () => {
         // 2. Switch to "scrolled nav" at 85%
         ScrollTrigger.create({
                                  trigger: header,
-                                 start: "45% top",
+                                 start: "80% top",
 
                                  // ✅ scrolling DOWN → show new nav
                                  onEnter: () => {
@@ -145,12 +153,10 @@ const App = () => {
                     <BrandCarousel />
                 </section>
             </div>
-
-
             {/* 👇 temporary — just to test scrolling */}
-            <div style={{ height: "100vh", background: "lightgray" }}>
+            <section style={{ height: "100vh", background: "lightgray" }}>
                 scroll test
-            </div>
+            </section>
         </>
 
     )
