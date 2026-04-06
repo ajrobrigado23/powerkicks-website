@@ -27,18 +27,22 @@ const App = () => {
         if (!header || !panel) return;
 
         // ✅ Make sure it starts exactly below hero
-        gsap.set(panel, { y: 0 });
+        gsap.set(panel, {
+            y: 0
+        });
 
         // panel animation
         gsap.to(panel, {
-            y: -window.innerHeight, // moves panel up over hero
+            // moves panel up over hero
+            // panel doesn’t travel full height
+            y:  () => -window.innerHeight * 0.8,
             ease: "none",
             scrollTrigger: {
-                trigger: header,
-                start: "top top",
-                end: "bottom top",
-                scrub: 1.2,
-                invalidateOnRefresh: true
+                    trigger: header,
+                    start: "top top",
+                    end: "+=250%",
+                    scrub: 1.2,
+                    invalidateOnRefresh: true
             },
         });
 
