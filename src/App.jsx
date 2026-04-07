@@ -1,6 +1,6 @@
 import Header from "./components/layout/Header.jsx";
 import BrandCarousel from "./components/animations/BrandCarousel.jsx";
-import {useRef, useState} from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -22,6 +22,9 @@ const App = () => {
 
         const header = headerRef.current;
         const panel = panelRef.current;
+
+        const heroOverlay = header.querySelector(".hero-overlay");
+        const heroContent = header.querySelector(".hero-content");
 
         // Prevents GSAP from running if refs aren’t ready
         if (!header || !panel) return;
@@ -48,6 +51,33 @@ const App = () => {
             duration: 1.8,
         });
 
+        // Animate the overlay
+        gsap.to(heroOverlay, {
+            opacity: 0.5, // 🔥 50% black
+            ease: "none",
+            scrollTrigger: {
+                trigger: header,
+                start: "top top",
+                end: "+=30%", // 🔥 happens on first scroll only
+                scrub: 0.6,
+                invalidateOnRefresh: true,
+            },
+        });
+
+        // Hero text/content moves up and fades out as panel comes in
+        gsap.to(heroContent, {
+            y: () => -window.innerHeight * 0.15,
+            opacity: 0,
+            ease: "none",
+            scrollTrigger: {
+                trigger: header,
+                start: "top top",
+                end: "+=30%",
+                scrub: 0.6,
+                invalidateOnRefresh: true,
+            },
+        });
+
         // 1. Hide nav when scrolling starts (ONLY if not in "scrolled nav" mode)
         ScrollTrigger.create({
                                  trigger: header,
@@ -59,7 +89,7 @@ const App = () => {
 
                                      gsap.to("#main-nav", {
                                          opacity: 0,
-                                         y: 20,
+                                         y: -20,
                                          duration: 0.3,
                                          ease: "power2.in"
                                      });

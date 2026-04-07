@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
-import {useGSAP} from "@gsap/react";
+import { useGSAP } from "@gsap/react";
 
 const brands = [
     { name: "kukkiwon", logo:"/logo/kukkiwon.png" },
