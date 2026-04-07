@@ -5,59 +5,62 @@ import { Circle } from "lucide-react";
 
 export default function SlideUpText({ children, isButton }) {
     const containerRef = useRef(null);
+    // Text slide up animation
     const tl = useRef(null);
+    // Circle animation
     const circleRef = useRef(null);
     const circleTween = useRef(null);
 
     useGSAP(() => {
+        const top = containerRef.current.querySelector(".slide-text-top");
+        const bottom = containerRef.current.querySelector(".slide-text-bottom");
+
+        gsap.set([top, bottom], { force3D: true });
         tl.current = gsap.timeline({ paused: true });
 
-        const tops = gsap.utils.toArray(".top", containerRef.current);
-        const bottoms = gsap.utils.toArray(".bottom", containerRef.current);
-        // reduce the stagger slightly from 0.03, 0.8
-        const stagger = Math.min(0.02, 0.6 / tops.length);
-
         tl.current
-            .to(tops, {
+            .to(top, {
                 yPercent: -100,
-                duration: 0.6,
+                duration: 0.28,
                 ease: "power2.out",
-                stagger: stagger
+                force3D: true,
             }, 0)
-            .to(bottoms, {
+            .to(bottom, {
                 yPercent: -100,
-                duration: 0.6,
+                duration: 0.28,
                 ease: "power2.out",
-                stagger: stagger
+                force3D: true,
             }, 0);
 
     }, { scope: containerRef });
 
     const handleMouseEnter = () => {
-        // reuse the animation efficiently
-        tl.current?.restart();
-        if (isButton) {
+        tl.current?.timeScale(1).play();
+
+        if (isButton && circleRef.current) {
             circleTween.current?.kill();
             circleTween.current = gsap.to(circleRef.current, {
                 fill: "#ffffff",   // or any color
                 duration: 0.25,
                 ease: "power3.out",
-                scale: 0.60
+                scale: 0.60,
+                force3D: true,
             });
         }
 
     };
 
     const handleMouseLeave = () => {
-        // reuse the animation efficiently
-        tl.current?.restart();
-        if (isButton) {
+        tl.current?.timeScale(1).reverse();
+
+        if (isButton && circleRef.current) {
             circleTween.current?.kill();
             circleTween.current = gsap.to(circleRef.current, {
                 fill: "transparent",
                 duration: 0.25,
                 ease: "power3.out",
-                scale: 1
+                scale: 1,
+                force3D: true,
             });
         }
 
@@ -68,38 +71,29 @@ export default function SlideUpText({ children, isButton }) {
             ref={containerRef}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={isButton ? "bg-black px-4 py-3 rounded-xl" : undefined}
+            className={isButton ? "inline-flex items-center bg-black px-4 py-3 rounded-xl" : "inline-flex items-center"}
+            style={{ contain: "layout paint" }}
         >
-            <div className="flex overflow-hidden cursor-pointer relative">
-                {/* Top layer */}
-                <div className="flex items-end">
-                    {children.split("").map((char, i) => (
-                        <span key={i} className="top inline-block will-change-transform transform-gpu">
-                            {char === " " ? "\u00A0" : char}
-                        </span>
-                    ))}
-
-                    {
-                        isButton && (
-                            <span className="self-center inline-block pl-3 will-change-transform transform-gpu">
-                                <Circle ref={circleRef} size={8} strokeWidth={2}/>
-                            </span>
-                        )
-                    }
-
+            <div className="relative overflow-hidden cursor-pointer leading-none">
+                <div className="slide-text-top will-change-transform transform-gpu">
+                    {children}
                 </div>
 
-                {/* Bottom layer */}
-                <div className="flex absolute top-full left-0">
-                    {children.split("").map((char, i) => (
-                        <span key={i} className="bottom inline-block will-change-transform transform-gpu">
-                            {char === " " ? "\u00A0" : char}
-                        </span>
-                    ))}
-
+                <div className="slide-text-bottom absolute left-0 top-full will-change-transform transform-gpu">
+                    {children}
                 </div>
             </div>
 
+            {isButton && (
+                <span className="inline-flex items-center pl-3">
+                    <Circle
+                        ref={circleRef}
+                        size={8}
+                        strokeWidth={2}
+                        className="will-change-transform transform-gpu"
+                    />
+                </span>
+            )}
         </div>
     );
 }

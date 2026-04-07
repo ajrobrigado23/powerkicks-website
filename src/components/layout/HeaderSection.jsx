@@ -47,7 +47,7 @@ export default function HeroSection() {
             {/* Adding gradient black at the bottom of the video */}
             <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent z-0"/>
             {/* top gradient - only covers top */}
-            <div className="absolute inset-x-0 top-0 h-1/3 bg-linear-to-b from-black/75 to-transparent z-0"/>
+            <div className="absolute inset-x-0 top-0 h-40 bg-linear-to-b from-black/55 to-transparent z-20 pointer-events-none" />
 
             {/* Hero Content */}
             <div

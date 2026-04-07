@@ -1,26 +1,59 @@
 import SlideUpText from "../animations/SlideUpText.jsx";
-import {useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import{ gsap } from "gsap";
 import {useGSAP} from "@gsap/react";
 
 const MENU_ITEMS = [
-  "About",
-  "Schedule",
-  "Contact",
-  "Facebook",
-  "Instagram",
-  "Privacy Policy",
-  "Terms of Service"
+  { label: "About", href: "#about" },
+  { label: "Schedule", href: "#schedule" },
+  { label: "Contact", href: "#contact" },
+  { label: "Facebook", href: "https://facebook.com", external: true },
+  { label: "Instagram", href: "https://instagram.com", external: true },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms of Service", href: "/terms-of-service" }
 ];
 
 export default function NavBar({ navScrolled }) {
 
     const navigationRef = useRef(null);
+    const toggleButtonRef = useRef(null);
+    const closeButtonRef = useRef(null);
     const [menuOpen, setMenuOpen] = useState(false);
     // Dropdown navigation
     const dropdownRef = useRef(null);
     const menuItemsRef = useRef([]);
     const hasOpenedRef = useRef(false);
+    const menuId = "mobile-menu";
+
+    useEffect(() => {
+        if (!menuOpen) return undefined;
+
+        const onKeyDown = (event) => {
+            if (event.key === "Escape") {
+                setMenuOpen(false);
+            }
+        };
+
+        document.addEventListener("keydown", onKeyDown);
+        return () => document.removeEventListener("keydown", onKeyDown);
+    }, [menuOpen]);
+
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = "hidden";
+            closeButtonRef.current?.focus();
+            return () => {
+                document.body.style.overflow = "";
+            };
+        }
+
+        document.body.style.overflow = "";
+        if (hasOpenedRef.current) {
+            toggleButtonRef.current?.focus();
+        }
+
+        return undefined;
+    }, [menuOpen]);
 
     // Animation for the navbar
     useGSAP(() => {
@@ -63,7 +96,7 @@ export default function NavBar({ navScrolled }) {
 
                 // Stagger menu items using the curtain and mask animation
                 gsap.fromTo(
-                    menuItemsRef.current,
+                    menuItemsRef.current.filter(Boolean),
                     {
                         y: "100%",
                         opacity: 1
@@ -101,18 +134,24 @@ export default function NavBar({ navScrolled }) {
     }, { dependencies: [menuOpen] });
 
     const handleToggle = () => {
-        const opening = !menuOpen;
-        setMenuOpen(opening);
+        setMenuOpen((prev) => !prev);
+    };
+
+    const getLinkProps = (item) => {
+        if (!item.external) return {};
+        return {
+            target: "_blank",
+            rel: "noreferrer noopener"
+        };
     };
 
     return(
         <>
             <nav id="main-nav" ref={navigationRef}
-                 className={`fixed top-0 w-full z-40 text-white bg-white/0
-                 will-change-transform 
+                 className={`fixed top-0 w-full z-40 text-white bg-white/0 transform-gpu
                  ${navScrolled
                      ? "py-4"
-                     : "py-3 backdrop-blur-xs"}`
+                     : "py-3 bg-transparent"}`
                  }>
                 <div className="flex h-full justify-between items-center text-white">
                     <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
@@ -120,26 +159,36 @@ export default function NavBar({ navScrolled }) {
                         className={`ms-16 flex font-semibold text-xs uppercase tracking-wide gap-20 max-[1101px]:hidden
                         ${navScrolled && "hidden"}
                     `}>
-                        <SlideUpText>About</SlideUpText>
-                        <SlideUpText>Schedule</SlideUpText>
-                        <SlideUpText>Contact</SlideUpText>
+                        {MENU_ITEMS.slice(0, 3).map((item) => (
+                            <li key={item.label}>
+                                <SlideUpText>
+                                    <a href={item.href} {...getLinkProps(item)}>{item.label}</a>
+                                </SlideUpText>
+                            </li>
+                        ))}
                     </ul>
                     {/* Get Free Trial button */}
                     <button
-                        className={`font-bold tracking-wider text-sm uppercase max-[1100px]:ml-auto max-[1100px]:me-4
-                            ${navScrolled ? "ml-auto me-2" : "me-10"}
-                        `}>
+                        className={`flex items-center justify-center font-bold tracking-wider text-sm uppercase max-[1100px]:ml-auto max-[1100px]:me-4
+                            ${navScrolled
+                                ? "ml-auto me-2"
+                                : "me-10"
+                            }
+                        `}
+                    >
                         <SlideUpText isButton={true}>Get Free Trial</SlideUpText>
                     </button>
 
                     {/* Menu button */}
                     <button
                         className={`
-                        ${ navScrolled 
-                            ? "flex flex-col justify-center items-center gap-1 me-8 cursor-pointer text-black px-3 py-3 bg-[#dee2e6] rounded-4xl"
-                            : "hidden max-[1100px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer"}`}
+                        max-[1100px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer
+                        ${ navScrolled ? "text-black px-3 py-3 bg-[#dee2e6] rounded-4xl" : "hidden"}`}
+                        ref={toggleButtonRef}
                         onClick={handleToggle}
                         aria-label="Toggle menu"
+                        aria-expanded={menuOpen}
+                        aria-controls={menuId}
                     >
                         <span className="font-semibold text-sm uppercase">Menu</span>
                     </button>
@@ -149,8 +198,13 @@ export default function NavBar({ navScrolled }) {
             {/* Dropdown */}
             <div
                 ref={dropdownRef}
+                id={menuId}
                 className="hidden max-[1100px]:grid fixed top-0 left-0 min-w-full h-screen bg-white z-50 text-black pointer-events-none"
                 style={{ clipPath: "inset(0% 0 100% 0)" }}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Mobile navigation menu"
+                aria-hidden={!menuOpen}
             >
                 <div className="grid grid-cols-2 grid-rows-[auto_1fr_auto] p-8 h-full">
 
@@ -159,14 +213,16 @@ export default function NavBar({ navScrolled }) {
                             // It stops until Contact element
                             MENU_ITEMS.slice(0, 3).map((item, i) => (
                                     <li
-                                        key={item}
+                                        key={item.label}
                                         className="overflow-hidden self-start"
                                     >
                                         <div
                                             ref={(el) => (menuItemsRef.current[i] = el)}
                                             className="opacity-0 translate-y-full "
                                         >
-                                            <SlideUpText>{item}</SlideUpText>
+                                            <SlideUpText>
+                                                <a href={item.href} onClick={() => setMenuOpen(false)} {...getLinkProps(item)}>{item.label}</a>
+                                            </SlideUpText>
                                         </div>
                                     </li>
                                 ))
@@ -180,48 +236,48 @@ export default function NavBar({ navScrolled }) {
 
                     {/* Left column - row 3 */}
                     <div className="col-start-1 row-start-3 flex flex-col uppercase text-sm font-semibold gap-8">
-                        <div>
+                        <ul>
                             {
                                 MENU_ITEMS.slice(3, 5).map((item, i) => {
                                     // Starting from the Facebook until Instagram element
                                     const currentLength = 3 + i;
                                     return (
-                                        <div className="overflow-hidden"
-                                        key={currentLength}>
+                                        <li className="overflow-hidden"
+                                        key={item.label}>
                                             <div
                                                 ref={(el) => (menuItemsRef.current[currentLength] = el)}
                                                 className="opacity-0 translate-y-full"
                                             >
-                                                <p>{item}</p>
+                                                <a href={item.href} onClick={() => setMenuOpen(false)} {...getLinkProps(item)}>{item.label}</a>
                                             </div>
-                                        </div>
+                                        </li>
                                     )
                                 })
                             }
-                        </div>
-                        <div>
+                        </ul>
+                        <ul>
                             {
                                 MENU_ITEMS.slice(5, MENU_ITEMS.length).map((item, i) => {
                                     // Starting from the Privacy Policy until Terms of Service
                                     const currentLength = 5 + i;
                                     return (
-                                        <div className="overflow-hidden"
-                                             key={currentLength}>
+                                        <li className="overflow-hidden"
+                                             key={item.label}>
                                             <div
                                                 ref={(el) => (menuItemsRef.current[currentLength] = el)}
                                                 className="opacity-0 translate-y-full"
                                             >
-                                                <p>{item}</p>
+                                                <a href={item.href} onClick={() => setMenuOpen(false)} {...getLinkProps(item)}>{item.label}</a>
                                             </div>
-                                        </div>
+                                        </li>
                                     )
                                 })
                             }
-                        </div>
+                        </ul>
                     </div>
 
                     <div className="col-start-2 row-start-1 row-span-3 flex justify-end items-start">
-                        <button onClick={handleToggle} aria-label="Toggle menu" className="cursor-pointer">
+                        <button ref={closeButtonRef} onClick={handleToggle} aria-label="Close menu" className="cursor-pointer">
                             <span className="font-bold text-sm uppercase">Close</span>
                         </button>
                     </div>
