@@ -26,32 +26,26 @@ const App = () => {
         // Prevents GSAP from running if refs aren’t ready
         if (!header || !panel) return;
 
-        // ✅ Make sure it starts exactly below hero
-        gsap.set(panel, {
-            y: 0
+        const panelTl = gsap.timeline({
+                                          scrollTrigger: {
+                                              trigger: header,
+                                              start: "top top",
+                                              end: "+=240%",
+                                              scrub: 1,
+                                              invalidateOnRefresh: true,
+                                          }
+                                      });
+
+        panelTl.to(panel, {
+            y: () => -window.innerHeight * 0.22,
+            ease: "none",
+            duration: 1,
         });
 
-        // panel animation
-        const tl = gsap.timeline({
-                                     scrollTrigger: {
-                                         trigger: header,
-                                         start: "top top",
-                                         end: "+=350%",
-                                         scrub: 1,
-                                         invalidateOnRefresh: true
-                                     }
-                                 });
-
-        // Stage 1 → fast move to middle
-        tl.to(panel, {
-            y: () => -window.innerHeight * 0.1, // middle
-            ease: "power3.out",
-        });
-
-        // Stage 2 → slow subtle move to near top
-        tl.to(panel, {
-            y: () => -window.innerHeight * 0.025, // slightly higher than before
-            ease: "power3.out",
+        panelTl.to(panel, {
+            y: () => -window.innerHeight * 0.38,
+            ease: "none",
+            duration: 1.8,
         });
 
         // 1. Hide nav when scrolling starts (ONLY if not in "scrolled nav" mode)
