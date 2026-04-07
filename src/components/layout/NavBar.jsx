@@ -41,8 +41,8 @@ export default function NavBar({ navScrolled }) {
     // Animation for the burger menu (dropdown on open/ close)
     useGSAP(() => {
 
-        // add gsap context
-        const ctx = gsap.context(() =>{
+        // add gsap context (New animations are freshly created)
+        const ctx = gsap.context(() => {
             if (menuOpen) {
                 hasOpenedRef.current = true;
                 gsap.set(dropdownRef.current, { pointerEvents: "auto" });
@@ -93,8 +93,9 @@ export default function NavBar({ navScrolled }) {
                     }
                 });
             }
-        });
+        }, dropdownRef.current);
 
+        // reset DOM to original state (kill animations)
         return () => ctx.revert();
 
     }, { dependencies: [menuOpen] });
@@ -107,11 +108,12 @@ export default function NavBar({ navScrolled }) {
     return(
         <>
             <nav id="main-nav" ref={navigationRef}
-                 className={`fixed top-0 w-full bg-transparent z-40 text-white ${
-                     navScrolled
-                         ? "py-4"
-                         : "py-4 mt-4"}`
-                }>
+                 className={`fixed top-0 w-full z-40 text-white bg-white/0
+                 will-change-transform 
+                 ${navScrolled
+                     ? "py-4"
+                     : "py-3 backdrop-blur-xs"}`
+                 }>
                 <div className="flex h-full justify-between items-center text-white">
                     <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
                     <ul
@@ -158,11 +160,11 @@ export default function NavBar({ navScrolled }) {
                             MENU_ITEMS.slice(0, 3).map((item, i) => (
                                     <li
                                         key={item}
-                                        className="overflow-hidden"
+                                        className="overflow-hidden self-start"
                                     >
                                         <div
                                             ref={(el) => (menuItemsRef.current[i] = el)}
-                                            className="opacity-0 translate-y-full"
+                                            className="opacity-0 translate-y-full "
                                         >
                                             <SlideUpText>{item}</SlideUpText>
                                         </div>

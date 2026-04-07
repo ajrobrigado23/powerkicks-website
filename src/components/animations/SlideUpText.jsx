@@ -14,27 +14,28 @@ export default function SlideUpText({ children, isButton }) {
 
         const tops = gsap.utils.toArray(".top", containerRef.current);
         const bottoms = gsap.utils.toArray(".bottom", containerRef.current);
-        const stagger = Math.min(0.03, 0.8 / tops.length);
+        // reduce the stagger slightly from 0.03, 0.8
+        const stagger = Math.min(0.02, 0.6 / tops.length);
 
         tl.current
             .to(tops, {
                 yPercent: -100,
-                duration: 0.4,
-                ease: "power3.out",
+                duration: 0.6,
+                ease: "power2.out",
                 stagger: stagger
             }, 0)
             .to(bottoms, {
                 yPercent: -100,
-                duration: 0.4,
-                ease: "power3.out",
+                duration: 0.6,
+                ease: "power2.out",
                 stagger: stagger
             }, 0);
 
     }, { scope: containerRef });
 
     const handleMouseEnter = () => {
-        tl.current?.kill();
-        tl.current?.play();
+        // reuse the animation efficiently
+        tl.current?.restart();
         if (isButton) {
             circleTween.current?.kill();
             circleTween.current = gsap.to(circleRef.current, {
@@ -48,8 +49,8 @@ export default function SlideUpText({ children, isButton }) {
     };
 
     const handleMouseLeave = () => {
-        tl.current?.kill();
-        tl.current?.reverse();
+        // reuse the animation efficiently
+        tl.current?.restart();
         if (isButton) {
             circleTween.current?.kill();
             circleTween.current = gsap.to(circleRef.current, {
@@ -73,14 +74,14 @@ export default function SlideUpText({ children, isButton }) {
                 {/* Top layer */}
                 <div className="flex items-end">
                     {children.split("").map((char, i) => (
-                        <span key={i} className="top inline-block will-change-transform">
+                        <span key={i} className="top inline-block will-change-transform transform-gpu">
                             {char === " " ? "\u00A0" : char}
                         </span>
                     ))}
 
                     {
                         isButton && (
-                            <span className="self-center inline-block pl-3 will-change-transform">
+                            <span className="self-center inline-block pl-3 will-change-transform transform-gpu">
                                 <Circle ref={circleRef} size={8} strokeWidth={2}/>
                             </span>
                         )
@@ -91,7 +92,7 @@ export default function SlideUpText({ children, isButton }) {
                 {/* Bottom layer */}
                 <div className="flex absolute top-full left-0">
                     {children.split("").map((char, i) => (
-                        <span key={i} className="bottom inline-block will-change-transform">
+                        <span key={i} className="bottom inline-block will-change-transform transform-gpu">
                             {char === " " ? "\u00A0" : char}
                         </span>
                     ))}
