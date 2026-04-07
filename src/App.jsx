@@ -25,9 +25,12 @@ const App = () => {
 
         const heroOverlay = header.querySelector(".hero-overlay");
         const heroContent = header.querySelector(".hero-content");
+        const heroParallax = header.querySelector(".hero-parallax");
+
+        const firstRevealEnd = "+=45%";
 
         // Prevents GSAP from running if refs aren’t ready
-        if (!header || !panel) return;
+        if (!header || !panel || !heroParallax || !heroContent || !heroOverlay) return;
 
         const panelTl = gsap.timeline({
                                           scrollTrigger: {
@@ -39,32 +42,21 @@ const App = () => {
                                           }
                                       });
 
+        // Stage 1: panel reaches the middle on the first scroll
         panelTl.to(panel, {
             y: () => -window.innerHeight * 0.22,
             ease: "none",
-            duration: 1,
+            duration: 0.8,
         });
 
+        // Stage 2: panel continues upward slowly
         panelTl.to(panel, {
             y: () => -window.innerHeight * 0.38,
             ease: "none",
-            duration: 1.8,
+            duration: 2,
         });
 
-        // Animate the overlay
-        gsap.to(heroOverlay, {
-            opacity: 0.5, // 🔥 50% black
-            ease: "none",
-            scrollTrigger: {
-                trigger: header,
-                start: "top top",
-                end: "+=30%", // 🔥 happens on first scroll only
-                scrub: 0.6,
-                invalidateOnRefresh: true,
-            },
-        });
-
-        // Hero text/content moves up and fades out as panel comes in
+        // Hero text disappears completely during the same first stage
         gsap.to(heroContent, {
             y: () => -window.innerHeight * 0.15,
             opacity: 0,
@@ -72,8 +64,34 @@ const App = () => {
             scrollTrigger: {
                 trigger: header,
                 start: "top top",
-                end: "+=30%",
-                scrub: 0.6,
+                end: firstRevealEnd,
+                scrub: 1,
+                invalidateOnRefresh: true,
+            },
+        });
+
+        // Hero overlay reaches 50% black during the same first stage
+        gsap.to(heroOverlay, {
+            opacity: 0.5,
+            ease: "none",
+            scrollTrigger: {
+                trigger: header,
+                start: "top top",
+                end: firstRevealEnd,
+                scrub: 1,
+                invalidateOnRefresh: true,
+            },
+        });
+
+        // Hero video/background moves slightly upward during the same first stage
+        gsap.to(heroParallax, {
+            y: () => -window.innerHeight * 0.12,
+            ease: "none",
+            scrollTrigger: {
+                trigger: header,
+                start: "top top",
+                end: firstRevealEnd,
+                scrub: 1,
                 invalidateOnRefresh: true,
             },
         });
