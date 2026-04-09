@@ -148,15 +148,15 @@ export default function NavBar({ navScrolled }) {
     return(
         <>
             <nav id="main-nav" ref={navigationRef}
-                 className={`fixed top-0 w-full z-40 text-white bg-white/0 transform-gpu
+                 className={`fixed top-0 w-full z-40 text-black transform-gpu
                  ${navScrolled
                      ? "py-4"
-                     : "py-3 bg-transparent"}`
+                     : "py-3 bg-white"}`
                  }>
-                <div className="flex h-full justify-between items-center text-white">
+                <div className="flex h-full justify-between items-center">
                     <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
                     <ul
-                        className={`ms-16 flex font-semibold text-xs uppercase tracking-wide gap-20 max-[1101px]:hidden
+                        className={`ms-16 flex font-bold text-xs uppercase tracking-wide gap-20 max-[1101px]:hidden
                         ${navScrolled && "hidden"}
                     `}>
                         {MENU_ITEMS.slice(0, 3).map((item) => (
@@ -169,7 +169,7 @@ export default function NavBar({ navScrolled }) {
                     </ul>
                     {/* Get Free Trial button */}
                     <button
-                        className={`flex items-center justify-center font-bold tracking-wider text-sm uppercase max-[1100px]:ml-auto max-[1100px]:me-4
+                        className={`flex items-center justify-center font-bold tracking-wider text-sm text-white uppercase max-[1100px]:ml-auto max-[1100px]:me-4
                             ${navScrolled
                                 ? "ml-auto me-2"
                                 : "me-10"

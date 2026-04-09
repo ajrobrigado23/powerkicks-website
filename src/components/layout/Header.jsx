@@ -8,8 +8,8 @@ const Header = forwardRef((props, ref) => {
 
     return (
         <>
-            <NavBar navScrolled={navScrolled}/>
             <header ref={ref} className="relative w-full h-screen overflow-hidden">
+                <NavBar navScrolled={navScrolled}/>
                 <HeroSection />
             </header>
         </>

@@ -71,7 +71,7 @@ export default function SlideUpText({ children, isButton }) {
             ref={containerRef}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={isButton ? "inline-flex items-center bg-black px-4 py-3 rounded-xl" : "inline-flex items-center"}
+            className={isButton ? "inline-flex items-center bg-black px-4 py-3" : "inline-flex items-center"}
             style={{ contain: "layout paint" }}
         >
             <div className="relative overflow-hidden cursor-pointer leading-none">
