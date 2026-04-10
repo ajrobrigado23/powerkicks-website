@@ -36,7 +36,8 @@ const App = () => {
                                          opacity: 0,
                                          y: -20,
                                          duration: 0.3,
-                                         ease: "power2.in"
+                                         ease: "power2.in",
+                                         overwrite: true
                                      });
                                  },
                                  onLeaveBack: () => {
@@ -64,7 +65,7 @@ const App = () => {
         // Switch to the scrolled navbar when LogoCarouselSection enters
         ScrollTrigger.create({
                                  trigger: logoSection,
-                                 start: "top 60%",
+                                 start: "top 0%",
 
                                  onEnter: () => {
                                      navScrolledRef.current = true;
@@ -104,15 +105,14 @@ const App = () => {
                                      );
                                  },
 
+                                 // only hide here — do NOT switch back to original navbar yet
                                  onLeaveBack: () => {
-                                     navScrolledRef.current = false;
-                                     setNavScrolled(false);
-
                                      gsap.to("#main-nav", {
                                          opacity: 0,
                                          y: -20,
                                          duration: 0.25,
-                                         ease: "power2.in"
+                                         ease: "power2.in",
+                                         overwrite: "auto"
                                      });
                                  }
                              });
@@ -128,6 +128,9 @@ const App = () => {
                     <LogoCarouselSection></LogoCarouselSection>
                 </div>
             </main>
+            <section className="h-screen">
+
+            </section>
         </>
 
     )
