@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LogoCarouselSection from "./components/layout/LogoCarouselSection.jsx";
 
 /*
     IMPORTANT TIPS - (When using React + GSAP)
@@ -188,17 +189,11 @@ const App = () => {
         <>
             <div className="relative">
                 <Header ref={headerRef} navScrolled={navScrolled}/>
-                <section
-                    ref={panelRef}
-                    className="absolute top-full left-0 w-full z-20 bg-white pt-8 pb-12 will-change-transform"
-                >
-                    <BrandCarousel />
-                </section>
             </div>
-            {/* 👇 temporary — just to test scrolling */}
-            <section style={{ height: "100vh", background: "lightgray" }}>
-                scroll test
-            </section>
+
+            <main>
+                <LogoCarouselSection></LogoCarouselSection>
+            </main>
         </>
 
     )

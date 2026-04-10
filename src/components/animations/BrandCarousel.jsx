@@ -61,13 +61,6 @@ export default function BrandCarousel() {
     return(
         <>
             <div className="flex flex-col items-center justify-center">
-                <h4 className="text-neutral-500 font-semibold">Partners</h4>
-                <h2 className="font font-semibold text-4xl pb-4">Trusted by our partners</h2>
-                <p className="font-medium text-xs text-center w-3/6 mb-20">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A,
-                    aperiam blanditiis dicta dolore esse fugit laudantium magnam necessitatibus omnis optio provident quos
-                    repellat repellendus rerum sunt veritatis voluptatem? Quod, voluptatum.
-                </p>
                 <div
                     ref={containerRef}
                     className="overflow-hidden w-5/6"

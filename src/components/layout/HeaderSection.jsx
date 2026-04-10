@@ -43,10 +43,10 @@ export default function HeroSection() {
                     <p className="mb-1 text-sm font-semibold text-[#7F7F7F]">
                         Trusted by 1,000+ dedicated students
                     </p>
-                    <h2 className="home-header text-black text-[clamp(3rem,4.5vw,4.5rem)] leading-[0.9] font-bold">
+                    <h2 className="home-header text-black text-[clamp(3rem,5vw,4.5rem)] leading-[0.9] font-bold">
                         More than kicks.
                     </h2>
-                    <h2 className="home-header text-black text-[clamp(3rem,4.5vw,4.5rem)] leading-[0.9] font-bold">
+                    <h2 className="home-header text-black text-[clamp(3rem,5vw,4.5rem)] leading-[0.9] font-bold">
                         Built on <span className="text-[#B91C1C]">discipline</span>
                     </h2>
                     <button className="mt-2 bg-black px-5 py-2 text-sm font-extrabold uppercase tracking-wide text-white">
@@ -57,7 +57,7 @@ export default function HeroSection() {
 
             {/* Left content */}
             <div className="relative z-10 row-start-3 col-start-1 pt-5 px-10 tablet:self-end tablet:row-start-2 tablet:col-start-1 tablet:pb-[3.50rem] min-[1300px]:pb-25">
-                <p className="home-para w-full font-medium tracking-[0.025rem] text-[clamp(0.875rem,1vw,1rem)]] tablet:max-w-lg ">
+                <p className="home-para w-full font-medium tracking-[0.025rem] text-[clamp(1rem,1.2vw,1.375rem)] tablet:max-w-lg ">
                     Powerkicks Taekwondo Club is a certified training center recognized by the Philippine
                     Taekwondo Association. We focus on discipline, structure, and real progress helping students
                     grow stronger every session.
