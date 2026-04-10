@@ -56,11 +56,10 @@ export default function HeroSection() {
             </div>
 
             {/* Left content */}
-            <div className="relative z-10 row-start-3 col-start-1 pt-5 px-10 tablet:self-end tablet:row-start-2 tablet:col-start-1 tablet:pb-[3.50rem] min-[1300px]:pb-25">
-                <p className="home-para w-full font-medium tracking-[0.025rem] text-[clamp(1rem,1.2vw,1.375rem)] tablet:max-w-lg ">
-                    Powerkicks Taekwondo Club is a certified training center recognized by the Philippine
-                    Taekwondo Association. We focus on discipline, structure, and real progress helping students
-                    grow stronger every session.
+            <div className="relative z-10 row-start-3 col-start-1 pt-5 px-10 tablet:self-end tablet:row-start-2 tablet:col-start-1 tablet:pb-[8.50rem] min-[1300px]:pb-30">
+                <p className="home-para w-full font-medium tracking-[0.025rem] text-[clamp(0.75rem,1.2vw,1rem)] tablet:max-w-md">
+                    Powerkicks is a certified taekwondo training center recognized by the Philippine Taekwondo
+                    Association, focused on building discipline, structure, and real progress in every student.
                 </p>
             </div>
 

@@ -154,7 +154,9 @@ export default function NavBar({ navScrolled }) {
                      : "py-3 bg-white"}`
                  }>
                 <div className="flex h-full justify-between items-center">
-                    <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
+                    <h1 className={`font-bold text-lg ms-10 uppercase tracking-wider
+                        ${navScrolled && "hidden"}
+                    `}>Powerkicks</h1>
                     <ul
                         className={`ms-16 flex font-bold text-xs uppercase tracking-wide gap-20 max-[1100px]:text-[0.70rem] max-[1100px]:gap-13 max-[901px]:hidden
                         ${navScrolled && "hidden"}

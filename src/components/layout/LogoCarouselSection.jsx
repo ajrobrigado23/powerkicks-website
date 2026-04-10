@@ -10,7 +10,7 @@ export default function LogoCarouselSection() {
                     <h3>trusted institutions</h3>
                 </div>
                 <div className="flex justify-between">
-                    <p className="font-semibold tracking-[0.025rem] text-[clamp(0.875rem,1vw,1rem)]">Partners & Affiliation</p>
+                    <p className="font-semibold tracking-[0.025rem] text-[clamp(0.65rem,1vw,0.80rem)]">Partners & Affiliation</p>
                     <p className="font-medium max-w-2xl tracking-[0.025rem] text-[clamp(1rem,1.2vw,1.375rem)]">Powerkicks works alongside national and international organizations to ensure high-quality training.</p>
                 </div>
                 <div>

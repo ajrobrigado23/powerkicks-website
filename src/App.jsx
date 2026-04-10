@@ -87,8 +87,6 @@ const App = () => {
                                      );
                                  },
 
-
-
                                  // only hide here — do NOT switch back to original navbar yet
                                  onLeaveBack: () => {
                                      gsap.to("#main-nav", {
@@ -111,6 +109,7 @@ const App = () => {
                 <div ref={logoSectionRef}>
                     <LogoCarouselSection></LogoCarouselSection>
                 </div>
+                {/* Testing section */}
                 <section className="h-screen">
 
                 </section>
