@@ -37,7 +37,7 @@ const App = () => {
                                          y: -20,
                                          duration: 0.3,
                                          ease: "power2.in",
-                                         overwrite: true
+                                         overwrite: "auto"
                                      });
                                  },
                                  onLeaveBack: () => {
@@ -81,29 +81,13 @@ const App = () => {
                                              opacity: 1,
                                              y: 0,
                                              duration: 0.3,
-                                             ease: "power2.out"
+                                             ease: "power2.out",
+                                             overwrite: "auto"
                                          }
                                      );
                                  },
 
-                                 onEnterBack: () => {
-                                     navScrolledRef.current = true;
-                                     setNavScrolled(true);
 
-                                     gsap.fromTo(
-                                         "#main-nav",
-                                         {
-                                             opacity: 0,
-                                             y: 20
-                                         },
-                                         {
-                                             opacity: 1,
-                                             y: 0,
-                                             duration: 0.3,
-                                             ease: "power2.out"
-                                         }
-                                     );
-                                 },
 
                                  // only hide here — do NOT switch back to original navbar yet
                                  onLeaveBack: () => {
@@ -127,10 +111,10 @@ const App = () => {
                 <div ref={logoSectionRef}>
                     <LogoCarouselSection></LogoCarouselSection>
                 </div>
-            </main>
-            <section className="h-screen">
+                <section className="h-screen">
 
-            </section>
+                </section>
+            </main>
         </>
 
     )
