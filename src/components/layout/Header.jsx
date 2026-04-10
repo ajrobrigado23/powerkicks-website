@@ -8,7 +8,7 @@ const Header = forwardRef((props, ref) => {
 
     return (
         <>
-            <header ref={ref} className="relative w-full min-h-screen min-[900px]:h-screen min-[900px]:overflow-hidden">
+            <header ref={ref} className="relative w-full min-h-screen tablet:h-screen tablet:overflow-hidden">
                 <NavBar navScrolled={navScrolled}/>
                 <HeroSection />
             </header>
