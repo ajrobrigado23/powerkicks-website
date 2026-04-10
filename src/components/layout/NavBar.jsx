@@ -156,7 +156,7 @@ export default function NavBar({ navScrolled }) {
                 <div className="flex h-full justify-between items-center">
                     <h1 className="font-bold text-lg ms-10 uppercase tracking-wider">Powerkicks</h1>
                     <ul
-                        className={`ms-16 flex font-bold text-xs uppercase tracking-wide gap-20 max-[1101px]:hidden
+                        className={`ms-16 flex font-bold text-xs uppercase tracking-wide gap-20 max-[1100px]:text-[0.70rem] max-[1100px]:gap-13 max-[901px]:hidden
                         ${navScrolled && "hidden"}
                     `}>
                         {MENU_ITEMS.slice(0, 3).map((item) => (
@@ -169,7 +169,7 @@ export default function NavBar({ navScrolled }) {
                     </ul>
                     {/* Get Free Trial button */}
                     <button
-                        className={`flex items-center justify-center font-bold tracking-wider text-sm text-white uppercase max-[1100px]:ml-auto max-[1100px]:me-4
+                        className={`flex items-center justify-center font-bold tracking-wider text-sm text-white uppercase max-[900px]:ml-auto max-[900px]:me-4
                             ${navScrolled
                                 ? "ml-auto me-2"
                                 : "me-10"
@@ -182,7 +182,7 @@ export default function NavBar({ navScrolled }) {
                     {/* Menu button */}
                     <button
                         className={`
-                        max-[1100px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer
+                        max-[900px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer
                         ${ navScrolled ? "text-black px-3 py-3 bg-[#dee2e6] rounded-4xl" : "hidden"}`}
                         ref={toggleButtonRef}
                         onClick={handleToggle}
@@ -199,7 +199,7 @@ export default function NavBar({ navScrolled }) {
             <div
                 ref={dropdownRef}
                 id={menuId}
-                className="hidden max-[1100px]:grid fixed top-0 left-0 min-w-full h-screen bg-white z-50 text-black pointer-events-none"
+                className="hidden max-[900px]:grid fixed top-0 left-0 min-w-full h-screen bg-white z-50 text-black pointer-events-none"
                 style={{ clipPath: "inset(0% 0 100% 0)" }}
                 role="dialog"
                 aria-modal="true"

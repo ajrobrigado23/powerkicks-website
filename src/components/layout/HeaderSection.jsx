@@ -35,11 +35,11 @@ export default function HeroSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative grid min-h-screen w-full grid-cols-1 grid-rows-[auto_auto_auto_auto] min-[1100px]:grid-rows-[auto_1fr_auto] min-[1100px]:grid-cols-[1fr_1.5fr] min-[1100px]:h-screen"
+            className="relative grid min-h-screen w-full grid-cols-1 grid-rows-[auto_auto_auto_auto] min-[900px]:grid-rows-[auto_1fr_auto] min-[900px]:grid-cols-[1fr_1.5fr] min-[900px]:h-screen"
         >
             {/* Headline overlay */}
-            <div className="row-start-1 pt-25 pb-5 ps-10 col-start-1 z-20 min-[1100px]:p-0 min-[1100px]:absolute min-[1100px]:left-10 min-[1100px]:top-[22vh]">
-                <div className="w-full min-[1100px]:w-max">
+            <div className="row-start-1 pt-25 pb-5 ps-10 col-start-1 z-20 min-[900px]:p-0 min-[900px]:absolute min-[900px]:left-10 min-[900px]:top-[22vh]">
+                <div className="w-full min-[900px]:w-max">
                     <p className="mb-2 text-sm font-semibold text-[#7F7F7F]">
                         Trusted by 1,000+ dedicated students
                     </p>
@@ -56,8 +56,8 @@ export default function HeroSection() {
             </div>
 
             {/* Left content */}
-            <div className="relative z-10 row-start-3 col-start-1 px-10 min-[1100px]:self-end min-[1100px]:pb-35 min-[1100px]:row-start-2 min-[1100px]:col-start-1">
-                <p className="home-para mt-6 w-full font-medium tracking-[0.025rem] text-[clamp(0.75rem,1vw,0.875rem)] min-[1100px]:max-w-md ">
+            <div className="relative z-10 row-start-3 col-start-1 pt-5 px-10 min-[900px]:self-end min-[900px]:row-start-2 min-[900px]:col-start-1 min-[900px]:pb-30 min-[1023px]:pb-35">
+                <p className="home-para w-full font-medium tracking-[0.025rem] text-[clamp(0.75rem,1vw,0.875rem)] min-[900px]:max-w-md ">
                     Powerkicks Taekwondo Club is a certified training center recognized by the Philippine
                     Taekwondo Association. We focus on discipline, structure, and real progress helping students
                     grow stronger every session.
@@ -68,8 +68,8 @@ export default function HeroSection() {
             <div className="relative
                             row-start-2
                             col-start-1
-                            min-[1100px]:col-start-2
-                            min-[1100px]:row-start-2
+                            min-[900px]:col-start-2
+                            min-[900px]:row-start-2
                             min-h-[300px]
 
             ">
@@ -87,7 +87,7 @@ export default function HeroSection() {
             </div>
 
             {/* Bottom text */}
-            <div className="col-span-2 row-start-4 flex items-center justify-between px-10 py-3 text-[11px] font-semibold tracking-wide min-[1100px]:row-start-3">
+            <div className="col-span-2 row-start-4 flex items-center justify-between px-10 py-6 text-[11px] font-semibold tracking-wide min-[900px]:row-start-3">
                 <p>Certified Coaches</p>
                 <p>Imus, Dasmariñas and General Trias</p>
                 <p>Kids, Teens and Adults</p>
