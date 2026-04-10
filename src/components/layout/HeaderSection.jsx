@@ -35,18 +35,18 @@ export default function HeroSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative grid min-h-screen w-full grid-cols-1 grid-rows-[auto_auto_auto_auto] min-[900px]:grid-rows-[auto_1fr_auto] min-[900px]:grid-cols-[1fr_1.5fr] min-[900px]:h-screen"
+            className="relative grid min-h-screen w-full grid-cols-1 grid-rows-[auto_auto_auto_auto] tablet:grid-rows-[auto_1fr_auto] tablet:grid-cols-[1fr_1.5fr] tablet:h-screen"
         >
             {/* Headline overlay */}
-            <div className="row-start-1 pt-25 pb-5 ps-10 col-start-1 z-20 min-[900px]:p-0 min-[900px]:absolute min-[900px]:left-10 min-[900px]:top-[22vh]">
-                <div className="w-full min-[900px]:w-max">
-                    <p className="mb-2 text-sm font-semibold text-[#7F7F7F]">
+            <div className="row-start-1 pt-25 pb-5 ps-10 col-start-1 z-20 tablet:p-0 tablet:absolute tablet:left-10 tablet:top-[22vh]">
+                <div className="w-full tablet:w-max">
+                    <p className="mb-1 text-sm font-semibold text-[#7F7F7F]">
                         Trusted by 1,000+ dedicated students
                     </p>
-                    <h2 className="home-header text-black text-[clamp(3.5rem,4.5vw,4.5rem)] leading-[0.9] font-bold">
+                    <h2 className="home-header text-black text-[clamp(3rem,4.5vw,4.5rem)] leading-[0.9] font-bold">
                         More than kicks.
                     </h2>
-                    <h2 className="home-header text-black text-[clamp(3.5rem,4.5vw,4.5rem)] leading-[0.9] font-bold">
+                    <h2 className="home-header text-black text-[clamp(3rem,4.5vw,4.5rem)] leading-[0.9] font-bold">
                         Built on <span className="text-[#B91C1C]">discipline</span>
                     </h2>
                     <button className="mt-2 bg-black px-5 py-3 text-sm font-extrabold uppercase tracking-wide text-white">
@@ -56,8 +56,8 @@ export default function HeroSection() {
             </div>
 
             {/* Left content */}
-            <div className="relative z-10 row-start-3 col-start-1 pt-5 px-10 min-[900px]:self-end min-[900px]:row-start-2 min-[900px]:col-start-1 min-[900px]:pb-30 min-[1023px]:pb-35">
-                <p className="home-para w-full font-medium tracking-[0.025rem] text-[clamp(0.75rem,1vw,0.875rem)] min-[900px]:max-w-md ">
+            <div className="relative z-10 row-start-3 col-start-1 pt-5 px-10 tablet:self-end tablet:row-start-2 tablet:col-start-1 tablet:pb-[3.50rem] min-[1300px]:pb-25">
+                <p className="home-para w-full font-medium tracking-[0.025rem] text-[clamp(0.875rem,1vw,1rem)]] tablet:max-w-lg ">
                     Powerkicks Taekwondo Club is a certified training center recognized by the Philippine
                     Taekwondo Association. We focus on discipline, structure, and real progress helping students
                     grow stronger every session.
@@ -68,13 +68,13 @@ export default function HeroSection() {
             <div className="relative
                             row-start-2
                             col-start-1
-                            min-[900px]:col-start-2
-                            min-[900px]:row-start-2
+                            tablet:col-start-2
+                            tablet:row-start-2
                             min-h-[300px]
 
             ">
                 <video
-                    className="hero-parallax absolute inset-0 z-0 h-full w-full object-cover object-center"
+                    className="hero-parallax absolute inset-0 h-full w-full object-cover object-center"
                     src="/videos/Powerkicks-Video-compress.mp4"
                     autoPlay
                     muted
@@ -82,12 +82,12 @@ export default function HeroSection() {
                     playsInline
                 />
 
-                <div className="absolute inset-0 z-0 bg-linear-to-t from-black/90 via-black/10 to-transparent" />
-                <div className="absolute inset-x-0 top-0 z-20 h-40 pointer-events-none bg-linear-to-b from-black/55 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/10 to-transparent" />
+                <div className="absolute inset-x-0 top-0 h-40 pointer-events-none bg-linear-to-b from-black/55 to-transparent" />
             </div>
 
             {/* Bottom text */}
-            <div className="col-span-2 row-start-4 flex items-center justify-between px-10 py-6 text-[11px] font-semibold tracking-wide min-[900px]:row-start-3">
+            <div className="row-start-4 flex items-center justify-between px-10 py-6 text-[11px] font-semibold tracking-wide tablet:row-start-3 tablet:col-span-2">
                 <p>Certified Coaches</p>
                 <p>Imus, Dasmariñas and General Trias</p>
                 <p>Kids, Teens and Adults</p>
