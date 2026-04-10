@@ -49,7 +49,7 @@ export default function HeroSection() {
                     <h2 className="home-header text-black text-[clamp(3rem,4.5vw,4.5rem)] leading-[0.9] font-bold">
                         Built on <span className="text-[#B91C1C]">discipline</span>
                     </h2>
-                    <button className="mt-2 bg-black px-5 py-3 text-sm font-extrabold uppercase tracking-wide text-white">
+                    <button className="mt-2 bg-black px-5 py-2 text-sm font-extrabold uppercase tracking-wide text-white">
                         View Schedule
                     </button>
                 </div>
