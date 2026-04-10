@@ -87,7 +87,7 @@ export default function HeroSection() {
             </div>
 
             {/* Bottom text */}
-            <div className="row-start-4 flex items-center justify-between px-10 py-6 text-[11px] font-semibold tracking-wide tablet:row-start-3 tablet:col-span-2">
+            <div className="row-start-4 flex items-end justify-between px-10 pt-5 pb-2 text-[10px] font-semibold tracking-[0.025rem] tablet:row-start-3 tablet:col-span-2">
                 <p>Certified Coaches</p>
                 <p>Imus, Dasmariñas and General Trias</p>
                 <p>Kids, Teens and Adults</p>
