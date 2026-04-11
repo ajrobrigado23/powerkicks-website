@@ -61,6 +61,7 @@ export default function HeroSection() {
                     stagger: 0.08,
                     ease: "power3.out",
                 }, "-=0.2");
+
         }, sectionRef);
 
         return () => ctx.revert();
