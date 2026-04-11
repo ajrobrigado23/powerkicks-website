@@ -26,7 +26,8 @@ export default function NavBar({ navScrolled }) {
     const menuId = "mobile-menu";
 
     useEffect(() => {
-        if (!menuOpen) return undefined;
+        if (!menuOpen)
+            return undefined;
 
         const onKeyDown = (event) => {
             if (event.key === "Escape") {
