@@ -2,15 +2,16 @@ import BrandCarousel from "../animations/BrandCarousel.jsx";
 
 export default function LogoCarouselSection() {
     return (
-        <section className="w-full px-10 py-10">
+        <section className="w-full px-10 py-20">
             <div className="flex flex-col min-[700px]:gap-15 tablet:gap-20">
-                <div className="text-[clamp(3rem,5vw,4.5rem)] leading-[0.9] font-bold">
+                <div className="text-[clamp(3rem,5vw,4.5rem)] leading-[0.9] font-bold pb-6">
                     <p className="mb-1 text-sm font-semibold text-[#7F7F7F]">Partners / Affiliation</p>
                     <h3>Backed by</h3>
                     <h3>trusted institutions</h3>
                 </div>
                 <div
-                    className="flex flex-col gap-4 pb-12 min-[700px]:pb-0 min-[700px]:flex-row min-[700px]:justify-between">
+                    className="flex flex-col gap-4 pb-12 min-[700px]:pb-0 min-[700px]:flex-row min-[700px]:justify-between"
+                >
                     <p className="opacity-0
                                   min-[700px]:opacity-100
                                   min-[700px]:font-semibold

@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LogoCarouselSection from "./components/sections/LogoCarouselSection.jsx";
+import TrainingSection from "./components/sections/TrainingSection.jsx";
 
 /*
     IMPORTANT TIPS - (When using React + GSAP)
@@ -107,6 +108,7 @@ const App = () => {
                 <div ref={logoSectionRef}>
                     <LogoCarouselSection></LogoCarouselSection>
                 </div>
+                <TrainingSection></TrainingSection>
             </main>
         </>
 
