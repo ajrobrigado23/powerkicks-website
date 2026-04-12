@@ -3,8 +3,10 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 export default function HeroSection() {
+
     const sectionRef = useRef(null);
 
+    // Opening animation for the hero section contents
     useGSAP(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({

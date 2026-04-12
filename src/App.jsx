@@ -29,40 +29,40 @@ const App = () => {
         ScrollTrigger.create({
                                  trigger: header,
                                  start: "top top",
+
                                  onEnter: () => {
                                      if (navScrolledRef.current) return;
 
-                                     gsap.to("#main-nav", {
-                                         opacity: 0,
-                                         y: -20,
-                                         duration: 0.3,
-                                         ease: "power2.in",
+                                     gsap.to(".nav-inner", {
+                                         yPercent: -100,
+                                         duration: 0.28,
+                                         ease: "power2.inOut",
                                          overwrite: "auto"
                                      });
                                  },
+
                                  onLeaveBack: () => {
                                      if (window.scrollY <= 10) {
                                          navScrolledRef.current = false;
                                          setNavScrolled(false);
 
                                          gsap.fromTo(
-                                             "#main-nav",
+                                             ".nav-inner",
                                              {
-                                                 opacity: 0,
-                                                 y: -20
+                                                 yPercent: -100
                                              },
                                              {
-                                                 opacity: 1,
-                                                 y: 0,
-                                                 duration: 0.3,
-                                                 ease: "power2.out"
+                                                 yPercent: 0,
+                                                 duration: 0.38,
+                                                 ease: "power3.out",
+                                                 overwrite: "auto"
                                              }
                                          );
                                      }
                                  }
                              });
 
-        // Switch to the scrolled navbar when LogoCarouselSection enters
+        // Reveal new navbar from below like a curtain (switched to new navbar design)
         ScrollTrigger.create({
                                  trigger: logoSection,
                                  start: "top 0%",
@@ -72,16 +72,14 @@ const App = () => {
                                      setNavScrolled(true);
 
                                      gsap.fromTo(
-                                         "#main-nav",
+                                         ".nav-inner",
                                          {
-                                             opacity: 0,
-                                             y: 20
+                                             yPercent: 100
                                          },
                                          {
-                                             opacity: 1,
-                                             y: 0,
-                                             duration: 0.3,
-                                             ease: "power2.out",
+                                             yPercent: 0,
+                                             duration: 0.85,
+                                             ease: "power3.out",
                                              overwrite: "auto"
                                          }
                                      );
@@ -89,11 +87,11 @@ const App = () => {
 
                                  // only hide here — do NOT switch back to original navbar yet
                                  onLeaveBack: () => {
-                                     gsap.to("#main-nav", {
-                                         opacity: 0,
-                                         y: -20,
-                                         duration: 0.25,
-                                         ease: "power2.in",
+                                     gsap.to(".nav-inner", {
+                                         yPercent: 100,
+                                         delay: 0.25,
+                                         duration: 1.25,
+                                         ease: "power3.out",
                                          overwrite: "auto"
                                      });
                                  }

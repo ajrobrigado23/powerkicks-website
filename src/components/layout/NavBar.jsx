@@ -56,22 +56,6 @@ export default function NavBar({ navScrolled }) {
         return undefined;
     }, [menuOpen]);
 
-    // Animation for the navbar
-    useGSAP(() => {
-        gsap.fromTo(navigationRef.current, {
-            opacity: 0,
-            y: -20
-        }, {
-            opacity: 1,
-            y: 0,
-            delay: 0.3,
-            ease: "power1.inOut",
-            onComplete: () => {
-                gsap.set(navigationRef.current, {clearProps: "all"});
-            }
-        });
-    }, []);
-
     // Animation for the burger menu (dropdown on open/ close)
     useGSAP(() => {
 
@@ -148,57 +132,69 @@ export default function NavBar({ navScrolled }) {
 
     return(
         <>
-            <nav id="main-nav" ref={navigationRef}
-                 className={`fixed top-0 w-full z-40 text-black transform-gpu
-                 ${navScrolled
-                     ? "py-4"
-                     : "py-3 bg-white"}`
-                 }>
-                <div className="flex h-full justify-between items-center">
-                    <h1 className={`font-bold text-lg ms-10 uppercase tracking-wider
-                        ${navScrolled && "hidden"}
-                    `}>Powerkicks</h1>
-                    <ul
-                        className={`ms-16 flex font-bold text-xs uppercase tracking-wide gap-20 max-[1100px]:text-[0.70rem] max-[1100px]:gap-13 max-[901px]:hidden
-                        ${navScrolled && "hidden"}
-                    `}>
-                        {MENU_ITEMS.slice(0, 3).map((item) => (
-                            <li key={item.label}>
-                                <SlideUpText>
-                                    <a href={item.href} {...getLinkProps(item)}>{item.label}</a>
-                                </SlideUpText>
-                            </li>
-                        ))}
-                    </ul>
-                    {/* Get Free Trial button */}
-                    <button
-                        className={`flex items-center justify-center font-bold tracking-wider text-sm text-white uppercase max-[900px]:ml-auto max-[900px]:me-4
-                            ${navScrolled
-                                ? "ml-auto me-2"
-                                : "me-10"
-                            }
-                        `}
+            <nav
+                id="main-nav"
+                ref={navigationRef}
+                className="fixed top-0 left-0 w-full z-40 transform-gpu"
+            >
+                <div className="nav-mask overflow-hidden">
+                    <div
+                        className={`nav-inner w-full text-black will-change-transform ${
+                            navScrolled ? "py-4 bg-transparent" : "py-3 bg-white"
+                        }`}
                     >
-                        <SlideUpText isButton={true}>Get Free Trial</SlideUpText>
-                    </button>
+                        <div className="flex h-full items-center justify-between">
+                            <h1
+                                className={`font-bold text-lg ms-10 uppercase tracking-wider transition-all duration-300 ${
+                                    navScrolled && "hidden"
+                                }`}
+                            >
+                                Powerkicks
+                            </h1>
 
-                    {/* Menu button */}
-                    <button
-                        className={`
-                        max-[900px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer
-                        ${ navScrolled ? "text-black px-3 py-3 bg-[#dee2e6] rounded-4xl" : "hidden"}`}
-                        ref={toggleButtonRef}
-                        onClick={handleToggle}
-                        aria-label="Toggle menu"
-                        aria-expanded={menuOpen}
-                        aria-controls={menuId}
-                    >
-                        <span className="font-semibold text-sm uppercase">Menu</span>
-                    </button>
+                            <ul
+                                className={`ms-16 flex font-bold text-xs uppercase tracking-wide gap-20 max-[1100px]:text-[0.70rem] max-[1100px]:gap-13 max-[901px]:hidden transition-all duration-300 ${
+                                    navScrolled && "hidden"
+                                }`}
+                            >
+                                {MENU_ITEMS.slice(0, 3).map((item) => (
+                                    <li key={item.label}>
+                                        <SlideUpText>
+                                            <a href={item.href} {...getLinkProps(item)}>
+                                                {item.label}
+                                            </a>
+                                        </SlideUpText>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <button
+                                className={`flex items-center justify-center font-bold tracking-wider text-sm text-white uppercase max-[900px]:ml-auto max-[900px]:me-4 ${
+                                    navScrolled ? "ml-auto me-2" : "me-10"
+                                }`}
+                            >
+                                <SlideUpText isButton={true}>Get Free Trial</SlideUpText>
+                            </button>
+
+                            <button
+                                className={`max-[900px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer ${
+                                    navScrolled
+                                        ? "text-black px-3 py-3 bg-[#dee2e6] rounded-4xl"
+                                        : "hidden"
+                                }`}
+                                ref={toggleButtonRef}
+                                onClick={handleToggle}
+                                aria-label="Toggle menu"
+                                aria-expanded={menuOpen}
+                                aria-controls={menuId}
+                            >
+                                <span className="font-semibold text-sm uppercase">Menu</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </nav>
 
-            {/* Dropdown */}
             <div
                 ref={dropdownRef}
                 id={menuId}
@@ -210,81 +206,90 @@ export default function NavBar({ navScrolled }) {
                 aria-hidden={!menuOpen}
             >
                 <div className="grid grid-cols-2 grid-rows-[auto_1fr_auto] p-8 h-full">
-
                     <ul className="col-start-1 row-start-2 flex flex-col justify-center font-bold tracking-tight text-5xl gap-1 uppercase">
-                        {
-                            // It stops until Contact element
-                            MENU_ITEMS.slice(0, 3).map((item, i) => (
-                                    <li
-                                        key={item.label}
-                                        className="overflow-hidden self-start"
-                                    >
-                                        <div
-                                            ref={(el) => (menuItemsRef.current[i] = el)}
-                                            className="opacity-0 translate-y-full "
+                        {MENU_ITEMS.slice(0, 3).map((item, i) => (
+                            <li
+                                key={item.label}
+                                className="overflow-hidden self-start"
+                            >
+                                <div
+                                    ref={(el) => (menuItemsRef.current[i] = el)}
+                                    className="opacity-0 translate-y-full"
+                                >
+                                    <SlideUpText>
+                                        <a
+                                            href={item.href}
+                                            onClick={() => setMenuOpen(false)}
+                                            {...getLinkProps(item)}
                                         >
-                                            <SlideUpText>
-                                                <a href={item.href} onClick={() => setMenuOpen(false)} {...getLinkProps(item)}>{item.label}</a>
-                                            </SlideUpText>
-                                        </div>
-                                    </li>
-                                ))
-                        }
+                                            {item.label}
+                                        </a>
+                                    </SlideUpText>
+                                </div>
+                            </li>
+                        ))}
                     </ul>
 
-                    {/* Left column - row 1 */}
                     <div className="col-start-1 row-start-1 flex">
                         <p className="font-bold uppercase text-2xl">Powerkicks</p>
                     </div>
 
-                    {/* Left column - row 3 */}
                     <div className="col-start-1 row-start-3 flex flex-col uppercase text-sm font-semibold gap-8">
                         <ul>
-                            {
-                                MENU_ITEMS.slice(3, 5).map((item, i) => {
-                                    // Starting from the Facebook until Instagram element
-                                    const currentLength = 3 + i;
-                                    return (
-                                        <li className="overflow-hidden"
-                                        key={item.label}>
-                                            <div
-                                                ref={(el) => (menuItemsRef.current[currentLength] = el)}
-                                                className="opacity-0 translate-y-full"
+                            {MENU_ITEMS.slice(3, 5).map((item, i) => {
+                                const currentLength = 3 + i;
+                                return (
+                                    <li className="overflow-hidden" key={item.label}>
+                                        <div
+                                            ref={(el) => (menuItemsRef.current[currentLength] = el)}
+                                            className="opacity-0 translate-y-full"
+                                        >
+                                            <a
+                                                href={item.href}
+                                                onClick={() => setMenuOpen(false)}
+                                                {...getLinkProps(item)}
                                             >
-                                                <a href={item.href} onClick={() => setMenuOpen(false)} {...getLinkProps(item)}>{item.label}</a>
-                                            </div>
-                                        </li>
-                                    )
-                                })
-                            }
+                                                {item.label}
+                                            </a>
+                                        </div>
+                                    </li>
+                                );
+                            })}
                         </ul>
+
                         <ul>
-                            {
-                                MENU_ITEMS.slice(5, MENU_ITEMS.length).map((item, i) => {
-                                    // Starting from the Privacy Policy until Terms of Service
-                                    const currentLength = 5 + i;
-                                    return (
-                                        <li className="overflow-hidden"
-                                             key={item.label}>
-                                            <div
-                                                ref={(el) => (menuItemsRef.current[currentLength] = el)}
-                                                className="opacity-0 translate-y-full"
+                            {MENU_ITEMS.slice(5).map((item, i) => {
+                                const currentLength = 5 + i;
+                                return (
+                                    <li className="overflow-hidden" key={item.label}>
+                                        <div
+                                            ref={(el) => (menuItemsRef.current[currentLength] = el)}
+                                            className="opacity-0 translate-y-full"
+                                        >
+                                            <a
+                                                href={item.href}
+                                                onClick={() => setMenuOpen(false)}
+                                                {...getLinkProps(item)}
                                             >
-                                                <a href={item.href} onClick={() => setMenuOpen(false)} {...getLinkProps(item)}>{item.label}</a>
-                                            </div>
-                                        </li>
-                                    )
-                                })
-                            }
+                                                {item.label}
+                                            </a>
+                                        </div>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
 
                     <div className="col-start-2 row-start-1 row-span-3 flex justify-end items-start">
-                        <button ref={closeButtonRef} onClick={handleToggle} aria-label="Close menu" className="cursor-pointer">
+                        <button
+                            ref={closeButtonRef}
+                            onClick={handleToggle}
+                            aria-label="Close menu"
+                            className="cursor-pointer"
+                        >
                             <span className="font-bold text-sm uppercase">Close</span>
                         </button>
                     </div>
-
                 </div>
             </div>
         </>
