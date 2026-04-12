@@ -195,10 +195,11 @@ export default function NavBar({ navScrolled }) {
                 </div>
             </nav>
 
+            {/* Dropdown section */}
             <div
                 ref={dropdownRef}
                 id={menuId}
-                className="hidden max-[900px]:grid fixed top-0 left-0 min-w-full h-screen bg-white z-50 text-black pointer-events-none"
+                className="hidden max-[900px]:grid fixed top-0 left-0 min-w-full h-screen bg-black z-50 text-white pointer-events-none"
                 style={{ clipPath: "inset(0% 0 100% 0)" }}
                 role="dialog"
                 aria-modal="true"
