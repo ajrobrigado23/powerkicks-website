@@ -18,19 +18,24 @@ export default function SmoothScrollProvider({ children }) {
 
         lenisRef.current = lenis;
 
+        // Whenever scroll moves, recalculate all ScrollTriggers
         const onScroll = () => {
             ScrollTrigger.update();
         };
 
+        // Everytime lenis scrolls, run onScroll
         lenis.on("scroll", onScroll);
 
+        // Animation frame loop (update every animation frame)
         const update = (time) => {
+            // Updates lenis every browser paint frame
             lenis.raf(time * 1000);
         };
 
         gsap.ticker.add(update);
         gsap.ticker.lagSmoothing(0);
 
+        // CleanUp on Unmount
         return () => {
             lenis.off("scroll", onScroll);
             gsap.ticker.remove(update);
@@ -39,5 +44,6 @@ export default function SmoothScrollProvider({ children }) {
         };
     }, []);
 
+    // Adds smooth scrolling behavior to wrapped components
     return children;
 }

@@ -55,8 +55,8 @@ const App = () => {
                                              },
                                              {
                                                  yPercent: 0,
-                                                 duration: 0.60,
-                                                 ease: "power3.out",
+                                                 duration: 0.45,
+                                                 ease: "power2.inOut",
                                                  overwrite: "auto"
                                              }
                                          );

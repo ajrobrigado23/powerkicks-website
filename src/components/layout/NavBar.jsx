@@ -2,6 +2,7 @@ import SlideUpText from "../animations/SlideUpText.jsx";
 import { useEffect, useRef, useState } from "react";
 import{ gsap } from "gsap";
 import {useGSAP} from "@gsap/react";
+import Button from "../ui/Button.jsx";
 
 const MENU_ITEMS = [
   { label: "About", href: "#about" },
@@ -168,13 +169,13 @@ export default function NavBar({ navScrolled }) {
                                 ))}
                             </ul>
 
-                            <button
+                            <Button
                                 className={`flex items-center justify-center font-bold tracking-wider text-sm text-white uppercase max-[900px]:ml-auto max-[900px]:me-4 ${
                                     navScrolled ? "ml-auto me-2" : "me-10"
                                 }`}
                             >
-                                <SlideUpText isButton={true}>Get Free Trial</SlideUpText>
-                            </button>
+                                Get Free Trial
+                            </Button>
 
                             <button
                                 className={`max-[900px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer ${
