@@ -35,8 +35,8 @@ const App = () => {
 
                                      gsap.to(".nav-inner", {
                                          yPercent: -100,
-                                         duration: 0.28,
-                                         ease: "power2.inOut",
+                                         duration: 0.45,
+                                         ease: "power3.inOut",
                                          overwrite: "auto"
                                      });
                                  },
@@ -53,7 +53,7 @@ const App = () => {
                                              },
                                              {
                                                  yPercent: 0,
-                                                 duration: 0.38,
+                                                 duration: 0.60,
                                                  ease: "power3.out",
                                                  overwrite: "auto"
                                              }
@@ -89,7 +89,7 @@ const App = () => {
                                  onLeaveBack: () => {
                                      gsap.to(".nav-inner", {
                                          yPercent: 100,
-                                         delay: 0.25,
+                                         delay: 0.15,
                                          duration: 1.25,
                                          ease: "power3.out",
                                          overwrite: "auto"
