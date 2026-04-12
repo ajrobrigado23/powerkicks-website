@@ -65,7 +65,7 @@ const App = () => {
         // Reveal new navbar from below like a curtain (switched to new navbar design)
         ScrollTrigger.create({
                                  trigger: logoSection,
-                                 start: "top 0%",
+                                 start: "top 10%",
 
                                  onEnter: () => {
                                      navScrolledRef.current = true;
@@ -107,10 +107,6 @@ const App = () => {
                 <div ref={logoSectionRef}>
                     <LogoCarouselSection></LogoCarouselSection>
                 </div>
-                {/* Testing section */}
-                <section className="h-screen">
-
-                </section>
             </main>
         </>
 

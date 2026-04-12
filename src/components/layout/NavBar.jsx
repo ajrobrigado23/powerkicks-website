@@ -179,7 +179,7 @@ export default function NavBar({ navScrolled }) {
                             <button
                                 className={`max-[900px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer ${
                                     navScrolled
-                                        ? "text-black px-3 py-3 bg-[#dee2e6] rounded-4xl"
+                                        ? "text-black px-[0.70rem] py-[0.65rem] bg-[#dee2e6] rounded-4xl"
                                         : "hidden"
                                 }`}
                                 ref={toggleButtonRef}
