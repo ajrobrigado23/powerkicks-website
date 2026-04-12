@@ -102,7 +102,7 @@ export default function HeroSection() {
 
             {/* Left content */}
             <div className="relative z-10 row-start-3 col-start-1 px-10 pt-5 tablet:row-start-2 tablet:col-start-1 tablet:self-end tablet:pb-[8.50rem] min-[1300px]:pb-30">
-                <p className="home-para w-full text-[clamp(0.75rem,1.2vw,1rem)] font-medium tracking-[0.025rem] tablet:max-w-md">
+                <p className="home-para w-full text-[clamp(0.85rem,1.2vw,1rem)] font-medium tracking-[0.025rem] tablet:max-w-md">
                     Powerkicks is a certified taekwondo training center recognized by the Philippine Taekwondo
                     Association, focused on building discipline, structure, and real progress in every student.
                 </p>
