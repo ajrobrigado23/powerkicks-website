@@ -1,5 +1,5 @@
 import NavBar from "./NavBar.jsx";
-import HeroSection from "./HeaderSection.jsx";
+import HeroSection from "../sections/HeaderSection.jsx";
 import { forwardRef } from "react";
 
 const Header = forwardRef((props, ref) => {
