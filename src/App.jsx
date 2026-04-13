@@ -27,77 +27,105 @@ const App = () => {
 
         if (!header || !logoSection) return;
 
+        const showTopNav = () => {
+            gsap.killTweensOf(".nav-inner")
+
+            navScrolledRef.current = false;
+            setNavScrolled(false);
+
+            gsap.fromTo(
+                ".nav-inner",
+                {
+                    yPercent: -100
+                },
+                {
+                    yPercent: 0,
+                    duration: 0.45,
+                    ease: "power2.inOut",
+                    overwrite: "auto"
+                }
+            );
+
+        };
+
+        const hideTopNav = () => {
+            gsap.killTweensOf(".nav-inner");
+
+            gsap.to(".nav-inner", {
+                yPercent: -100,
+                duration: 0.45,
+                ease: "power3.inOut",
+                overwrite: true,
+            });
+        };
+
+        const showScrolledNav = () => {
+            gsap.killTweensOf(".nav-inner");
+
+            navScrolledRef.current = true;
+            setNavScrolled(true);
+
+            gsap.fromTo(
+                ".nav-inner",
+                { yPercent: 100 },
+                {
+                    yPercent: 0,
+                    duration: 0.85,
+                    ease: "power3.out",
+                    overwrite: true,
+                }
+            );
+        }
+
+        // only hide here — do NOT switch back to original navbar yet
+        const hideScrolledNav = () => {
+            gsap.killTweensOf(".nav-inner");
+
+            gsap.to(".nav-inner", {
+                yPercent: 100,
+                delay: 0.15,
+                duration: 1.25,
+                ease: "power3.out",
+                overwrite: "auto"
+            });
+
+        }
+
         // Hide original nav when user starts scrolling down from hero
-        ScrollTrigger.create({
+        const trigger1 = ScrollTrigger.create({
                                  trigger: header,
                                  start: "top top",
-
                                  onEnter: () => {
                                      if (navScrolledRef.current) return;
-
-                                     gsap.to(".nav-inner", {
-                                         yPercent: -100,
-                                         duration: 0.45,
-                                         ease: "power3.inOut",
-                                         overwrite: "auto"
-                                     });
+                                     hideTopNav();
                                  },
-
                                  onLeaveBack: () => {
                                      if (window.scrollY <= 10) {
-                                         navScrolledRef.current = false;
-                                         setNavScrolled(false);
-
-                                         gsap.fromTo(
-                                             ".nav-inner",
-                                             {
-                                                 yPercent: -100
-                                             },
-                                             {
-                                                 yPercent: 0,
-                                                 duration: 0.45,
-                                                 ease: "power2.inOut",
-                                                 overwrite: "auto"
-                                             }
-                                         );
+                                         showTopNav();
                                      }
-                                 }
+                                 },
                              });
 
         // Reveal new navbar from below like a curtain (switched to new navbar design)
-        ScrollTrigger.create({
+        const trigger2 = ScrollTrigger.create({
                                  trigger: logoSection,
                                  start: "top 10%",
-
                                  onEnter: () => {
-                                     navScrolledRef.current = true;
-                                     setNavScrolled(true);
-
-                                     gsap.fromTo(
-                                         ".nav-inner",
-                                         {
-                                             yPercent: 100
-                                         },
-                                         {
-                                             yPercent: 0,
-                                             duration: 0.85,
-                                             ease: "power3.out",
-                                             overwrite: "auto"
-                                         }
-                                     );
+                                     showScrolledNav();
                                  },
-
-                                 // only hide here — do NOT switch back to original navbar yet
                                  onLeaveBack: () => {
-                                     gsap.to(".nav-inner", {
-                                         yPercent: 100,
-                                         delay: 0.15,
-                                         duration: 1.25,
-                                         ease: "power3.out",
-                                         overwrite: "auto"
-                                     });
-                                 }
+                                     hideScrolledNav();
+                                 },
                              });
+
+        const onResize = () => ScrollTrigger.refresh();
+        window.addEventListener("resize", onResize);
+
+        return () => {
+            trigger1.kill();
+            trigger2.kill();
+            window.removeEventListener("resize", onResize);
+        };
 
     }, []);
 
