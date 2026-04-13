@@ -1,18 +1,31 @@
 import SlideUpText from "../animations/SlideUpText.jsx";
+import { forwardRef } from "react";
 
-export default function Button({
+const Button = forwardRef(({
         textColor= "white",
         backgroundColor= "black",
         className= "",
         isButton = true,
+        isMenu = false,
+        onClick,
         children,
         ...props
-    }
-    ) {
+    }, ref) => {
 
     return(
-        <a className={`text-${textColor} bg-${backgroundColor} ${className}`}>
-            <SlideUpText isButton={isButton}>{children}</SlideUpText>
-        </a>
+        isMenu
+            ?   <button
+                    className={className}
+                    ref={ref}
+                    onClick={onClick}
+                    {...props}
+                >
+                    <span className="font-semibold text-sm uppercase">{children}</span>
+                </button>
+            :   <a className={`text-${textColor} bg-${backgroundColor} ${className}`}>
+                    <SlideUpText isButton={isButton}>{children}</SlideUpText>
+                </a>
     );
-}
+});
+
+export default Button;
