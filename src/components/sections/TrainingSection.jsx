@@ -1,4 +1,5 @@
-import trainingImageOne from '../../assets/images/website-picture-1-black-white.webp'
+import trainingImageOne from '../../assets/images/website-picture-1.webp'
+import PremiumImageHover from "../ui/PremiumImageHover.jsx";
 
 export default function TrainingSection() {
     return (
@@ -30,11 +31,10 @@ export default function TrainingSection() {
                 </p>
             </div>
             <div className="row-start-3 col-start-2 pt-[4rem]">
-                <div className="w-full h-[400px] overflow-hidden">
-                    <img
+                <div className="w-full h-[450px] overflow-hidden">
+                    <PremiumImageHover
                         src={trainingImageOne}
                         alt="Powerkicks training session"
-                        className="w-full h-full object-cover"
                     />
                 </div>
             </div>
