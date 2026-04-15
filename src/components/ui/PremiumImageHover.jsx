@@ -38,7 +38,7 @@ export default function PremiumImageHover({ src, alt }) {
     return (
         <div
             ref={cardRef}
-            className="overflow-hidden"
+            className="h-full w-full overflow-hidden"
             onMouseEnter={handleEnter}
             onMouseLeave={handleLeave}
         >

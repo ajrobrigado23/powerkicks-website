@@ -1,9 +1,59 @@
 import trainingImageOne from '../../assets/images/website-picture-1.webp'
 import PremiumImageHover from "../ui/PremiumImageHover.jsx";
+import {useGSAP} from "@gsap/react";
+import {useRef} from "react";
+import { gsap } from "gsap";
 
 export default function TrainingSection() {
+
+    const sectionRef = useRef(null);
+    const imageWrapRef = useRef(null);
+
+    useGSAP(() => {
+
+        const wrapper = imageWrapRef.current;
+
+        if (!wrapper) return;
+
+        const image = wrapper.querySelector("img");
+
+        gsap.set(wrapper, {
+            clipPath: "inset(100% 0 0 0)",
+        });
+
+        gsap.set(image, {
+            scale: 1.15,
+            y: 40,
+        });
+
+        const tl = gsap.timeline({
+                                     scrollTrigger: {
+                                         trigger: wrapper,
+                                         start: "top 85%",
+                                         toggleActions: "play none none reverse",
+                                     },
+                                 });
+
+        tl.to(wrapper, {
+            clipPath: "inset(0% 0 0 0)",
+            duration: 1.2,
+            ease: "power4.out",
+        }).to(
+            image,
+            {
+                scale: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power3.out",
+            },
+            0
+        );
+    }, { scope: sectionRef });
+
     return (
-        <section className="grid grid-cols-[1fr_1.8fr] grid-rows-[auto_auto_auto_auto] w-full px-10 py-10 bg-black text-white">
+        <section
+            ref={sectionRef}
+            className="grid grid-cols-[1fr_1.8fr] grid-rows-[auto_auto_auto_auto] w-full px-10 py-10 bg-black text-white">
             {/* 1st Row */}
             <div className="row-start-1 col-span-2 pb-[8rem]">
                 <h2 className="text-[clamp(3rem,5vw,4.5rem)] leading-[0.9] font-bold max-w-2xl">
@@ -31,7 +81,9 @@ export default function TrainingSection() {
                 </p>
             </div>
             <div className="row-start-3 col-start-2 pt-[4rem]">
-                <div className="w-full h-[450px] overflow-hidden">
+                <div
+                    ref={imageWrapRef}
+                    className="w-full h-[430px] overflow-hidden">
                     <PremiumImageHover
                         src={trainingImageOne}
                         alt="Powerkicks training session"
