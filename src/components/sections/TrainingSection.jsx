@@ -1,5 +1,5 @@
 import trainingImageOne from '../../assets/images/website-picture-1.webp'
-import PremiumImageHover from "../ui/PremiumImageHover.jsx";
+import LiftZoomImage from "../ui/LiftZoomImage.jsx";
 import {useGSAP} from "@gsap/react";
 import {useRef} from "react";
 import { gsap } from "gsap";
@@ -85,7 +85,7 @@ export default function TrainingSection() {
                 <div
                     ref={imageWrapRef}
                     className="w-full h-[430px] overflow-hidden">
-                    <PremiumImageHover
+                    <LiftZoomImage
                         src={trainingImageOne}
                         alt="Powerkicks training session"
                     />

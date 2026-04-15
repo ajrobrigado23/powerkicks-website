@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 
-export default function PremiumImageHover({ src, alt }) {
+export default function LiftZoomImage({ src, alt }) {
     const imageRef = useRef(null);
 
     const handleEnter = () => {
