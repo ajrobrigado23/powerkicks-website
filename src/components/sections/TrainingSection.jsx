@@ -26,13 +26,14 @@ export default function TrainingSection() {
             y: 40,
         });
 
-        const tl = gsap.timeline({
-                                     scrollTrigger: {
-                                         trigger: wrapper,
-                                         start: "top 85%",
-                                         toggleActions: "play none none reverse",
-                                     },
-                                 });
+        const tl =
+            gsap.timeline({
+                 scrollTrigger: {
+                     trigger: wrapper,
+                     start: "top 85%",
+                     toggleActions: "play none none reverse",
+                 },
+             });
 
         tl.to(wrapper, {
             clipPath: "inset(0% 0 0 0)",
