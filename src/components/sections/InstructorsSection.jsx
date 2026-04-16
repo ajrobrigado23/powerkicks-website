@@ -1,3 +1,5 @@
+import kikoImg from "../../assets/images/coach-kiko-1.png"
+
 export default function InstructorsSection() {
     return(
         <section
@@ -28,6 +30,27 @@ export default function InstructorsSection() {
                     to developing not just skills, but discipline, confidence,
                     and strong character in every student.
                 </p>
+            </div>
+            {/* 4th Row */}
+            <div className="row-start-4 col-start-1">
+                <p className="font-normal text-[clamp(0.75rem,1.25vw,0.90rem)]">
+                    Francisco SA. Robrigado
+                </p>
+            </div>
+            <div className="row-start-4 col-start-2 justify-self-start">
+                <div
+                    className="w-full h-[550px] overflow-hidden"
+                >
+                    <img
+                        src={kikoImg}
+                        className="block h-full w-full object-contain"
+                        style={{
+                            filter: "grayscale(100%) brightness(0.80)",
+                            transform: "scale(1)",
+                            willChange: "transform, filter",
+                        }}
+                    />
+                </div>
             </div>
 
         </section>
