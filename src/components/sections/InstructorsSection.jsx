@@ -1,4 +1,5 @@
-import kikoImg from "../../assets/images/coach-kiko-1.png"
+import kikoImg from "../../assets/images/coach-kiko.webp"
+import EditorialPicture from "../ui/EditoriaIPicture.jsx";
 
 export default function InstructorsSection() {
     return(
@@ -38,19 +39,7 @@ export default function InstructorsSection() {
                 </p>
             </div>
             <div className="row-start-4 col-start-2 justify-self-start">
-                <div
-                    className="w-full h-[550px] overflow-hidden"
-                >
-                    <img
-                        src={kikoImg}
-                        className="block h-full w-full object-contain"
-                        style={{
-                            filter: "grayscale(100%) brightness(0.80)",
-                            transform: "scale(1)",
-                            willChange: "transform, filter",
-                        }}
-                    />
-                </div>
+                <EditorialPicture src={kikoImg} alt="Coach kiko" />
             </div>
 
         </section>
