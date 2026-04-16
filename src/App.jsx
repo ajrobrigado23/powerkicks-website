@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import LogoCarouselSection from "./components/sections/LogoCarouselSection.jsx";
 import TrainingSection from "./components/sections/TrainingSection.jsx";
 import SmoothScrollProvider from "./components/layout/SmoothScrollProvider.jsx";
+import InstructorsSection from "./components/sections/InstructorsSection.jsx";
 
 /*
     IMPORTANT TIPS - (When using React + GSAP)
@@ -138,6 +139,7 @@ const App = () => {
                     <LogoCarouselSection></LogoCarouselSection>
                 </div>
                 <TrainingSection></TrainingSection>
+                <InstructorsSection></InstructorsSection>
             </main>
         </SmoothScrollProvider>
 
