@@ -40,7 +40,7 @@ export default function EditorialPicture({ src, alt }) {
                 ref={imageRef}
                 src={src}
                 alt={alt}
-                className="block h-full w-full object-cover"
+                className="block h-full w-full object-[center_20%] object-cover"
             />
         </div>
     );

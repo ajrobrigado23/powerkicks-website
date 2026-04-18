@@ -100,6 +100,7 @@
 @theme {
     --font-sans: 'General Sans', sans-serif;
     --breakpoint-tablet: 900px;
+    --breakpoint-desktop: 1090px;
 }
 
 
