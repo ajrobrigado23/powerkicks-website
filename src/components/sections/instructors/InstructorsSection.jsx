@@ -1,5 +1,6 @@
 import InfoRow from "../../ui/InfoRow.jsx";
 import CoachProfile from "./CoachProfile.jsx";
+import { coaches } from "./coaches.js";
 
 export default function InstructorsSection() {
     return(
@@ -25,8 +26,19 @@ export default function InstructorsSection() {
                 Each coach at Powerkicks brings a hands-on approach to training guiding every student with
                 precision, consistency, and a deep understanding of taekwondo fundamentals.
             </InfoRow>
-            {/* 4th Row */}
-            <CoachProfile></CoachProfile>
+            {/* Coaches Profile Section */}
+            {
+                coaches.map((coach, index) => (
+                    <CoachProfile
+                        key={index}
+                        name={coach.name}
+                        image={coach.image}
+                        alt={coach.alt}
+                        description={coach.role}
+                        achievements={coach.achievements}
+                    />
+                ))
+            }
 
 
         </section>

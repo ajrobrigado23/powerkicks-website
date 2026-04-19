@@ -11,6 +11,7 @@ export default function CoachProfile({
 
     return (
         <>
+            {/* 4th Row */}
             <div className="col-start-1 py-[2rem]">
                 <p className="font-normal text-[clamp(0.75rem,1.25vw,0.90rem)]">
                     {name}
