@@ -1,6 +1,5 @@
-import kikoImg from "../../assets/images/coach-kiko.webp"
-import EditorialPicture from "../ui/EditorialPicture.jsx";
-import InfoRow from "../ui/InfoRow.jsx";
+import InfoRow from "../../ui/InfoRow.jsx";
+import CoachProfile from "./CoachProfile.jsx";
 
 export default function InstructorsSection() {
     return(
@@ -27,24 +26,8 @@ export default function InstructorsSection() {
                 precision, consistency, and a deep understanding of taekwondo fundamentals.
             </InfoRow>
             {/* 4th Row */}
-            <div className="col-start-1 py-[2rem]">
-                <p className="font-normal text-[clamp(0.75rem,1.25vw,0.90rem)]">
-                    Francisco SA. Robrigado
-                </p>
-            </div>
-            <div className="h-full py-[2rem] desktop:col-start-2 desktop:justify-self-start">
-                <EditorialPicture src={kikoImg} alt="Coach kiko" />
-            </div>
-            {/* 5th Row */}
-            <InfoRow label="Head Coach">
-                Each coach at Powerkicks brings a hands-on approach to training guiding every student with
-                precision, consistency, and a deep understanding of taekwondo fundamentals.
-            </InfoRow>
-            {/* 6th Row */}
-            <InfoRow label="Achievements">
-                Each coach at Powerkicks brings a hands-on approach to training guiding every student with
-                precision, consistency, and a deep understanding of taekwondo fundamentals.
-            </InfoRow>
+            <CoachProfile></CoachProfile>
+
 
         </section>
     );

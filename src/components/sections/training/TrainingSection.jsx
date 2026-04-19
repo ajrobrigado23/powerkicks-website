@@ -1,5 +1,5 @@
-import trainingImageOne from '../../assets/images/website-picture-1.webp'
-import LiftZoomImage from "../ui/LiftZoomImage.jsx";
+import trainingImageOne from '../../../assets/images/website-picture-1.webp'
+import LiftZoomImage from "../../ui/LiftZoomImage.jsx";
 import {useGSAP} from "@gsap/react";
 import {useRef} from "react";
 import { gsap } from "gsap";
