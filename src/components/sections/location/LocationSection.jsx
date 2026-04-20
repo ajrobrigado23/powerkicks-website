@@ -1,30 +1,107 @@
+import { useRef, useState } from "react";
+import { locations } from "./locations.js";
+import LocationRow from "./LocationRow.jsx";
+import LocationPreview from "./LocationPreview.jsx";
+
 export default function LocationSection() {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const rowRefs = useRef([]);
 
-    return(
+    const setRowRef = (element, index) => {
+        rowRefs.current[index] = element;
+    };
+
+    const activeLocation = locations[activeIndex];
+    const activeRow = rowRefs.current[activeIndex];
+
+    return (
         <section className="w-full px-10 pt-[2rem] pb-[2rem]">
-            <div className="flex flex-col min-[700px]:gap-15 tablet:gap-20 pb-8 border-b-2">
-                <div className="text-[clamp(3rem,5vw,4.5rem)] leading-[0.9] font-bold pb-6">
-                    <p className="mb-1 text-sm font-semibold text-[#7F7F7F]">Partners / Affiliation</p>
-                    <h3>Find a Powerkicks</h3>
-                    <h3>Near You</h3>
-                </div>
-                <div
-                    className="flex flex-col gap-4 min-[700px]:flex-row min-[700px]:justify-between"
-                >
-                    <p className="opacity-0
-                                  min-[700px]:opacity-100
-                                  min-[700px]:font-semibold
-                                  min-[700px]:tracking-[0.025rem]
-                                  min-[700px]:text-[0.80rem]
-                                  tablet:text-[clamp(0.80rem,1.25vw,1rem)]
-                                ">
-                        Recognized by
-                    </p>
-                    <p className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] min-[700px]:max-w-md tablet:max-w-2xl">
-                        Powerkicks is aligned with recognized national and international organizations, ensuring
-                        structured training, certified standards, and consistent athlete development. </p>
+            <div className="pb-8">
+                {/* Header */}
+                <div className="flex flex-col gap-10 pb-8 min-[700px]:gap-15 tablet:gap-20">
+                    <div className="pb-6 text-[clamp(3rem,5vw,4.5rem)] leading-[0.9] font-bold">
+                        <p className="mb-1 text-sm font-semibold text-[#7F7F7F]">
+                            Our Branches
+                        </p>
+                        <h3>Find a Powerkicks</h3>
+                        <h3>Near You</h3>
+                    </div>
+
+                    <div className="flex flex-col gap-4 min-[700px]:flex-row min-[700px]:justify-between">
+                        <p
+                            className="
+                                opacity-0
+                                min-[700px]:opacity-100
+                                min-[700px]:font-semibold
+                                min-[700px]:tracking-[0.025rem]
+                                min-[700px]:text-[0.80rem]
+                                tablet:text-[clamp(0.80rem,1.25vw,1rem)]
+                            "
+                        >
+                            Visit Our Branches
+                        </p>
+
+                        <p className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] min-[700px]:max-w-md tablet:max-w-2xl">
+                            Explore Powerkicks branches near you and find the
+                            location that best fits your training journey. Each
+                            branch offers structured coaching, disciplined
+                            instruction, and a strong community for students of
+                            all levels.
+                        </p>
+                    </div>
                 </div>
 
+                {/* Desktop */}
+                <div className="relative hidden min-[1000px]:block">
+                    <LocationPreview
+                        activeLocation={activeLocation}
+                        activeRow={activeRow}
+                    />
+
+                    <div className="relative z-10">
+                        {locations.map((location, index) => (
+                            <LocationRow
+                                key={location.id}
+                                ref={(element) => setRowRef(element, index)}
+                                location={location}
+                                isActive={activeIndex === index}
+                                onHover={() => setActiveIndex(index)}
+                            />
+                        ))}
+
+                        <div className="border-t border-black/15" />
+                    </div>
+                </div>
+
+                {/* Mobile / tablet fallback */}
+                <div className="grid gap-8 min-[1000px]:hidden">
+                    {locations.map((location) => (
+                        <article
+                            key={location.id}
+                            className="border-t border-black/15 pt-6"
+                        >
+                            <div className="mb-4 aspect-[4/5] overflow-hidden bg-neutral-200">
+                                <img
+                                    src={location.image}
+                                    alt={location.title}
+                                    className="h-full w-full object-cover"
+                                />
+                            </div>
+
+                            <h3 className="text-[clamp(1.4rem,3vw,2rem)] font-semibold leading-none">
+                                {location.title}
+                            </h3>
+
+                            <p className="mt-3 text-[0.82rem] font-semibold uppercase tracking-[0.06rem]">
+                                {location.address}
+                            </p>
+
+                            <p className="mt-3 max-w-xl tracking-[0.025rem] text-[clamp(0.85rem,1.3vw,1rem)] leading-[1.6] text-black/75">
+                                {location.description}
+                            </p>
+                        </article>
+                    ))}
+                </div>
             </div>
         </section>
     );
