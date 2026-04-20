@@ -7,8 +7,28 @@ export default function LocationPreview({ activeLocation, activeRow }) {
     const imageWrapRef = useRef(null);
     const imageRef = useRef(null);
 
+    // hide the panel when null
     useGSAP(() => {
-        if (!panelRef.current || !activeRow) return;
+        if (!panelRef.current) return;
+
+        if (!activeLocation) {
+            gsap.to(panelRef.current, {
+                autoAlpha: 0,
+                duration: 0.25,
+                ease: "power2.out",
+            });
+            return;
+        }
+
+        gsap.to(panelRef.current, {
+            autoAlpha: 1,
+            duration: 0.25,
+            ease: "power2.out",
+        });
+    }, [activeLocation]);
+
+    useGSAP(() => {
+        if (!panelRef.current || !activeRow || !activeLocation) return;
 
         const rowTop = activeRow.offsetTop;
         const rowHeight = activeRow.offsetHeight;
@@ -21,7 +41,7 @@ export default function LocationPreview({ activeLocation, activeRow }) {
             duration: 0.65,
             ease: "power3.out",
         });
-    }, [activeRow]);
+    }, [activeRow, activeLocation]);
 
     useGSAP(() => {
         if (!imageWrapRef.current || !imageRef.current || !activeLocation) return;
@@ -58,20 +78,22 @@ export default function LocationPreview({ activeLocation, activeRow }) {
     return (
         <div
             ref={panelRef}
-            className="pointer-events-none absolute left-1/2 top-0 z-20 hidden w-full max-w-[16rem] -translate-x-1/2 min-[1000px]:block tablet:max-w-[18rem]"
+            className="pointer-events-none absolute left-1/2 top-0 z-20 hidden w-full max-w-[16rem] -translate-x-1/2 opacity-0 min-[1000px]:block tablet:max-w-[18rem]"
         >
-            <div
-                ref={imageWrapRef}
-                className="aspect-[4/5] overflow-hidden bg-neutral-200"
-            >
-                <img
-                    key={activeLocation.id}
-                    ref={imageRef}
-                    src={activeLocation.image}
-                    alt={activeLocation.title}
-                    className="h-full w-full object-cover"
-                />
-            </div>
+            {activeLocation && (
+                <div
+                    ref={imageWrapRef}
+                    className="aspect-[4/5] overflow-hidden bg-neutral-200"
+                >
+                    <img
+                        key={activeLocation.id}
+                        ref={imageRef}
+                        src={activeLocation.image}
+                        alt={activeLocation.title}
+                        className="h-full w-full object-cover"
+                    />
+                </div>
+            )}
         </div>
     );
 }

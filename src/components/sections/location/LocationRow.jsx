@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 const LocationRow = forwardRef(function LocationRow(
-    { location, isActive, onHover },
+    { location, isActive, onHover, onLeave },
     ref
 ) {
     return (
@@ -9,7 +9,8 @@ const LocationRow = forwardRef(function LocationRow(
             ref={ref}
             onMouseEnter={onHover}
             onFocus={onHover}
-            className="grid grid-cols-[1fr_1fr_1fr] items-center border-t border-black/15"
+            onMouseLeave={onLeave}
+            className="grid grid-cols-[1fr_1fr_1.8fr] items-center border-b border-black/15"
         >
             {/* Left */}
             <div className="py-8">
@@ -24,22 +25,13 @@ const LocationRow = forwardRef(function LocationRow(
             </div>
 
             {/* Middle spacer */}
-            <div className="py-8" />
+            <div className="py-8 bg-red-100"/>
 
             {/* Right */}
-            <div className="py-8">
-                <p
-                    className={
-                        `mb-2 text-[0.82rem] font-semibold uppercase tracking-[0.06rem] transition-opacity duration-300,
-                        ${isActive ? "opacity-100" : "opacity-45"}
-                        `}
-                >
-                    {location.address}
-                </p>
-
+            <div className="py-8 col-start-3 justify-self-end bg-red-300">
                 <p
                     className={`
-                        max-w-md tracking-[0.025rem] text-[clamp(0.85rem,1.2vw,1rem)] leading-[1.6] transition-colors duration-300,
+                        max-w-[32rem] font-regular tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] transition-colors duration-300,
                         ${isActive ? "text-black" : "text-black/60"}
                     `}
                 >

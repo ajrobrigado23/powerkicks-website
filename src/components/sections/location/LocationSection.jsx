@@ -4,7 +4,7 @@ import LocationRow from "./LocationRow.jsx";
 import LocationPreview from "./LocationPreview.jsx";
 
 export default function LocationSection() {
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(null);
     const rowRefs = useRef([]);
 
     const setRowRef = (element, index) => {
@@ -26,29 +26,6 @@ export default function LocationSection() {
                         <h3>Find a Powerkicks</h3>
                         <h3>Near You</h3>
                     </div>
-
-                    <div className="flex flex-col gap-4 min-[700px]:flex-row min-[700px]:justify-between">
-                        <p
-                            className="
-                                opacity-0
-                                min-[700px]:opacity-100
-                                min-[700px]:font-semibold
-                                min-[700px]:tracking-[0.025rem]
-                                min-[700px]:text-[0.80rem]
-                                tablet:text-[clamp(0.80rem,1.25vw,1rem)]
-                            "
-                        >
-                            Visit Our Branches
-                        </p>
-
-                        <p className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] min-[700px]:max-w-md tablet:max-w-2xl">
-                            Explore Powerkicks branches near you and find the
-                            location that best fits your training journey. Each
-                            branch offers structured coaching, disciplined
-                            instruction, and a strong community for students of
-                            all levels.
-                        </p>
-                    </div>
                 </div>
 
                 {/* Desktop */}
@@ -66,6 +43,7 @@ export default function LocationSection() {
                                 location={location}
                                 isActive={activeIndex === index}
                                 onHover={() => setActiveIndex(index)}
+                                onLeave={() => setActiveIndex(null)}
                             />
                         ))}
 

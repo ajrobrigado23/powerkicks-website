@@ -13,7 +13,7 @@ export const locations = [
         id: 2,
         image: dasmaImage,
         title: "Powerkicks Imus",
-        address: "Sample address for Imus branch",
+        address: "KM 30 Emilio Aguinaldo Highway, Bo. Burol, Dasmariñas, Cavite",
         description:
             "Train in a structured environment with coaches focused on discipline, consistency, and student growth.",
     },
@@ -21,7 +21,7 @@ export const locations = [
         id: 3,
         image: dasmaImage,
         title: "Powerkicks General Trias",
-        address: "Sample address for General Trias branch",
+        address: "KM 30 Emilio Aguinaldo Highway, Bo. Burol, Dasmariñas, Cavite",
         description:
             "A supportive training space for beginners and competitive students who want strong fundamentals.",
     },
