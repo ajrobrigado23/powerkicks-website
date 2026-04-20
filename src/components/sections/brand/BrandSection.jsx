@@ -1,6 +1,6 @@
-import BrandCarousel from "../animations/BrandCarousel.jsx";
+import BrandCarousel from "../../animations/BrandCarousel.jsx";
 
-export default function LogoCarouselSection() {
+export default function BrandSection() {
     return (
         <section className="w-full px-10 pt-[6rem] pb-[8rem]">
             <div className="flex flex-col min-[700px]:gap-15 tablet:gap-20">

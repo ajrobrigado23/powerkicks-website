@@ -17,14 +17,14 @@ export const coaches = [
         alt: "Coach Andy",
         title: "Assistant Coach",
         role: "Supports training sessions and ensures proper fundamentals are applied consistently.",
-        achievements: "Helped train students who competed in regional tournaments.",
+        achievements: "Supports training sessions and ensures proper fundamentals are applied consistently.",
     },
     {
         name: "Bridgith Baraoidan",
         image: brigidthImg,
         alt: "Coach Brigidth",
         title: "Assistant Coach",
-        role: "Focuses on discipline, conditioning, and technical execution.",
-        achievements: "Developed beginner students into competitive athletes.",
+        role: "Supports training sessions and ensures proper fundamentals are applied consistently..",
+        achievements: "Supports training sessions and ensures proper fundamentals are applied consistently.",
     },
 ];
