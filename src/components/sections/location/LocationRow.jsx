@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 const LocationRow = forwardRef(function LocationRow(
-    { location, isActive, onHover, onLeave },
+    { location, isActive, onHover, onLeave, hasActiveHover },
     ref
 ) {
     return (
@@ -17,7 +17,9 @@ const LocationRow = forwardRef(function LocationRow(
                 <h3
                     className={`
                         text-[clamp(1.35rem,2vw,2rem)] leading-none font-semibold transition-opacity duration-300,
-                        ${isActive ? "opacity-100" : "opacity-45"}
+                        ${!hasActiveHover && "opacity-100 text-black"}
+                        ${hasActiveHover && isActive && "opacity-100 text-black"}
+                        ${hasActiveHover && !isActive && "opacity-40 text-black"}
                     `}
                 >
                     {location.title}
@@ -32,7 +34,9 @@ const LocationRow = forwardRef(function LocationRow(
                 <p
                     className={`
                         max-w-[32rem] font-regular tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] transition-colors duration-300,
-                        ${isActive ? "text-black" : "text-black/60"}
+                        ${!hasActiveHover && "text-black"}
+                        ${hasActiveHover && isActive && "text-black"}
+                        ${hasActiveHover && !isActive && "text-black/50"}
                     `}
                 >
                     {location.description}

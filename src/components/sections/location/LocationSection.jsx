@@ -11,8 +11,13 @@ export default function LocationSection() {
         rowRefs.current[index] = element;
     };
 
-    const activeLocation = locations[activeIndex];
-    const activeRow = rowRefs.current[activeIndex];
+    const activeLocation =
+        activeIndex !== null ? locations[activeIndex] : null;
+
+    const activeRow =
+        activeIndex !== null ? rowRefs.current[activeIndex] : null;
+
+    const hasActiveHover = activeIndex !== null;
 
     return (
         <section className="w-full px-10 pt-[2rem] pb-[2rem]">
@@ -42,12 +47,11 @@ export default function LocationSection() {
                                 ref={(element) => setRowRef(element, index)}
                                 location={location}
                                 isActive={activeIndex === index}
+                                hasActiveHover={hasActiveHover}
                                 onHover={() => setActiveIndex(index)}
                                 onLeave={() => setActiveIndex(null)}
                             />
                         ))}
-
-                        <div className="border-t border-black/15" />
                     </div>
                 </div>
 
