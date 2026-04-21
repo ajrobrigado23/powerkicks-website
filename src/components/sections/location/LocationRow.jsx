@@ -13,10 +13,10 @@ const LocationRow = forwardRef(function LocationRow(
             className="grid grid-cols-[1fr_1fr_1.8fr] items-center border-b border-black/15"
         >
             {/* Left */}
-            <div className="py-8">
+            <div className="py-8 flex flex-col justify-center gap-2">
                 <h3
                     className={`
-                        text-[clamp(1.35rem,2vw,2rem)] leading-none font-semibold transition-opacity duration-300,
+                        font-semibold text-[clamp(0.75rem,1.25vw,1rem)] leading-none transition-opacity duration-300,
                         ${!hasActiveHover && "opacity-100 text-black"}
                         ${hasActiveHover && isActive && "opacity-100 text-black"}
                         ${hasActiveHover && !isActive && "opacity-40 text-black"}
@@ -24,6 +24,9 @@ const LocationRow = forwardRef(function LocationRow(
                 >
                     {location.title}
                 </h3>
+                <p className="font-normal tracking-[0.025rem] text-[clamp(0.65rem,1.5vw,0.75rem)]">
+                    {location.address}
+                </p>
             </div>
 
             {/* Middle spacer */}
