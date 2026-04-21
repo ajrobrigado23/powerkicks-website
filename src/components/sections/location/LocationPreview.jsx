@@ -78,7 +78,7 @@ export default function LocationPreview({ activeLocation, activeRow }) {
     return (
         <div
             ref={panelRef}
-            className="pointer-events-none absolute left-1/2 top-0 z-20 hidden w-full max-w-[16rem] -translate-x-1/2 opacity-0 min-[1000px]:block tablet:max-w-[18rem]"
+            className="pointer-events-none absolute left-1/2 top-0 z-20 w-full max-w-[16rem] -translate-x-1/2 opacity-0 tablet:max-w-[18rem]"
         >
             {activeLocation && (
                 <div

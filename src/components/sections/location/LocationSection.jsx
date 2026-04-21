@@ -35,10 +35,17 @@ export default function LocationSection() {
 
                 {/* Desktop */}
                 <div className="relative hidden min-[1000px]:block">
-                    <LocationPreview
-                        activeLocation={activeLocation}
-                        activeRow={activeRow}
-                    />
+                    {/* Overlay layer aligned to same grid */}
+                    <div className="pointer-events-none absolute inset-0 z-20 grid grid-cols-[1fr_1fr_1.8fr]">
+                        <div />
+                        <div className="relative">
+                            <LocationPreview
+                                activeLocation={activeLocation}
+                                activeRow={activeRow}
+                            />
+                        </div>
+                        <div />
+                    </div>
 
                     <div className="relative z-10">
                         {locations.map((location, index) => (
