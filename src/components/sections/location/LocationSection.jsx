@@ -34,9 +34,9 @@ export default function LocationSection() {
                 </div>
 
                 {/* Desktop */}
-                <div className="relative hidden min-[1000px]:block">
+                <div className="relative hidden min-[1000px]:block pt-[2rem]">
                     {/* Overlay layer aligned to same grid */}
-                    <div className="pointer-events-none absolute inset-0 z-20 grid grid-cols-[1fr_1fr_1.8fr]">
+                    <div className="pointer-events-none absolute inset-0 z-20 grid grid-cols-[1.5fr_1fr_1.8fr]">
                         <div />
                         <div className="relative">
                             <LocationPreview
@@ -53,6 +53,7 @@ export default function LocationSection() {
                                 key={location.id}
                                 ref={(element) => setRowRef(element, index)}
                                 location={location}
+                                locationLength={locations.length}
                                 isActive={activeIndex === index}
                                 hasActiveHover={hasActiveHover}
                                 onHover={() => setActiveIndex(index)}

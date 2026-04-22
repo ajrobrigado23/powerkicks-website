@@ -12,7 +12,7 @@ export const locations = [
     {
         id: 2,
         image: dasmaImage,
-        title: "Powerkicks Imus",
+        title: "Robinson General Trias",
         address: "KM 30 Emilio Aguinaldo Highway, Bo. Burol, Dasmariñas, Cavite",
         description:
             "Train in a structured environment with coaches focused on discipline, consistency, and student growth.",
@@ -20,7 +20,7 @@ export const locations = [
     {
         id: 3,
         image: dasmaImage,
-        title: "Powerkicks General Trias",
+        title: "Imus Bucandala Main Gym",
         address: "KM 30 Emilio Aguinaldo Highway, Bo. Burol, Dasmariñas, Cavite",
         description:
             "A supportive training space for beginners and competitive students who want strong fundamentals.",
