@@ -62,14 +62,20 @@ export default function LocationAccordionItem({
                 className="flex w-full items-center justify-between gap-6 py-6 text-left"
                 aria-expanded={isOpen}
             >
-                <h3
-                    className={`
-                                text-[clamp(1.25rem,2vw,3rem)] font-semibold leading-none transition-opacity duration-300
+                <div className="flex flex-col gap-1">
+                    <h3
+                        className={`
+                                text-[clamp(1.25rem,4vw,5rem)] font-semibold leading-none transition-opacity duration-300
                                 ${isOpen ? "opacity-100" : "opacity-85"}
                               `}
-                >
-                    {location.title}
-                </h3>
+                    >
+                        {location.title}
+                    </h3>
+
+                    <p className="font-normal tracking-[0.025rem] text-[clamp(0.65rem,1.5vw,0.75rem)] text-black">
+                        {location.address}
+                    </p>
+                </div>
 
                 <span className="relative flex h-6 w-6 items-center justify-center">
                     <Plus
@@ -103,10 +109,6 @@ export default function LocationAccordionItem({
                             className="h-full w-full object-cover"
                         />
                     </div>
-
-                    <p className="text-[0.82rem] font-semibold uppercase tracking-[0.06rem] text-black">
-                        {location.address}
-                    </p>
 
                     <p className="mt-3 max-w-xl tracking-[0.025rem] text-[clamp(0.85rem,1.3vw,1rem)] leading-[1.6] text-black/75">
                         {location.description}
