@@ -10,8 +10,8 @@ const LocationRow = forwardRef(function LocationRow(
             onMouseEnter={onHover}
             onFocus={onHover}
             onMouseLeave={onLeave}
-            className={`grid grid-cols-[1.5fr_1fr_1.8fr] items-center border-t border-black/15
-                ${locationLength === location.id && "border-b" }
+            className={`grid grid-cols-[1.5fr_1fr_1.8fr] items-center border-b border-black/15
+                ${locationLength === location.id && "border-b-0" }
             `}
         >
             {/* Left */}

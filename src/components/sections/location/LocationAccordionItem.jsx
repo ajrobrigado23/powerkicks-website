@@ -64,9 +64,9 @@ export default function LocationAccordionItem({
             >
                 <h3
                     className={`
-                        "text-[clamp(1.25rem,3vw,2rem)] font-semibold leading-none transition-opacity duration-300",
-                        isOpen ? "opacity-100" : "opacity-85"
-                    `}
+                                text-[clamp(1.25rem,2vw,3rem)] font-semibold leading-none transition-opacity duration-300
+                                ${isOpen ? "opacity-100" : "opacity-85"}
+                              `}
                 >
                     {location.title}
                 </h3>

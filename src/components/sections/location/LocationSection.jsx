@@ -36,7 +36,7 @@ export default function LocationSection() {
                     </div>
                 </div>
 
-                {/* Desktop - (Implement an Hover Image Reveal) */}
+                {/* Desktop - (Implement a Hover Image Reveal) */}
                 <div className="relative hidden min-[1090px]:block pt-[2rem]">
                     {/* Overlay layer aligned to same grid */}
                     <div className="pointer-events-none absolute inset-0 z-20 grid grid-cols-[1.5fr_1fr_1.8fr]">
