@@ -83,13 +83,13 @@ export default function HeroSection() {
                     </p>
 
                     <div className="overflow-hidden">
-                        <h2 className="hero-line-inner text-[clamp(3rem,5vw,4.5rem)] font-bold leading-[0.9] text-black">
+                        <h2 className="hero-line-inner text-[clamp(2.75rem,8vw,4rem)] tablet:text-[clamp(4rem,5vw,4.5rem)] font-bold leading-[0.9] text-black">
                             More than kicks.
                         </h2>
                     </div>
 
                     <div className="overflow-hidden">
-                        <h2 className="hero-line-inner text-[clamp(3rem,5vw,4.5rem)] font-bold leading-[0.9] text-black">
+                        <h2 className="hero-line-inner text-[clamp(2.75rem,8vw,4rem)] tablet:text-[clamp(4rem,5vw,4.5rem)] font-bold leading-[0.9] text-black">
                             Built on <span className="text-[#B91C1C]">discipline</span>
                         </h2>
                     </div>
