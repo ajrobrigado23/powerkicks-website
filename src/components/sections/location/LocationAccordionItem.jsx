@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -11,13 +11,13 @@ export default function LocationAccordionItem({
 
     const contentRef = useRef(null);
     const innerRef = useRef(null);
-    const iconRef = useRef(null);
+
     // Animate the picture
     const imageRef = useRef(null);
 
     useGSAP(() => {
 
-        if (!contentRef.current || !innerRef.current || !iconRef.current)
+        if (!contentRef.current || !innerRef.current)
             return;
 
         // Animation for the picture
@@ -44,11 +44,6 @@ export default function LocationAccordionItem({
                 ease: "power3.out",
             });
 
-            gsap.to(iconRef.current, {
-                rotate: 180,
-                duration: 0.45,
-                ease: "power3.out",
-            });
         } else {
             gsap.to(contentRef.current, {
                 height: 0,
@@ -56,11 +51,6 @@ export default function LocationAccordionItem({
                 ease: "power3.out",
             });
 
-            gsap.to(iconRef.current, {
-                rotate: 0,
-                duration: 0.45,
-                ease: "power3.out",
-            });
         }
     }, [isOpen]);
 
@@ -81,11 +71,21 @@ export default function LocationAccordionItem({
                     {location.title}
                 </h3>
 
-                <span
-                    ref={iconRef}
-                    className="flex shrink-0 items-center justify-center"
-                >
-                    <ChevronDown size={24} strokeWidth={1.8} />
+                <span className="relative flex h-6 w-6 items-center justify-center">
+                    <Plus
+                        size={24}
+                        strokeWidth={1.8}
+                        className={`absolute transition-all duration-300 ${
+                            isOpen ? "opacity-0 scale-75" : "opacity-100 scale-100"
+                        }`}
+                    />
+                    <Minus
+                        size={24}
+                        strokeWidth={1.8}
+                        className={`absolute transition-all duration-300 ${
+                            isOpen ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                        }`}
+                    />
                 </span>
             </button>
 
