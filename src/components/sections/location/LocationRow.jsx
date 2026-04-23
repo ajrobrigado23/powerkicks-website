@@ -43,7 +43,7 @@ const LocationRow = forwardRef(function LocationRow(
             <div className="py-8 col-start-3 justify-self-end">
                 <p
                     className={`
-                        max-w-[32rem] font-regular tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] transition-colors duration-300,
+                        max-w-[32rem] font-medium tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] transition-colors duration-300
                         ${!hasActiveHover && "text-black"}
                         ${hasActiveHover && isActive && "text-black"}
                         ${hasActiveHover && !isActive && "text-black/50"}

@@ -2,10 +2,13 @@ import { useRef, useState } from "react";
 import { locations } from "./locations.js";
 import LocationRow from "./LocationRow.jsx";
 import LocationPreview from "./LocationPreview.jsx";
+import LocationAccordionItem from "./LocationAccordionItem.jsx";
 
 export default function LocationSection() {
     const [activeIndex, setActiveIndex] = useState(null);
     const rowRefs = useRef([]);
+    // For the UI Accordion
+    const [openIndex, setOpenIndex] = useState(null);
 
     const setRowRef = (element, index) => {
         rowRefs.current[index] = element;
@@ -33,8 +36,8 @@ export default function LocationSection() {
                     </div>
                 </div>
 
-                {/* Desktop */}
-                <div className="relative hidden min-[1000px]:block pt-[2rem]">
+                {/* Desktop - (Implement an Hover Image Reveal) */}
+                <div className="relative hidden min-[1090px]:block pt-[2rem]">
                     {/* Overlay layer aligned to same grid */}
                     <div className="pointer-events-none absolute inset-0 z-20 grid grid-cols-[1.5fr_1fr_1.8fr]">
                         <div />
@@ -63,35 +66,20 @@ export default function LocationSection() {
                     </div>
                 </div>
 
-                {/* Mobile / tablet fallback */}
-                <div className="grid gap-8 min-[1000px]:hidden">
-                    {locations.map((location) => (
-                        <article
+                {/* Mobile / tablet fallback (Make it Accordion UI (Accordion Component) ) */}
+                <div className="min-[1090px]:hidden">
+                    {locations.map((location, index) => (
+                        <LocationAccordionItem
                             key={location.id}
-                            className="border-t border-black/15 pt-6"
-                        >
-                            <div className="mb-4 aspect-[4/5] overflow-hidden bg-neutral-200">
-                                <img
-                                    src={location.image}
-                                    alt={location.title}
-                                    className="h-full w-full object-cover"
-                                />
-                            </div>
-
-                            <h3 className="text-[clamp(1.4rem,3vw,2rem)] font-semibold leading-none">
-                                {location.title}
-                            </h3>
-
-                            <p className="mt-3 text-[0.82rem] font-semibold uppercase tracking-[0.06rem]">
-                                {location.address}
-                            </p>
-
-                            <p className="mt-3 max-w-xl tracking-[0.025rem] text-[clamp(0.85rem,1.3vw,1rem)] leading-[1.6] text-black/75">
-                                {location.description}
-                            </p>
-                        </article>
+                            location={location}
+                            isOpen={openIndex === index}
+                            onToggle={() =>
+                                setOpenIndex(openIndex === index ? null : index)
+                            }
+                        />
                     ))}
                 </div>
+
             </div>
         </section>
     );
