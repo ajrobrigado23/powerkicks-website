@@ -65,18 +65,19 @@ export default function LocationAccordionItem({
                 <div className="flex flex-col gap-1">
                     <h3
                         className={`
-                                text-[clamp(1.25rem,4vw,5rem)] font-semibold leading-none transition-opacity duration-300
+                                text-[clamp(1.25rem,4vw,4.5rem)] font-semibold leading-none transition-opacity duration-300
                                 ${isOpen ? "opacity-100" : "opacity-85"}
                               `}
                     >
                         {location.title}
                     </h3>
 
-                    <p className="font-normal tracking-[0.025rem] text-[clamp(0.65rem,1.5vw,0.75rem)] text-black">
+                    <p className="font-normal tracking-[0.025rem] text-[clamp(0.45rem,1.5vw,0.75rem)] text-black">
                         {location.address}
                     </p>
                 </div>
 
+                {/* Icons */}
                 <span className="relative flex h-6 w-6 items-center justify-center">
                     <Plus
                         size={24}

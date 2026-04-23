@@ -10,15 +10,15 @@ const LocationRow = forwardRef(function LocationRow(
             onMouseEnter={onHover}
             onFocus={onHover}
             onMouseLeave={onLeave}
-            className={`grid grid-cols-[1.5fr_1fr_1.8fr] items-center border-b border-black/15
-                ${locationLength === location.id && "border-b-0" }
+            className={`grid grid-cols-[1.5fr_1fr_1.8fr] items-center border-black/50
+                ${locationLength === location.id ? "border-b-0" : "border-b-2" }
             `}
         >
             {/* Left */}
             <div className="py-8 flex flex-col justify-center gap-2">
                 <h3
                     className={`
-                        font-semibold text-[clamp(1rem,1.75vw,3rem)] leading-none transition-opacity duration-300,
+                        font-semibold text-[clamp(1rem,2vw,3rem)] leading-none transition-opacity duration-300,
                         ${!hasActiveHover && "opacity-100 text-black"}
                         ${hasActiveHover && isActive && "opacity-100 text-black"}
                         ${hasActiveHover && !isActive && "opacity-40 text-black"}
