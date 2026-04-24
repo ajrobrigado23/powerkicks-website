@@ -72,6 +72,7 @@ export default function LocationSection() {
                         <LocationAccordionItem
                             key={location.id}
                             location={location}
+                            locationLength={locations.length}
                             isOpen={openIndex === index}
                             onToggle={() =>
                                 setOpenIndex(openIndex === index ? null : index)

@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 
 export default function LocationAccordionItem({
                                                   location,
+                                                  locationLength,
                                                   isOpen,
                                                   onToggle,
                                               }) {
@@ -55,7 +56,9 @@ export default function LocationAccordionItem({
     }, [isOpen]);
 
     return (
-        <article className="border-t border-black/15">
+        <article className={`border-black/50
+            ${locationLength === location.id ? "border-b-0" : "border-b-2"}
+        `}>
             <button
                 type="button"
                 onClick={onToggle}
@@ -72,7 +75,7 @@ export default function LocationAccordionItem({
                         {location.title}
                     </h3>
 
-                    <p className="font-normal tracking-[0.025rem] text-[clamp(0.45rem,1.5vw,0.75rem)] text-black">
+                    <p className="font-normal tracking-[0.025rem] text-[clamp(0.35rem,1.5vw,0.70rem)] text-black">
                         {location.address}
                     </p>
                 </div>
@@ -102,7 +105,13 @@ export default function LocationAccordionItem({
                 style={{ height: 0 }}
             >
                 <div ref={innerRef} className="pb-6">
-                    <div className="mb-4 aspect-[4/5] overflow-hidden bg-neutral-200">
+                    {/* description */}
+                    <p className="mb-4 max-w-full font-medium tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] leading-[1.6]">
+                        {location.description}
+                    </p>
+
+                    {/* picture */}
+                    <div className="mb-2 aspect-[4/5] overflow-hidden bg-neutral-200">
                         <img
                             ref={imageRef}
                             src={location.image}
@@ -110,12 +119,9 @@ export default function LocationAccordionItem({
                             className="h-full w-full object-cover"
                         />
                     </div>
-
-                    <p className="mt-3 max-w-xl tracking-[0.025rem] text-[clamp(0.85rem,1.3vw,1rem)] leading-[1.6] text-black/75">
-                        {location.description}
-                    </p>
                 </div>
             </div>
+
         </article>
     );
 }
