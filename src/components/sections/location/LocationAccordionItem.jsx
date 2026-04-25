@@ -9,34 +9,13 @@ export default function LocationAccordionItem({
                                                   isOpen,
                                                   onToggle,
                                               }) {
-
     const contentRef = useRef(null);
     const innerRef = useRef(null);
-
-    // Animate the picture
+    const imageWrapRef = useRef(null);
     const imageRef = useRef(null);
 
     useGSAP(() => {
-
-        if (!contentRef.current || !innerRef.current)
-            return;
-
-        // Animation for the picture
-        if (isOpen && imageRef.current) {
-            gsap.fromTo(
-                imageRef.current,
-                {
-                    scale: 1.05,
-                    autoAlpha: 0,
-                },
-                {
-                    scale: 1,
-                    autoAlpha: 1,
-                    duration: 0.65,
-                    ease: "power3.out",
-                }
-            );
-        }
+        if (!contentRef.current || !innerRef.current) return;
 
         if (isOpen) {
             gsap.to(contentRef.current, {
@@ -45,20 +24,46 @@ export default function LocationAccordionItem({
                 ease: "power3.out",
             });
 
+            gsap.fromTo(
+                imageWrapRef.current,
+                {
+                    clipPath: "inset(0 0 100% 0)",
+                },
+                {
+                    clipPath: "inset(0 0 0% 0)",
+                    duration: 0.65,
+                    ease: "power3.out",
+                }
+            );
+
+            gsap.fromTo(
+                imageRef.current,
+                {
+                    scale: 1.08,
+                    autoAlpha: 0,
+                },
+                {
+                    scale: 1,
+                    autoAlpha: 1,
+                    duration: 0.75,
+                    ease: "power3.out",
+                }
+            );
         } else {
             gsap.to(contentRef.current, {
                 height: 0,
                 duration: 0.45,
-                ease: "power3.out",
+                ease: "power3.inOut",
             });
-
         }
     }, [isOpen]);
 
     return (
-        <article className={`border-black/50
-            ${locationLength === location.id ? "border-b-0" : "border-b-2"}
-        `}>
+        <article
+            className={`border-black/50 ${
+                locationLength === location.id ? "border-b-0" : "border-b-2"
+            }`}
+        >
             <button
                 type="button"
                 onClick={onToggle}
@@ -66,12 +71,7 @@ export default function LocationAccordionItem({
                 aria-expanded={isOpen}
             >
                 <div className="flex flex-col gap-1">
-                    <h3
-                        className={`
-                                text-[clamp(1.25rem,4vw,4.5rem)] font-semibold leading-none transition-opacity duration-300
-                                ${isOpen ? "opacity-100" : "opacity-85"}
-                              `}
-                    >
+                    <h3 className="text-[clamp(1.25rem,4vw,4.5rem)] font-semibold leading-none">
                         {location.title}
                     </h3>
 
@@ -80,38 +80,34 @@ export default function LocationAccordionItem({
                     </p>
                 </div>
 
-                {/* Icons */}
                 <span className="relative flex h-6 w-6 items-center justify-center">
                     <Plus
                         size={24}
                         strokeWidth={1.8}
                         className={`absolute transition-all duration-300 ${
-                            isOpen ? "opacity-0 scale-75" : "opacity-100 scale-100"
+                            isOpen ? "scale-75 opacity-0" : "scale-100 opacity-100"
                         }`}
                     />
                     <Minus
                         size={24}
                         strokeWidth={1.8}
                         className={`absolute transition-all duration-300 ${
-                            isOpen ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                            isOpen ? "scale-100 opacity-100" : "scale-75 opacity-0"
                         }`}
                     />
                 </span>
             </button>
 
-            <div
-                ref={contentRef}
-                className="overflow-hidden"
-                style={{ height: 0 }}
-            >
+            <div ref={contentRef} className="overflow-hidden" style={{ height: 0 }}>
                 <div ref={innerRef} className="pb-6">
-                    {/* description */}
                     <p className="mb-4 max-w-full font-medium tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] leading-[1.6]">
                         {location.description}
                     </p>
 
-                    {/* picture */}
-                    <div className="mb-2 aspect-[4/5] overflow-hidden bg-neutral-200">
+                    <div
+                        ref={imageWrapRef}
+                        className="mb-2 aspect-[4/5] overflow-hidden bg-neutral-200"
+                    >
                         <img
                             ref={imageRef}
                             src={location.image}
@@ -121,7 +117,6 @@ export default function LocationAccordionItem({
                     </div>
                 </div>
             </div>
-
         </article>
     );
 }
