@@ -100,7 +100,7 @@ export default function LocationAccordionItem({
 
             <div ref={contentRef} className="overflow-hidden" style={{ height: 0 }}>
                 <div ref={innerRef} className="pb-6">
-                    <p className="mb-4 max-w-full font-medium tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] leading-[1.6]">
+                    <p className="mt-2 mb-4 max-w-full font-medium tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] leading-[1.6]">
                         {location.description}
                     </p>
 

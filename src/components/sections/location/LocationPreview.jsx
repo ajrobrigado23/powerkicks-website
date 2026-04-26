@@ -28,6 +28,7 @@ export default function LocationPreview({ activeLocation, activeRow }) {
     }, [activeLocation]);
 
     useGSAP(() => {
+
         if (!panelRef.current || !activeRow || !activeLocation) return;
 
         const rowTop = activeRow.offsetTop;
@@ -44,6 +45,7 @@ export default function LocationPreview({ activeLocation, activeRow }) {
     }, [activeRow, activeLocation]);
 
     useGSAP(() => {
+
         if (!imageWrapRef.current || !imageRef.current || !activeLocation) return;
 
         gsap.killTweensOf([imageWrapRef.current, imageRef.current]);

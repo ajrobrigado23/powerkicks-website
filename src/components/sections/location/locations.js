@@ -1,9 +1,11 @@
-import dasmaImage from "../../../assets/images/coach-kiko.webp";
+import waltermartDasma from "../../../assets/images/waltermart-dasma-gym.jpg";
+import robinsonGenTri from "../../../assets/images/rob-gen-tri.jpg";
+import imusMainGym from "../../../assets/images/imus-gym.jpg";
 
 export const locations = [
     {
         id: 1,
-        image: dasmaImage,
+        image: waltermartDasma,
         title: "Waltermart Dasmariñas",
         address: "KM 30 Emilio Aguinaldo Highway, Bo. Burol, Dasmariñas, Cavite",
         description:
@@ -11,7 +13,7 @@ export const locations = [
     },
     {
         id: 2,
-        image: dasmaImage,
+        image: robinsonGenTri,
         title: "Robinson General Trias",
         address: "KM 30 Emilio Aguinaldo Highway, Bo. Burol, Dasmariñas, Cavite",
         description:
@@ -19,7 +21,7 @@ export const locations = [
     },
     {
         id: 3,
-        image: dasmaImage,
+        image: imusMainGym,
         title: "Imus Bucandala Main Gym",
         address: "KM 30 Emilio Aguinaldo Highway, Bo. Burol, Dasmariñas, Cavite",
         description:
