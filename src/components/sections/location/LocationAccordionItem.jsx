@@ -22,6 +22,9 @@ export default function LocationAccordionItem({
                 height: innerRef.current.offsetHeight,
                 duration: 0.55,
                 ease: "power3.out",
+                onComplete: () => {
+                    contentRef.current.style.height = "auto";
+                }
             });
 
             gsap.fromTo(
@@ -51,9 +54,15 @@ export default function LocationAccordionItem({
             );
         } else {
             gsap.to(contentRef.current, {
-                height: 0,
-                duration: 0.45,
-                ease: "power3.inOut",
+                height: contentRef.current.scrollHeight,
+                duration: 0.01,
+                onComplete: () => {
+                    gsap.to(contentRef.current, {
+                        height: 0,
+                        duration: 0.45,
+                        ease: "power3.inOut",
+                    });
+                },
             });
         }
     }, [isOpen]);
@@ -106,17 +115,19 @@ export default function LocationAccordionItem({
 
                     <div
                         ref={imageWrapRef}
-                        className="mb-2 aspect-[4/5] overflow-hidden bg-neutral-200"
+                        className="h-[clamp(320px,65vw,600px)] overflow-hidden bg-neutral-100"
                     >
                         <img
                             ref={imageRef}
                             src={location.image}
                             alt={location.title}
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-cover object-[center_70%]"
                         />
                     </div>
+
                 </div>
             </div>
+
         </article>
     );
 }
