@@ -141,7 +141,7 @@ export default function NavBar({ navScrolled }) {
                 <div className="nav-mask overflow-hidden">
                     <div
                         className={`nav-inner w-full text-black will-change-transform ${
-                            navScrolled ? "py-4 bg-transparent" : "py-3 bg-white"
+                            navScrolled ? "py-4 bg-transparent" : "py-3 bg-[#F2F2F2]"
                         }`}
                     >
                         <div className="flex h-full items-center justify-between">

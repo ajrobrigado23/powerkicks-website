@@ -106,5 +106,6 @@
 
 /* Add it globally */
 body {
+    background-color: #F2F2F2;
     font-family: var(--font-sans);
 }
