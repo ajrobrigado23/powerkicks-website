@@ -83,8 +83,10 @@ export default function LocationSection() {
                             key={location.id}
                             location={location}
                             locationLength={locations.length}
+                            // check if this item is open
                             isOpen={openIndex === index}
                             onToggle={() =>
+                                // if already open (close it), if closed (open it)
                                 setOpenIndex(openIndex === index ? null : index)
                             }
                         />
