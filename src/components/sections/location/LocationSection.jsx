@@ -5,21 +5,28 @@ import LocationPreview from "./LocationPreview.jsx";
 import LocationAccordionItem from "./LocationAccordionItem.jsx";
 
 export default function LocationSection() {
+    // track which row is currently hovered (null means nothing)
     const [activeIndex, setActiveIndex] = useState(null);
+    // stores references to each row DOM element (positioning the preview GSAP)
     const rowRefs = useRef([]);
     // For the UI Accordion
     const [openIndex, setOpenIndex] = useState(null);
 
+    // saves each row's DOM element
     const setRowRef = (element, index) => {
+        // [div1, div2, div3]
         rowRefs.current[index] = element;
     };
 
+    // gets the actual location object based on hover
     const activeLocation =
         activeIndex !== null ? locations[activeIndex] : null;
 
+    // gets the DOM element of the hovered row
     const activeRow =
         activeIndex !== null ? rowRefs.current[activeIndex] : null;
 
+    // has something hovered
     const hasActiveHover = activeIndex !== null;
 
     return (
@@ -42,6 +49,7 @@ export default function LocationSection() {
                     <div className="pointer-events-none absolute inset-0 z-20 grid grid-cols-[1.5fr_1fr_1.8fr]">
                         <div />
                         <div className="relative">
+                            {/* display the hover image preview */}
                             <LocationPreview
                                 activeLocation={activeLocation}
                                 activeRow={activeRow}
@@ -51,7 +59,9 @@ export default function LocationSection() {
                     </div>
 
                     <div className="relative z-10">
+                        {/* Loop through all branches */}
                         {locations.map((location, index) => (
+                            // Render each row
                             <LocationRow
                                 key={location.id}
                                 ref={(element) => setRowRef(element, index)}
