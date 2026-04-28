@@ -131,10 +131,17 @@ export default function HeroSection() {
             </div>
 
             {/* Bottom text */}
-            <div className="row-start-4 flex items-end justify-between px-10 pt-5 pb-2 text-[10px] font-semibold tracking-[0.025rem] tablet:row-start-3 tablet:col-span-2 max-[650px]:hidden">
-                <p className="hero-bottom-item">Certified Coaches</p>
-                <p className="hero-bottom-item">Imus, Dasmariñas and General Trias</p>
-                <p className="hero-bottom-item">Kids, Teens and Adults</p>
+            <div className="row-start-4 flex items-end justify-between px-10 pt-5 pb-2 text-[8px] font-semibold tracking-[0.025rem] tablet:row-start-3 tablet:col-span-2 max-[650px]:hidden">
+                <div className="hero-bottom-item">
+                    <p className="text-[#7F7F7F]">Located at</p>
+                    <p>Imus,  Dasmarinas and General Trias, Cavite</p>
+                </div>
+                <div className="hero-bottom-item">
+                    <p className="text-[#7F7F7F]">Affiliated by PTA</p>
+                    <p>Philippine Taekwondo Association</p>
+                </div>
+
+
             </div>
         </section>
     );
