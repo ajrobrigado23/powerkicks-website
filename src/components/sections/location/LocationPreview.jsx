@@ -3,40 +3,50 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 export default function LocationPreview({ activeLocation, activeRow }) {
+    // floating preview container (moves up/down)
     const panelRef = useRef(null);
+    // wrapper of the image (for fade animation)
     const imageWrapRef = useRef(null);
+    // image itself (for zoom + fade animation)
     const imageRef = useRef(null);
 
-    // hide the panel when null
+    // Show and Hide Panel - (run whenever dependencies change)
     useGSAP(() => {
         if (!panelRef.current) return;
 
+        // hide the panel when null (if nothing is hovered)
         if (!activeLocation) {
             gsap.to(panelRef.current, {
+                // opacity + visibility
                 autoAlpha: 0,
                 duration: 0.25,
                 ease: "power2.out",
             });
             return;
         }
-
+        // has an active location
         gsap.to(panelRef.current, {
+            // fade in panel
             autoAlpha: 1,
             duration: 0.25,
             ease: "power2.out",
         });
     }, [activeLocation]);
 
+    // Position panel (code logic)
     useGSAP(() => {
 
         if (!panelRef.current || !activeRow || !activeLocation) return;
 
-        const rowTop = activeRow.offsetTop;
-        const rowHeight = activeRow.offsetHeight;
+        // exact position of the hovered row on the screen (works with - scrolling, complex layout, transforms and responsive design)
+        const rect = activeRow.getBoundingClientRect();
+        // position of the panel’s parent container
+        const parentRect = panelRef.current.offsetParent.getBoundingClientRect();
+        // height of preview panel
         const panelHeight = panelRef.current.offsetHeight;
-
-        const targetY = rowTop + rowHeight / 2 - panelHeight / 2;
-
+        // formula, it aligns center to center with the row
+        const targetY = rect.top - parentRect.top + rect.height / 2 - panelHeight / 2;
+        // moves the panel vertically
         gsap.to(panelRef.current, {
             y: targetY,
             duration: 0.65,
@@ -44,12 +54,13 @@ export default function LocationPreview({ activeLocation, activeRow }) {
         });
     }, [activeRow, activeLocation]);
 
+    // Image animation (on hover change)
     useGSAP(() => {
 
         if (!imageWrapRef.current || !imageRef.current || !activeLocation) return;
-
+        // kills previous animation (prevents animation stacking)
         gsap.killTweensOf([imageWrapRef.current, imageRef.current]);
-
+        // fade in wrapper
         gsap.fromTo(
             imageWrapRef.current,
             {
@@ -61,7 +72,7 @@ export default function LocationPreview({ activeLocation, activeRow }) {
                 ease: "power2.out",
             }
         );
-
+        // image zoom + fade
         gsap.fromTo(
             imageRef.current,
             {
@@ -85,6 +96,7 @@ export default function LocationPreview({ activeLocation, activeRow }) {
             {activeLocation && (
                 <div
                     ref={imageWrapRef}
+                    // hide overflow (for clean animation)
                     className="aspect-[4/5] overflow-hidden bg-neutral-200"
                 >
                     <img
