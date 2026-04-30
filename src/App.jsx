@@ -8,6 +8,7 @@ import TrainingSection from "./components/sections/training/TrainingSection.jsx"
 import SmoothScrollProvider from "./components/layout/SmoothScrollProvider.jsx";
 import InstructorsSection from "./components/sections/instructors/InstructorsSection.jsx";
 import LocationSection from "./components/sections/location/LocationSection.jsx";
+import TestimonialSection from "./components/sections/testimonial/TestimonialSection.jsx";
 
 /*
     IMPORTANT TIPS - (When using React + GSAP)
@@ -142,6 +143,7 @@ const App = () => {
                 <TrainingSection></TrainingSection>
                 <InstructorsSection></InstructorsSection>
                 <LocationSection></LocationSection>
+                <TestimonialSection></TestimonialSection>
             </main>
         </SmoothScrollProvider>
 

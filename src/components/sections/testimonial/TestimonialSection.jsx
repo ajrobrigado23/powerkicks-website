@@ -1,5 +1,7 @@
 export default function TestimonialSection() {
     return(
-        <p>Testimonial Section</p>
+        <section className="w-full px-10 pt-[2rem] pb-[2rem]">
+            <p>Testimonial Section</p>
+        </section>
     );
 }
