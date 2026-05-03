@@ -1,4 +1,17 @@
+import {useState} from "react";
+import TestimonialCarousel from "./TestimonialCarousel.jsx";
+
 export default function TestimonialSection() {
+
+    const [currentPage, setCurrentPage] = useState(0);
+
+    const nextSlide = () => {
+        setCurrentPage(1);
+    };
+
+    const prevSlide = () => {
+        setCurrentPage(0);
+    };
 
     return(
         <section className="w-full px-10 pt-[2rem] pb-[2rem]">
@@ -33,7 +46,7 @@ export default function TestimonialSection() {
                     </div>
                     {/* Column 2 */}
                     <div className="col-start-2 bg-red-200">
-                        <p>column 2</p>
+                        <TestimonialCarousel currentPage={currentPage}></TestimonialCarousel>
                     </div>
                     {/* Column 3 */}
                     <div className="col-start-3 bg-red-300">
