@@ -1,5 +1,3 @@
-import BrandCarousel from "../../animations/BrandCarousel.jsx";
-
 export default function TestimonialSection() {
     return(
         <section className="w-full px-10 pt-[2rem] pb-[2rem]">
@@ -27,6 +25,8 @@ export default function TestimonialSection() {
                         you're in the right place. </p>
                 </div>
             </div>
+            {/* Testimonial Section */}
+
         </section>
     );
 }
