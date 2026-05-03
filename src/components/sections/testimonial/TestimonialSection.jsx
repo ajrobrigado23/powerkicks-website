@@ -1,8 +1,9 @@
 export default function TestimonialSection() {
+
     return(
         <section className="w-full px-10 pt-[2rem] pb-[2rem]">
-            {/* Header */}
             <div className="flex flex-col min-[700px]:gap-15 tablet:gap-20">
+                {/* Header */}
                 <div className="text-[clamp(3rem,5vw,4.5rem)] leading-[0.9] font-bold pb-6">
                     <p className="mb-1 text-sm font-semibold text-[#7F7F7F]">Testimonials</p>
                     <h3>Champion Share</h3>
@@ -24,9 +25,23 @@ export default function TestimonialSection() {
                         If you're looking for disciplined, experienced, and high-quality taekwondo coaches
                         you're in the right place. </p>
                 </div>
-            </div>
-            {/* Testimonial Section */}
+                {/* Testimonial Section */}
+                <div className="grid grid-cols-[auto_3fr_1fr]">
+                    {/* Column 1 */}
+                    <div className="col-start-1 bg-red-100">
+                        <p>column 1</p>
+                    </div>
+                    {/* Column 2 */}
+                    <div className="col-start-2 bg-red-200">
+                        <p>column 2</p>
+                    </div>
+                    {/* Column 3 */}
+                    <div className="col-start-3 bg-red-300">
+                        <p>column 3</p>
+                    </div>
+                </div>
 
+            </div>
         </section>
     );
 }
