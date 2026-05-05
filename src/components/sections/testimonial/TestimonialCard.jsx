@@ -7,6 +7,15 @@ export default function TestimonialCard() {
                 “We build Discipline that carries into school and work. We push limits. We demand focus. We celebrate
                 growth.”</p>
             <hr className="border-t border-gray-300"/>
+            {/* details section */}
+            <div className="flex gap-2">
+                <p>picture</p>
+                <div className="flex flex-col">
+                    <p>starts</p>
+                    <p>Albert Joshua T. Robrigado</p>
+                    <p>Member of Junior National Team</p>
+                </div>
+            </div>
         </div>
     );
 }
