@@ -1,5 +1,6 @@
 import {useState} from "react";
 import TestimonialCarousel from "./TestimonialCarousel.jsx";
+import blackBeltImg from "../../../assets/images/black-background-black-belt.jpg"
 
 export default function TestimonialSection() {
 
@@ -50,7 +51,10 @@ export default function TestimonialSection() {
                     </div>
                     {/* Column 3 */}
                     <div className="col-start-3 bg-red-300">
-                        <p>column 3</p>
+                        <img
+                            className="object-cover object-center w-full"
+                            src={blackBeltImg}
+                            alt="black belt dobuk with black background" />
                     </div>
                 </div>
 
