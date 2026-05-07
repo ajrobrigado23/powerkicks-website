@@ -40,19 +40,19 @@ export default function TestimonialSection() {
                         you're in the right place. </p>
                 </div>
                 {/* Testimonial Section */}
-                <div className="grid grid-cols-[auto_3fr_1fr]">
+                <div className="grid grid-cols-[auto_3fr_1fr] items-stretch">
                     {/* Column 1 */}
                     <div className="col-start-1 bg-red-100">
                         <p>column 1</p>
                     </div>
                     {/* Column 2 */}
-                    <div className="col-start-2">
+                    <div className="col-start-2 flex h-full">
                         <TestimonialCarousel currentPage={currentPage}></TestimonialCarousel>
                     </div>
                     {/* Column 3 */}
                     <div className="col-start-3 bg-red-300">
                         <img
-                            className="object-cover object-center w-full"
+                            className="object-cover object-center w-full h-full"
                             src={blackBeltImg}
                             alt="black belt dobuk with black background" />
                     </div>
