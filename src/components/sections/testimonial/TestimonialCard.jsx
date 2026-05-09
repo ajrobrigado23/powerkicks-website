@@ -14,7 +14,7 @@ export default function TestimonialCard() {
 
             <div className="border-t w-10 pb-2" />
 
-            <div className="mt-auto flex gap-2">
+            <div className="flex gap-2">
                 <img
                     className="h-15 w-15 rounded-full object-cover object-center"
                     src={togashiImg}
@@ -22,17 +22,27 @@ export default function TestimonialCard() {
                 />
 
                 <div className="flex flex-col">
-                    <Star size={16} color="#B91C1C" />
-
-                    <p className="pt-2 font-medium italic tracking-[0.025rem] text-[clamp(0.65rem,1.5vw,0.85rem)]">
+                    {/* loop through the stars */}
+                    <div className="flex gap-1">
+                        {[...Array(5)].map((_, index) => (
+                            <Star
+                                key={index}
+                                size={15}
+                                color="#B91C1C"
+                                fill="#B91C1C"
+                            />
+                        ))}
+                    </div>
+                    <p className="pt-2 font-semibold tracking-[0.025rem] text-[clamp(0.55rem,1.5vw,0.75rem)]">
                         Albert Joshua T. Robrigado
                     </p>
 
-                    <p className="font-medium tracking-[0.025rem] text-[clamp(0.65rem,1.5vw,0.75rem)] text-[#7F7F7F]">
+                    <p className="font-medium tracking-[0.025rem] text-[clamp(0.45rem,1.5vw,0.65rem)] text-[#7F7F7F]">
                         Member of Junior National Team
                     </p>
                 </div>
             </div>
+
         </div>
     );
 }
