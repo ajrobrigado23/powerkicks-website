@@ -48,7 +48,10 @@ export default function TestimonialSection() {
                     {/* Column 2 */}
                     <div className="col-start-2 flex h-full relative">
                         <TestimonialCarousel currentPage={currentPage}></TestimonialCarousel>
-                        <p className="absolute bottom-10 left-6">button</p>
+                        <div className="absolute bottom-10 left-6 flex gap-8 uppercase">
+                            <p>Prev</p>
+                            <p>Next</p>
+                        </div>
                     </div>
                     {/* Column 3 */}
                     <div className="col-start-3 bg-red-300">
