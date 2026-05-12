@@ -1,6 +1,7 @@
 import {useState} from "react";
 import TestimonialCarousel from "./TestimonialCarousel.jsx";
 import blackBeltImg from "../../../assets/images/black-background-black-belt.jpg"
+import SlideUpText from "../../animations/SlideUpText.jsx";
 
 export default function TestimonialSection() {
 
@@ -48,9 +49,9 @@ export default function TestimonialSection() {
                     {/* Column 2 */}
                     <div className="col-start-2 flex h-full relative">
                         <TestimonialCarousel currentPage={currentPage}></TestimonialCarousel>
-                        <div className="absolute bottom-10 left-6 flex gap-8 uppercase">
-                            <p>Prev</p>
-                            <p>Next</p>
+                        <div className="absolute bottom-10 left-6 flex gap-8 uppercase text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
+                            <SlideUpText>Prev</SlideUpText>
+                            <SlideUpText isArrowRight={true}>Next</SlideUpText>
                         </div>
                     </div>
                     {/* Column 3 */}

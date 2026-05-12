@@ -5,7 +5,7 @@ export default function TestimonialCard() {
 
     return (
         <div className="flex h-full w-full flex-col gap-5 border border-black/20 p-6">
-            <Quote className="rotate-180" fill="black" size="25"/>
+            <Quote className="rotate-180" fill="black" size="30"/>
 
             <p className="font-regular italic max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1.20rem)] py-8">
                 We build Discipline that carries into school and work. We push limits. We demand focus. We celebrate
