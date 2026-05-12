@@ -3,8 +3,9 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Circle } from "lucide-react";
 import { ArrowRight } from 'lucide-react';
+import { ArrowLeft } from "lucide-react";
 
-export default function SlideUpText({ children, isButton, isArrowRight }) {
+export default function SlideUpText({ children, isButton, isArrowRight, isArrowLeft }) {
     const containerRef = useRef(null);
     // Text slide up animation
     const tl = useRef(null);
@@ -76,14 +77,20 @@ export default function SlideUpText({ children, isButton, isArrowRight }) {
             style={{ contain: "layout paint" }}
         >
             <div className="relative overflow-hidden cursor-pointer leading-none">
-                <div className={`slide-text-top will-change-transform transform-gpu ${isArrowRight && "inline-flex items-center gap-1"}`}>
+                <div className={`slide-text-top will-change-transform transform-gpu ${(isArrowRight || isArrowLeft) && "inline-flex items-center gap-1"}`}>
+                    { isArrowLeft && (
+                        <ArrowLeft size={12} strokeWidth={3}/>
+                    )}
                     {children}
                     { isArrowRight && (
                         <ArrowRight size={12} strokeWidth={3}></ArrowRight>
                     )}
                 </div>
 
-                <div className={`slide-text-bottom absolute left-0 top-full will-change-transform transform-gpu ${isArrowRight && "inline-flex items-center gap-1"}`}>
+                <div className={`slide-text-bottom absolute left-0 top-full will-change-transform transform-gpu ${(isArrowRight || isArrowLeft) && "inline-flex items-center gap-1"}`}>
+                    { isArrowLeft && (
+                        <ArrowLeft size={12} strokeWidth={3}/>
+                    )}
                     {children}
                     { isArrowRight && (
                         <ArrowRight size={12} strokeWidth={3}></ArrowRight>

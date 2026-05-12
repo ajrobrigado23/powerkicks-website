@@ -50,7 +50,7 @@ export default function TestimonialSection() {
                     <div className="col-start-2 flex h-full relative">
                         <TestimonialCarousel currentPage={currentPage}></TestimonialCarousel>
                         <div className="absolute bottom-10 left-6 flex gap-8 uppercase text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
-                            <SlideUpText>Prev</SlideUpText>
+                            <SlideUpText isArrowLeft={true}>Prev</SlideUpText>
                             <SlideUpText isArrowRight={true}>Next</SlideUpText>
                         </div>
                     </div>
