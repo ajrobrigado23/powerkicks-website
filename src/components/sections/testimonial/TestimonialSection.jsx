@@ -43,8 +43,25 @@ export default function TestimonialSection() {
                 {/* Testimonial Section */}
                 <div className="grid grid-cols-[auto_3fr_1fr] items-stretch">
                     {/* Column 1 */}
-                    <div className="col-start-1 bg-red-100">
-                        <p>column 1</p>
+                    <div
+                        className="
+                            col-start-1
+                            flex
+                            flex-col
+                            justify-center
+                            items-center
+                            gap-2
+                            h-full
+                            border-t
+                            border-l
+                            border-b
+                            border-black/20 tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1.25rem)]
+                            font-semibold
+                            p-4"
+                    >
+                        <p>01</p>
+                        <p>02</p>
+                        <p>03</p>
                     </div>
                     {/* Column 2 */}
                     <div className="col-start-2 flex h-full relative">
