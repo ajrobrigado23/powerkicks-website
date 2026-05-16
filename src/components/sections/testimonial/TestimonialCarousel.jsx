@@ -18,13 +18,18 @@ export default function TestimonialCarousel({ currentPage }) {
                                 className="w-1/3 shrink-0 h-full"
                                 key={index}
                             >
-                                <TestimonialCard />
+                                <TestimonialCard
+                                    name={testimonial.name}
+                                    title={testimonial.title}
+                                    quotes={testimonial.quotes}
+                                    image={testimonial.img}
+                                />
                             </div>
                         );
                     })
                 }
-
             </div>
+
         </div>
     );
 }
