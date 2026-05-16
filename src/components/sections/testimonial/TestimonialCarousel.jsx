@@ -1,4 +1,5 @@
 import TestimonialCard from "./TestimonialCard.jsx";
+import { testimonials } from "./testimonials.js";
 
 export default function TestimonialCarousel({ currentPage }) {
 
@@ -8,29 +9,21 @@ export default function TestimonialCarousel({ currentPage }) {
                 className="flex h-full transition-transform duration-500 ease-out"
                 style={{ transform: `translateX(-${currentPage * 100}%)` }}
             >
-                <div className="w-1/3 shrink-0 h-full">
-                    <TestimonialCard />
-                </div>
+                {
+                    testimonials.map((testimonial, index) => {
+                        console.log(testimonial.name);
 
-                <div className="w-1/3 shrink-0 h-full">
-                    <TestimonialCard />
-                </div>
+                        return (
+                            <div
+                                className="w-1/3 shrink-0 h-full"
+                                key={index}
+                            >
+                                <TestimonialCard />
+                            </div>
+                        );
+                    })
+                }
 
-                <div className="w-1/3 shrink-0 h-full">
-                    <TestimonialCard />
-                </div>
-
-                <div className="w-1/3 shrink-0 h-full">
-                    <TestimonialCard />
-                </div>
-
-                <div className="w-1/3 shrink-0 h-full">
-                    <TestimonialCard />
-                </div>
-
-                <div className="w-1/3 shrink-0 h-full">
-                    <TestimonialCard />
-                </div>
             </div>
         </div>
     );

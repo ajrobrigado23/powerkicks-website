@@ -50,16 +50,16 @@ export default function TestimonialSection() {
                             flex-col
                             justify-center
                             items-center
-                            gap-2
+                            gap-6
                             h-full
                             border-t
                             border-l
                             border-b
-                            border-black/20 tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1.25rem)]
+                            border-black/20 text-[clamp(0.85rem,1.5vw,1.25rem)]
                             font-semibold
                             p-4"
                     >
-                        <p>01</p>
+                        <p className="tracking-[0.075rem]">01</p>
                         <p>02</p>
                         <p>03</p>
                     </div>
