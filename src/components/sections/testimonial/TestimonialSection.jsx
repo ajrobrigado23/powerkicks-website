@@ -8,11 +8,16 @@ export default function TestimonialSection() {
     const [currentPage, setCurrentPage] = useState(0);
 
     const nextSlide = () => {
-        setCurrentPage(1);
+        if (currentPage === 1)
+            return
+
+        setCurrentPage(currentPage => currentPage + 1);
     };
 
     const prevSlide = () => {
-        setCurrentPage(0);
+        if (currentPage === 0)
+            return
+        setCurrentPage(currentPage => currentPage - 1);
     };
 
     return(
@@ -68,17 +73,17 @@ export default function TestimonialSection() {
                         <TestimonialCarousel currentPage={currentPage}></TestimonialCarousel>
                         <div className="absolute bottom-10 left-6 flex gap-8 uppercase text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
                             {/* Prev Button */}
-                            <a>
+                            <a onClick={prevSlide}>
                                 <SlideUpText isArrowLeft={true}>Prev</SlideUpText>
                             </a>
                             {/* Next Button */}
-                            <a>
+                            <a onClick={nextSlide}>
                                 <SlideUpText isArrowRight={true}>Next</SlideUpText>
                             </a>
                         </div>
                     </div>
                     {/* Column 3 */}
-                    <div className="col-start-3 bg-red-300">
+                    <div className="col-start-3">
                         <img
                             className="object-cover object-center w-full h-full"
                             src={blackBeltImg}
