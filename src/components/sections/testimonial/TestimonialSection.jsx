@@ -65,8 +65,8 @@ export default function TestimonialSection() {
                             p-4"
                     >
                         <p className="tracking-[0.075rem]">01</p>
-                        <p>02</p>
-                        <p>03</p>
+                        <p className="text-xs text-[#7F7F7F]">02</p>
+                        <p className="text-xs text-[#7F7F7F]">03</p>
                     </div>
                     {/* Column 2 */}
                     <div className="col-start-2 flex h-full relative">
