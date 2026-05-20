@@ -73,11 +73,13 @@ export default function TestimonialSection() {
                         <TestimonialCarousel currentPage={currentPage}></TestimonialCarousel>
                         <div className="absolute bottom-10 left-6 flex gap-8 uppercase text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
                             {/* Prev Button */}
-                            <a onClick={prevSlide}>
+                            <a onClick={prevSlide}
+                               className={`${currentPage === 0 && "text-[#7F7F7F]"}`}>
                                 <SlideUpText isArrowLeft={true}>Prev</SlideUpText>
                             </a>
                             {/* Next Button */}
-                            <a onClick={nextSlide}>
+                            <a onClick={nextSlide}
+                               className={`${currentPage !== 0 && "text-[#7F7F7F]"}`}>
                                 <SlideUpText isArrowRight={true}>Next</SlideUpText>
                             </a>
                         </div>
