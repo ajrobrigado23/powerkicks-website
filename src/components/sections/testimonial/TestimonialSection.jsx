@@ -74,12 +74,12 @@ export default function TestimonialSection() {
                         <div className="absolute bottom-10 left-6 flex gap-8 uppercase text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
                             {/* Prev Button */}
                             <a onClick={prevSlide}
-                               className={`${currentPage === 0 && "text-[#7F7F7F]"}`}>
+                               className={`${currentPage === 0 && "text-[#7F7F7F]"}  p-0 m-0 inline-flex bg-red-100`}>
                                 <SlideUpText isArrowLeft={true}>Prev</SlideUpText>
                             </a>
                             {/* Next Button */}
                             <a onClick={nextSlide}
-                               className={`${currentPage !== 0 && "text-[#7F7F7F]"}`}>
+                               className={`${currentPage !== 0 && "text-[#7F7F7F]"}  p-0 m-0 inline-flex bg-red-100`}>
                                 <SlideUpText isArrowRight={true}>Next</SlideUpText>
                             </a>
                         </div>
