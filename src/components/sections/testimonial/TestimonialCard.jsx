@@ -1,10 +1,14 @@
-import { Star, Quote } from "lucide-react"
+import { Star } from "lucide-react"
+import quotesImg from "../../../assets/images/quotes-2.png"
 
 export default function TestimonialCard({ name, title, quotes, image }) {
 
     return (
-        <div className="flex h-full w-full flex-col gap-2 border border-black/20 p-6">
-            <Quote className="rotate-180" fill="black" size="30"/>
+        <div className="flex h-full w-full flex-col gap-1 border border-black/20 p-6">
+            <img
+                className="block object-contain w-10 h-10"
+                src={quotesImg}
+                alt="quotes" />
 
             <p className="
                 font-regular
@@ -18,7 +22,7 @@ export default function TestimonialCard({ name, title, quotes, image }) {
                 {quotes}
             </p>
 
-            <div className="border-t w-10 pb-2" />
+            <div className="ml-1 border-t w-12 pb-4" />
 
             <div className="flex gap-2">
                 <img
