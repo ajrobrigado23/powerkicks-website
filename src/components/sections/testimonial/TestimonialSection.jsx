@@ -61,13 +61,14 @@ export default function TestimonialSection() {
                             border-t
                             border-l
                             border-b
-                            border-black/20 text-[clamp(0.85rem,1.5vw,1.25rem)]
+                            border-black/20
+                            text-[clamp(0.85rem,1.5vw,1.25rem)]
                             font-semibold
                             p-6"
                     >
-                        <p className="tracking-[0.075rem]">01</p>
-                        <p className="text-xs text-[#7F7F7F]">02</p>
-                        <p className="text-xs text-[#7F7F7F]">03</p>
+                        <p className={`${currentPage !== 0 ? "text-xs text-[#7F7F7F]" : "text-[clamp(0.85rem,1.5vw,1.50rem)]"} tracking-[0.075rem]`}>01</p>
+                        <p className={`${currentPage !== 1 ? "text-xs text-[#7F7F7F]" : "text-[clamp(0.85rem,1.5vw,1.50rem)]"}`}>02</p>
+
                     </div>
                     {/* Column 2 */}
                     <div className="col-start-2 flex h-full relative">
