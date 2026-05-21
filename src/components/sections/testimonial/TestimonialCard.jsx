@@ -6,7 +6,7 @@ export default function TestimonialCard({ name, title, quotes, image }) {
     return (
         <div className="flex h-full w-full flex-col gap-1 border border-black/20 p-6">
             <img
-                className="block object-contain w-10 h-10"
+                className="block object-contain w-8 h-8"
                 src={quotesImg}
                 alt="quotes" />
 

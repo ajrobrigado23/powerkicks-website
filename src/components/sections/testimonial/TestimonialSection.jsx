@@ -1,7 +1,8 @@
 import {useState} from "react";
 import TestimonialCarousel from "./TestimonialCarousel.jsx";
-import blackBeltImg from "../../../assets/images/black-background-black-belt.jpg"
 import SlideUpText from "../../animations/SlideUpText.jsx";
+import blackBeltImg from "../../../assets/images/black-background-black-belt.jpg"
+import quotesImg from "../../../assets/images/quotes-2.png"
 
 export default function TestimonialSection() {
 
@@ -62,7 +63,7 @@ export default function TestimonialSection() {
                             border-b
                             border-black/20 text-[clamp(0.85rem,1.5vw,1.25rem)]
                             font-semibold
-                            p-4"
+                            p-6"
                     >
                         <p className="tracking-[0.075rem]">01</p>
                         <p className="text-xs text-[#7F7F7F]">02</p>
@@ -94,6 +95,18 @@ export default function TestimonialSection() {
                 </div>
 
             </div>
+            {/* Bottom section */}
+            <div className="flex justify-between pt-6">
+                <div className="flex justify-center items-end gap-6">
+                    <img
+                        className="block object-contain w-5 h-5"
+                        src={quotesImg}
+                        alt="quotes" />
+                    <p className="tracking-[0.025rem] text-[clamp(0.45rem,1vw,0.65rem)] font-medium">Strong body. Strong mind. Strong life</p>
+                </div>
+                <p className="uppercase tracking-[0.025rem] font-semibold text-[clamp(0.45rem,1vw,0.65rem)]">Powerkicks Taekwondo</p>
+            </div>
+
         </section>
     );
 }
