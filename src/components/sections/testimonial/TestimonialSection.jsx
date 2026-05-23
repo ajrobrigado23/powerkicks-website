@@ -68,10 +68,10 @@ export default function TestimonialSection() {
                     >
                         <p className={`${currentPage !== 0 ? "text-xs text-[#7F7F7F]" : "text-[clamp(0.85rem,1.5vw,1.50rem)]"} tracking-[0.075rem]`}>01</p>
                         <p className={`${currentPage !== 1 ? "text-xs text-[#7F7F7F]" : "text-[clamp(0.85rem,1.5vw,1.50rem)]"}`}>02</p>
-
+                        <p className="text-xs text-[#7F7F7F]">03</p>
                     </div>
                     {/* Column 2 */}
-                    <div className="col-start-2 flex h-full relative">
+                    <div className="col-start-2 flex h-full relative overflow-hidden">
                         <TestimonialCarousel currentPage={currentPage}></TestimonialCarousel>
                         <div className="absolute bottom-10 left-6 flex gap-8 uppercase text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
                             {/* Prev Button */}
