@@ -1,7 +1,7 @@
 import TestimonialCard from "./TestimonialCard.jsx";
-import { testimonials } from "./testimonials.js";
 
-export default function TestimonialCarousel({ currentPage }) {
+
+export default function TestimonialCarousel({ currentPage, testimonials }) {
 
     // render each group as one full page
     const groupedTestimonials = [];
@@ -12,35 +12,31 @@ export default function TestimonialCarousel({ currentPage }) {
     }
 
     return(
-        <div className="h-full w-full overflow-hidden">
+        <div className="h-full min-h-full w-full overflow-x-hidden overflow-y-visible">
             <div
-                className="flex h-full transition-transform duration-500 ease-out will-change-transform"
+                className="flex h-full min-h-full transition-transform duration-500 ease-out will-change-transform"
                 style={{ transform: `translateX(-${currentPage * 100}%)` }}
             >
-                {
-                    groupedTestimonials.map((group, pageIndex) => (
-                        <div
-                            key={pageIndex}
-                            className="flex h-full min-w-full"
-                        >
-                            {
-                                group.map((testimonial, index) => (
-                                <div
-                                    key={index}
-                                    className="h-full w-1/3 shrink-0"
-                                >
-                                    <TestimonialCard
-                                        name={testimonial.name}
-                                        title={testimonial.title}
-                                        quotes={testimonial.quotes}
-                                        image={testimonial.img}
-                                    />
-                                </div>
-                            ))
-                            }
-                        </div>
-                    ))
-                }
+                {groupedTestimonials.map((group, pageIndex) => (
+                    <div
+                        key={pageIndex}
+                        className="flex h-full min-h-full min-w-full"
+                    >
+                        {group.map((testimonial, index) => (
+                            <div
+                                key={index}
+                                className="h-full min-h-full w-1/3 shrink-0"
+                            >
+                                <TestimonialCard
+                                    name={testimonial.name}
+                                    title={testimonial.title}
+                                    quotes={testimonial.quotes}
+                                    image={testimonial.img}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                ))}
             </div>
         </div>
     );

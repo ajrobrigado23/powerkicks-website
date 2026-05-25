@@ -3,14 +3,17 @@ import TestimonialCarousel from "./TestimonialCarousel.jsx";
 import SlideUpText from "../../animations/SlideUpText.jsx";
 import blackBeltImg from "../../../assets/images/black-background-black-belt.jpg"
 import quotesImg from "../../../assets/images/quotes-2.png"
+import { testimonials } from "./testimonials.js";
 
 export default function TestimonialSection() {
 
     const [currentPage, setCurrentPage] = useState(0);
 
     const nextSlide = () => {
-        if (currentPage === 1)
-            return
+        const totalPages = Math.ceil(testimonials.length / 3);
+
+        if (currentPage === totalPages - 1)
+            return;
 
         setCurrentPage(currentPage => currentPage + 1);
     };
@@ -58,9 +61,7 @@ export default function TestimonialSection() {
                             items-center
                             gap-6
                             h-full
-                            border-t
-                            border-l
-                            border-b
+                            border
                             border-black/20
                             text-[clamp(0.85rem,1.5vw,1.25rem)]
                             font-semibold
@@ -71,19 +72,30 @@ export default function TestimonialSection() {
                         <p className="text-xs text-[#7F7F7F]">03</p>
                     </div>
                     {/* Column 2 */}
-                    <div className="col-start-2 flex h-full relative overflow-hidden">
-                        <TestimonialCarousel currentPage={currentPage}></TestimonialCarousel>
-                        <div className="absolute bottom-10 left-6 flex gap-8 uppercase text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
+                    <div className="col-start-2 relative flex h-full min-h-full border-t border-b border-r border-black/20 overflow-x-hidden">
+                        <TestimonialCarousel
+                            currentPage={currentPage}
+                            testimonials={testimonials}
+                        />
+
+                        <div className="absolute bottom-10 left-6 flex gap-8 text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
                             {/* Prev Button */}
-                            <a onClick={prevSlide}
-                               className={`${currentPage === 0 && "text-[#7F7F7F]"}  p-0 m-0 inline-flex bg-red-100`}>
+                            <button
+                                type="button"
+                                onClick={prevSlide}
+                                className={`${currentPage === 0 && "text-[#7F7F7F]"} p-0 m-0 inline-flex bg-red-100 uppercase`}
+                            >
                                 <SlideUpText isArrowLeft={true}>Prev</SlideUpText>
-                            </a>
+                            </button>
+
                             {/* Next Button */}
-                            <a onClick={nextSlide}
-                               className={`${currentPage !== 0 && "text-[#7F7F7F]"}  p-0 m-0 inline-flex bg-red-100`}>
+                            <button
+                                type="button"
+                                onClick={nextSlide}
+                                className={`${currentPage !== 0 && "text-[#7F7F7F]"} p-0 m-0 inline-flex bg-red-100 uppercase`}
+                            >
                                 <SlideUpText isArrowRight={true}>Next</SlideUpText>
-                            </a>
+                            </button>
                         </div>
                     </div>
                     {/* Column 3 */}
