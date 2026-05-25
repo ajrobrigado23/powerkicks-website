@@ -50,12 +50,13 @@ export default function TestimonialSection() {
                         you're in the right place. </p>
                 </div>
                 {/* Testimonial Section */}
-                <div className="grid grid-cols-[auto_3fr_1fr] items-stretch">
+                <div className="grid grid-cols-[72px_3fr_1fr] items-stretch">
                     {/* Column 1 */}
                     <div
                         className="
                             col-start-1
                             flex
+                            w-[72px]
                             flex-col
                             justify-center
                             items-center
@@ -72,7 +73,7 @@ export default function TestimonialSection() {
                         <p className="text-xs text-[#7F7F7F]">03</p>
                     </div>
                     {/* Column 2 */}
-                    <div className="col-start-2 relative flex h-full min-h-full border-t border-b border-r border-black/20 overflow-x-hidden">
+                    <div className="col-start-2 relative flex h-full min-h-full border-t border-b border-black/20 overflow-x-hidden">
                         <TestimonialCarousel
                             currentPage={currentPage}
                             testimonials={testimonials}
