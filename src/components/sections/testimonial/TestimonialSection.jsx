@@ -70,9 +70,22 @@ export default function TestimonialSection() {
                             font-semibold
                             p-6"
                     >
-                        <p className={`${currentPage !== 0 ? "text-xs text-[#7F7F7F]" : "text-[clamp(0.85rem,1.5vw,1.50rem)]"} tracking-[0.075rem]`}>01</p>
-                        <p className={`${currentPage !== 1 ? "text-xs text-[#7F7F7F]" : "text-[clamp(0.85rem,1.5vw,1.50rem)]"}`}>02</p>
-                        <p className="text-xs text-[#7F7F7F]">03</p>
+                        {
+                            // create 2 empty items because totalPages is 2 - [undefined, undefined]
+                            Array.from({ length: totalPages }).map((_, index) => (
+                            <p
+                                key={index}
+                                className={currentPage === index
+                                    ? "text-[clamp(0.85rem,1.5vw,1.50rem)]"
+                                    : "text-xs text-[#7F7F7F]"
+                                }
+                            >
+                                {
+                                    // padStart(2, "0") makes it always 2 digits:
+                                    String(index + 1).padStart(2, "0") // 01
+                                }
+                            </p>
+                        ))}
                     </div>
                     {/* Column 2 */}
                     <div className="col-start-2 relative flex h-full min-h-full border-t border-b border-black/20 overflow-x-hidden">
