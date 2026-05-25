@@ -9,8 +9,10 @@ export default function TestimonialSection() {
 
     const [currentPage, setCurrentPage] = useState(0);
 
+    // calculate the real last page
+    const totalPages = Math.ceil(testimonials.length / 3);
+
     const nextSlide = () => {
-        const totalPages = Math.ceil(testimonials.length / 3);
 
         if (currentPage === totalPages - 1)
             return;
@@ -84,6 +86,7 @@ export default function TestimonialSection() {
                             <button
                                 type="button"
                                 onClick={prevSlide}
+                                disabled={currentPage === 0}
                                 className={`${currentPage === 0 && "text-[#7F7F7F]"} p-0 m-0 inline-flex bg-red-100 uppercase`}
                             >
                                 <SlideUpText isArrowLeft={true}>Prev</SlideUpText>
@@ -93,7 +96,8 @@ export default function TestimonialSection() {
                             <button
                                 type="button"
                                 onClick={nextSlide}
-                                className={`${currentPage !== 0 && "text-[#7F7F7F]"} p-0 m-0 inline-flex bg-red-100 uppercase`}
+                                disabled={currentPage === totalPages - 1}
+                                className={`${currentPage === totalPages - 1 && "text-[#7F7F7F]"} p-0 m-0 inline-flex bg-red-100 uppercase`}
                             >
                                 <SlideUpText isArrowRight={true}>Next</SlideUpText>
                             </button>
