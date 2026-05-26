@@ -2,12 +2,15 @@ import TestimonialCard from "./TestimonialCard.jsx";
 
 export default function TestimonialCarousel({ currentPage, testimonials }) {
 
+    // use a constants for cards per page
+    const CARDS_PER_PAGE = 3;
+
     // render each group as one full page
     const groupedTestimonials = [];
 
-    for (let i = 0; i < testimonials.length; i += 3) {
+    for (let i = 0; i < testimonials.length; i += CARDS_PER_PAGE) {
         // move from page 1 to page 2, instead of sliding card by card.
-        groupedTestimonials.push(testimonials.slice(i, i + 3));
+        groupedTestimonials.push(testimonials.slice(i, i + CARDS_PER_PAGE));
     }
 
     return(
