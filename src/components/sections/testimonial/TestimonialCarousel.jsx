@@ -11,7 +11,7 @@ export default function TestimonialCarousel({ currentPage, testimonials }) {
     }
 
     return(
-        <div className="h-full min-h-full w-full overflow-x-hidden overflow-y-visible">
+        <div className="h-full w-full overflow-x-hidden overflow-y-visible">
             <div
                 className="flex h-full min-h-full transition-transform duration-500 ease-out will-change-transform"
                 style={{ transform: `translateX(-${currentPage * 100}%)` }}
@@ -19,7 +19,7 @@ export default function TestimonialCarousel({ currentPage, testimonials }) {
                 {groupedTestimonials.map((group, pageIndex) => (
                     <div
                         key={pageIndex}
-                        className="flex h-full min-h-full min-w-full"
+                        className="flex h-full min-w-full"
                     >
                         {group.map((testimonial, index) => (
                             <div
