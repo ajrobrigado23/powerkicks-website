@@ -4,7 +4,7 @@ import quotesImg from "../../../assets/images/quotes-2.png"
 export default function TestimonialCard({ name, title, quotes, image }) {
 
     return (
-        <div className="box-border flex h-full min-h-full w-full flex-col gap-1 p-6 border-r border-black/20">
+        <div className="box-border flex h-full min-h-full w-full flex-col gap-1 border-r border-black/20 p-6 pb-8">
             <img
                 className="block h-8 w-8 object-contain"
                 src={quotesImg}
@@ -28,14 +28,14 @@ export default function TestimonialCard({ name, title, quotes, image }) {
             <div className="mt-auto">
                 <div className="ml-1 w-12 border-t pb-4" />
 
-                <div className="flex gap-2">
+                <div className="flex min-w-0 gap-2">
                     <img
                         className="h-15 w-15 rounded-full object-cover object-center"
                         src={image}
                         alt=""
                     />
 
-                    <div className="flex flex-col">
+                    <div className="flex min-w-0 flex-col">
                         <div className="flex gap-1">
                             {[...Array(5)].map((_, index) => (
                                 <Star
@@ -47,17 +47,19 @@ export default function TestimonialCard({ name, title, quotes, image }) {
                             ))}
                         </div>
 
-                        <p className="pt-2 font-semibold tracking-[0.025rem] text-[clamp(0.55rem,1.5vw,0.75rem)]">
+                        <p className="truncate pt-2 font-semibold tracking-[0.025rem] text-[clamp(0.55rem,1.5vw,0.75rem)]">
                             {name}
                         </p>
 
-                        <p className="font-medium tracking-[0.025rem] text-[clamp(0.45rem,1.5vw,0.65rem)] text-[#7F7F7F]">
+                        <p className="truncate font-medium tracking-[0.025rem] text-[clamp(0.45rem,1.5vw,0.65rem)] text-[#7F7F7F]">
                             {title}
                         </p>
                     </div>
+
                 </div>
             </div>
 
+            {/* Bottom padding */}
             <div className="p-10">
 
             </div>
