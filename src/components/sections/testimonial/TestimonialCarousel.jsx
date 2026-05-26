@@ -1,6 +1,5 @@
 import TestimonialCard from "./TestimonialCard.jsx";
 
-
 export default function TestimonialCarousel({ currentPage, testimonials }) {
 
     // render each group as one full page
