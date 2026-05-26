@@ -28,7 +28,7 @@ export default function TestimonialCard({ name, title, quotes, image }) {
             <div className="mt-auto">
                 <div className="ml-1 w-12 border-t pb-4" />
 
-                <div className="flex min-w-0 gap-2">
+                <div className="flex min-w-0 gap-2 items-start">
                     <img
                         className="h-15 w-15 shrink-0 rounded-full object-cover object-center"
                         src={image}
