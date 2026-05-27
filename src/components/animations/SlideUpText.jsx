@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Circle } from "lucide-react";
@@ -36,12 +36,23 @@ export default function SlideUpText({ children, isButton, isArrowRight, isArrowL
 
     }, { scope: containerRef });
 
+    // once the button becomes disabled, the slide animation goes back to the start
+    useEffect(() => {
+        if (!tl.current) return;
+
+        if (disabled) {
+            // resets the timeline when disabled, so it does not get stuck in the previous hover state
+            tl.current.pause(0);
+        }
+    }, [disabled]);
+
     const handleMouseEnter = () => {
         // stop the animation when disabled
         if (disabled)
             return;
 
-        tl.current?.timeScale(1).play();
+        // forces the animation to start from the beginning every time you hover
+        tl.current?.timeScale(1).play(0);
 
         if (isButton && circleRef.current) {
             circleTween.current?.kill();
@@ -83,7 +94,12 @@ export default function SlideUpText({ children, isButton, isArrowRight, isArrowL
             className={isButton ? "inline-flex items-center bg-black px-4 py-3" : "inline-flex items-center"}
             style={{ contain: "layout paint" }}
         >
-            <div className="relative overflow-hidden cursor-pointer leading-none">
+            <div
+                className={`
+                            relative overflow-hidden leading-none
+                            ${disabled ? "cursor-not-allowed" : "cursor-pointer"}
+                `}
+            >
                 <div className={`slide-text-top will-change-transform transform-gpu ${(isArrowRight || isArrowLeft) && "inline-flex items-center gap-1"}`}>
                     { isArrowLeft && (
                         <ArrowLeft size={12} strokeWidth={3}/>
