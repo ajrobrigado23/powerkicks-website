@@ -5,7 +5,7 @@ import { Circle } from "lucide-react";
 import { ArrowRight } from 'lucide-react';
 import { ArrowLeft } from "lucide-react";
 
-export default function SlideUpText({ children, isButton, isArrowRight, isArrowLeft }) {
+export default function SlideUpText({ children, isButton, isArrowRight, isArrowLeft, disabled=false }) {
     const containerRef = useRef(null);
     // Text slide up animation
     const tl = useRef(null);
@@ -37,6 +37,10 @@ export default function SlideUpText({ children, isButton, isArrowRight, isArrowL
     }, { scope: containerRef });
 
     const handleMouseEnter = () => {
+        // stop the animation when disabled
+        if (disabled)
+            return;
+
         tl.current?.timeScale(1).play();
 
         if (isButton && circleRef.current) {
@@ -53,6 +57,9 @@ export default function SlideUpText({ children, isButton, isArrowRight, isArrowL
     };
 
     const handleMouseLeave = () => {
+        if (disabled)
+            return;
+
         tl.current?.timeScale(1).reverse();
 
         if (isButton && circleRef.current) {

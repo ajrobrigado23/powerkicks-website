@@ -11,6 +11,9 @@ export default function TestimonialSection() {
 
     // calculate the real last page
     const totalPages = Math.ceil(testimonials.length / 3);
+    // disabled variables
+    const isPrevDisabled = currentPage === 0;
+    const isNextDisabled = currentPage === totalPages - 1;
 
     const nextSlide = () => {
 
@@ -94,27 +97,51 @@ export default function TestimonialSection() {
                             testimonials={testimonials}
                         />
 
+                        {/* Buttons section */}
                         <div className="absolute bottom-10 left-6 flex gap-8 text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
                             {/* Prev Button */}
                             <button
                                 type="button"
                                 onClick={prevSlide}
-                                disabled={currentPage === 0}
-                                className={`${currentPage === 0 && "text-[#7F7F7F]"} p-0 m-0 inline-flex bg-red-100 uppercase`}
+                                disabled={isPrevDisabled}
+                                className={`
+                                            m-0 inline-flex p-0 uppercase
+                                            ${isPrevDisabled
+                                                                    ? "cursor-not-allowed text-[#7F7F7F]"
+                                                                    : "cursor-pointer text-black"
+                                                                }
+                                        `}
                             >
-                                <SlideUpText isArrowLeft={true}>Prev</SlideUpText>
+                                <SlideUpText
+                                    isArrowLeft={true}
+                                    disabled={isPrevDisabled}
+                                >
+                                    Prev
+                                </SlideUpText>
                             </button>
 
                             {/* Next Button */}
                             <button
                                 type="button"
                                 onClick={nextSlide}
-                                disabled={currentPage === totalPages - 1}
-                                className={`${currentPage === totalPages - 1 && "text-[#7F7F7F]"} p-0 m-0 inline-flex bg-red-100 uppercase`}
+                                disabled={isNextDisabled}
+                                className={`
+                                            m-0 inline-flex p-0 uppercase
+                                            ${isNextDisabled
+                                                                    ? "cursor-not-allowed text-[#7F7F7F]"
+                                                                    : "cursor-pointer text-black"
+                                                                }
+                                        `}
                             >
-                                <SlideUpText isArrowRight={true}>Next</SlideUpText>
+                                <SlideUpText
+                                    isArrowRight={true}
+                                    disabled={isNextDisabled}
+                                >
+                                    Next
+                                </SlideUpText>
                             </button>
                         </div>
+
                     </div>
                     {/* Column 3 */}
                     <div className="col-start-3">
