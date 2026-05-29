@@ -55,23 +55,25 @@ export default function TestimonialSection() {
                         you're in the right place. </p>
                 </div>
                 {/* Testimonial Section */}
-                <div className="grid grid-cols-[72px_3fr_1fr] items-stretch">
+                <div className="grid grid-cols-1 items-stretch min-[1200px]:grid-cols-[72px_3fr_1fr]">
                     {/* Column 1 */}
                     <div
                         className="
-                            col-start-1
-                            flex
-                            w-[72px]
-                            flex-col
-                            justify-center
-                            items-center
-                            gap-6
-                            h-full
-                            border
-                            border-black/20
-                            text-[clamp(0.85rem,1.5vw,1.25rem)]
-                            font-semibold
-                            p-6"
+                                    hidden
+                                    min-[1200px]:col-start-1
+                                    min-[1200px]:flex
+                                    min-[1200px]:w-[72px]
+                                    flex-col
+                                    justify-center
+                                    items-center
+                                    gap-6
+                                    h-full
+                                    border
+                                    border-black/20
+                                    text-[clamp(0.85rem,1.5vw,1.25rem)]
+                                    font-semibold
+                                    p-6
+                                "
                     >
                         {
                             // create 2 empty items because totalPages is 2 - [undefined, undefined]
@@ -91,7 +93,7 @@ export default function TestimonialSection() {
                         ))}
                     </div>
                     {/* Column 2 */}
-                    <div className="col-start-2 relative flex h-full min-h-full border-t border-b border-black/20 overflow-x-hidden">
+                    <div className="col-start-1 relative flex h-full border-l border-t border-b border-black/20 overflow-x-hidden min-[1200px]:border-l-0 min-[1200px]:col-start-2">
                         <TestimonialCarousel
                             currentPage={currentPage}
                             testimonials={testimonials}
@@ -144,11 +146,12 @@ export default function TestimonialSection() {
 
                     </div>
                     {/* Column 3 */}
-                    <div className="col-start-3">
+                    <div className="hidden min-[1200px]:col-start-3 min-[1200px]:block">
                         <img
                             className="object-cover object-center w-full h-full"
                             src={blackBeltImg}
-                            alt="black belt dobuk with black background" />
+                            alt="black belt dobuk with black background"
+                        />
                     </div>
                 </div>
 
