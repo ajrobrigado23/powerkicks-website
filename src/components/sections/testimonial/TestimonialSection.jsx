@@ -13,9 +13,10 @@ export default function TestimonialSection() {
 
     // calculate the total pages
     const totalPages = Math.ceil(testimonials.length / cardsPerPage);
+    const safeCurrentPage = Math.min(currentPage, totalPages - 1);
     // disabled variables
-    const isPrevDisabled = currentPage === 0;
-    const isNextDisabled = currentPage === totalPages - 1;
+    const isPrevDisabled = safeCurrentPage === 0;
+    const isNextDisabled = safeCurrentPage === totalPages - 1;
 
     // Update the number of visible testimonial cards whenever the screen size changes
     useEffect(() => {
@@ -31,14 +32,14 @@ export default function TestimonialSection() {
 
     const nextSlide = () => {
 
-        if (currentPage === totalPages - 1)
+        if (safeCurrentPage === totalPages - 1)
             return;
 
         setCurrentPage(currentPage => currentPage + 1);
     };
 
     const prevSlide = () => {
-        if (currentPage === 0)
+        if (safeCurrentPage === 0)
             return
         setCurrentPage(currentPage => currentPage - 1);
     };
@@ -109,7 +110,7 @@ export default function TestimonialSection() {
                     {/* Column 2 */}
                     <div className="col-start-1 relative flex h-full border-l border-t border-b border-black/20 overflow-x-hidden min-[1200px]:border-l-0 min-[1200px]:col-start-2">
                         <TestimonialCarousel
-                            currentPage={currentPage}
+                            currentPage={safeCurrentPage}
                             testimonials={testimonials}
                             cardsPerPage={cardsPerPage}
                         />
