@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import TestimonialCarousel from "./TestimonialCarousel.jsx";
 import SlideUpText from "../../animations/SlideUpText.jsx";
 import blackBeltImg from "../../../assets/images/black-background-black-belt.jpg"
@@ -8,12 +8,26 @@ import { testimonials } from "./testimonials.js";
 export default function TestimonialSection() {
 
     const [currentPage, setCurrentPage] = useState(0);
+    // Track how many testimonial cards should be shown per page based on screen size
+    const [cardsPerPage, setCardsPerPage] = useState(3);
 
-    // calculate the real last page
-    const totalPages = Math.ceil(testimonials.length / 3);
+    // calculate the total pages
+    const totalPages = Math.ceil(testimonials.length / cardsPerPage);
     // disabled variables
     const isPrevDisabled = currentPage === 0;
     const isNextDisabled = currentPage === totalPages - 1;
+
+    // Update the number of visible testimonial cards whenever the screen size changes
+    useEffect(() => {
+        const updateCardsPerPage = () => {
+            setCardsPerPage(window.innerWidth < 900 ? 2 : 3);
+        };
+
+        updateCardsPerPage();
+        window.addEventListener("resize", updateCardsPerPage);
+
+        return () => window.removeEventListener("resize", updateCardsPerPage);
+    }, []);
 
     const nextSlide = () => {
 
@@ -97,6 +111,7 @@ export default function TestimonialSection() {
                         <TestimonialCarousel
                             currentPage={currentPage}
                             testimonials={testimonials}
+                            cardsPerPage={cardsPerPage}
                         />
 
                         {/* Buttons section */}
