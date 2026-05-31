@@ -22,13 +22,21 @@ export default function TestimonialSection() {
     // Update the number of visible testimonial cards whenever the screen size changes
     useEffect(() => {
         const updateCardsPerPage = () => {
-            setCardsPerPage(window.innerWidth < 900 ? 2 : 3);
+            if (window.innerWidth < 640) {
+                setCardsPerPage(1);
+            } else if (window.innerWidth < 900) {
+                setCardsPerPage(2);
+            } else {
+                setCardsPerPage(3);
+            }
         };
 
         updateCardsPerPage();
+
         window.addEventListener("resize", updateCardsPerPage);
 
         return () => window.removeEventListener("resize", updateCardsPerPage);
+
     }, []);
 
     const nextSlide = () => {
@@ -109,7 +117,7 @@ export default function TestimonialSection() {
                         ))}
                     </div>
                     {/* Column 2 */}
-                    <div className="col-start-1 relative flex h-full border-l border-t border-b border-black/20 overflow-x-hidden min-[1200px]:border-l-0 min-[1200px]:col-start-2">
+                    <div className="col-start-1 relative flex h-full border-r border-l border-t border-b border-black/20 overflow-x-hidden min-[650px]:border-r-0 min-[1200px]:border-l-0 min-[1200px]:col-start-2">
                         <TestimonialCarousel
                             currentPage={safeCurrentPage}
                             testimonials={testimonials}

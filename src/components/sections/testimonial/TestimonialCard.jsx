@@ -4,7 +4,7 @@ import quotesImg from "../../../assets/images/quotes-2.png"
 export default function TestimonialCard({ name, title, quotes, image }) {
 
     return (
-        <div className="box-border flex h-full min-h-full w-full flex-col gap-1 border-r border-black/20 p-6 pb-[98px]">
+        <div className="box-border flex h-full min-h-full w-full flex-col gap-1 border-r-0 border-black/20 p-6 pb-[98px] min-[650px]:border-r">
             <img
                 className="block h-8 w-8 object-contain"
                 src={quotesImg}
