@@ -24,7 +24,7 @@ export default function TestimonialCarousel({ currentPage, testimonials, cardsPe
     return(
         <div className="h-full w-full overflow-x-hidden overflow-y-visible">
             <div
-                className="flex h-full min-h-full transition-transform duration-500 ease-out will-change-transform"
+                className="flex h-full transition-transform duration-500 ease-out will-change-transform"
                 style={{ transform: `translateX(-${currentPage * 100}%)` }}
             >
                 {groupedTestimonials.map((group, pageIndex) => (
