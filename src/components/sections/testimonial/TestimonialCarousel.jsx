@@ -1,14 +1,25 @@
 import TestimonialCard from "./TestimonialCard.jsx";
+import {useMemo} from "react";
 
 export default function TestimonialCarousel({ currentPage, testimonials, cardsPerPage }) {
 
-    // render each group as one full page
-    const groupedTestimonials = [];
+    // memoize the grouped testimonials so they only recalculate when testimonials or cardsPerPage changes
+    const groupedTestimonials = useMemo(() => {
+        // render each group as one full page
+       const groups = [];
 
-    for (let i = 0; i < testimonials.length; i += cardsPerPage) {
-        // move from page 1 to page 2, instead of sliding card by card.
-        groupedTestimonials.push(testimonials.slice(i, i + cardsPerPage));
-    }
+       // loop through the testimonials based on how many cards should appear per page
+        for (let i = 0; i < testimonials.length; i += cardsPerPage) {
+            // move from page 1 to page 2, instead of sliding card by card.
+            // take a chunk of testimonials and add it as one full carousel page
+            groups.push(testimonials.slice(i, i + cardsPerPage));
+        }
+
+        // return the final grouped testimonial pages
+       return groups
+
+        // re-run this grouping only when testimonials or cardsPerPage changes
+    }, [testimonials, cardsPerPage]);
 
     return(
         <div className="h-full w-full overflow-x-hidden overflow-y-visible">
