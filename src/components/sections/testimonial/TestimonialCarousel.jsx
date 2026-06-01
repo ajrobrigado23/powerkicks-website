@@ -1,7 +1,11 @@
 import TestimonialCard from "./TestimonialCard.jsx";
 import {useMemo} from "react";
 
-export default function TestimonialCarousel({ currentPage, testimonials, cardsPerPage }) {
+export default function TestimonialCarousel({
+                                                currentPage,
+                                                testimonials,
+                                                cardsPerPage = 3
+}) {
 
     // memoize the grouped testimonials so they only recalculate when testimonials or cardsPerPage changes
     const groupedTestimonials = useMemo(() => {
