@@ -104,7 +104,7 @@ export default function TestimonialSection() {
                             Array.from({ length: totalPages }).map((_, index) => (
                             <p
                                 key={index}
-                                className={currentPage === index
+                                className={safeCurrentPage === index
                                     ? "text-[clamp(0.85rem,1.5vw,1.50rem)]"
                                     : "text-xs text-[#7F7F7F]"
                                 }
