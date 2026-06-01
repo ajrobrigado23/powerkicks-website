@@ -13,8 +13,8 @@ export default function TestimonialSection() {
 
     // calculate the total pages
     const totalPages = Math.ceil(testimonials.length / cardsPerPage);
-    // keep the carousel page index within the available page range
-    const safeCurrentPage = Math.min(currentPage, totalPages - 1);
+    // keep the carousel page index within the available page range (prevent it going below 0)
+    const safeCurrentPage = Math.max(0, Math.min(currentPage, totalPages - 1));
     // disabled variables
     const isPrevDisabled = safeCurrentPage === 0;
     const isNextDisabled = safeCurrentPage === totalPages - 1;
