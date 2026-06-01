@@ -1,10 +1,10 @@
 import { Star } from "lucide-react"
 import quotesImg from "../../../assets/images/quotes-2.png"
 
-export default function TestimonialCard({ name, title, quotes, image, isLastCard}) {
+export default function TestimonialCard({ name, title, quotes, image, isLastCardInPage}) {
 
     return (
-        <div className={`box-border flex h-full w-full flex-col gap-1 border-black/20 p-6 pb-[98px] ${isLastCard ? "border-r-0" : "border-r"}`}>
+        <div className={`box-border flex h-full w-full flex-col gap-1 border-black/20 p-6 pb-[98px] ${isLastCardInPage ? "border-r-0" : "border-r"}`}>
             <img
                 className="block h-8 w-8 object-contain"
                 src={quotesImg}

@@ -48,7 +48,7 @@ export default function TestimonialCarousel({
                                     title={testimonial.title}
                                     quotes={testimonial.quotes}
                                     image={testimonial.img}
-                                    isLastCard={index === group.length - 1}
+                                    isLastCardInPage={index === group.length - 1}
                                 />
                             </div>
                         ))}
