@@ -138,6 +138,7 @@ export default function TestimonialSection() {
                                                                     : "cursor-pointer text-black"
                                                                 }
                                         `}
+                                aria-label="Show previous testimonials"
                             >
                                 <SlideUpText
                                     isArrowLeft={true}
@@ -159,6 +160,7 @@ export default function TestimonialSection() {
                                                                     : "cursor-pointer text-black"
                                                                 }
                                         `}
+                                aria-label="Show next testimonials"
                             >
                                 <SlideUpText
                                     isArrowRight={true}
