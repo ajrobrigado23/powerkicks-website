@@ -1,4 +1,11 @@
+import FAQAccordionItem from "./FAQAccordionItem.jsx";
+import { faqs } from "./faq.js";
+import { useState } from "react";
+
 export default function FAQSection () {
+
+    // For the UI Accordion
+    const [openIndex, setOpenIndex] = useState(null);
 
     return (
         <section className="w-full px-10 pt-[2rem] pb-[2rem] bg-black text-white">
@@ -20,12 +27,26 @@ export default function FAQSection () {
                                   min-[700px]:text-[0.80rem]
                                   tablet:text-[clamp(0.80rem,1.25vw,1rem)]
                                 ">
-                        Recognized by
+                        Most asked questions by our clients
                     </p>
-                    <p className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] min-[700px]:max-w-md tablet:max-w-2xl">
-                        Powerkicks is aligned with recognized national and international organizations, ensuring
-                        structured training, certified standards, and consistent athlete development. </p>
+                    {/* FAQ accordion items */}
+                    <div className="flex flex-col gap-8">
+                        {faqs.map((faq, index) => (
+                            <FAQAccordionItem
+                                key={faq.id}
+                                faq={faq}
+                                faqLength={faq.length}
+                                // check if this item is open
+                                isOpen={openIndex === index}
+                                onToggle={() =>
+                                    // if already open (close it), if closed (open it)
+                                    setOpenIndex(openIndex === index ? null : index)
+                                }
+                            />
+                        ))}
+                    </div>
                 </div>
+
             </div>
         </section>
     );
