@@ -21,6 +21,7 @@ export default function FAQSection () {
                     className="flex flex-col gap-4 pb-12 min-[700px]:pb-0 min-[700px]:flex-row min-[700px]:justify-between"
                 >
                     <p className="opacity-0
+                                text-[#7F7F7F]
                                   min-[700px]:opacity-100
                                   min-[700px]:font-semibold
                                   min-[700px]:tracking-[0.025rem]
@@ -30,7 +31,7 @@ export default function FAQSection () {
                         Most asked questions by our clients
                     </p>
                     {/* FAQ accordion items */}
-                    <div className="flex flex-col gap-8">
+                    <div className="flex flex-col gap-15">
                         {faqs.map((faq, index) => (
                             <FAQAccordionItem
                                 key={faq.id}
