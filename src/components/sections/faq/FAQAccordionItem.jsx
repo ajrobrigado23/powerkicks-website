@@ -75,7 +75,7 @@ export default function FAQAccordionItem({
             <div ref={contentRef} className="overflow-hidden" style={{ height: 0 }}>
                 {/* content wrapper */}
                 <div ref={innerRef} className="pt-13 text-[#7F7F7F]">
-                    <p className="max-w-3xl font-medium tracking-[0.025rem] text-[clamp(0.50rem,1.5vw,0.90rem)] leading-[1.6]">
+                    <p className="max-w-3xl font-medium tracking-[0.025rem] text-[clamp(0.80rem,1.5vw,0.90rem)] leading-[1.6]">
                         {faq.answer}
                     </p>
                 </div>
