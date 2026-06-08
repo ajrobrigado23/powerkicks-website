@@ -41,16 +41,16 @@ export default function FAQAccordionItem({
 
     return (
         <article
-            className="border-white/50 text-white"
+            className="w-[90%] border-white/50 text-white"
         >
             <button
                 type="button"
                 onClick={onToggle}
-                className="flex w-full text-left gap-20"
+                className="flex w-full text-left justify-between"
                 aria-expanded={isOpen}
             >
                 <div className="flex flex-col">
-                    <h3 className="text-[clamp(0.75rem,3vw,1.50rem)] font-semibold leading-none">
+                    <h3 className="text-[clamp(0.75rem,3vw,1.35rem)] font-semibold leading-none">
                         {faq.question}
                     </h3>
                 </div>
@@ -76,7 +76,7 @@ export default function FAQAccordionItem({
             <div ref={contentRef} className="overflow-hidden" style={{ height: 0 }}>
                 {/* content wrapper */}
                 <div ref={innerRef} className="pt-13 text-[#7F7F7F]">
-                    <p className="max-w-full font-medium tracking-[0.025rem] text-[clamp(0.50rem,1.5vw,0.90rem)] leading-[1.6]">
+                    <p className="max-w-3xl font-medium tracking-[0.025rem] text-[clamp(0.50rem,1.5vw,0.90rem)] leading-[1.6]">
                         {faq.answer}
                     </p>
                 </div>
