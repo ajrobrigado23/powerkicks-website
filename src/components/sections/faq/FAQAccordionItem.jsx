@@ -40,7 +40,7 @@ export default function FAQAccordionItem({
 
     return (
         <article
-            className="max-w-full border-white/50 text-white"
+            className="max-w-full text-white"
         >
             <button
                 type="button"
@@ -49,7 +49,7 @@ export default function FAQAccordionItem({
                 aria-expanded={isOpen}
             >
                 <div className="flex flex-col">
-                    <h3 className="text-[clamp(0.75rem,3vw,1.35rem)] font-semibold leading-none">
+                    <h3 className="text-[clamp(0.75rem,3vw,1.35rem)] font-semibold leading-none pr-6 min-[1050px]:pr-0">
                         {faq.question}
                     </h3>
                 </div>
