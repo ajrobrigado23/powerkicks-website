@@ -12,7 +12,7 @@ export default function FAQSection () {
             <div className="flex flex-col min-[700px]:gap-15 tablet:gap-20">
                 {/* Section heading */}
                 <div className="pb-15 text-[clamp(3rem,5vw,4.5rem)] leading-[0.9] font-bold min-[700px]:pb-6">
-                    <p className="mb-1 text-sm font-semibold text-[#7F7F7F]">Partners / Affiliation</p>
+                    <p className="mb-1 text-sm font-semibold text-[#7F7F7F]">Before You Start</p>
                     <h3>Frequently asked</h3>
                     <h3>questions</h3>
                 </div>
