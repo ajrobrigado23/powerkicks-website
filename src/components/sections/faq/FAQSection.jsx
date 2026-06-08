@@ -32,10 +32,10 @@ export default function FAQSection () {
                     </p>
                     {/* FAQ accordion items */}
                     <div className="flex flex-col gap-15 pl-30">
-                        {faqs.map((faq, index) => (
+                        {faqs.map((item, index) => (
                             <FAQAccordionItem
-                                key={faq.id}
-                                faq={faq}
+                                key={item.id}
+                                faq={item}
                                 // check if this item is open
                                 isOpen={openIndex === index}
                                 onToggle={() =>
