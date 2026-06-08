@@ -41,7 +41,7 @@ export default function FAQAccordionItem({
 
     return (
         <article
-            className="w-[90%] border-white/50 text-white"
+            className="max-w-full border-white/50 text-white"
         >
             <button
                 type="button"

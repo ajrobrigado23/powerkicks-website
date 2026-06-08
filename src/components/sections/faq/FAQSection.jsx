@@ -18,7 +18,7 @@ export default function FAQSection () {
                 </div>
                 {/* FAQ content section */}
                 <div
-                    className="flex flex-col gap-4 pb-12 min-[700px]:pb-0 min-[700px]:flex-row min-[700px]:justify-between"
+                    className="flex flex-col pb-12 min-[700px]:pb-0 min-[700px]:flex-row min-[700px]:justify-between"
                 >
                     <p className="opacity-0
                                 text-[#7F7F7F]
@@ -28,10 +28,10 @@ export default function FAQSection () {
                                   min-[700px]:text-[0.80rem]
                                   tablet:text-[clamp(0.80rem,1.25vw,1rem)]
                                 ">
-                        Most asked questions by our clients
+                        Everything you need to know before starting your Powerkicks journey.
                     </p>
                     {/* FAQ accordion items */}
-                    <div className="flex flex-col gap-15">
+                    <div className="flex flex-col gap-15 pl-30">
                         {faqs.map((faq, index) => (
                             <FAQAccordionItem
                                 key={faq.id}
