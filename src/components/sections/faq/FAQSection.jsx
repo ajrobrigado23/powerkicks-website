@@ -36,7 +36,6 @@ export default function FAQSection () {
                             <FAQAccordionItem
                                 key={faq.id}
                                 faq={faq}
-                                faqLength={faq.length}
                                 // check if this item is open
                                 isOpen={openIndex === index}
                                 onToggle={() =>

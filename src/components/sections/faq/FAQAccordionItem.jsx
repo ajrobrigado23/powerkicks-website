@@ -5,7 +5,6 @@ import {gsap} from "gsap";
 
 export default function FAQAccordionItem({
                                              faq,
-                                             faqLength,
                                              isOpen,
                                              onToggle
                                          }) {
