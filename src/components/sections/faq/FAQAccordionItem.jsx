@@ -9,17 +9,20 @@ export default function FAQAccordionItem({
                                              onToggle
                                          }) {
 
-    // collapsible container (animate its height)
+    // accordion container whose height is animated by GSAP
     const contentRef = useRef(null);
     // actual content inside (used to measure height - offsetHeight)
     const innerRef = useRef(null);
 
+    // animate the FAQ answer container when the accordion opens or closes
     useGSAP(() => {
         if (!contentRef.current || !innerRef.current) return;
 
+        // stop any running height animation before starting a new one
         gsap.killTweensOf(contentRef.current);
 
         if (isOpen) {
+            // expand the container from height 0 to the actual content height
             gsap.fromTo(
                 contentRef.current,
                 { height: 0 },
@@ -30,6 +33,7 @@ export default function FAQAccordionItem({
                 }
             );
         } else {
+            // collapse the container back to height 0
             gsap.to(contentRef.current, {
                 height: 0,
                 duration: 0.45,
