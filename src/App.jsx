@@ -10,6 +10,7 @@ import InstructorsSection from "./components/sections/instructors/InstructorsSec
 import LocationSection from "./components/sections/location/LocationSection.jsx";
 import TestimonialSection from "./components/sections/testimonial/TestimonialSection.jsx";
 import FAQSection from "./components/sections/faq/FAQSection.jsx";
+import PowerkicksMarqueeSection from "./components/sections/marquee/PowerkicksMarqueeSection.jsx";
 
 /*
     IMPORTANT TIPS - (When using React + GSAP)
@@ -146,6 +147,7 @@ const App = () => {
                 <LocationSection></LocationSection>
                 <TestimonialSection></TestimonialSection>
                 <FAQSection></FAQSection>
+                <PowerkicksMarqueeSection></PowerkicksMarqueeSection>
             </main>
         </SmoothScrollProvider>
 

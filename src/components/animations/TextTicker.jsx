@@ -31,11 +31,11 @@ export default function TextTicker({ children, black, right }) {
             className="overflow-hidden w-full z-0"
         >
             {/* Duplicate the items to create a seamless loop */}
-            <div ref={trackRef} className={`flex whitespace-nowrap ${black ? "text-black": "text-[#7F7F7F]"} will-change-transform`}>
+            <div ref={trackRef} className={`flex whitespace-nowrap uppercase ${black ? "text-black": "text-white"} will-change-transform`}>
                 {[...items, ...items].map((letter, i) => (
                     <span
                         key={i}
-                        className="mx-6 text-8xl font-bold"
+                        className="mx-10 text-[14rem] tracking-[0.075rem] font-semibold"
                     >
                         {letter}
                     </span>
