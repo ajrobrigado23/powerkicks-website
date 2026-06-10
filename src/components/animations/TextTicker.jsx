@@ -20,7 +20,7 @@ export default function TextTicker({ children, black, right }) {
             x: right ? -totalWidth : 0,
         });
 
-        gsap.to(track, {
+        const tween = gsap.to(track, {
             x: right ? 0 : -totalWidth,
             duration: 180,
             ease: "none",
@@ -31,6 +31,9 @@ export default function TextTicker({ children, black, right }) {
                 ),
             },
         });
+
+        // kill the animation once the component unmounts
+        return () => tween.kill();
 
     }, { scope: containerRef });
 
