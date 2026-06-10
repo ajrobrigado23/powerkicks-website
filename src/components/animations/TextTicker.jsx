@@ -35,7 +35,7 @@ export default function TextTicker({ children, black, right }) {
         // kill the animation once the component unmounts
         return () => tween.kill();
 
-    }, { scope: containerRef });
+    }, { scope: containerRef, dependencies: [right] });
 
     // 6 or 10
     const items = Array(6).fill(children);
