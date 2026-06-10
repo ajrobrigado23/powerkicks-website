@@ -8,10 +8,20 @@ export default function TextTicker({ children, black, right }) {
 
     useGSAP(() => {
         const track = trackRef.current;
+
+        if (!track)
+            return;
+
         const totalWidth = track.scrollWidth / 2; // Half because we duplicated items
 
+
+        // Start from the correct position depending on direction
+        gsap.set(track, {
+            x: right ? -totalWidth : 0,
+        });
+
         gsap.to(track, {
-            x: right ? `+=${totalWidth}` : `-=${totalWidth}`,
+            x: right ? 0 : -totalWidth,
             duration: 180,
             ease: "none",
             repeat: -1,
@@ -21,8 +31,10 @@ export default function TextTicker({ children, black, right }) {
                 ),
             },
         });
+
     }, { scope: containerRef });
 
+    // 6 or 10
     const items = Array(6).fill(children);
 
     return (
@@ -35,7 +47,7 @@ export default function TextTicker({ children, black, right }) {
                 {[...items, ...items].map((letter, i) => (
                     <span
                         key={i}
-                        className="mx-10 text-[14rem] tracking-[0.0.75rem] font-semibold"
+                        className="mx-10 text-[12rem] tracking-[0.075rem] font-semibold"
                     >
                         {letter}
                     </span>
