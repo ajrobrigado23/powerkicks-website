@@ -12,7 +12,7 @@ export default function TextTicker({ children, black, right }) {
 
         gsap.to(track, {
             x: right ? `+=${totalWidth}` : `-=${totalWidth}`,
-            duration: 60,
+            duration: 180,
             ease: "none",
             repeat: -1,
             modifiers: {
@@ -35,7 +35,7 @@ export default function TextTicker({ children, black, right }) {
                 {[...items, ...items].map((letter, i) => (
                     <span
                         key={i}
-                        className="mx-10 text-[14rem] tracking-[0.075rem] font-semibold"
+                        className="mx-10 text-[14rem] tracking-[0.0.75rem] font-semibold"
                     >
                         {letter}
                     </span>
