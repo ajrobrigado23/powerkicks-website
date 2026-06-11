@@ -2,6 +2,10 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
+// constant
+const DURATION = 180;
+const REPEAT_COUNT = 6;
+
 export default function TextTicker({ children, black, right }) {
     const containerRef = useRef(null);
     const trackRef = useRef(null);
@@ -22,7 +26,7 @@ export default function TextTicker({ children, black, right }) {
 
         const tween = gsap.to(track, {
             x: right ? 0 : -totalWidth,
-            duration: 180,
+            duration: DURATION,
             ease: "none",
             repeat: -1,
             modifiers: {
@@ -38,7 +42,7 @@ export default function TextTicker({ children, black, right }) {
     }, { scope: containerRef, dependencies: [right] });
 
     // 6 or 10
-    const items = Array(6).fill(children);
+    const items = Array(REPEAT_COUNT).fill(children);
 
     return (
         <div
