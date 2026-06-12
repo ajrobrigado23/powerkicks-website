@@ -51,12 +51,12 @@ export default function TextTicker({ children, black, right }) {
         >
             {/* Duplicate the items to create a seamless loop */}
             <div ref={trackRef} className={`flex whitespace-nowrap uppercase ${black ? "text-black": "text-white"} will-change-transform`}>
-                {[...items, ...items].map((letter, i) => (
+                {[...items, ...items].map((item, i) => (
                     <span
                         key={i}
                         className="mx-10 text-[12rem] tracking-[0.075rem] font-semibold"
                     >
-                        {letter}
+                        {item}
                     </span>
                 ))}
             </div>
