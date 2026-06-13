@@ -54,7 +54,7 @@ export default function TextTicker({ children, black, right }) {
                 {[...items, ...items].map((item, i) => (
                     <span
                         key={i}
-                        className="mx-7 shrink-0 text-[12rem] tracking-[0.075rem] font-semibold"
+                        className="mx-7 shrink-0 text-[8rem] min-[700px]:text-[10rem] min-[900px]:text-[12rem] tracking-[0.075rem] font-semibold"
                     >
                         {item}
                     </span>
