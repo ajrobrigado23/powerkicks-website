@@ -38,6 +38,11 @@ export default function Footer() {
                 </div>
 
             </div>
+            {/* Credits part */}
+            <div className="flex justify-between pt-20">
+                <h4>Made & Curated By Albert Robrigado</h4>
+                <p>2026 Powerkicks, All rights reserved</p>
+            </div>
 
         </footer>
     );
