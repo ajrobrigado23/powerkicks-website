@@ -12,7 +12,7 @@ export default function Footer() {
                         by Powerkicks platforms.</p>
                 </div>
                 {/* Social Media */}
-                <div className="flex flex-col items-center">
+                <div className="hidden flex-col items-center min-[501px]:flex">
                     <div className="w-full max-w-[220px] text-left">
                         <h4 className="text-[clamp(0.90rem,1.5vw,1.50rem)] font-semibold pb-2">Social Media</h4>
                         <div className="flex flex-col gap-3">
@@ -31,7 +31,7 @@ export default function Footer() {
                         own and operate.</p>
                 </div>
                 {/* Contact Us */}
-                <div className="flex flex-col items-center">
+                <div className="hidden flex-col items-center min-[501px]:flex">
                     <div className="w-full max-w-[220px] text-left">
                         <h4 className="text-[clamp(0.90rem,1.5vw,1.50rem)] font-semibold pb-2">Contact Us</h4>
                         <p className="text-[#7F7F7F] text-[clamp(0.80rem,1.2vw,0.90rem)] font-medium tracking-[0.025rem]">+639-19-826-2504</p>
@@ -41,10 +41,10 @@ export default function Footer() {
 
             </div>
             {/* Credits part */}
-            <div className="flex justify-between pt-20 text-[clamp(0.50rem,1.2vw,0.55rem)] text-[#7F7F7F] font-semibold">
+            <div className="flex justify-between pt-20 text-[clamp(0.35rem,1.2vw,0.55rem)] text-[#7F7F7F] font-semibold">
                 <h4>Made & Curated By <span className="text-white">Albert Robrigado</span></h4>
-                <p className="flex items center gap-1">
-                    <span className="text-[0.80rem] leading-none">&copy;</span>
+                <p className="flex items-center gap-1">
+                    <span className="text-[clamp(0.65rem,1.2vw,0.80rem)] leading-none">&copy;</span>
                     2026 Powerkicks, All rights reserved
                 </p>
             </div>
