@@ -2,7 +2,7 @@ export default function Footer() {
 
     return (
         <footer className="w-full px-10 pt-[2rem] pb-[1rem] bg-black text-white">
-            <div className="grid grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 gap-10 min-[500px]:grid-cols-2">
                 {/* Terms of Service */}
                 <div className="flex flex-col">
                     <h4 className="text-[clamp(0.90rem,1.5vw,1.50rem)] font-semibold pb-2">Terms of Service</h4>
