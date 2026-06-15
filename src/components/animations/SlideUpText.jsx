@@ -94,6 +94,7 @@ export default function SlideUpText({ children, isButton, isArrowRight, isArrowL
             className={isButton ? "inline-flex items-center bg-black px-4 py-3" : "inline-flex items-center"}
             style={{ contain: "layout paint" }}
         >
+            {/* Arrow right and Arrow left button */}
             <div
                 className={`
                             relative overflow-hidden leading-none
@@ -121,6 +122,7 @@ export default function SlideUpText({ children, isButton, isArrowRight, isArrowL
                 </div>
             </div>
 
+            {/* Button circle */}
             {isButton && (
                 <span className="inline-flex items-center pl-3">
                     <Circle
