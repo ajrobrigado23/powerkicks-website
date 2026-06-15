@@ -43,7 +43,10 @@ export default function Footer() {
             {/* Credits part */}
             <div className="flex justify-between pt-20 text-[clamp(0.50rem,1.2vw,0.55rem)] text-[#7F7F7F] font-semibold">
                 <h4>Made & Curated By <span className="text-white">Albert Robrigado</span></h4>
-                <p>2026 Powerkicks, All rights reserved</p>
+                <p className="flex items center gap-1">
+                    <span className="text-[0.80rem] leading-none">&copy;</span>
+                    2026 Powerkicks, All rights reserved
+                </p>
             </div>
 
         </footer>
