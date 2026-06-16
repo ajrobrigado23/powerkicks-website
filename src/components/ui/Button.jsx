@@ -3,6 +3,7 @@ import { forwardRef } from "react";
 
 const Button = forwardRef(({
         textColor= "white",
+        padding,
         backgroundColor= "black",
         className= "",
         isButton = true,
@@ -22,8 +23,8 @@ const Button = forwardRef(({
                 >
                     <span className="font-semibold text-sm uppercase">{children}</span>
                 </button>
-            :   <a className={`text-${textColor} bg-${backgroundColor} ${className}`}>
-                    <SlideUpText isButton={isButton}>{children}</SlideUpText>
+            :   <a className={`inline-flex text-${textColor} bg-${backgroundColor} ${className}`}>
+                    <SlideUpText isButton={isButton} padding={padding}>{children}</SlideUpText>
                 </a>
     );
 });

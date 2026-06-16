@@ -5,7 +5,7 @@ import { Circle } from "lucide-react";
 import { ArrowRight } from 'lucide-react';
 import { ArrowLeft } from "lucide-react";
 
-export default function SlideUpText({ children, isButton, isArrowRight, isArrowLeft, disabled=false }) {
+export default function SlideUpText({ children, padding, isButton, isArrowRight, isArrowLeft, disabled=false }) {
     const containerRef = useRef(null);
     // Text slide up animation
     const tl = useRef(null);
@@ -93,7 +93,7 @@ export default function SlideUpText({ children, isButton, isArrowRight, isArrowL
             onMouseLeave={handleMouseLeave}
             className={
                 isButton
-                    ? "inline-flex items-center bg-black px-4 py-3"
+                    ? `inline-flex items-center ${padding}`
                     : "inline-flex items-center"}
             style={{ contain: "layout paint" }}
         >
