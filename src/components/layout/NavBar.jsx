@@ -170,7 +170,7 @@ export default function NavBar({ navScrolled }) {
                             </ul>
 
                             <Button
-                                className={`flex items-center justify-center font-bold tracking-wider text-sm text-white uppercase max-[900px]:ml-auto max-[900px]:me-4 ${
+                                className={`hidden items-center justify-center font-bold tracking-wider text-sm text-white uppercase min-[575px]:flex max-[900px]:ml-auto max-[900px]:me-4 ${
                                     navScrolled ? "ml-auto me-2" : "me-10"
                                 }`}
                             >

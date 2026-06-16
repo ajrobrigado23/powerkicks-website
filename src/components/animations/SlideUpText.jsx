@@ -91,7 +91,10 @@ export default function SlideUpText({ children, isButton, isArrowRight, isArrowL
             ref={containerRef}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={isButton ? "inline-flex items-center bg-black px-4 py-3" : "inline-flex items-center"}
+            className={
+                isButton
+                    ? "inline-flex items-center bg-black px-4 py-3"
+                    : "inline-flex items-center"}
             style={{ contain: "layout paint" }}
         >
             {/* Arrow right and Arrow left button */}
