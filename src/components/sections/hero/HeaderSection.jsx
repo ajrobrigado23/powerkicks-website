@@ -96,7 +96,7 @@ export default function HeroSection() {
                     </div>
 
                     <Button
-                        className="hero-button mt-2 font-bold tracking-wider text-sm text-white uppercase"
+                        className="hero-button inline-flex mt-2 font-bold tracking-wider text-sm text-white uppercase"
                         padding="px-4 py-3"
                     >
                         View Schedule
@@ -144,9 +144,8 @@ export default function HeroSection() {
                     <p className="text-[#7F7F7F]">Affiliated by PTA</p>
                     <p>Philippine Taekwondo Association</p>
                 </div>
-
-
             </div>
+
         </section>
     );
 }

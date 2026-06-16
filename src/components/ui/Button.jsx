@@ -23,7 +23,7 @@ const Button = forwardRef(({
                 >
                     <span className="font-semibold text-sm uppercase">{children}</span>
                 </button>
-            :   <a className={`inline-flex text-${textColor} bg-${backgroundColor} ${className}`}>
+            :   <a className={`text-${textColor} bg-${backgroundColor} ${className}`}>
                     <SlideUpText isButton={isButton} padding={padding}>{children}</SlideUpText>
                 </a>
     );
