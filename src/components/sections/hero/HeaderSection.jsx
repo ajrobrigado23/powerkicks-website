@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import Button from "../../ui/Button.jsx";
 
 export default function HeroSection() {
 
@@ -94,9 +95,12 @@ export default function HeroSection() {
                         </h2>
                     </div>
 
-                    <button className="hero-button mt-2 bg-black px-5 py-2 text-sm font-extrabold uppercase tracking-wide text-white">
+                    <Button
+                        className="hero-button mt-2 font-bold tracking-wider text-sm text-white uppercase"
+                        padding="px-4 py-3"
+                    >
                         View Schedule
-                    </button>
+                    </Button>
                 </div>
             </div>
 
