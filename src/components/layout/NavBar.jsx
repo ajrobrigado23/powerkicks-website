@@ -5,7 +5,7 @@ import {useGSAP} from "@gsap/react";
 import Button from "../ui/Button.jsx";
 
 const MENU_ITEMS = [
-  { label: "About", href: "#about" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Schedule", href: "#schedule" },
   { label: "Contact", href: "#contact" },
   { label: "Facebook", href: "https://facebook.com", external: true },
