@@ -146,7 +146,7 @@ export default function NavBar({ navScrolled }) {
                     >
                         <div className="flex h-full items-center justify-between">
                             <h1
-                                className={`font-bold text-lg ms-10 uppercase tracking-wider transition-all duration-300 ${
+                                className={`font-bold text-2xl ms-10 uppercase tracking-wider transition-all duration-300 ${
                                     navScrolled && "hidden"
                                 }`}
                             >
@@ -154,7 +154,7 @@ export default function NavBar({ navScrolled }) {
                             </h1>
 
                             <ul
-                                className={`ms-16 flex font-bold text-xs uppercase tracking-wide gap-20 max-[1100px]:text-[0.70rem] max-[1100px]:gap-13 max-[901px]:hidden transition-all duration-300 ${
+                                className={`ms-[6rem] flex font-bold text-xs uppercase tracking-wide gap-7 max-[1100px]:text-[0.70rem] max-[1100px]:gap-13 max-[901px]:hidden transition-all duration-300 ${
                                     navScrolled && "hidden"
                                 }`}
                             >

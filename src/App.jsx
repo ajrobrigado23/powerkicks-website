@@ -11,6 +11,7 @@ import Home from "./pages/Home.jsx";
 const App = () => {
 
     return (
+        // Wrapped my app with react router, so that my website can show different pages depending on the url
         <BrowserRouter>
             <SmoothScrollProvider>
                 <Routes>
