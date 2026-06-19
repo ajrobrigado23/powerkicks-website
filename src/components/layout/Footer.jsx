@@ -1,3 +1,5 @@
+import SlideUpText from "../animations/SlideUpText.jsx";
+
 export default function Footer() {
 
     return (
@@ -16,9 +18,15 @@ export default function Footer() {
                     <div className="w-full max-w-[220px] text-left">
                         <h4 className="text-[clamp(0.90rem,1.5vw,1.50rem)] font-semibold pb-2">Social Media</h4>
                         <div className="flex flex-col gap-3">
-                            <p className="text-[clamp(0.60rem,1.5vw,0.80rem)] font-medium tracking-[0.025rem] uppercase">Facebook</p>
-                            <p className="text-[clamp(0.60rem,1.5vw,0.80rem)] font-medium tracking-[0.025rem] uppercase">Instagram</p>
-                            <p className="text-[clamp(0.60rem,1.5vw,0.80rem)] font-medium tracking-[0.025rem] uppercase">Tiktok</p>
+                            <a className="text-[clamp(0.60rem,1.5vw,0.80rem)] font-medium tracking-[0.025rem] uppercase">
+                                <SlideUpText>Facebook</SlideUpText>
+                            </a>
+                            <a className="text-[clamp(0.60rem,1.5vw,0.80rem)] font-medium tracking-[0.025rem] uppercase">
+                                <SlideUpText>Instagram</SlideUpText>
+                            </a>
+                            <a className="text-[clamp(0.60rem,1.5vw,0.80rem)] font-medium tracking-[0.025rem] uppercase">
+                                <SlideUpText>Tiktok</SlideUpText>
+                            </a>
                         </div>
                     </div>
                 </div>
