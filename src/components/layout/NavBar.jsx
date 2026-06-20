@@ -154,7 +154,7 @@ export default function NavBar({ navScrolled }) {
                             </h1>
 
                             <ul
-                                className={`ms-[6rem] flex font-bold text-xs uppercase tracking-wide gap-7 max-[1100px]:text-[0.70rem] max-[901px]:hidden transition-all duration-300 ${
+                                className={`ms-[6rem] flex font-bold text-[0.7rem] uppercase tracking-wide gap-8 max-[1100px]:text-[0.65rem] max-[901px]:hidden transition-all duration-300 ${
                                     navScrolled && "hidden"
                                 }`}
                             >

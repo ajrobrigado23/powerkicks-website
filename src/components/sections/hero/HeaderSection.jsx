@@ -77,7 +77,7 @@ export default function HeroSection() {
             className="relative grid min-h-screen w-full grid-cols-1 grid-rows-[auto_auto_auto_auto] tablet:h-screen tablet:grid-cols-[1fr_1.5fr] tablet:grid-rows-[auto_1fr_auto]"
         >
             {/* Headline overlay */}
-            <div className="row-start-1 col-start-1 z-20 pt-25 pb-5 ps-10 tablet:absolute tablet:left-10 tablet:top-[22vh] tablet:p-0">
+            <div className="row-start-1 col-start-1 z-20 pt-25 pb-5 px-10 tablet:absolute tablet:left-10 tablet:top-[22vh] tablet:p-0">
                 <div className="w-full tablet:w-max">
                     <p className="hero-eyebrow mb-1 text-sm font-semibold text-[#7F7F7F]">
                         Trusted by 1,000+ dedicated students
