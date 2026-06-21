@@ -296,6 +296,7 @@ export default function NavBar({ navScrolled }) {
                         </button>
                     </div>
                 </div>
+
             </div>
         </>
     );
