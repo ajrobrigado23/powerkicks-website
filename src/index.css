@@ -103,6 +103,13 @@
     --breakpoint-desktop: 1090px;
 }
 
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
 
 /* Add it globally */
 body {
