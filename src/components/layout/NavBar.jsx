@@ -3,10 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import{ gsap } from "gsap";
 import {useGSAP} from "@gsap/react";
 import Button from "../ui/Button.jsx";
+import { Link } from "react-router-dom";
 
 const MENU_ITEMS = [
   { label: "Gallery", href: "#gallery" },
-  { label: "Schedule", href: "#schedule" },
+  { label: "Schedule", to: "/schedule" },
   { label: "Contact", href: "#contact" },
   { label: "Facebook", href: "https://facebook.com", external: true },
   { label: "Instagram", href: "https://instagram.com", external: true },
@@ -131,6 +132,27 @@ export default function NavBar({ navScrolled }) {
         };
     };
 
+    // reusable link container
+    const renderMenuLink = (item, onClick) => {
+        if (item.to) {
+            return (
+                <Link to={item.to} onClick={onClick}>
+                    {item.label}
+                </Link>
+            );
+        }
+
+        return (
+            <a
+                href={item.href}
+                onClick={onClick}
+                {...getLinkProps(item)}
+            >
+                {item.label}
+            </a>
+        );
+    };
+
     return(
         <>
             <nav
@@ -161,9 +183,7 @@ export default function NavBar({ navScrolled }) {
                                 {MENU_ITEMS.slice(0, 3).map((item) => (
                                     <li key={item.label}>
                                         <SlideUpText>
-                                            <a href={item.href} {...getLinkProps(item)}>
-                                                {item.label}
-                                            </a>
+                                            {renderMenuLink(item)}
                                         </SlideUpText>
                                     </li>
                                 ))}
@@ -222,13 +242,7 @@ export default function NavBar({ navScrolled }) {
                                     className="opacity-0 translate-y-full"
                                 >
                                     <SlideUpText>
-                                        <a
-                                            href={item.href}
-                                            onClick={() => setMenuOpen(false)}
-                                            {...getLinkProps(item)}
-                                        >
-                                            {item.label}
-                                        </a>
+                                        {renderMenuLink(item, () => setMenuOpen(false))}
                                     </SlideUpText>
                                 </div>
                             </li>
