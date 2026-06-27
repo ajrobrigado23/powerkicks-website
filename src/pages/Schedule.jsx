@@ -1,5 +1,6 @@
 import NavBar from "../components/layout/NavBar.jsx";
 import ScheduleHero from "../components/sections/schedule/ScheduleHero.jsx";
+import ScheduleContent from "../components/sections/schedule/ScheduleContent.jsx";
 
 export default function Schedule() {
 
@@ -9,6 +10,7 @@ export default function Schedule() {
 
             <main>
                 <ScheduleHero></ScheduleHero>
+                <ScheduleContent></ScheduleContent>
             </main>
         </>
     );
