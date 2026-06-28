@@ -1,4 +1,4 @@
-export default function ScheduleContent() {
+export default function ScheduleGallery() {
 
     return (
         <section>
