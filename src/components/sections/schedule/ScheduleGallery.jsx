@@ -1,4 +1,5 @@
 import scheduleImgOne from "../../../assets/images/schedule-images/section-2-blackandwhite.jpg"
+import scheduleImgTwo from "../../../assets/images/schedule-images/section-3-blackandwhite.jpg"
 
 export default function ScheduleGallery() {
 
@@ -15,11 +16,20 @@ export default function ScheduleGallery() {
                 </p>
             </div>
             <div className="col-span-8">
-                <div className="ml-auto h-[420px] w-[85%] overflow-hidden">
+                <div className="ml-auto h-[420px] w-[75%] overflow-hidden">
                     <img
                         src={scheduleImgOne}
                         alt="powerkicks picture 1"
                         className="block h-full w-full object-cover object-[center_20%]"
+                    />
+                </div>
+            </div>
+            <div className="col-span-12 pt-4 pb-4">
+                <div className="h-[500px] w-[100%] overflow-hidden">
+                    <img
+                        src={scheduleImgTwo}
+                        alt="powerkicks picture 2"
+                        className="block h-full w-full object-cover object-[center_45%]"
                     />
                 </div>
             </div>
