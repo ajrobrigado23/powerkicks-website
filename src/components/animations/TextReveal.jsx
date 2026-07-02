@@ -46,12 +46,12 @@ export default function TextReveal({
                 {items.map((item, index) => (
                     <span
                         key={index}
-                        className="inline-block overflow-hidden leading-none"
+                        className="inline-block overflow-hidden leading-none pb-[0.08em]"
                         aria-hidden="true"
                     >
-                        <span className="text-reveal-item inline-block leading-none">
-                            {item === " " ? "\u00A0" : item}
-                        </span>
+                    <span className="text-reveal-item inline-block leading-none">
+                        {item === " " ? "\u00A0" : item}
+                    </span>
 
                         {type === "words" && index !== items.length - 1 ? "\u00A0" : ""}
                     </span>
