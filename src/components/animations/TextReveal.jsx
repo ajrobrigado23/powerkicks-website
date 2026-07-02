@@ -28,14 +28,16 @@ export default function TextReveal({
         gsap.fromTo(
             revealItems,
             {
-                yPercent: 110,
+                y: "1.1em",
+                force3D: true,
             },
             {
-                yPercent: 0,
+                y: "0em",
                 duration,
                 delay,
                 stagger,
                 ease: "power4.out",
+                force3D: true,
             }
         );
     }, { scope: wrapperRef, dependencies: [children, delay, duration, stagger, type] });
@@ -49,7 +51,7 @@ export default function TextReveal({
                         className="inline-block overflow-hidden leading-none pb-[0.08em]"
                         aria-hidden="true"
                     >
-                    <span className="text-reveal-item inline-block leading-none">
+                    <span className="text-reveal-item inline-block leading-none will-change-transform transform-gpu">
                         {item === " " ? "\u00A0" : item}
                     </span>
 
