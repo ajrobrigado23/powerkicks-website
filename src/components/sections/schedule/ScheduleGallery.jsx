@@ -9,20 +9,24 @@ export default function ScheduleGallery() {
         <section className="grid grid-cols-12 px-10 pb-[2rem]">
             {/* 1st Row */}
             <div className="col-span-4">
+                {/* header */}
                 <TextReveal
                     as="h3"
                     type="words"
-                    className="text-[clamp(2.25rem,4vw,2.75rem)] leading-[0.9] font-bold"
-                    duration={1.6}
+                    className="text-[clamp(2.25rem,4vw,2.75rem)] leading-[0.9] font-bold mb-2"
+                    duration={2.50}
+                    delay={1}
                     stagger={0.07}
                 >
                     Training Schedule
                 </TextReveal>
+                {/* paragraph */}
                 <TextReveal
                     as="p"
                     type="words"
                     className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)]"
                     duration={1.2}
+                    delay={1.25}
                     stagger={0.025}
                 >
                     Powerkicks is aligned with recognized national and international organizations, ensuring structured

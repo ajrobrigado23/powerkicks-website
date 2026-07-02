@@ -28,6 +28,7 @@ export default function TextReveal({
         gsap.fromTo(
             revealItems,
             {
+                // replace from percentage transforms to em (to remove the earthquake or shaky movement)
                 y: "1.1em",
                 force3D: true,
             },
