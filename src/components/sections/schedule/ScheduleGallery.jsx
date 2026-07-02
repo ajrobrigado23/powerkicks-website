@@ -18,10 +18,16 @@ export default function ScheduleGallery() {
                 >
                     Training Schedule
                 </TextReveal>
-                <p className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)]">
+                <TextReveal
+                    as="p"
+                    type="words"
+                    className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)]"
+                    duration={1.2}
+                    stagger={0.025}
+                >
                     Powerkicks is aligned with recognized national and international organizations, ensuring structured
                     training, certified standards, and consistent athlete development.
-                </p>
+                </TextReveal>
             </div>
             <div className="col-span-8">
                 <SchedulePicture
