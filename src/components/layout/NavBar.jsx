@@ -120,9 +120,10 @@ export default function NavBar({ navScrolled }) {
 
     }, { dependencies: [menuOpen] });
 
+    // Reveal navbar text and button on page load with a staggered slide-up animation
     useGSAP(() => {
         gsap.fromTo(
-            ".nav-text-inner",
+            [".nav-text-inner", ".nav-button-inner"],
             {
                 yPercent: 100,
             },
@@ -207,14 +208,18 @@ export default function NavBar({ navScrolled }) {
                                 ))}
                             </ul>
 
-                            <Button
-                                className={`items-center justify-center font-bold tracking-wider text-sm text-white uppercase max-[900px]:ml-auto max-[900px]:me-4 ${
-                                    navScrolled ? "flex ml-auto me-2" : "me-10 hidden min-[575px]:flex"
-                                }`}
-                                padding="px-4 py-3"
-                            >
-                                Get Free Trial
-                            </Button>
+                            <div className="overflow-hidden">
+                                <div className="nav-button-inner">
+                                    <Button
+                                        className={`items-center justify-center font-bold tracking-wider text-sm text-white uppercase max-[900px]:ml-auto max-[900px]:me-4 ${
+                                            navScrolled ? "flex ml-auto me-2" : "me-10 hidden min-[575px]:flex"
+                                        }`}
+                                        padding="px-4 py-3"
+                                    >
+                                        Get Free Trial
+                                    </Button>
+                                </div>
+                            </div>
 
                             {/* Menu Button */}
                             <Button
