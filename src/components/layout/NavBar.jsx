@@ -189,7 +189,11 @@ export default function NavBar({ navScrolled }) {
                                     navScrolled && "hidden"
                                 }`}
                             >
-                                Powerkicks
+                                <div className="nav-text-reveal overflow-hidden">
+                                    <div className="nav-text-inner">
+                                        Powerkicks
+                                    </div>
+                                </div>
                             </h1>
 
                             <ul
