@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
 export default function TextReveal({
+                                       // means you can choose what elements it renders
                                        as: Tag = "div",
                                        children,
                                        className = "",
@@ -11,15 +12,17 @@ export default function TextReveal({
                                        stagger = 0.06,
                                        type = "letters",
                                    }) {
+    // creates a reference to the wrapper element
     const wrapperRef = useRef(null);
-
+    // check if the children is a plain text
     const text = typeof children === "string" ? children : "";
-
+    // decide how to split the text
     const items = type === "words"
         ? text.split(" ")
         : text.split("");
 
     useGSAP(() => {
+        // finds all the text pieces that will be animated (only inside this component)
         const revealItems = gsap.utils.toArray(
             ".text-reveal-item",
             wrapperRef.current

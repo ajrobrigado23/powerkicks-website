@@ -129,10 +129,10 @@ export default function NavBar({ navScrolled }) {
             },
             {
                 yPercent: 0,
-                duration: 1,
+                duration: 1.25,
                 stagger: 0.08,
                 ease: "power4.out",
-                delay: 0.3,
+                delay: 0.25,
             }
         );
     }, { scope: navigationRef });
@@ -212,12 +212,14 @@ export default function NavBar({ navScrolled }) {
                                 ))}
                             </ul>
 
-                            <div className="overflow-hidden">
+                            <div
+                                className={`overflow-hidden max-[900px]:ml-auto max-[900px]:me-4 ${
+                                    navScrolled ? "ml-auto me-2" : "me-10 hidden min-[575px]:block"
+                                }`}
+                            >
                                 <div className="nav-button-inner">
                                     <Button
-                                        className={`items-center justify-center font-bold tracking-wider text-sm text-white uppercase max-[900px]:ml-auto max-[900px]:me-4 ${
-                                            navScrolled ? "flex ml-auto me-2" : "me-10 hidden min-[575px]:flex"
-                                        }`}
+                                        className="flex items-center justify-center font-bold tracking-wider text-sm text-white uppercase"
                                         padding="px-4 py-3"
                                     >
                                         Get Free Trial

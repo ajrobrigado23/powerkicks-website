@@ -7,7 +7,7 @@ export default function ScheduleHero() {
                 as="h1"
                 type="letters"
                 className="uppercase text-[clamp(22rem,8vw,24rem)] font-bold leading-none whitespace-nowrap"
-                duration={3}
+                duration={2.50}
                 stagger={0.07}
             >
                 Power
