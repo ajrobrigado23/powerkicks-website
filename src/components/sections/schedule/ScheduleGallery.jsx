@@ -14,7 +14,7 @@ export default function ScheduleGallery() {
                     as="h3"
                     type="words"
                     className="text-[clamp(2.25rem,4vw,2.75rem)] leading-[0.9] font-bold mb-2"
-                    duration={2.50}
+                    duration={1.6}
                     delay={1}
                     stagger={0.07}
                 >

@@ -120,6 +120,22 @@ export default function NavBar({ navScrolled }) {
 
     }, { dependencies: [menuOpen] });
 
+    useGSAP(() => {
+        gsap.fromTo(
+            ".nav-text-inner",
+            {
+                yPercent: 100,
+            },
+            {
+                yPercent: 0,
+                duration: 1,
+                stagger: 0.08,
+                ease: "power4.out",
+                delay: 0.3,
+            }
+        );
+    }, { scope: navigationRef });
+
     const handleToggle = () => {
         setMenuOpen((prev) => !prev);
     };
@@ -176,15 +192,17 @@ export default function NavBar({ navScrolled }) {
                             </h1>
 
                             <ul
-                                className={`ms-[6rem] flex font-bold text-[0.7rem] uppercase tracking-wide gap-8 max-[1100px]:text-[0.65rem] max-[901px]:hidden transition-all duration-300 ${
+                                className={`nav-links ms-[6rem] flex font-bold text-[0.7rem] uppercase tracking-wide gap-8 max-[1100px]:text-[0.65rem] max-[901px]:hidden transition-all duration-300 ${
                                     navScrolled && "hidden"
                                 }`}
                             >
                                 {MENU_ITEMS.slice(0, 3).map((item) => (
-                                    <li key={item.label}>
-                                        <SlideUpText>
-                                            {renderMenuLink(item)}
-                                        </SlideUpText>
+                                    <li key={item.label} className="nav-text-reveal overflow-hidden">
+                                        <div className="nav-text-inner">
+                                            <SlideUpText>
+                                                {renderMenuLink(item)}
+                                            </SlideUpText>
+                                        </div>
                                     </li>
                                 ))}
                             </ul>
