@@ -43,7 +43,7 @@ export default function ScheduleGallery() {
             <div className="col-span-12 pt-4 pb-4">
                 <SchedulePicture
                     src={scheduleImgTwo}
-                    className="h-[500px] w-[100%] overflow-hidden"
+                    className="h-[500px] w-full"
                     centerPercentage="45%"
                 />
             </div>

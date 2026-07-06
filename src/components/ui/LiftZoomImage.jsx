@@ -3,11 +3,18 @@ import { gsap } from "gsap";
 
 export default function LiftZoomImage({
                                           src,
-                                          alt }) {
-
+                                          alt = "powerkicks image",
+                                          wrapperClassName = "",
+                                          imageClassName = "block h-full w-full object-cover",
+                                          centerPercentage = "50%",
+                                      }) {
     const imageRef = useRef(null);
 
     const handleEnter = () => {
+        if (!imageRef.current) return;
+
+        gsap.killTweensOf(imageRef.current);
+
         gsap.to(imageRef.current, {
             scale: 1.05,
             y: -4,
@@ -18,6 +25,10 @@ export default function LiftZoomImage({
     };
 
     const handleLeave = () => {
+        if (!imageRef.current) return;
+
+        gsap.killTweensOf(imageRef.current);
+
         gsap.to(imageRef.current, {
             scale: 1,
             y: 0,
@@ -29,7 +40,7 @@ export default function LiftZoomImage({
 
     return (
         <div
-            className="h-full w-full overflow-hidden"
+            className={`h-full w-full overflow-hidden ${wrapperClassName}`}
             onMouseEnter={handleEnter}
             onMouseLeave={handleLeave}
         >
@@ -37,9 +48,10 @@ export default function LiftZoomImage({
                 ref={imageRef}
                 src={src}
                 alt={alt}
-                className="block h-full w-full object-cover"
+                className={imageClassName}
                 style={{
-                    filter: "grayscale(100%) brightness(0.80)",
+                    objectPosition: `center ${centerPercentage}`,
+                    filter: "grayscale(100%) brightness(0.85)",
                     transform: "scale(1)",
                     willChange: "transform, filter",
                 }}

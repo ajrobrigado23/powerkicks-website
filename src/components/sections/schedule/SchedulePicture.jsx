@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import LiftZoomImage from "../../ui/LiftZoomImage.jsx";
 
 export default function SchedulePicture({
                                             src,
@@ -8,19 +9,19 @@ export default function SchedulePicture({
                                             centerPercentage = "50%",
                                         }) {
     const imageWrapRef = useRef(null);
+    const imageRevealRef = useRef(null);
 
     useGSAP(() => {
         const wrapper = imageWrapRef.current;
-        if (!wrapper) return;
+        const reveal = imageRevealRef.current;
 
-        const image = wrapper.querySelector("img");
-        if (!image) return;
+        if (!wrapper || !reveal) return;
 
         gsap.set(wrapper, {
             clipPath: "inset(100% 0 0 0)",
         });
 
-        gsap.set(image, {
+        gsap.set(reveal, {
             scale: 1.15,
             y: 40,
         });
@@ -38,7 +39,7 @@ export default function SchedulePicture({
             duration: 1.2,
             ease: "power4.out",
         }).to(
-            image,
+            reveal,
             {
                 scale: 1,
                 y: 0,
@@ -54,14 +55,15 @@ export default function SchedulePicture({
             ref={imageWrapRef}
             className={`overflow-hidden ${className}`}
         >
-            <img
-                src={src}
-                alt="powerkicks schedule picture"
-                className="block h-full w-full object-cover"
-                style={{
-                    objectPosition: `center ${centerPercentage}`,
-                }}
-            />
+            <div
+                ref={imageRevealRef}
+                className="h-full w-full">
+                    <LiftZoomImage
+                        src={src}
+                        alt="powerkicks schedule picture"
+                        centerPercentage={centerPercentage}
+                    />
+            </div>
         </div>
     );
 }
