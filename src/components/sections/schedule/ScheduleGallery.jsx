@@ -1,5 +1,5 @@
-import scheduleImgOne from "../../../assets/images/schedule-images/section-2-blackandwhite.jpg"
-import scheduleImgTwo from "../../../assets/images/schedule-images/section-3-blackandwhite.jpg"
+import scheduleImgOne from "../../../assets/images/schedule-images/section-2.jpg"
+import scheduleImgTwo from "../../../assets/images/schedule-images/section-3.jpg"
 import SchedulePicture from "./SchedulePicture.jsx";
 import TextReveal from "../../animations/TextReveal.jsx";
 
