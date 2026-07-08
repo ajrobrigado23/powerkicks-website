@@ -7,6 +7,7 @@ export default function ScheduleGallery() {
     const firstImage = scheduleImages[0];
     const secondImage = scheduleImages[1];
     const thirdImage = scheduleImages[2];
+    const fourImage = scheduleImages[3];
 
     return (
         <section className="grid grid-cols-12 px-10 pb-[2rem]">
@@ -64,10 +65,10 @@ export default function ScheduleGallery() {
             </div>
             <div className="col-span-6 pl-2">
                 <SchedulePicture
-                    src={thirdImage.src}
-                    alt={thirdImage.alt}
+                    src={fourImage.src}
+                    alt={fourImage.alt}
                     className="h-[500px] w-full"
-                    centerPercentage={thirdImage.centerPercentage}
+                    centerPercentage={fourImage.centerPercentage}
                 />
             </div>
 
