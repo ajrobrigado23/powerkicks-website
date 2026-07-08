@@ -1,9 +1,11 @@
-import scheduleImgOne from "../../../assets/images/schedule-images/section-2.jpg"
-import scheduleImgTwo from "../../../assets/images/schedule-images/section-3.jpg"
 import SchedulePicture from "./SchedulePicture.jsx";
 import TextReveal from "../../animations/TextReveal.jsx";
+import { scheduleImages } from "./schedule.js"
 
 export default function ScheduleGallery() {
+
+    const firstImage = scheduleImages[0];
+    const secondImage = scheduleImages[1];
 
     return (
         <section className="grid grid-cols-12 px-10 pb-[2rem]">
@@ -35,17 +37,27 @@ export default function ScheduleGallery() {
             </div>
             <div className="col-span-8">
                 <SchedulePicture
-                    src={scheduleImgOne}
+                    src={firstImage.src}
+                    alt={firstImage.alt}
                     className="ml-auto h-[420px] w-[75%] overflow-hidden"
-                    centerPercentage="20%"
+                    centerPercentage={firstImage.centerPercentage}
                 />
             </div>
+            {/* 2nd Row */}
             <div className="col-span-12 pt-4 pb-4">
                 <SchedulePicture
-                    src={scheduleImgTwo}
+                    src={secondImage.src}
+                    alt={secondImage.alt}
                     className="h-[500px] w-full"
-                    centerPercentage="45%"
+                    centerPercentage={secondImage.centerPercentage}
                 />
+            </div>
+            {/* 3rd Row */}
+            <div className="col-span-4">
+
+            </div>
+            <div className="col-span-4">
+
             </div>
 
         </section>

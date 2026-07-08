@@ -6,6 +6,7 @@ import LiftZoomImage from "../../ui/LiftZoomImage.jsx";
 export default function SchedulePicture({
                                             src,
                                             className = "",
+                                            alt,
                                             centerPercentage = "50%",
                                         }) {
     const imageWrapRef = useRef(null);
@@ -60,7 +61,7 @@ export default function SchedulePicture({
                 className="h-full w-full">
                     <LiftZoomImage
                         src={src}
-                        alt="powerkicks schedule picture"
+                        alt={alt}
                         centerPercentage={centerPercentage}
                     />
             </div>
