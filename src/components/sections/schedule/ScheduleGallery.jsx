@@ -18,7 +18,7 @@ export default function ScheduleGallery() {
                 <TextReveal
                     as="h3"
                     type="words"
-                    className="text-[clamp(2.25rem,4vw,2.75rem)] leading-[0.9] font-bold mb-2"
+                    className="text-[clamp(2.25rem,4vw,3rem)] leading-[0.9] font-bold pt-4 mb-6"
                     duration={1.6}
                     delay={1}
                     stagger={0.07}
@@ -83,11 +83,11 @@ export default function ScheduleGallery() {
             </div>
             <div className="col-span-8 pt-12 pl-2">
                 {/* header */}
-                <div className="text-center">
+                <div className="text-center pb-4">
                     <TextReveal
                         as="h3"
                         type="words"
-                        className="text-[clamp(2.25rem,4vw,2.75rem)] leading-[0.9] font-bold mb-2"
+                        className="text-[clamp(2.25rem,4.50vw,3.50rem)] leading-[0.9] font-bold mb-2 tracking-wide"
                         duration={1.6}
                         delay={1}
                         stagger={0.07}
@@ -97,21 +97,21 @@ export default function ScheduleGallery() {
                 </div>
 
                 {/* paragraph */}
-                <div className="flex justify-between">
+                <div className="flex justify-around px-4">
                     <div className="flex flex-col">
-                        <h3>Tuesday</h3>
+                        <h3 className="font-semibold text-lg py-2">Tuesday</h3>
                         <p>Novice</p>
-                        <p>4:00pm - 5:30pm</p>
+                        <p className="font-bold italic">4:00pm - 5:30pm</p>
                     </div>
                     <div className="flex flex-col">
-                        <h3>Tuesday</h3>
+                        <h3 className="font-semibold text-lg py-2">Thursday</h3>
                         <p>Novice</p>
-                        <p>4:00pm - 5:30pm</p>
+                        <p className="font-bold italic">4:00pm - 5:30pm</p>
                     </div>
                     <div className="flex flex-col">
-                        <h3>Tuesday</h3>
+                        <h3 className="font-semibold text-lg py-2">Saturday</h3>
                         <p>Novice</p>
-                        <p>4:00pm - 5:30pm</p>
+                        <p className="font-bold italic">4:00pm - 5:30pm</p>
                     </div>
                 </div>
             </div>
