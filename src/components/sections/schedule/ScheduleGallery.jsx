@@ -8,6 +8,7 @@ export default function ScheduleGallery() {
     const secondImage = scheduleImages[1];
     const thirdImage = scheduleImages[2];
     const fourImage = scheduleImages[3];
+    const fiveImage = scheduleImages[4];
 
     return (
         <section className="grid grid-cols-12 px-10 pb-[2rem]">
@@ -70,6 +71,49 @@ export default function ScheduleGallery() {
                     className="h-[500px] w-full"
                     centerPercentage={fourImage.centerPercentage}
                 />
+            </div>
+            {/* 4th row */}
+            <div className="col-span-4 pt-4 pr-2">
+                <SchedulePicture
+                    src={fiveImage.src}
+                    alt={fiveImage.alt}
+                    className="h-[500px] w-full"
+                    centerPercentage={fiveImage.centerPercentage}
+                />
+            </div>
+            <div className="col-span-8 pt-12 pl-2">
+                {/* header */}
+                <div className="text-center">
+                    <TextReveal
+                        as="h3"
+                        type="words"
+                        className="text-[clamp(2.25rem,4vw,2.75rem)] leading-[0.9] font-bold mb-2"
+                        duration={1.6}
+                        delay={1}
+                        stagger={0.07}
+                    >
+                        Waltermart Dasmarinas
+                    </TextReveal>
+                </div>
+
+                {/* paragraph */}
+                <div className="flex justify-between">
+                    <div className="flex flex-col">
+                        <h3>Tuesday</h3>
+                        <p>Novice</p>
+                        <p>4:00pm - 5:30pm</p>
+                    </div>
+                    <div className="flex flex-col">
+                        <h3>Tuesday</h3>
+                        <p>Novice</p>
+                        <p>4:00pm - 5:30pm</p>
+                    </div>
+                    <div className="flex flex-col">
+                        <h3>Tuesday</h3>
+                        <p>Novice</p>
+                        <p>4:00pm - 5:30pm</p>
+                    </div>
+                </div>
             </div>
 
         </section>
