@@ -117,7 +117,7 @@ export default function ScheduleGallery() {
                             Tuesday
                         </TextReveal>
 
-                        {/* category */}
+                        {/* novice category */}
                         <TextReveal
                             as="p"
                             type="words"
@@ -129,6 +129,34 @@ export default function ScheduleGallery() {
                             stagger={0.09}
                         >
                             Novice
+                        </TextReveal>
+
+                        {/* time */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="font-bold italic"
+                            duration={1.2}
+                            delay={0.4}
+                            stagger={0.07}
+                        >
+                            4:00pm - 5:30pm
+                        </TextReveal>
+
+                        {/* advance category */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="text-xs pt-2"
+                            duration={1.2}
+                            delay={0.3}
+                            stagger={0.09}
+                        >
+                            Advance
                         </TextReveal>
 
                         {/* time */}
@@ -162,7 +190,7 @@ export default function ScheduleGallery() {
                             Thursday
                         </TextReveal>
 
-                        {/* category */}
+                        {/* novice category */}
                         <TextReveal
                             as="p"
                             type="words"
@@ -174,6 +202,34 @@ export default function ScheduleGallery() {
                             stagger={0.09}
                         >
                             Novice
+                        </TextReveal>
+
+                        {/* time */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="font-bold italic"
+                            duration={1.2}
+                            delay={0.4}
+                            stagger={0.07}
+                        >
+                            4:00pm - 5:30pm
+                        </TextReveal>
+
+                        {/* advance category */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="text-xs pt-2"
+                            duration={1.2}
+                            delay={0.3}
+                            stagger={0.09}
+                        >
+                            Advance
                         </TextReveal>
 
                         {/* time */}
@@ -207,7 +263,7 @@ export default function ScheduleGallery() {
                             Saturday
                         </TextReveal>
 
-                        {/* category */}
+                        {/* novice category */}
                         <TextReveal
                             as="p"
                             type="words"
@@ -219,6 +275,34 @@ export default function ScheduleGallery() {
                             stagger={0.09}
                         >
                             Novice
+                        </TextReveal>
+
+                        {/* time */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="font-bold italic"
+                            duration={1.2}
+                            delay={0.4}
+                            stagger={0.07}
+                        >
+                            4:00pm - 5:30pm
+                        </TextReveal>
+
+                        {/* advance category */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="text-xs pt-2"
+                            duration={1.2}
+                            delay={0.3}
+                            stagger={0.09}
+                        >
+                            Advance
                         </TextReveal>
 
                         {/* time */}
