@@ -87,9 +87,11 @@ export default function ScheduleGallery() {
                     <TextReveal
                         as="h3"
                         type="words"
+                        triggerOnScroll
+                        scrollStart="top 85%"
                         className="text-[clamp(2.25rem,4.50vw,3.50rem)] leading-[0.9] font-bold mb-2 tracking-wide"
                         duration={1.6}
-                        delay={1}
+                        delay={0.2}
                         stagger={0.07}
                     >
                         Waltermart Dasmarinas

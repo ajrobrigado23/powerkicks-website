@@ -11,7 +11,11 @@ export default function TextReveal({
                                        duration = 1.4,
                                        stagger = 0.06,
                                        type = "letters",
+                                       // scroll trigger options
+                                       triggerOnScroll = false,
+                                       scrollStart = "top 85%"
                                    }) {
+
     // creates a reference to the wrapper element
     const wrapperRef = useRef(null);
     // check if the children is a plain text
@@ -42,9 +46,19 @@ export default function TextReveal({
                 stagger,
                 ease: "power4.out",
                 force3D: true,
+
+                // Adds ScrollTrigger only when triggerOnScroll is true
+                ...(triggerOnScroll && {
+                    scrollTrigger: {
+                        trigger: wrapperRef.current,
+                        start: scrollStart,
+                        toggleActions: "play none none none",
+                        once: true,
+                    },
+                }),
             }
         );
-    }, { scope: wrapperRef, dependencies: [children, delay, duration, stagger, type] });
+    }, { scope: wrapperRef, dependencies: [children, delay, duration, stagger, type, triggerOnScroll, scrollStart] });
 
     return (
         <div ref={wrapperRef} className="overflow-hidden">
