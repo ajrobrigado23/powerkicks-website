@@ -90,8 +90,8 @@ export default function ScheduleGallery() {
                         triggerOnScroll
                         scrollStart="top 85%"
                         className="text-[clamp(2.25rem,4.50vw,3.50rem)] leading-[0.9] font-bold mb-2 tracking-wide"
-                        duration={1.6}
-                        delay={0.2}
+                        duration={1.2}
+                        delay={0.1}
                         stagger={0.07}
                     >
                         Waltermart Dasmarinas
@@ -100,22 +100,143 @@ export default function ScheduleGallery() {
 
                 {/* paragraph */}
                 <div className="flex justify-around px-4">
+
+                    {/* Tuesday */}
                     <div className="flex flex-col">
-                        <h3 className="font-semibold text-lg py-2">Tuesday</h3>
-                        <p>Novice</p>
-                        <p className="font-bold italic">4:00pm - 5:30pm</p>
+                        {/* header */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="font-semibold text-lg py-2"
+                            duration={1.2}
+                            delay={0.2}
+                            stagger={0.07}
+                        >
+                            Tuesday
+                        </TextReveal>
+
+                        {/* category */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="text-xs"
+                            duration={1.2}
+                            delay={0.3}
+                            stagger={0.09}
+                        >
+                            Novice
+                        </TextReveal>
+
+                        {/* time */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="font-bold italic"
+                            duration={1.2}
+                            delay={0.4}
+                            stagger={0.07}
+                        >
+                            4:00pm - 5:30pm
+                        </TextReveal>
                     </div>
+
+                    {/* Thursday */}
                     <div className="flex flex-col">
-                        <h3 className="font-semibold text-lg py-2">Thursday</h3>
-                        <p>Novice</p>
-                        <p className="font-bold italic">4:00pm - 5:30pm</p>
+                        {/* header */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="font-semibold text-lg py-2"
+                            duration={1.2}
+                            delay={0.2}
+                            stagger={0.07}
+                        >
+                            Thursday
+                        </TextReveal>
+
+                        {/* category */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="text-xs"
+                            duration={1.2}
+                            delay={0.3}
+                            stagger={0.09}
+                        >
+                            Novice
+                        </TextReveal>
+
+                        {/* time */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="font-bold italic"
+                            duration={1.2}
+                            delay={0.4}
+                            stagger={0.07}
+                        >
+                            4:00pm - 5:30pm
+                        </TextReveal>
                     </div>
+
+                    {/* Saturday */}
                     <div className="flex flex-col">
-                        <h3 className="font-semibold text-lg py-2">Saturday</h3>
-                        <p>Novice</p>
-                        <p className="font-bold italic">4:00pm - 5:30pm</p>
+                        {/* header */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="font-semibold text-lg py-2"
+                            duration={1.2}
+                            delay={0.2}
+                            stagger={0.07}
+                        >
+                            Saturday
+                        </TextReveal>
+
+                        {/* category */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="text-xs"
+                            duration={1.2}
+                            delay={0.3}
+                            stagger={0.09}
+                        >
+                            Novice
+                        </TextReveal>
+
+                        {/* time */}
+                        <TextReveal
+                            as="p"
+                            type="words"
+                            triggerOnScroll
+                            scrollStart="top 85%"
+                            className="font-bold italic"
+                            duration={1.2}
+                            delay={0.4}
+                            stagger={0.07}
+                        >
+                            4:00pm - 5:30pm
+                        </TextReveal>
                     </div>
                 </div>
+
             </div>
 
         </section>
