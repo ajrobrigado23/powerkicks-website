@@ -9,6 +9,8 @@ export default function ScheduleGallery() {
     const thirdImage = scheduleImages[2];
     const fourImage = scheduleImages[3];
     const fiveImage = scheduleImages[4];
+    const sixImage = scheduleImages[5];
+    const sevenImage = scheduleImages[6];
 
     return (
         <section className="grid grid-cols-12 px-10 pb-[2rem]">
@@ -321,6 +323,27 @@ export default function ScheduleGallery() {
                     </div>
                 </div>
 
+            </div>
+
+            {/* 5th row */}
+            <div className="col-span-3 pt-6 pl-2">
+                {/* Whitespace */}
+            </div>
+            <div className="col-span-3 pt-6 pr-2">
+                <SchedulePicture
+                    src={sixImage.src}
+                    alt={sixImage.alt}
+                    className="h-[300px] w-full"
+                    centerPercentage={sixImage.centerPercentage}
+                />
+            </div>
+            <div className="col-span-6 pt-6">
+                <SchedulePicture
+                    src={sevenImage.src}
+                    alt={sevenImage.alt}
+                    className="h-[500px] w-full"
+                    centerPercentage={sevenImage.centerPercentage}
+                />
             </div>
 
         </section>

@@ -3,6 +3,8 @@ import scheduleImgTwo from "../../../assets/images/schedule-images/section-3.jpg
 import scheduleImgThree from "../../../assets/images/schedule-images/section-4.jpg";
 import scheduleImgFour from "../../../assets/images/schedule-images/section-5.jpg";
 import scheduleImgFive from "../../../assets/images/schedule-images/section-6.jpg";
+import scheduleImgSix from "../../../assets/images/schedule-images/section-7.jpg";
+import scheduleImgSeven from "../../../assets/images/schedule-images/section-8.jpg";
 
 export const scheduleImages = [
     {
@@ -33,6 +35,18 @@ export const scheduleImages = [
         id: 5,
         src: scheduleImgFive,
         alt: "Powerkicks training image 5",
+        centerPercentage: "20%",
+    },
+    {
+        id: 6,
+        src: scheduleImgSix,
+        alt: "Powerkicks training image 6",
+        centerPercentage: "20%",
+    },
+    {
+        id: 7,
+        src: scheduleImgSeven,
+        alt: "Powerkicks training image 7",
         centerPercentage: "20%",
     },
 ];
