@@ -9,6 +9,7 @@ export default function SchedulePicture({
                                             alt,
                                             // controls the vertical object-position of the image
                                             centerPercentage = "50%",
+                                            delay = 0
                                         }) {
     // ref for the outer wrapper that will be clipped/revlead
     const imageWrapRef = useRef(null);
@@ -53,6 +54,7 @@ export default function SchedulePicture({
             clipPath: "inset(0% 0 0 0)",
             duration: 1.2,
             ease: "power4.out",
+            delay: delay
         })
             // At the same time, animate the image back to normal scale and position
             .to(

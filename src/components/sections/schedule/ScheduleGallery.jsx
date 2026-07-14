@@ -72,6 +72,7 @@ export default function ScheduleGallery() {
                     alt={fourImage.alt}
                     className="h-[500px] w-full"
                     centerPercentage={fourImage.centerPercentage}
+                    delay={0.3}
                 />
             </div>
             {/* 4th row */}
@@ -343,6 +344,7 @@ export default function ScheduleGallery() {
                     alt={sevenImage.alt}
                     className="h-[500px] w-full"
                     centerPercentage={sevenImage.centerPercentage}
+                    delay={0.3}
                 />
             </div>
 
