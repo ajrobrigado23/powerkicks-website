@@ -1,9 +1,9 @@
 import TextReveal from "../../animations/TextReveal.jsx";
 import ScheduleDay from "./ScheduleDay.jsx";
 
-export default function TrainingScheduleDetails({ location }) {
+export default function TrainingScheduleDetails({ className, location }) {
     return (
-        <div className="flex justify-around px-4">
+        <div className={className}>
             {location === "dasmarinas" && (
                 <>
                     {/* Tuesday */}

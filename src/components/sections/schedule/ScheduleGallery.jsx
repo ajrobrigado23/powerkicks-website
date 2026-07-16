@@ -12,6 +12,7 @@ export default function ScheduleGallery() {
     const fiveImage = scheduleImages[4];
     const sixImage = scheduleImages[5];
     const sevenImage = scheduleImages[6];
+    const eightImage = scheduleImages[7];
 
     return (
         <section className="grid grid-cols-12 px-10 pb-[2rem]">
@@ -104,16 +105,17 @@ export default function ScheduleGallery() {
 
                 {/* paragraph */}
                 <TrainingScheduleDetails
+                    className="flex justify-around px-4"
                     location="dasmarinas"
                 />
 
             </div>
 
             {/* 5th row */}
-            <div className="col-span-3 pt-6 pl-2">
+            <div className="col-span-3 pt-4 pl-2">
                 {/* Whitespace */}
             </div>
-            <div className="col-span-3 pt-6 pr-2">
+            <div className="col-span-3 pt-4 pr-2">
                 <SchedulePicture
                     src={sixImage.src}
                     alt={sixImage.alt}
@@ -121,7 +123,7 @@ export default function ScheduleGallery() {
                     centerPercentage={sixImage.centerPercentage}
                 />
             </div>
-            <div className="col-span-6 pt-6">
+            <div className="col-span-6 pt-4 pl-2 pb-2">
                 <SchedulePicture
                     src={sevenImage.src}
                     alt={sevenImage.alt}
@@ -132,10 +134,37 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 6th row */}
-            <div className="col-span-6 pl-2">
-
+            <div className="col-span-6 pt-2 pr-2">
+                {/* header */}
+                <div className="pb-4">
+                    <TextReveal
+                        as="h3"
+                        type="words"
+                        triggerOnScroll
+                        scrollStart="top 85%"
+                        className="text-[clamp(2.25rem,4.50vw,3.25rem)] leading-[0.9] font-bold mb-2 tracking-wide"
+                        duration={1.2}
+                        delay={0.1}
+                        stagger={0.07}
+                    >
+                        Robinson General Trias
+                    </TextReveal>
+                </div>
+                {/* paragraph */}
+                <TrainingScheduleDetails
+                    className="flex justify-between px-4"
+                    location="dasmarinas"
+                />
             </div>
-
+            <div className="col-span-6 pt-2 pl-2">
+                <SchedulePicture
+                    src={eightImage.src}
+                    alt={eightImage.alt}
+                    className="h-[500px] w-full"
+                    centerPercentage={eightImage.centerPercentage}
+                    delay={0.3}
+                />
+            </div>
 
         </section>
     );
