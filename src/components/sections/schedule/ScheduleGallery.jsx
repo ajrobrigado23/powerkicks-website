@@ -175,7 +175,29 @@ export default function ScheduleGallery() {
                     className="h-[500px] w-full"
                     centerPercentage={nineImage.centerPercentage}
                     horizontalPosition="left"
-                    delay={0.3}
+                />
+            </div>
+            <div className="col-span-8 pt-4 pl-2">
+                {/* header */}
+                <div className="text-center pb-4">
+                    <TextReveal
+                        as="h3"
+                        type="words"
+                        triggerOnScroll
+                        scrollStart="top 85%"
+                        className="text-[clamp(2.25rem,4.50vw,3.50rem)] leading-[0.9] font-bold mb-2 tracking-wide"
+                        duration={1.2}
+                        delay={0.1}
+                        stagger={0.07}
+                    >
+                        Imus Bucandala Gym
+                    </TextReveal>
+                </div>
+
+                {/* paragraph */}
+                <TrainingScheduleDetails
+                    className="flex justify-around px-4"
+                    location="dasmarinas"
                 />
             </div>
 
