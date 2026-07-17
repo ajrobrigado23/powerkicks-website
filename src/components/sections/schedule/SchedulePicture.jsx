@@ -9,6 +9,7 @@ export default function SchedulePicture({
                                             alt,
                                             // controls the vertical object-position of the image
                                             centerPercentage = "50%",
+                                            horizontalPosition = "center",
                                             delay = 0
                                         }) {
     // ref for the outer wrapper that will be clipped/revlead
@@ -87,6 +88,7 @@ export default function SchedulePicture({
                         src={src}
                         alt={alt}
                         centerPercentage={centerPercentage}
+                        horizontalPosition={horizontalPosition}
                     />
             </div>
         </div>

@@ -13,6 +13,7 @@ export default function ScheduleGallery() {
     const sixImage = scheduleImages[5];
     const sevenImage = scheduleImages[6];
     const eightImage = scheduleImages[7];
+    const nineImage = scheduleImages[8];
 
     return (
         <section className="grid grid-cols-12 px-10 pb-[2rem]">
@@ -162,6 +163,18 @@ export default function ScheduleGallery() {
                     alt={eightImage.alt}
                     className="h-[500px] w-full"
                     centerPercentage={eightImage.centerPercentage}
+                    delay={0.3}
+                />
+            </div>
+
+            {/* 7th row */}
+            <div className="col-span-4 pt-4 pr-2">
+                <SchedulePicture
+                    src={nineImage.src}
+                    alt={nineImage.alt}
+                    className="h-[500px] w-full"
+                    centerPercentage={nineImage.centerPercentage}
+                    horizontalPosition="left"
                     delay={0.3}
                 />
             </div>

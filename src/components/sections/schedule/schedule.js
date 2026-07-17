@@ -6,6 +6,7 @@ import scheduleImgFive from "../../../assets/images/schedule-images/section-6.jp
 import scheduleImgSix from "../../../assets/images/schedule-images/section-7.jpg";
 import scheduleImgSeven from "../../../assets/images/schedule-images/section-8.jpg";
 import scheduleImgEight from "../../../assets/images/schedule-images/section-9.jpg";
+import scheduleImgNine from "../../../assets/images/schedule-images/section-10.jpg";
 
 export const scheduleImages = [
     {
@@ -54,6 +55,12 @@ export const scheduleImages = [
         id: 8,
         src: scheduleImgEight,
         alt: "Powerkicks training image 8",
+        centerPercentage: "20%",
+    },
+    {
+        id: 9,
+        src: scheduleImgNine,
+        alt: "Powerkicks training image 9",
         centerPercentage: "20%",
     },
 ];

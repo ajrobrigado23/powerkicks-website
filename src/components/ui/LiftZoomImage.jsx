@@ -9,6 +9,7 @@ export default function LiftZoomImage({
                                           imageClassName = "block h-full w-full object-cover",
                                           // controls the vertical object-position of the image
                                           centerPercentage = "50%",
+                                          horizontalPosition = "center",
                                       }) {
     // creates a reference to the image element so GSAP can animate it
     const imageRef = useRef(null);
@@ -74,7 +75,7 @@ export default function LiftZoomImage({
                 // Inline styles for image position and default visual state
                 style={{
                     // Controls which part of the image is focused vertically
-                    objectPosition: `center ${centerPercentage}`,
+                    objectPosition: `${horizontalPosition} ${centerPercentage}`,
 
                     // Default state: black and white with slightly darker brightness
                     filter: "grayscale(100%) brightness(0.85)",
