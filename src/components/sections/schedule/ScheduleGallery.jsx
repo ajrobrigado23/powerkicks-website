@@ -14,6 +14,8 @@ export default function ScheduleGallery() {
     const sevenImage = scheduleImages[6];
     const eightImage = scheduleImages[7];
     const nineImage = scheduleImages[8];
+    const tenthImage = scheduleImages[9];
+    const eleventhImage = scheduleImages[10];
 
     return (
         <section className="grid grid-cols-12 px-10 pb-[2rem]">
@@ -143,7 +145,7 @@ export default function ScheduleGallery() {
                         type="words"
                         triggerOnScroll
                         scrollStart="top 85%"
-                        className="text-[clamp(2.25rem,4.50vw,3.25rem)] leading-[0.9] font-bold mb-2 tracking-wide"
+                        className="text-[clamp(2.25rem,4.50vw,3.25rem)] leading-[0.9] font-bold mb-4 tracking-wide px-2"
                         duration={1.2}
                         delay={0.1}
                         stagger={0.07}
@@ -153,7 +155,7 @@ export default function ScheduleGallery() {
                 </div>
                 {/* paragraph */}
                 <TrainingScheduleDetails
-                    className="flex justify-between px-4"
+                    className="flex justify-between px-2"
                     location="dasmarinas"
                 />
             </div>
@@ -198,6 +200,24 @@ export default function ScheduleGallery() {
                 <TrainingScheduleDetails
                     className="flex justify-around px-4"
                     location="dasmarinas"
+                />
+            </div>
+
+            {/* 8th row */}
+            <div className="col-span-4 pt-4 pr-2">
+                <SchedulePicture
+                    src={tenthImage.src}
+                    alt={tenthImage.alt}
+                    className="h-[500px] w-full"
+                    centerPercentage={tenthImage.centerPercentage}
+                />
+            </div>
+            <div className="col-span-8 pt-4 pl-2">
+                <SchedulePicture
+                    src={eleventhImage.src}
+                    alt={eleventhImage.alt}
+                    className="h-[500px] w-full"
+                    centerPercentage={eleventhImage.centerPercentage}
                 />
             </div>
 
