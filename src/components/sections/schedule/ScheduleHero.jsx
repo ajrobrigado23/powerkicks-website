@@ -1,8 +1,10 @@
 import TextReveal from "../../animations/TextReveal.jsx";
+import {forwardRef} from "react";
 
-export default function ScheduleHero() {
+const ScheduleHero = forwardRef((props, ref) => {
+
     return (
-        <section className="w-full h-full pt-[2rem] flex justify-center items-center overflow-hidden pr-[2rem]">
+        <section ref={ref} className="w-full h-full pt-[2rem] flex justify-center items-center overflow-hidden pr-[2rem]">
             <TextReveal
                 as="h1"
                 type="letters"
@@ -14,4 +16,7 @@ export default function ScheduleHero() {
             </TextReveal>
         </section>
     );
-}
+});
+
+ScheduleHero.displayName = "ScheduleHero";
+export default ScheduleHero;
