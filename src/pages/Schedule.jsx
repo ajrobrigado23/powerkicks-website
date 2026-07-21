@@ -175,7 +175,7 @@ export default function Schedule() {
     }, []);
     return (
         <>
-            <header ref={firstContainerRef} className="relative w-full min-h-screen tablet:h-screen tablet:overflow-hidden">
+            <header ref={firstContainerRef} className="relative w-full tablet:h-screen tablet:overflow-hidden">
                 <NavBar navScrolled={navScrolled}></NavBar>
                 <ScheduleHero ref={secondContainerRef}></ScheduleHero>
             </header>
