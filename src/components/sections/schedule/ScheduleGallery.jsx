@@ -20,7 +20,7 @@ export default function ScheduleGallery() {
     return (
         <section className="grid grid-cols-12 px-10 pb-[2rem]">
             {/* 1st Row */}
-            <div className="col-span-4">
+            <div className="col-span-12 tablet:col-span-4">
                 {/* header */}
                 <TextReveal
                     as="h3"
@@ -45,11 +45,11 @@ export default function ScheduleGallery() {
                     training, certified standards, and consistent athlete development.
                 </TextReveal>
             </div>
-            <div className="col-span-8">
+            <div className="col-span-12 tablet:col-span-8">
                 <SchedulePicture
                     src={firstImage.src}
                     alt={firstImage.alt}
-                    className="ml-auto h-[420px] w-[75%] overflow-hidden"
+                    className="ml-auto h-[420px] w-full overflow-hidden tablet:w-[75%]"
                     centerPercentage={firstImage.centerPercentage}
                 />
             </div>

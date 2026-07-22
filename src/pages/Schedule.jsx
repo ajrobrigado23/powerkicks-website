@@ -142,7 +142,7 @@ export default function Schedule() {
                                                   start: "center",
                                                   // Display ScrollTrigger markers for debugging.
                                                   // Remove or set to false when finished debugging.
-                                                  markers:true,
+                                                  markers:false,
                                                   // When scrolling forward and reaching the trigger,
                                                   // show the scrolled navbar.
                                                   onEnter: () => {
