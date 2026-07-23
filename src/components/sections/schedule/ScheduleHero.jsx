@@ -4,7 +4,7 @@ import {forwardRef} from "react";
 const ScheduleHero = forwardRef((props, ref) => {
 
     return (
-        <section ref={ref} className="w-full h-full pt-[4rem] pl-0 flex justify-center items-center overflow-hidden tablet:h-full">
+        <section ref={ref} className="w-full h-full pt-[8rem] pl-0 flex justify-center items-center overflow-hidden tablet:h-full tablet:pt-[4rem]">
             <TextReveal
                 as="h1"
                 type="letters"

@@ -36,7 +36,7 @@ export default function ScheduleGallery() {
                 <TextReveal
                     as="p"
                     type="words"
-                    className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)]"
+                    className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] pb-12 tablet:pb-0"
                     duration={1.2}
                     delay={1.25}
                     stagger={0.025}
