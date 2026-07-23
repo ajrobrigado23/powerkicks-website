@@ -213,7 +213,7 @@ export default function NavBar({ navScrolled }) {
                             </ul>
 
                             <div
-                                className={`overflow-hidden max-[900px]:ml-auto max-[900px]:me-4 ${
+                                className={`overflow-hidden max-[901px]:ml-auto max-[901px]:me-4 ${
                                     navScrolled ? "ml-auto me-2" : "me-10 hidden min-[575px]:block"
                                 }`}
                             >
@@ -229,7 +229,7 @@ export default function NavBar({ navScrolled }) {
 
                             {/* Menu Button */}
                             <Button
-                                className={`max-[900px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer ${
+                                className={`max-[901px]:flex flex-col justify-center items-center gap-1 me-8 cursor-pointer ${
                                     navScrolled
                                         ? "text-black px-[0.70rem] py-[0.65rem] bg-[#dee2e6] rounded-4xl"
                                         : "hidden"
