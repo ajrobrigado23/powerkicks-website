@@ -97,7 +97,7 @@ export default function ScheduleGallery() {
                         type="words"
                         triggerOnScroll
                         scrollStart="top 85%"
-                        className="text-[clamp(2.25rem,4.50vw,3.50rem)] leading-[0.9] font-bold mb-2 tracking-wide"
+                        className="text-[clamp(1.25rem,4.50vw,3.50rem)] leading-[0.9] font-bold mb-2 tracking-wide"
                         duration={1.2}
                         delay={0.1}
                         stagger={0.07}
