@@ -81,7 +81,7 @@ export default function ScheduleGallery() {
                 />
             </div>
             {/* 4th row */}
-            <div className="col-span-4 pt-4 pr-2">
+            <div className="col-span-12 pt-4 min-[751px]:col-span-4 min-[751px]:pr-2">
                 <SchedulePicture
                     src={fiveImage.src}
                     alt={fiveImage.alt}
@@ -89,7 +89,7 @@ export default function ScheduleGallery() {
                     centerPercentage={fiveImage.centerPercentage}
                 />
             </div>
-            <div className="col-span-8 pt-12 pl-2">
+            <div className="col-span-12 py-[6rem] min-[751px]:pt-12 min-[751px]:col-span-8 min-[751px]:pl-2 min-[751px]:pb-0">
                 {/* header */}
                 <div className="text-center pb-4">
                     <TextReveal
@@ -97,7 +97,7 @@ export default function ScheduleGallery() {
                         type="words"
                         triggerOnScroll
                         scrollStart="top 85%"
-                        className="text-[clamp(1.25rem,4.50vw,3.50rem)] leading-[0.9] font-bold mb-2 tracking-wide"
+                        className="w-full text-[clamp(0.25rem,7.00vw,3.50rem)] leading-[0.9] font-bold mb-2 tracking-wide min-[751px]:text-[clamp(1.25rem,4.25vw,3.50rem)]"
                         duration={1.2}
                         delay={0.1}
                         stagger={0.07}
@@ -108,7 +108,7 @@ export default function ScheduleGallery() {
 
                 {/* paragraph */}
                 <TrainingScheduleDetails
-                    className="flex justify-around px-4"
+                    className="flex justify-between px-8 tablet:justify-around"
                     location="dasmarinas"
                 />
 
