@@ -63,7 +63,7 @@ export default function ScheduleGallery() {
                 />
             </div>
             {/* 3rd Row */}
-            <div className="col-span-6 pr-2">
+            <div className="col-span-12 pr-0 phone:col-span-6 phone:pr-2">
                 <SchedulePicture
                     src={thirdImage.src}
                     alt={thirdImage.alt}
@@ -71,7 +71,7 @@ export default function ScheduleGallery() {
                     centerPercentage={thirdImage.centerPercentage}
                 />
             </div>
-            <div className="col-span-6 pl-2">
+            <div className="col-span-12 pt-4 pl-0 phone:col-span-6 phone:pl-2 phone:pt-0">
                 <SchedulePicture
                     src={fourImage.src}
                     alt={fourImage.alt}
