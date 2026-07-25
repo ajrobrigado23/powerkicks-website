@@ -97,7 +97,7 @@ export default function ScheduleGallery() {
                         type="words"
                         triggerOnScroll
                         scrollStart="top 85%"
-                        className="w-full text-[clamp(0.25rem,7.00vw,3.50rem)] leading-[0.9] font-bold mb-2 tracking-wide min-[751px]:text-[clamp(1.25rem,4.25vw,3.50rem)]"
+                        className="text-4xl w-full leading-[0.9] font-bold mb-2 tracking-wide min-[551px]:text-[clamp(0.25rem,7.00vw,3.50rem)] min-[751px]:text-[clamp(1.25rem,4.25vw,3.50rem)]"
                         duration={1.2}
                         delay={0.1}
                         stagger={0.07}
@@ -108,7 +108,7 @@ export default function ScheduleGallery() {
 
                 {/* paragraph */}
                 <TrainingScheduleDetails
-                    className="flex justify-between px-8 tablet:justify-around"
+                    className="flex justify-between px-0 min-[401px]:px-4 phone:px-8 tablet:justify-around"
                     location="dasmarinas"
                 />
 
