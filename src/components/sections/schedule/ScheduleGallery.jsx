@@ -115,10 +115,10 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 5th row */}
-            <div className="col-span-3 pt-4 pl-2">
+            <div className="col-span-0 pt-0 pl-0 min-[751px]:pt-4 min-[751px]:col-span-3 min-[751px]:pl-2">
                 {/* Whitespace */}
             </div>
-            <div className="col-span-3 pt-4 pr-2">
+            <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-3 min-[751px]:pr-2">
                 <SchedulePicture
                     src={sixImage.src}
                     alt={sixImage.alt}
@@ -126,7 +126,7 @@ export default function ScheduleGallery() {
                     centerPercentage={sixImage.centerPercentage}
                 />
             </div>
-            <div className="col-span-6 pt-4 pl-2 pb-2">
+            <div className="col-span-12 pt-4 pl-0 pb-2 min-[751px]:col-span-6 min-[751px]:pl-2">
                 <SchedulePicture
                     src={sevenImage.src}
                     alt={sevenImage.alt}
