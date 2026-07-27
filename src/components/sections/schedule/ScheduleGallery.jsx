@@ -170,7 +170,7 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 7th row */}
-            <div className="col-span-4 pt-4 pr-2">
+            <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-4 min-[751px]:pr-2">
                 <SchedulePicture
                     src={nineImage.src}
                     alt={nineImage.alt}
@@ -179,7 +179,7 @@ export default function ScheduleGallery() {
                     horizontalPosition="left"
                 />
             </div>
-            <div className="col-span-8 pt-4 pl-2">
+            <div className="col-span-12 py-[6rem] pl-0 min-[751px]:col-span-8 min-[751px]:pl-2 min-[751px]:pt-4">
                 {/* header */}
                 <div className="text-center pb-4">
                     <TextReveal
@@ -198,7 +198,7 @@ export default function ScheduleGallery() {
 
                 {/* paragraph */}
                 <TrainingScheduleDetails
-                    className="flex justify-around px-4"
+                    className="flex justify-between px-0 min-[751px]:px-4 min-[401px]:justify-around"
                     location="dasmarinas"
                 />
             </div>
