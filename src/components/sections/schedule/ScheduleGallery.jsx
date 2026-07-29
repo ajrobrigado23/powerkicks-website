@@ -204,7 +204,7 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 8th row */}
-            <div className="col-span-4 pt-4 pr-2">
+            <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-4 min-[751px]:pr-2]">
                 <SchedulePicture
                     src={tenthImage.src}
                     alt={tenthImage.alt}
@@ -212,7 +212,7 @@ export default function ScheduleGallery() {
                     centerPercentage={tenthImage.centerPercentage}
                 />
             </div>
-            <div className="col-span-8 pt-4 pl-2">
+            <div className="col-span-12 pt-4 pl-0 min-[751px]:col-span-8 min-[751px]:pl-2">
                 <SchedulePicture
                     src={eleventhImage.src}
                     alt={eleventhImage.alt}
