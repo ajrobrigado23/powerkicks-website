@@ -137,7 +137,7 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 6th row */}
-            <div className="col-span-12 py-[6rem] pr-0 min-[751px]:col-span-6 min-[751px]:pr-2 min-[751px]:pt-2 min-[751px]:py-0">
+            <div className="col-span-12 py-[6rem] pr-0 min-[751px]:col-span-6 min-[751px]:pr-2 min-[751px]:pt-12 min-[751px]:py-0">
                 {/* header */}
                 <div className="text-center pb-4 min-[751px]:text-left">
                     <TextReveal
@@ -179,7 +179,7 @@ export default function ScheduleGallery() {
                     horizontalPosition="left"
                 />
             </div>
-            <div className="col-span-12 py-[6rem] pl-0 min-[751px]:col-span-8 min-[751px]:pl-2 min-[751px]:pt-4">
+            <div className="col-span-12 py-[6rem] pl-0 min-[751px]:col-span-8 min-[751px]:pl-2 min-[751px]:pt-12">
                 {/* header */}
                 <div className="text-center pb-4">
                     <TextReveal
