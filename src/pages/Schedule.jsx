@@ -5,6 +5,8 @@ import {useRef, useState} from "react";
 import {useGSAP} from "@gsap/react";
 import {gsap} from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import Footer from "../components/layout/Footer.jsx";
+import PowerkicksMarqueeSection from "../components/sections/marquee/PowerkicksMarqueeSection.jsx";
 
 export default function Schedule() {
 
@@ -182,6 +184,8 @@ export default function Schedule() {
 
             <main>
                 <ScheduleGallery></ScheduleGallery>
+                <PowerkicksMarqueeSection />
+                <Footer/>
             </main>
         </>
     );
