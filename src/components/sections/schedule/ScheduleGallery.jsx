@@ -218,6 +218,7 @@ export default function ScheduleGallery() {
                     alt={eleventhImage.alt}
                     className="h-[500px] w-full"
                     centerPercentage={eleventhImage.centerPercentage}
+                    delay={0.3}
                 />
             </div>
 
