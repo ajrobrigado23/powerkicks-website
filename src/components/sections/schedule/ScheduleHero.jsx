@@ -8,7 +8,7 @@ const ScheduleHero = forwardRef((props, ref) => {
             <TextReveal
                 as="h1"
                 type="letters"
-                className="uppercase -ml-[0.15em] text-[clamp(6rem,28vw,35rem)] font-bold leading-none whitespace-nowrap"
+                className="uppercase -ml-[0.15em] text-[clamp(6rem,28vw,35rem)] font-bold leading-none whitespace-nowrap text-white"
                 duration={2.50}
                 stagger={0.07}
             >

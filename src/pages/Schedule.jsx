@@ -177,12 +177,12 @@ export default function Schedule() {
     }, []);
     return (
         <>
-            <header ref={firstContainerRef} className="relative w-full tablet:h-screen tablet:overflow-hidden">
-                <NavBar navScrolled={navScrolled}></NavBar>
+            <header ref={firstContainerRef} className="relative w-full tablet:h-screen tablet:overflow-hidden bg-black">
+                <NavBar navScrolled={navScrolled} isBlack={true}></NavBar>
                 <ScheduleHero ref={secondContainerRef}></ScheduleHero>
             </header>
 
-            <main>
+            <main className="bg-black">
                 <ScheduleGallery></ScheduleGallery>
                 <PowerkicksMarqueeSection />
                 <Footer/>

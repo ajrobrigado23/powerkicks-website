@@ -15,7 +15,9 @@ const MENU_ITEMS = [
   { label: "Terms of Service", href: "/terms-of-service" }
 ];
 
-export default function NavBar({ navScrolled }) {
+export default function NavBar({
+                                   navScrolled,
+                                   isBlack = false }) {
 
     const navigationRef = useRef(null);
     const toggleButtonRef = useRef(null);
@@ -179,8 +181,8 @@ export default function NavBar({ navScrolled }) {
             >
                 <div className="nav-mask overflow-hidden">
                     <div
-                        className={`nav-inner w-full text-black will-change-transform ${
-                            navScrolled ? "py-4 bg-transparent" : "py-3 bg-[#F7F7F7]"
+                        className={`nav-inner w-full ${isBlack ? 'text-white' : 'text-black'} will-change-transform ${
+                            navScrolled ? "py-4 bg-transparent" : `py-3 ${isBlack ? 'bg-black' : 'bg-[#F7F7F7]'}`
                         }`}
                     >
                         <div className="flex h-full items-center justify-between">
