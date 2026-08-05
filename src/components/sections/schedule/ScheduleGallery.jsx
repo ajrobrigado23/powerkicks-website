@@ -18,34 +18,37 @@ export default function ScheduleGallery() {
     const eleventhImage = scheduleImages[10];
 
     return (
-        <section className="grid grid-cols-12 px-10 pb-[2rem]">
+        <section className="grid grid-cols-12 px-10 pb-[2rem] text-white">
             {/* 1st Row */}
-            <div className="col-span-12 tablet:col-span-4">
+            <div className="col-span-5">
                 {/* header */}
                 <TextReveal
                     as="h3"
                     type="words"
-                    className="text-[clamp(2.25rem,4vw,3rem)] leading-[0.9] font-bold pt-4 mb-6"
+                    className="text-[clamp(0.75rem,1.25vw,0.90rem)] leading-[0.9] font-bold uppercase"
                     duration={1.6}
                     delay={1}
                     stagger={0.07}
                 >
                     Training Schedule
                 </TextReveal>
+            </div>
+            <div className="col-span-7">
                 {/* paragraph */}
                 <TextReveal
                     as="p"
                     type="words"
-                    className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] pb-12 tablet:pb-0"
+                    className="font-semibold max-w-full tracking-[0.025rem] text-[clamp(1.75rem,2.50vw,3rem)] pb-24"
                     duration={1.2}
                     delay={1.25}
                     stagger={0.025}
                 >
                     Powerkicks is aligned with recognized national and international organizations, ensuring structured
-                    training, certified standards, and consistent athlete development.
+                    training, <span className="text-[#7F7F7F]">certified standards, and consistent athlete development.</span>
                 </TextReveal>
             </div>
-            <div className="col-span-12 tablet:col-span-8">
+            {/* 2nd Row */}
+            <div className="col-span-12 tablet:col-span-12">
                 <SchedulePicture
                     src={firstImage.src}
                     alt={firstImage.alt}
@@ -53,7 +56,6 @@ export default function ScheduleGallery() {
                     centerPercentage={firstImage.centerPercentage}
                 />
             </div>
-            {/* 2nd Row */}
             <div className="col-span-12 pt-4 pb-4">
                 <SchedulePicture
                     src={secondImage.src}
