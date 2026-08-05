@@ -44,7 +44,7 @@ export default function ScheduleGallery() {
                     stagger={0.025}
                 >
                     Powerkicks is aligned with recognized national and international organizations, ensuring structured
-                    training, <span className="text-[#7F7F7F]">certified standards, and consistent athlete development.</span>
+                    training,{" "} <span className="text-[#7F7F7F]">certified standards, and consistent athlete development.</span>
                 </TextReveal>
             </div>
             {/* 2nd Row */}
