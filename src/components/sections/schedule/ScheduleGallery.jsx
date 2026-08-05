@@ -48,14 +48,6 @@ export default function ScheduleGallery() {
                 </TextReveal>
             </div>
             {/* 2nd Row */}
-            <div className="col-span-12 tablet:col-span-12">
-                <SchedulePicture
-                    src={firstImage.src}
-                    alt={firstImage.alt}
-                    className="ml-auto h-[420px] w-full overflow-hidden tablet:w-[75%]"
-                    centerPercentage={firstImage.centerPercentage}
-                />
-            </div>
             <div className="col-span-12 pt-4 pb-4">
                 <SchedulePicture
                     src={secondImage.src}
@@ -83,6 +75,15 @@ export default function ScheduleGallery() {
                 />
             </div>
             {/* 4th row */}
+            <div className="col-span-12 pt-4">
+                <SchedulePicture
+                    src={firstImage.src}
+                    alt={firstImage.alt}
+                    className="ml-auto h-full w-full overflow-hidden"
+                    centerPercentage={firstImage.centerPercentage}
+                />
+            </div>
+
             <div className="col-span-12 pt-4 min-[751px]:col-span-4 min-[751px]:pr-2">
                 <SchedulePicture
                     src={fiveImage.src}
