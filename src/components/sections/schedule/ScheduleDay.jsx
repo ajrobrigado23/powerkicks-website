@@ -1,6 +1,6 @@
 import TextReveal from "../../animations/TextReveal.jsx";
 
-export default function ScheduleDay({ day, noviceTime, advanceTime }) {
+export default function ScheduleDay({ day, noviceTime }) {
 
     return (
         <>
@@ -9,7 +9,7 @@ export default function ScheduleDay({ day, noviceTime, advanceTime }) {
                 type="words"
                 triggerOnScroll
                 scrollStart="top 85%"
-                className="font-semibold text-[clamp(0.85rem,2.50vw,1.25rem)] py-2"
+                className="font-semibold text-[clamp(0.90rem,1.25vw, 1.15rem)] leading-[0.9] pt-2 pb-8 text-[#9F9F9F] uppercase"
                 duration={1.2}
                 delay={0.2}
                 stagger={0.07}
@@ -22,20 +22,7 @@ export default function ScheduleDay({ day, noviceTime, advanceTime }) {
                 type="words"
                 triggerOnScroll
                 scrollStart="top 85%"
-                className="text-[clamp(0.45rem,1.50vw,0.75rem)]"
-                duration={1.2}
-                delay={0.3}
-                stagger={0.09}
-            >
-                Novice
-            </TextReveal>
-
-            <TextReveal
-                as="p"
-                type="words"
-                triggerOnScroll
-                scrollStart="top 85%"
-                className="text-[clamp(0.65rem,1.75vw,1.00rem)] font-bold italic"
+                className="text-[clamp(0.80rem,1.25vw,1.15rem)] font-bold"
                 duration={1.2}
                 delay={0.4}
                 stagger={0.07}
@@ -48,26 +35,14 @@ export default function ScheduleDay({ day, noviceTime, advanceTime }) {
                 type="words"
                 triggerOnScroll
                 scrollStart="top 85%"
-                className="text-[clamp(0.45rem,1.50vw,0.75rem)] pt-2"
+                className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] text-[#9F9F9F]"
                 duration={1.2}
                 delay={0.3}
                 stagger={0.09}
             >
-                Advance
+                All Belts Category (from white belt to black belt)
             </TextReveal>
 
-            <TextReveal
-                as="p"
-                type="words"
-                triggerOnScroll
-                scrollStart="top 85%"
-                className="text-[clamp(0.65rem,1.75vw,1.00rem)] font-bold italic"
-                duration={1.2}
-                delay={0.4}
-                stagger={0.07}
-            >
-                {advanceTime}
-            </TextReveal>
         </>
     );
 }

@@ -25,7 +25,7 @@ export default function ScheduleGallery() {
                 <TextReveal
                     as="h3"
                     type="words"
-                    className="text-[clamp(0.75rem,1.25vw,0.90rem)] leading-[0.9] font-bold uppercase"
+                    className="text-[clamp(0.90rem,1.25vw,1.25rem)] leading-[0.9] font-bold uppercase"
                     duration={1.6}
                     delay={1}
                     stagger={0.07}
@@ -84,42 +84,51 @@ export default function ScheduleGallery() {
                 />
             </div>
 
-            <div className="col-span-12 pt-4 min-[751px]:col-span-4 min-[751px]:pr-2">
+            {/* 5th row */}
+            <div className="col-span-6 pt-[10rem]">
+                {/* header */}
+                <TextReveal
+                    as="h3"
+                    type="words"
+                    triggerOnScroll
+                    scrollStart="top 85%"
+                    className="text-[clamp(0.90rem,1.25vw,1.25rem)] leading-[0.9] font-bold uppercase pb-2"
+                    duration={1.2}
+                    delay={0.1}
+                    stagger={0.07}
+                >
+                    Waltermart Dasmarinas
+                </TextReveal>
+                {/* header */}
+                <TextReveal
+                    as="p"
+                    type="words"
+                    triggerOnScroll
+                    scrollStart="top 85%"
+                    className="text-[clamp(0.45rem,1vw,0.55rem)] leading-[0.9] uppercase font-medium text-[#7F7F7F] w-[45%]"
+                    duration={1.2}
+                    delay={0.1}
+                    stagger={0.07}
+                >
+                    Km. 30, Emilio Aguinaldo Highway, Barangay Burol, Dasmariñas City, Cavite, 4114, Philippines
+                </TextReveal>
+            </div>
+            <div className="col-span-6 py-[10rem]">
+                {/* paragraph */}
+                <TrainingScheduleDetails
+                    className="flex justify-between"
+                    location="dasmarinas"
+                />
+            </div>
+
+            {/* **5th row */}
+            <div className="col-span-0 pt-0 pl-0 min-[751px]:pt-4 min-[751px]:col-span-12 min-[751px]:pl-2">
                 <SchedulePicture
                     src={fiveImage.src}
                     alt={fiveImage.alt}
                     className="h-[500px] w-full"
                     centerPercentage={fiveImage.centerPercentage}
                 />
-            </div>
-            <div className="col-span-12 py-[6rem] min-[751px]:pt-12 min-[751px]:col-span-8 min-[751px]:pl-2 min-[751px]:pb-0">
-                {/* header */}
-                <div className="text-center pb-4">
-                    <TextReveal
-                        as="h3"
-                        type="words"
-                        triggerOnScroll
-                        scrollStart="top 85%"
-                        className="text-4xl w-full leading-[0.9] font-bold mb-2 tracking-wide min-[551px]:text-[clamp(0.25rem,7.00vw,3.50rem)] min-[751px]:text-[clamp(1.25rem,4.25vw,3.50rem)]"
-                        duration={1.2}
-                        delay={0.1}
-                        stagger={0.07}
-                    >
-                        Waltermart Dasmarinas
-                    </TextReveal>
-                </div>
-
-                {/* paragraph */}
-                <TrainingScheduleDetails
-                    className="flex justify-between px-0 min-[401px]:px-4 phone:px-8 tablet:justify-around"
-                    location="dasmarinas"
-                />
-
-            </div>
-
-            {/* 5th row */}
-            <div className="col-span-0 pt-0 pl-0 min-[751px]:pt-4 min-[751px]:col-span-3 min-[751px]:pl-2">
-                {/* Whitespace */}
             </div>
             <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-3 min-[751px]:pr-2">
                 <SchedulePicture
