@@ -121,13 +121,70 @@ export default function ScheduleGallery() {
                 />
             </div>
 
-            {/* **5th row */}
-            <div className="col-span-0 pt-0 pl-0 min-[751px]:pt-4 min-[751px]:col-span-12 min-[751px]:pl-2">
+            {/* 6th row */}
+            <div className="col-span-0 pt-0 pl-0 min-[751px]:pt-4 min-[751px]:col-span-4 min-[751px]:pr-2">
                 <SchedulePicture
                     src={fiveImage.src}
                     alt={fiveImage.alt}
-                    className="h-[500px] w-full"
+                    className="h-[600px] w-full"
                     centerPercentage={fiveImage.centerPercentage}
+                />
+            </div>
+            <div className="col-span-12 pt-4 pl-0 pb-2 min-[751px]:col-span-8 min-[751px]:pl-2">
+                <SchedulePicture
+                    src={sevenImage.src}
+                    alt={sevenImage.alt}
+                    className="h-[600px] w-full"
+                    centerPercentage={sevenImage.centerPercentage}
+                    delay={0.3}
+                />
+            </div>
+
+            {/* 7th row */}
+            <div className="col-span-5 pt-[10rem]">
+                {/* header */}
+                <TextReveal
+                    as="h3"
+                    type="words"
+                    triggerOnScroll
+                    scrollStart="top 85%"
+                    className="text-[clamp(0.90rem,1.25vw,1.25rem)] leading-[0.9] font-bold uppercase pb-2"
+                    duration={1.2}
+                    delay={0.1}
+                    stagger={0.07}
+                >
+                    Robinson General Trias
+                </TextReveal>
+                {/* header */}
+                <TextReveal
+                    as="p"
+                    type="words"
+                    triggerOnScroll
+                    scrollStart="top 85%"
+                    className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] font-medium text-[#7F7F7F] w-[47%]"
+                    duration={1.2}
+                    delay={0.1}
+                    stagger={0.07}
+                >
+                    Km. 30, Emilio Aguinaldo Highway, Barangay Burol, Dasmariñas City, Cavite, 4114, Philippines
+                </TextReveal>
+            </div>
+            <div className="col-span-7 pt-[10rem] pb-[5rem]">
+                {/* paragraph */}
+                <TrainingScheduleDetails
+                    className="flex justify-between"
+                    location="dasmarinas"
+                />
+            </div>
+
+            {/* 8th row */}
+            <div className="col-span-12 pt-2 pl-2 min-[751px]:col-span-6 min-[751px]:pl-2">
+                <SchedulePicture
+                    src={eightImage.src}
+                    alt={eightImage.alt}
+                    className="h-[500px] w-full"
+                    centerPercentage={eightImage.centerPercentage}
+                    delay={0.3}
                 />
             </div>
             <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-3 min-[751px]:pr-2">
@@ -138,50 +195,6 @@ export default function ScheduleGallery() {
                     centerPercentage={sixImage.centerPercentage}
                 />
             </div>
-            <div className="col-span-12 pt-4 pl-0 pb-2 min-[751px]:col-span-6 min-[751px]:pl-2">
-                <SchedulePicture
-                    src={sevenImage.src}
-                    alt={sevenImage.alt}
-                    className="h-[500px] w-full"
-                    centerPercentage={sevenImage.centerPercentage}
-                    delay={0.3}
-                />
-            </div>
-
-            {/* 6th row */}
-            <div className="col-span-12 py-[6rem] pr-0 min-[751px]:col-span-6 min-[751px]:pr-2 min-[751px]:pt-12 min-[751px]:py-0">
-                {/* header */}
-                <div className="text-center pb-4 min-[751px]:text-left">
-                    <TextReveal
-                        as="h3"
-                        type="words"
-                        triggerOnScroll
-                        scrollStart="top 85%"
-                        className="text-4xl w-full leading-[0.9] font-bold mb-2 tracking-wide min-[551px]:text-[clamp(0.25rem,7.00vw,3.50rem)] min-[751px]:text-[clamp(1.25rem,4.25vw,3.50rem)]"
-                        duration={1.2}
-                        delay={0.1}
-                        stagger={0.07}
-                    >
-                        Robinson General Trias
-                    </TextReveal>
-                </div>
-                {/* paragraph */}
-                <TrainingScheduleDetails
-                    className="flex justify-between px-2"
-                    location="dasmarinas"
-                />
-            </div>
-            <div className="col-span-12 pt-2 pl-2 min-[751px]:col-span-6 min-[751px]:pl-2">
-                <SchedulePicture
-                    src={eightImage.src}
-                    alt={eightImage.alt}
-                    className="h-[500px] w-full"
-                    centerPercentage={eightImage.centerPercentage}
-                    delay={0.3}
-                />
-            </div>
-
-            {/* 7th row */}
             <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-4 min-[751px]:pr-2">
                 <SchedulePicture
                     src={nineImage.src}
@@ -215,7 +228,7 @@ export default function ScheduleGallery() {
                 />
             </div>
 
-            {/* 8th row */}
+            {/* 9th row */}
             <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-4 min-[751px]:pr-2]">
                 <SchedulePicture
                     src={tenthImage.src}
