@@ -178,32 +178,34 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 8th row */}
-            <div className="col-span-12 pt-2 pl-2 min-[751px]:col-span-6 min-[751px]:pl-2">
-                <SchedulePicture
-                    src={eightImage.src}
-                    alt={eightImage.alt}
-                    className="h-[500px] w-full"
-                    centerPercentage={eightImage.centerPercentage}
-                    delay={0.3}
-                />
-            </div>
-            <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-3 min-[751px]:pr-2">
-                <SchedulePicture
-                    src={sixImage.src}
-                    alt={sixImage.alt}
-                    className="h-[300px] w-full"
-                    centerPercentage={sixImage.centerPercentage}
-                />
-            </div>
-            <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-4 min-[751px]:pr-2">
+            <div className="col-span-4 pr-2">
                 <SchedulePicture
                     src={nineImage.src}
                     alt={nineImage.alt}
-                    className="h-[500px] w-full"
+                    className="h-[600px] w-full"
                     centerPercentage={nineImage.centerPercentage}
                     horizontalPosition="left"
                 />
             </div>
+            <div className="col-span-8 pl-2">
+                <SchedulePicture
+                    src={eightImage.src}
+                    alt={eightImage.alt}
+                    className="h-[600px] w-full"
+                    centerPercentage={eightImage.centerPercentage}
+                    delay={0.3}
+                />
+            </div>
+            <div className="col-span-12 pt-4">
+                <SchedulePicture
+                    src={sixImage.src}
+                    alt={sixImage.alt}
+                    className="h-full w-full"
+                    centerPercentage={sixImage.centerPercentage}
+                />
+            </div>
+
+            {/* 9th row */}
             <div className="col-span-12 py-[6rem] pl-0 min-[751px]:col-span-8 min-[751px]:pl-2 min-[751px]:pt-12">
                 {/* header */}
                 <div className="text-center pb-4">
@@ -228,7 +230,7 @@ export default function ScheduleGallery() {
                 />
             </div>
 
-            {/* 9th row */}
+            {/* 10th row */}
             <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-4 min-[751px]:pr-2]">
                 <SchedulePicture
                     src={tenthImage.src}
