@@ -85,7 +85,7 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 5th row */}
-            <div className="col-span-6 pt-[10rem]">
+            <div className="col-span-5 pt-[10rem]">
                 {/* header */}
                 <TextReveal
                     as="h3"
@@ -105,7 +105,7 @@ export default function ScheduleGallery() {
                     type="words"
                     triggerOnScroll
                     scrollStart="top 85%"
-                    className="text-[clamp(0.45rem,1vw,0.55rem)] leading-[0.9] uppercase font-medium text-[#7F7F7F] w-[45%]"
+                    className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] font-medium text-[#7F7F7F] w-[47%]"
                     duration={1.2}
                     delay={0.1}
                     stagger={0.07}
@@ -113,7 +113,7 @@ export default function ScheduleGallery() {
                     Km. 30, Emilio Aguinaldo Highway, Barangay Burol, Dasmariñas City, Cavite, 4114, Philippines
                 </TextReveal>
             </div>
-            <div className="col-span-6 py-[10rem]">
+            <div className="col-span-7 pt-[10rem] pb-[5rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
                     className="flex justify-between"

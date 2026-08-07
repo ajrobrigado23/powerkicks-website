@@ -13,24 +13,27 @@ export default function TrainingScheduleDetails({ className, location }) {
                         <div className="flex flex-col">
                             <ScheduleDay
                                 day="Tuesday"
-                                noviceTime="4:00pm - 5:30pm"
-                            />
+                            >
+                                4:00<span className="text-sm font-light">pm</span> - 5:00<span className="text-sm font-light">pm</span>
+                            </ScheduleDay>
                         </div>
 
                         {/* Thursday */}
                         <div className="flex flex-col">
                             <ScheduleDay
                                 day="Thursday"
-                                noviceTime="4:00pm - 5:30pm"
-                            />
+                            >
+                                4:00<span className="text-sm font-light">pm</span> - 5:00<span className="text-sm font-light">pm</span>
+                            </ScheduleDay>
                         </div>
 
                         {/* Saturday */}
                         <div className="flex flex-col">
                             <ScheduleDay
                                 day="Saturday"
-                                noviceTime="4:00pm - 5:30pm"
-                            />
+                            >
+                                4:00<span className="text-sm font-light">pm</span> - 5:00<span className="text-sm font-light">pm</span>
+                            </ScheduleDay>
                         </div>
                     </>
                 )}
