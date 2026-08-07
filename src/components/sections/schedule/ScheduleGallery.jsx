@@ -206,32 +206,44 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 9th row */}
-            <div className="col-span-12 py-[6rem] pl-0 min-[751px]:col-span-8 min-[751px]:pl-2 min-[751px]:pt-12">
+            <div className="col-span-5 pt-[10rem]">
                 {/* header */}
-                <div className="text-center pb-4">
-                    <TextReveal
-                        as="h3"
-                        type="words"
-                        triggerOnScroll
-                        scrollStart="top 85%"
-                        className="text-[clamp(2.25rem,4.50vw,3.50rem)] leading-[0.9] font-bold mb-2 tracking-wide"
-                        duration={1.2}
-                        delay={0.1}
-                        stagger={0.07}
-                    >
-                        Imus Bucandala Gym
-                    </TextReveal>
-                </div>
-
+                <TextReveal
+                    as="h3"
+                    type="words"
+                    triggerOnScroll
+                    scrollStart="top 85%"
+                    className="text-[clamp(0.90rem,1.25vw,1.25rem)] leading-[0.9] font-bold uppercase pb-2"
+                    duration={1.2}
+                    delay={0.1}
+                    stagger={0.07}
+                >
+                    Imus Bucandala Main Gym
+                </TextReveal>
+                {/* header */}
+                <TextReveal
+                    as="p"
+                    type="words"
+                    triggerOnScroll
+                    scrollStart="top 85%"
+                    className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] font-medium text-[#7F7F7F] w-[47%]"
+                    duration={1.2}
+                    delay={0.1}
+                    stagger={0.07}
+                >
+                    Km. 30, Emilio Aguinaldo Highway, Barangay Burol, Dasmariñas City, Cavite, 4114, Philippines
+                </TextReveal>
+            </div>
+            <div className="col-span-7 pt-[10rem] pb-[5rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
-                    className="flex justify-between px-0 min-[751px]:px-4 min-[401px]:justify-around"
+                    className="flex justify-between"
                     location="dasmarinas"
                 />
             </div>
 
             {/* 10th row */}
-            <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-4 min-[751px]:pr-2]">
+            <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-4 min-[751px]:pr-2">
                 <SchedulePicture
                     src={tenthImage.src}
                     alt={tenthImage.alt}
