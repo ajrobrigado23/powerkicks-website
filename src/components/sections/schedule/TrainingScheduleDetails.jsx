@@ -30,7 +30,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         </div>
 
                         {/* Thursday */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col px-2">
                             <ScheduleDay
                                 day="Thursday"
                             >

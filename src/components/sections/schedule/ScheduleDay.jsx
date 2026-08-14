@@ -35,7 +35,7 @@ export default function ScheduleDay({ children, day }) {
                 type="words"
                 triggerOnScroll
                 scrollStart="top 85%"
-                className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] text-[#9F9F9F]"
+                className="text-[clamp(0.40rem,0.90vw,0.60rem)] leading-[0.9] text-[#9F9F9F]"
                 duration={1.2}
                 delay={0.3}
                 stagger={0.09}
