@@ -261,6 +261,30 @@ export default function ScheduleGallery() {
                 />
             </div>
 
+            {/* 11th row */}
+            <div className="col-span-5">
+
+            </div>
+            <div className="col-span-7">
+                {/* paragraph */}
+                {/* paragraph */}
+                <TextReveal
+                    as="p"
+                    type="words"
+                    className="py-20"
+                    triggerOnScroll
+                    duration={1.2}
+                    delay={1.25}
+                    stagger={0.025}
+                >
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the
+                    librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to
+                    make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the
+                    leap into electronic typesetting, remaining essentially unchanged.
+                </TextReveal>
+            </div>
+
         </section>
     );
 }

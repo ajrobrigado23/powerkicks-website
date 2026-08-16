@@ -56,7 +56,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                 scrollStart="top 85%"
                 className="py-20"
                 duration={0.40}
-                stagger={0.06}
+                stagger={0.025}
             >
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the
