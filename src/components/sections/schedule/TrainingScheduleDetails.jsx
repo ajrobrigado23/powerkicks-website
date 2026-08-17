@@ -21,7 +21,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                 {location === "dasmarinas" && (
                     <>
                         {/* Tuesday */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Tuesday"
                             >
@@ -30,7 +30,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         </div>
 
                         {/* Thursday */}
-                        <div className="flex flex-col px-2">
+                        <div className="flex flex-col min-w-[120px] px-6">
                             <ScheduleDay
                                 day="Thursday"
                             >
@@ -39,7 +39,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         </div>
 
                         {/* Saturday */}
-                        <div className="flex flex-col">
+                        <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Saturday"
                             >

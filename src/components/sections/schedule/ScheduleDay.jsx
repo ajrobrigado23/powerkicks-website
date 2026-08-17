@@ -9,7 +9,7 @@ export default function ScheduleDay({ children, day }) {
                 type="words"
                 triggerOnScroll
                 scrollStart="top 85%"
-                className="font-semibold text-[clamp(0.90rem,1.25vw, 1.15rem)] leading-[0.9] pt-2 pb-8 text-[#9F9F9F] uppercase"
+                className="font-semibold text-[clamp(0.90rem,1.25vw, 1.15rem)] leading-[0.9] pt-2 pb-2 text-[#9F9F9F] uppercase min-[550px]:pb-4"
                 duration={1.2}
                 delay={0.2}
                 stagger={0.07}
