@@ -2,9 +2,9 @@ import SlideUpText from "../animations/SlideUpText.jsx";
 import { forwardRef } from "react";
 
 const Button = forwardRef(({
-        textColor= "white",
+        textColor= "text-white",
         padding,
-        backgroundColor= "black",
+        backgroundColor= "bg-black",
         className= "",
         isButton = true,
         isMenu = false,
@@ -23,7 +23,7 @@ const Button = forwardRef(({
                 >
                     <span className="font-semibold text-sm uppercase">{children}</span>
                 </button>
-            :   <a className={`text-${textColor} bg-${backgroundColor} ${className}`}>
+            :   <a className={`${textColor} ${backgroundColor} ${className}`}>
                     <SlideUpText isButton={isButton} padding={padding}>{children}</SlideUpText>
                 </a>
     );

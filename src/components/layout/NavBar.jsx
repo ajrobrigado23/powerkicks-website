@@ -221,8 +221,9 @@ export default function NavBar({
                             >
                                 <div className="nav-button-inner">
                                     <Button
-                                        className="flex items-center justify-center font-bold tracking-wider text-sm text-white uppercase"
+                                        className="flex items-center justify-center font-bold tracking-wider text-sm uppercase"
                                         padding="px-4 py-3"
+                                        backgroundColor="bg-[#B91C1C]"
                                     >
                                         Get Free Trial
                                     </Button>
