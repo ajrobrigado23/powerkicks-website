@@ -16,8 +16,8 @@ export default function BrandSection() {
                                   min-[700px]:opacity-100
                                   min-[700px]:font-semibold
                                   min-[700px]:tracking-[0.025rem]
-                                  min-[700px]:text-[0.80rem]
-                                  tablet:text-[clamp(0.80rem,1.25vw,1rem)]
+                                  min-[700px]:text-[0.90rem]
+                                  tablet:text-[clamp(0.90rem,1.25vw,1.25rem)]
                                 ">
                         Recognized by
                     </p>
