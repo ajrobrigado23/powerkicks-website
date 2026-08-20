@@ -17,38 +17,99 @@ export default function TrainingScheduleDetails({ className, location }) {
                 Training Schedule
             </TextReveal>
 
+            {/* dasmarinas */}
             <div className={className}>
                 {location === "dasmarinas" && (
                     <>
-                        {/* Tuesday */}
-                        <div className="flex flex-col min-w-[120px]">
-                            <ScheduleDay
-                                day="Tuesday"
-                            >
-                                4:00<span className="text-sm font-light">pm</span> - 5:00<span className="text-sm font-light">pm</span>
-                            </ScheduleDay>
-                        </div>
-
                         {/* Thursday */}
-                        <div className="flex flex-col min-w-[120px] px-6">
+                        <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Thursday"
                             >
-                                4:00<span className="text-sm font-light">pm</span> - 5:00<span className="text-sm font-light">pm</span>
+                                5:00<span className="text-sm font-light">pm</span> - 7:00<span className="text-sm font-light">pm</span>
                             </ScheduleDay>
                         </div>
 
                         {/* Saturday */}
-                        <div className="flex flex-col min-w-[120px]">
+                        <div className="flex flex-col min-w-[120px] px-6">
                             <ScheduleDay
                                 day="Saturday"
                             >
-                                4:00<span className="text-sm font-light">pm</span> - 5:00<span className="text-sm font-light">pm</span>
+                                5:00<span className="text-sm font-light">pm</span> - 7:00<span className="text-sm font-light">pm</span>
+                            </ScheduleDay>
+                        </div>
+
+                        {/* Sunday */}
+                        <div className="flex flex-col min-w-[120px]">
+                            <ScheduleDay
+                                day="Sunday"
+                            >
+                                4:00<span className="text-sm font-light">pm</span> - 6:00<span className="text-sm font-light">pm</span>
                             </ScheduleDay>
                         </div>
                     </>
                 )}
             </div>
+
+            {/* robinson general trias */}
+            <div className={className}>
+                {location === "gentri" && (
+                    <>
+                        {/* Saturday */}
+                        <div className="flex flex-col min-w-[120px]">
+                            <ScheduleDay
+                                day="Saturday"
+                            >
+                                11:30<span className="text-sm font-light">am</span> - 2:30<span className="text-sm font-light">pm</span>
+                            </ScheduleDay>
+                        </div>
+
+                        {/* Sunday */}
+                        <div className="flex flex-col min-w-[120px] mr-[10%] min-[751px]:mr-0 min-[1246px]:mr-[25%]">
+                            <ScheduleDay
+                                day="Sunday"
+                            >
+                                11:30<span className="text-sm font-light">am</span> - 2:30<span className="text-sm font-light">pm</span>
+                            </ScheduleDay>
+                        </div>
+                    </>
+                )}
+            </div>
+
+            {/* imus bucandala gym */}
+            <div className={className}>
+                {location === "bucandala" && (
+                    <>
+                        {/* Monday */}
+                        <div className="flex flex-col min-w-[120px]">
+                            <ScheduleDay
+                                day="Monday"
+                            >
+                                5:00<span className="text-sm font-light">pm</span> - 7:00<span className="text-sm font-light">pm</span>
+                            </ScheduleDay>
+                        </div>
+
+                        {/* Wednesday */}
+                        <div className="flex flex-col min-w-[120px] px-6">
+                            <ScheduleDay
+                                day="Wednesday"
+                            >
+                                5:00<span className="text-sm font-light">pm</span> - 7:00<span className="text-sm font-light">pm</span>
+                            </ScheduleDay>
+                        </div>
+
+                        {/* Friday */}
+                        <div className="flex flex-col min-w-[120px]">
+                            <ScheduleDay
+                                day="Friday"
+                            >
+                                5:00<span className="text-sm font-light">pm</span> - 7:00<span className="text-sm font-light">pm</span>
+                            </ScheduleDay>
+                        </div>
+                    </>
+                )}
+            </div>
+
             <TextReveal
                 as="h4"
                 type="words"

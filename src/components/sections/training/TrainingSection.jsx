@@ -63,8 +63,8 @@ export default function TrainingSection() {
             </div>
             {/* 2nd Row */}
             <div className="row-start-2 col-start-1 pt-[6rem]">
-                <p className="max-w-[16rem] font-semibold text-[clamp(0.75rem,1.25vw,0.90rem)]">
-                    Powerkicks (noun) - <br/>
+                <p className="max-w-[18rem] font-semibold text-[clamp(0.75rem,1.25vw,0.90rem)]">
+                    Powerkicks (noun) -
                     Modern taekwondo training built on discipline, focus, and growth.
                 </p>
             </div>

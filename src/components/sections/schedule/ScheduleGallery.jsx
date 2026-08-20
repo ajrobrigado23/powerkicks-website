@@ -173,7 +173,7 @@ export default function ScheduleGallery() {
                 {/* paragraph */}
                 <TrainingScheduleDetails
                     className="flex flex-wrap justify-between gap-y-6"
-                    location="dasmarinas"
+                    location="gentri"
                 />
             </div>
 
@@ -238,7 +238,7 @@ export default function ScheduleGallery() {
                 {/* paragraph */}
                 <TrainingScheduleDetails
                     className="flex flex-wrap justify-between gap-y-6"
-                    location="dasmarinas"
+                    location="bucandala"
                 />
             </div>
 
