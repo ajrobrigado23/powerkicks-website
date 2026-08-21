@@ -2,6 +2,7 @@ import SmoothScrollProvider from "./components/layout/SmoothScrollProvider.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Schedule from "./pages/Schedule.jsx";
+import Gallery from "./pages/Gallery.jsx";
 
 /*
     IMPORTANT TIPS - (When using React + GSAP)
@@ -18,6 +19,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/schedule" element={<Schedule />} />
+                    <Route path="/gallery" element={<Gallery/>} />
                 </Routes>
 
             </SmoothScrollProvider>

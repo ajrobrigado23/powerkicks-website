@@ -6,7 +6,7 @@ import Button from "../ui/Button.jsx";
 import { Link } from "react-router-dom";
 
 const MENU_ITEMS = [
-  { label: "Gallery", href: "#gallery" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Schedule", to: "/schedule" },
   { label: "Contact", href: "#contact" },
   { label: "Facebook", href: "https://facebook.com", external: true },
