@@ -45,12 +45,20 @@ export default function Schedule() {
             // Animate the navbar from above the screen into its normal position.
             gsap.fromTo(
                 ".nav-inner",
-                { yPercent: -100 },
+                {
+                    yPercent: -110,
+                },
                 {
                     yPercent: 0,
                     duration: 0.45,
                     ease: "power2.inOut",
-                    overwrite: "auto",
+                    overwrite: true,
+                    force3D: false,
+                    onComplete: () => {
+                        gsap.set(".nav-inner", {
+                            clearProps: "transform",
+                        });
+                    },
                 }
             );
         };
@@ -62,10 +70,11 @@ export default function Schedule() {
 
             // Move the navbar upward and outside the screen.
             gsap.to(".nav-inner", {
-                yPercent: -100,
+                yPercent: -110,
                 duration: 0.45,
                 ease: "power3.inOut",
                 overwrite: true,
+                force3D: false,
             });
         };
 
@@ -82,12 +91,20 @@ export default function Schedule() {
             // Animate the new navbar from below into its normal position.
             gsap.fromTo(
                 ".nav-inner",
-                { yPercent: 100 },
+                {
+                    yPercent: 110,
+                },
                 {
                     yPercent: 0,
                     duration: 0.85,
                     ease: "power3.out",
                     overwrite: true,
+                    force3D: false,
+                    onComplete: () => {
+                        gsap.set(".nav-inner", {
+                            clearProps: "transform",
+                        });
+                    },
                 }
             );
         };
@@ -100,11 +117,11 @@ export default function Schedule() {
 
             // Move the navbar downward and outside the screen.
             gsap.to(".nav-inner", {
-                yPercent: 100,
-                delay: 0.15,
+                yPercent: 110,
                 duration: 1.25,
                 ease: "power3.out",
-                overwrite: "auto",
+                overwrite: true,
+                force3D: false,
             });
         };
 
