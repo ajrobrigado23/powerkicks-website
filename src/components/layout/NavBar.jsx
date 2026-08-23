@@ -177,17 +177,19 @@ export default function NavBar({
             <nav
                 id="main-nav"
                 ref={navigationRef}
-                className="fixed top-0 left-0 w-full z-40 transform-gpu"
+                className="fixed top-0 left-0 w-full z-40"
             >
                 <div className="nav-mask overflow-hidden">
                     <div
-                        className={`nav-inner w-full ${isBlack ? 'text-white' : 'text-black'} will-change-transform ${
-                            navScrolled ? "py-4 bg-transparent" : `py-3 ${isBlack ? 'bg-black' : 'bg-[#F7F7F7]'}`
-                        }`}
+                        className={
+                            `nav-inner w-full
+                            ${isBlack ? 'text-white' : 'text-black'} 
+                            ${navScrolled ? "py-4 bg-transparent" : `py-3 ${isBlack ? 'bg-black' : 'bg-[#F7F7F7]'}`}
+                        `}
                     >
                         <div className="flex h-full items-center justify-between">
                             <h1
-                                className={`font-bold text-2xl ms-10 uppercase tracking-wider transition-all duration-300 ${
+                                className={`font-bold text-2xl ms-10 uppercase tracking-wider ${
                                     navScrolled && "hidden"
                                 }`}
                             >
@@ -199,7 +201,7 @@ export default function NavBar({
                             </h1>
 
                             <ul
-                                className={`nav-links ms-[6rem] flex font-bold text-[0.7rem] uppercase tracking-wide gap-8 max-[1100px]:text-[0.65rem] max-[901px]:hidden transition-all duration-300 ${
+                                className={`nav-links ms-[6rem] flex font-bold text-[0.7rem] uppercase tracking-wide gap-8 max-[1100px]:text-[0.65rem] max-[901px]:hidden ${
                                     navScrolled && "hidden"
                                 }`}
                             >
@@ -248,6 +250,7 @@ export default function NavBar({
                             </Button>
                         </div>
                     </div>
+
                 </div>
             </nav>
 
