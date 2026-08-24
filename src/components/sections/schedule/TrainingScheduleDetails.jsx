@@ -31,7 +31,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         </div>
 
                         {/* Saturday */}
-                        <div className="flex flex-col min-w-[120px] px-6">
+                        <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Saturday"
                             >
@@ -90,7 +90,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         </div>
 
                         {/* Wednesday */}
-                        <div className="flex flex-col min-w-[120px] px-6">
+                        <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Wednesday"
                             >

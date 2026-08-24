@@ -116,7 +116,7 @@ export default function ScheduleGallery() {
             <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[10rem] min-[751px]:pb-[5rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
-                    className="flex flex-wrap justify-between gap-y-6"
+                    className="flex flex-wrap justify-between gap-x-6 gap-y-6"
                     location="dasmarinas"
                 />
             </div>
@@ -237,7 +237,7 @@ export default function ScheduleGallery() {
             <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[10rem] min-[751px]:pb-[5rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
-                    className="flex flex-wrap justify-between gap-y-6"
+                    className="flex flex-wrap justify-between gap-x-6 gap-y-6"
                     location="bucandala"
                 />
             </div>
