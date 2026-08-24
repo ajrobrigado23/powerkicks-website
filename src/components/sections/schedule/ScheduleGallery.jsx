@@ -18,7 +18,7 @@ export default function ScheduleGallery() {
     const eleventhImage = scheduleImages[10];
 
     return (
-        <section className="grid grid-cols-12 px-10 pb-[2rem] text-white">
+        <section className="grid grid-cols-12 px-10 pt-20 text-white min-[751px]:pt-0">
             {/* 1st Row */}
             <div className="col-span-12 pb-[2rem] min-[601px]:col-span-5 min-[601px]:pb-0">
                 {/* header */}
@@ -38,7 +38,7 @@ export default function ScheduleGallery() {
                 <TextReveal
                     as="p"
                     type="words"
-                    className="font-semibold max-w-full tracking-[0.025rem] text-[clamp(1.15rem,2.50vw,3rem)] min-[601px]:pb-24"
+                    className="font-semibold max-w-full tracking-[0.025rem] text-[clamp(1.15rem,2.50vw,3rem)] pb-[2rem] min-[601px]:pb-24"
                     duration={1.2}
                     delay={1.25}
                     stagger={0.025}
@@ -265,7 +265,7 @@ export default function ScheduleGallery() {
             <div className="col-span-5">
 
             </div>
-            <div className="col-span-7">
+            <div className="col-span-12 min-[751px]:col-span-7">
                 {/* paragraph */}
                 <TextReveal
                     as="p"
