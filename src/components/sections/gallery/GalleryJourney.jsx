@@ -1,4 +1,5 @@
 import {galleryImages} from "./gallery.js";
+import TextReveal from "../../animations/TextReveal.jsx";
 
 export default function GalleryJourney() {
 
@@ -29,6 +30,34 @@ export default function GalleryJourney() {
                             Training Journey
                         </h3>
                     </div>
+                </div>
+                {/* 2nd row */}
+                <div className="col-span-4 pt-5">
+                    {/* sub header */}
+                    <TextReveal
+                        as="h3"
+                        type="words"
+                        className="text-[clamp(0.90rem,1.25vw,1.25rem)] leading-[0.9] font-bold uppercase"
+                        duration={1.6}
+                        delay={1}
+                        stagger={0.07}
+                    >
+                        Training Journey
+                    </TextReveal>
+                </div>
+                <div className="col-span-8 py-5">
+                    {/* paragraph */}
+                    <TextReveal
+                        as="p"
+                        type="words"
+                        className="font-semibold max-w-full tracking-[0.025rem] text-[clamp(1.15rem,2.50vw,3rem)]"
+                        duration={1.2}
+                        delay={1.25}
+                        stagger={0.025}
+                    >
+                        From the first class to advanced training, every student follows a path built on
+                        <span className="text-[#7F7F7F]"> discipline, consistency, confidence, and growth.</span>
+                    </TextReveal>
                 </div>
 
             </section>
