@@ -21,11 +21,12 @@ export default function GalleryJourney() {
                         <div className="absolute inset-0 z-10 bg-black/50" />
 
                         {/* Text */}
-                        <h3 className="absolute top-10 left-10 z-20 text-white text-[clamp(0.90rem,1.25vw,1.25rem)] leading-[0.9] font-semibold uppercase">
+                        <h3 className="absolute top-10 left-10 z-20 text-white text-[clamp(2rem,6vw,10rem)] leading-[1] font-semibold uppercase">
                             Our
                             <br />
                             Step-by-Step
-                            <br/>Training Journey
+                            <br/>
+                            Training Journey
                         </h3>
                     </div>
                 </div>
