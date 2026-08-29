@@ -1,9 +1,12 @@
 import {galleryImages} from "./gallery.js";
 import TextReveal from "../../animations/TextReveal.jsx";
+import SchedulePicture from "../schedule/SchedulePicture.jsx";
 
 export default function GalleryJourney() {
 
     const secondImage = galleryImages[1];
+    const thirdImage = galleryImages[2];
+    const fourthImage = galleryImages[3];
 
     return (
         <>
@@ -31,6 +34,7 @@ export default function GalleryJourney() {
                         </h3>
                     </div>
                 </div>
+
                 {/* 2nd row */}
                 <div className="col-span-4 pt-5">
                     {/* sub header */}
@@ -50,14 +54,35 @@ export default function GalleryJourney() {
                     <TextReveal
                         as="p"
                         type="words"
+                        triggerOnScroll
+                        scrollStart="top 85%"
                         className="font-semibold max-w-full tracking-[0.025rem] text-[clamp(1.15rem,2.50vw,3rem)]"
                         duration={1.2}
-                        delay={1.25}
                         stagger={0.025}
                     >
                         From the first class to advanced training, every student follows a path built on
                         <span className="text-[#7F7F7F]"> discipline, consistency, confidence, and growth.</span>
                     </TextReveal>
+                </div>
+
+                {/* 3rd row */}
+                <div className="col-span-6 pr-2">
+                    {/* picture */}
+                    <SchedulePicture
+                        src={thirdImage.src}
+                        alt={thirdImage.alt}
+                        className="h-[500px] w-full py-2"
+                        centerPercentage={thirdImage.centerPercentage}
+                    />
+                </div>
+                <div className="col-span-6 pl-2">
+                    {/* picture */}
+                    <SchedulePicture
+                        src={fourthImage.src}
+                        alt={fourthImage.alt}
+                        className="h-[500px] w-full py-2"
+                        centerPercentage={fourthImage.centerPercentage}
+                    />
                 </div>
 
             </section>
