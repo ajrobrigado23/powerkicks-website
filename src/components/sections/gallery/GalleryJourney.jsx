@@ -7,6 +7,7 @@ export default function GalleryJourney() {
     const secondImage = galleryImages[1];
     const thirdImage = galleryImages[2];
     const fourthImage = galleryImages[3];
+    const fifthImage = galleryImages[4];
 
     return (
         <>
@@ -36,7 +37,7 @@ export default function GalleryJourney() {
                 </div>
 
                 {/* 2nd row */}
-                <div className="col-span-4 pt-5">
+                <div className="col-span-4 pt-[4rem]">
                     {/* sub header */}
                     <TextReveal
                         as="h3"
@@ -49,7 +50,7 @@ export default function GalleryJourney() {
                         Training Journey
                     </TextReveal>
                 </div>
-                <div className="col-span-8 py-5">
+                <div className="col-span-8 py-[4rem]">
                     {/* paragraph */}
                     <TextReveal
                         as="p"
@@ -82,6 +83,17 @@ export default function GalleryJourney() {
                         alt={fourthImage.alt}
                         className="h-[500px] w-full py-2"
                         centerPercentage={fourthImage.centerPercentage}
+                    />
+                </div>
+
+                {/* 4th row */}
+                <div className="col-span-12">
+                    {/* picture */}
+                    <SchedulePicture
+                        src={fifthImage.src}
+                        alt={fifthImage.alt}
+                        className="h-[650px] w-full py-2"
+                        centerPercentage={fifthImage.centerPercentage}
                     />
                 </div>
 
