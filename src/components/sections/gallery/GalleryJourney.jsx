@@ -8,6 +8,8 @@ export default function GalleryJourney() {
     const thirdImage = galleryImages[2];
     const fourthImage = galleryImages[3];
     const fifthImage = galleryImages[4];
+    const sixthImage = galleryImages[5];
+    const seventhImage = galleryImages[6];
 
     return (
         <>
@@ -94,6 +96,26 @@ export default function GalleryJourney() {
                         alt={fifthImage.alt}
                         className="h-[650px] w-full py-2"
                         centerPercentage={fifthImage.centerPercentage}
+                    />
+                </div>
+
+                {/* 5th row */}
+                <div className="col-span-6 pr-2">
+                    {/* picture */}
+                    <SchedulePicture
+                        src={sixthImage.src}
+                        alt={sixthImage.alt}
+                        className="h-[650px] w-full py-2"
+                        centerPercentage={sixthImage.centerPercentage}
+                    />
+                </div>
+                <div className="col-span-6 pl-2">
+                    {/* picture */}
+                    <SchedulePicture
+                        src={seventhImage.src}
+                        alt={seventhImage.alt}
+                        className="h-[1300px] w-full py-2"
+                        centerPercentage={seventhImage.centerPercentage}
                     />
                 </div>
 

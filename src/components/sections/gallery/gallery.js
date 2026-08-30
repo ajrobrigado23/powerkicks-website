@@ -3,6 +3,8 @@ import galleryImgTwo from "../../../assets/images/gallery-images/IMG_7594.JPG";
 import galleryImgThree from "../../../assets/images/gallery-images/IMG_7095.JPG";
 import galleryImgFour from "../../../assets/images/gallery-images/IMG_7640.JPG";
 import galleryImgFive from "../../../assets/images/gallery-images/IMG_7666.JPG";
+import galleryImgSix from "../../../assets/images/gallery-images/IMG_7553.JPG";
+import galleryImgSeven from "../../../assets/images/gallery-images/IMG_7551.JPG";
 
 export const galleryImages = [
     {
@@ -33,6 +35,18 @@ export const galleryImages = [
         id: 5,
         src: galleryImgFive,
         alt: "Powerkicks training gallery image 5",
+        centerPercentage: "35%",
+    },
+    {
+        id: 6,
+        src: galleryImgSix,
+        alt: "Powerkicks training gallery image 6",
+        centerPercentage: "35%",
+    },
+    {
+        id: 7,
+        src: galleryImgSeven,
+        alt: "Powerkicks training gallery image 7",
         centerPercentage: "35%",
     },
 ];
