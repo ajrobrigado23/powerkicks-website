@@ -13,7 +13,7 @@ export default function GalleryJourney() {
 
     return (
         <>
-            <section className="grid grid-cols-12 px-10">
+            <section className="grid grid-cols-12  gap-x-4 px-10">
                 {/* step by step training journey */}
                 <div className="col-span-12 py-10 -mx-10">
                     <div className="relative overflow-hidden h-[750px]">
@@ -69,7 +69,7 @@ export default function GalleryJourney() {
                 </div>
 
                 {/* 3rd row */}
-                <div className="col-span-6 pr-2">
+                <div className="col-span-6">
                     {/* picture */}
                     <SchedulePicture
                         src={thirdImage.src}
@@ -78,7 +78,7 @@ export default function GalleryJourney() {
                         centerPercentage={thirdImage.centerPercentage}
                     />
                 </div>
-                <div className="col-span-6 pl-2">
+                <div className="col-span-6">
                     {/* picture */}
                     <SchedulePicture
                         src={fourthImage.src}
@@ -100,7 +100,7 @@ export default function GalleryJourney() {
                 </div>
 
                 {/* 5th row */}
-                <div className="col-span-6 pr-2">
+                <div className="col-span-6">
                     {/* picture */}
                     <SchedulePicture
                         src={sixthImage.src}
@@ -109,7 +109,7 @@ export default function GalleryJourney() {
                         centerPercentage={sixthImage.centerPercentage}
                     />
                 </div>
-                <div className="col-span-6 pl-2">
+                <div className="col-span-6">
                     {/* picture */}
                     <SchedulePicture
                         src={seventhImage.src}
