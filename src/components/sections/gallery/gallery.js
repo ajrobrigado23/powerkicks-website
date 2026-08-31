@@ -6,6 +6,7 @@ import galleryImgFive from "../../../assets/images/gallery-images/IMG_7666.JPG";
 import galleryImgSix from "../../../assets/images/gallery-images/IMG_7553.JPG";
 import galleryImgSeven from "../../../assets/images/gallery-images/IMG_7551.JPG";
 import galleryImgEight from "../../../assets/images/gallery-images/IMG_7100.JPG";
+import galleryImgNinth from "../../../assets/images/gallery-images/IMG_7119.JPG";
 
 export const galleryImages = [
     {
@@ -53,7 +54,13 @@ export const galleryImages = [
     {
         id: 8,
         src: galleryImgEight,
-        alt: "Powerkicks training gallery image ",
+        alt: "Powerkicks training gallery image 8",
+        centerPercentage: "20%",
+    },
+    {
+        id: 9,
+        src: galleryImgNinth,
+        alt: "Powerkicks training gallery image 9",
         centerPercentage: "20%",
     },
 ];

@@ -46,7 +46,7 @@ export default function GalleryHero() {
             </div>
 
             {/* 2nd row */}
-            <div className="col-span-4 pt-10">
+            <div className="col-span-4 pt-[3rem]">
                 {/* sub header */}
                 <TextReveal
                     as="h3"
@@ -59,7 +59,7 @@ export default function GalleryHero() {
                     Our Mission
                 </TextReveal>
             </div>
-            <div className="col-span-8 pt-10 pb-10">
+            <div className="col-span-8 pt-[3rem] pb-10">
                 {/* paragraph */}
                 <TextReveal
                     as="p"

@@ -11,6 +11,7 @@ export default function GalleryJourney() {
     const sixthImage = galleryImages[5];
     const seventhImage = galleryImages[6]
     const eightImage = galleryImages[7];
+    const ninthImage = galleryImages[8];
 
     return (
         <>
@@ -128,6 +129,46 @@ export default function GalleryJourney() {
                         className="h-[650px] w-full py-2"
                         centerPercentage={eightImage.centerPercentage}
                     />
+                </div>
+
+                {/* 6th row */}
+                <div className="col-span-12">
+                    {/* picture */}
+                    <SchedulePicture
+                        src={ninthImage.src}
+                        alt={ninthImage.alt}
+                        className="h-[650px] w-full py-2"
+                        centerPercentage={ninthImage.centerPercentage}
+                    />
+                </div>
+
+                {/* 7th row */}
+                <div className="col-span-4 pt-[3rem]">
+                    {/* sub header */}
+                    <TextReveal
+                        as="h3"
+                        type="words"
+                        className="text-[clamp(0.90rem,1.25vw,1.25rem)] leading-[0.9] font-bold uppercase"
+                        duration={1.6}
+                        delay={1}
+                        stagger={0.07}
+                    >
+                        Our Vision
+                    </TextReveal>
+                </div>
+                <div className="col-span-8 pt-[3rem] pb-[6rem]">
+                    {/* paragraph */}
+                    <TextReveal
+                        as="p"
+                        type="words"
+                        className=""
+                        triggerOnScroll
+                        duration={1.2}
+                        stagger={0.025}
+                    >
+                        Our mission is to help students grow through disciplined taekwondo training building confidence,
+                        focus, respect, and strength that extends beyond the mat.
+                    </TextReveal>
                 </div>
 
             </section>
