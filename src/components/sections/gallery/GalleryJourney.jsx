@@ -9,7 +9,8 @@ export default function GalleryJourney() {
     const fourthImage = galleryImages[3];
     const fifthImage = galleryImages[4];
     const sixthImage = galleryImages[5];
-    const seventhImage = galleryImages[6];
+    const seventhImage = galleryImages[6]
+    const eightImage = galleryImages[7];
 
     return (
         <>
@@ -109,13 +110,23 @@ export default function GalleryJourney() {
                         centerPercentage={sixthImage.centerPercentage}
                     />
                 </div>
-                <div className="col-span-6">
+                <div className="col-span-6 row-span-2">
                     {/* picture */}
                     <SchedulePicture
                         src={seventhImage.src}
                         alt={seventhImage.alt}
                         className="h-[1300px] w-full py-2"
                         centerPercentage={seventhImage.centerPercentage}
+                    />
+                </div>
+
+                <div className="col-span-6">
+                    {/* picture */}
+                    <SchedulePicture
+                        src={eightImage.src}
+                        alt={eightImage.alt}
+                        className="h-[650px] w-full py-2"
+                        centerPercentage={eightImage.centerPercentage}
                     />
                 </div>
 
