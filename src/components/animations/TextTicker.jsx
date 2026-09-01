@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 const DURATION = 180;
 const REPEAT_COUNT = 6;
 
-export default function TextTicker({ children, black, right }) {
+export default function TextTicker({ children, textIsBlack, right }) {
     const containerRef = useRef(null);
     const trackRef = useRef(null);
 
@@ -52,7 +52,7 @@ export default function TextTicker({ children, black, right }) {
             {/* Duplicate the items to create a seamless loop */}
             <div
                 ref={trackRef}
-                className={`flex whitespace-nowrap uppercase ${black ? "text-black" : "text-white"} will-change-transform`}
+                className={`flex whitespace-nowrap uppercase ${textIsBlack ? "text-black" : "text-white"} will-change-transform`}
             >
                 {[...items, ...items].map((item, i) => (
                     <span
