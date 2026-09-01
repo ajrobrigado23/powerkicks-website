@@ -134,7 +134,7 @@ const Home = () => {
                 <LocationSection />
                 <TestimonialSection />
                 <FAQSection />
-                <PowerkicksMarqueeSection />
+                <PowerkicksMarqueeSection backgroundColorBlack={false}/>
             </main>
 
             <Footer />

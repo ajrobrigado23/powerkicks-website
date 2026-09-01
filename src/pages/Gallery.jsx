@@ -15,7 +15,7 @@ export default function Gallery() {
 
             <main>
                 <GalleryJourney/>
-                <PowerkicksMarqueeSection />
+                <PowerkicksMarqueeSection backgroundColorBlack={false}/>
             </main>
 
             <Footer></Footer>

@@ -47,7 +47,7 @@ export default function TextTicker({ children, black, right }) {
     return (
         <div
             ref={containerRef}
-            className="w-full overflow-hidden overflow-x-clip bg-black"
+            className="w-full overflow-hidden overflow-x-clip"
         >
             {/* Duplicate the items to create a seamless loop */}
             <div
