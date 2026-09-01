@@ -1,9 +1,9 @@
 import SlideUpText from "../animations/SlideUpText.jsx";
 
-export default function Footer() {
+export default function Footer({backgroundColorBlack=true, textColorWhite=true}) {
 
     return (
-        <footer className="w-full px-10 pt-[2rem] pb-[1rem] bg-black text-white">
+        <footer className={`w-full px-10 pt-[2rem] pb-[1rem] ${backgroundColorBlack && "bg-black"} ${textColorWhite && "text-white"}`}>
             <div className="grid grid-cols-1 gap-10 min-[501px]:grid-cols-2">
                 {/* Terms of Service */}
                 <div className="flex flex-col">
@@ -50,7 +50,7 @@ export default function Footer() {
             </div>
             {/* Credits part */}
             <div className="flex justify-between pt-20 text-[clamp(0.35rem,1.2vw,0.55rem)] text-[#7F7F7F] font-semibold">
-                <h4>Made & Curated By <span className="text-white">Albert Robrigado</span></h4>
+                <h4>Made & Curated By <span className={`${textColorWhite && "text-white"}`}>Albert Robrigado</span></h4>
                 <p className="flex items-center gap-1">
                     <span className="text-[clamp(0.65rem,1.2vw,0.80rem)] leading-none">&copy;</span>
                     2026 Powerkicks, All rights reserved

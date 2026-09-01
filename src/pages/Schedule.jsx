@@ -201,7 +201,7 @@ export default function Schedule() {
 
             <main className="bg-black">
                 <ScheduleGallery></ScheduleGallery>
-                <PowerkicksMarqueeSection />
+                <PowerkicksMarqueeSection backgroundColorBlack={true} textIsBlack={false}/>
             </main>
 
             <Footer/>

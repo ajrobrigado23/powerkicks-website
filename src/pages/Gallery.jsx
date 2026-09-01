@@ -18,7 +18,7 @@ export default function Gallery() {
                 <PowerkicksMarqueeSection backgroundColorBlack={false}/>
             </main>
 
-            <Footer></Footer>
+            <Footer backgroundColorBlack={false} textColorWhite={false}></Footer>
         </>
     );
 }
