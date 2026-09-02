@@ -18,13 +18,13 @@ export default function Footer({backgroundColorBlack=true, textColorWhite=true})
                     <div className="w-full max-w-[220px] text-left">
                         <h4 className="text-[clamp(0.90rem,1.5vw,1.50rem)] font-semibold pb-2">Social Media</h4>
                         <div className="flex flex-col gap-3">
-                            <a className="text-[clamp(0.60rem,1.5vw,0.80rem)] font-medium tracking-[0.025rem] uppercase">
+                            <a className={`text-[clamp(0.60rem,1.5vw,0.80rem)] ${ textColorWhite ? "font-medium" : "font-semibold"} tracking-[0.025rem] uppercase`}>
                                 <SlideUpText>Facebook</SlideUpText>
                             </a>
-                            <a className="text-[clamp(0.60rem,1.5vw,0.80rem)] font-medium tracking-[0.025rem] uppercase">
+                            <a className={`text-[clamp(0.60rem,1.5vw,0.80rem)] ${ textColorWhite ? "font-medium" : "font-semibold"} tracking-[0.025rem] uppercase`}>
                                 <SlideUpText>Instagram</SlideUpText>
                             </a>
-                            <a className="text-[clamp(0.60rem,1.5vw,0.80rem)] font-medium tracking-[0.025rem] uppercase">
+                            <a className={`text-[clamp(0.60rem,1.5vw,0.80rem)] ${ textColorWhite ? "font-medium" : "font-semibold"} tracking-[0.025rem] uppercase`}>
                                 <SlideUpText>Tiktok</SlideUpText>
                             </a>
                         </div>
@@ -50,7 +50,7 @@ export default function Footer({backgroundColorBlack=true, textColorWhite=true})
             </div>
             {/* Credits part */}
             <div className="flex justify-between pt-20 text-[clamp(0.35rem,1.2vw,0.55rem)] text-[#7F7F7F] font-semibold">
-                <h4>Made & Curated By <span className={`${textColorWhite && "text-white"}`}>Albert Robrigado</span></h4>
+                <h4>Made & Curated By <span className={`${textColorWhite ? "text-white" : "text-black"}`}>Albert Robrigado</span></h4>
                 <p className="flex items-center gap-1">
                     <span className="text-[clamp(0.65rem,1.2vw,0.80rem)] leading-none">&copy;</span>
                     2026 Powerkicks, All rights reserved
