@@ -35,7 +35,13 @@ export default function GalleryHero() {
                     A visual story of Powerkicks Taekwondo capturing our students, coaches, training sessions,
                     competitions, <span className="text-[#7F7F7F]">and the moments that define our discipline-driven community.</span>
                 </TextReveal>
+            </div>
 
+            <div className="col-span-0 min-[751px]:col-span-4">
+
+            </div>
+
+            <div className="col-span-12 pt-2 min-[751px]:col-span-8 pt-0">
                 {/* picture */}
                 <SchedulePicture
                     src={firstImage.src}
@@ -45,7 +51,7 @@ export default function GalleryHero() {
                 />
             </div>
 
-            {/* 2nd row */}
+            {/* 3nd row */}
             <div className="col-span-4 pt-[3rem]">
                 {/* sub header */}
                 <TextReveal
