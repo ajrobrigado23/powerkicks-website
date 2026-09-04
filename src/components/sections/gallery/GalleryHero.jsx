@@ -1,13 +1,14 @@
 import TextReveal from "../../animations/TextReveal.jsx";
 import SchedulePicture from "../schedule/SchedulePicture.jsx";
-import { galleryImages } from "../gallery/gallery.js";
+import { galleryImages } from "./gallery.js";
+import {forwardRef} from "react";
 
-export default function GalleryHero() {
+const GalleryHero = forwardRef( (props, ref) => {
 
     const firstImage = galleryImages[0];
 
     return (
-        <section className="grid grid-cols-12 px-10 pt-[12rem]">
+        <section ref={ref} className="grid grid-cols-12 px-10 pt-[12rem]">
             {/* gallery hero section */}
             <div className="col-span-4">
                 {/* sub header */}
@@ -82,4 +83,7 @@ export default function GalleryHero() {
 
         </section>
     );
-}
+});
+
+GalleryHero.displayName = "GalleryHero";
+export default GalleryHero;
