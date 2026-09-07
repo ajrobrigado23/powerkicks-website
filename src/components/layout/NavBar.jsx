@@ -184,7 +184,7 @@ export default function NavBar({
                         className={
                             `nav-inner w-full
                             ${isBlack ? 'text-white' : 'text-black'} 
-                            ${navScrolled ? "py-4 bg-transparent" : `py-3 ${isBlack ? 'bg-black' : 'bg-[#F7F7F7]'}`}
+                            ${navScrolled ? "py-4 bg-transparent" : `py-6 ${isBlack ? 'bg-black' : 'bg-[#F7F7F7]'}`}
                         `}
                     >
                         <div className="flex h-full items-center justify-between">

@@ -8,7 +8,7 @@ const GalleryHero = forwardRef( (props, ref) => {
     const firstImage = galleryImages[0];
 
     return (
-        <section ref={ref} className="grid grid-cols-12 px-10 pt-[12rem]">
+        <section ref={ref} className="grid grid-cols-12 px-10 pt-[8rem]">
             {/* gallery hero section */}
             <div className="col-span-4">
                 {/* sub header */}
