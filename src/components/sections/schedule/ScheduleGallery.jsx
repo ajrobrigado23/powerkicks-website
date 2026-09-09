@@ -85,7 +85,7 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 5th row */}
-            <div className="col-span-12 pt-[2rem] min-[751px]:col-span-5 min-[751px]:pt-[10rem]">
+            <div className="col-span-12 pt-[2rem] min-[751px]:col-span-5 min-[751px]:pt-[9rem]">
                 {/* header */}
                 <TextReveal
                     as="h3"
@@ -113,7 +113,7 @@ export default function ScheduleGallery() {
                     Km. 30, Emilio Aguinaldo Highway, Barangay Burol, Dasmariñas City, Cavite, 4114, Philippines
                 </TextReveal>
             </div>
-            <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[10rem] min-[751px]:pb-[5rem]">
+            <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
                     className="flex flex-wrap justify-between gap-x-6 gap-y-6"
@@ -141,7 +141,7 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 7th row */}
-            <div className="col-span-12 pt-[2rem] min-[751px]:col-span-5 min-[751px]:pt-[10rem]">
+            <div className="col-span-12 pt-[2rem] min-[751px]:col-span-5 min-[751px]:pt-[9rem]">
                 {/* header */}
                 <TextReveal
                     as="h3"
@@ -169,7 +169,7 @@ export default function ScheduleGallery() {
                     Km. 30, Emilio Aguinaldo Highway, Barangay Burol, Dasmariñas City, Cavite, 4114, Philippines
                 </TextReveal>
             </div>
-            <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[10rem] min-[751px]:pb-[5rem]">
+            <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
                     className="flex flex-wrap justify-between gap-y-6"
@@ -206,7 +206,7 @@ export default function ScheduleGallery() {
             </div>
 
             {/* 9th row */}
-            <div className="col-span-12 pt-[2rem] min-[751px]:col-span-5 min-[751px]:pt-[10rem]">
+            <div className="col-span-12 pt-[2rem] min-[751px]:col-span-5 min-[751px]:pt-[9rem]">
                 {/* header */}
                 <TextReveal
                     as="h3"
@@ -234,7 +234,7 @@ export default function ScheduleGallery() {
                     Km. 30, Emilio Aguinaldo Highway, Barangay Burol, Dasmariñas City, Cavite, 4114, Philippines
                 </TextReveal>
             </div>
-            <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[10rem] min-[751px]:pb-[5rem]">
+            <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
                     className="flex flex-wrap justify-between gap-x-6 gap-y-6"

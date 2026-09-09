@@ -1,5 +1,5 @@
 import TextReveal from "../../animations/TextReveal.jsx";
-import {forwardRef} from "react";
+import { forwardRef } from "react";
 
 const ScheduleHero = forwardRef((props, ref) => {
 

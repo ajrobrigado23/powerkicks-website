@@ -196,7 +196,7 @@ export default function NavBar({
                             >
                                 <div className="nav-text-reveal overflow-hidden">
                                     <div className="nav-text-inner">
-                                        <Logo></Logo>
+                                        <Logo isBlack={isBlack}></Logo>
                                     </div>
                                 </div>
                             </h1>
