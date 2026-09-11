@@ -1,7 +1,7 @@
 export default function ContactHero() {
 
     return(
-        <section>
+        <section className="">
 
         </section>
     );

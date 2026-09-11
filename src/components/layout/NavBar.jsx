@@ -9,7 +9,7 @@ import Logo from "../ui/Logo.jsx";
 const MENU_ITEMS = [
   { label: "Gallery", href: "/gallery" },
   { label: "Schedule", to: "/schedule" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
   { label: "Facebook", href: "https://facebook.com", external: true },
   { label: "Instagram", href: "https://instagram.com", external: true },
   { label: "Privacy Policy", href: "/privacy-policy" },
