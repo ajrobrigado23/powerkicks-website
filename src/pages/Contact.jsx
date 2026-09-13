@@ -5,7 +5,7 @@ export default function Contact() {
 
     return(
         <>
-            <main className="min-h-screen bg-black">
+            <main className="min-h-screen bg-black text-white">
                 <NavBar isBlack={true}></NavBar>
                 <ContactHero></ContactHero>
             </main>
