@@ -4,7 +4,7 @@ export default function ContactHero() {
 
     return(
         <section className="grid grid-cols-12 px-10 pt-[10rem] w-full">
-            <div className="col-span-12 text-white">
+            <div className="col-span-12">
                 <TextReveal
                     as="h1"
                     type="letters"
@@ -14,6 +14,25 @@ export default function ContactHero() {
                 >
                     Contact
                 </TextReveal>
+            </div>
+
+            <div className="col-span-8">
+                <TextReveal
+                    as="p"
+                    type="words"
+                    className="text-[clamp(1rem,1.25vw,1.75rem)] leading-[0.9] font-light"
+                    triggerOnScroll
+                    duration={1.2}
+                    delay={1.25}
+                    stagger={0.025}
+                >
+                    For any enquiries, or just to say hello, get in touch and contact us.
+                </TextReveal>
+            </div>
+
+            <div className="col-span-4">
+                {/* Contact Information */}
+
             </div>
 
         </section>
