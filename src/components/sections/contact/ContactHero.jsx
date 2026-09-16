@@ -36,6 +36,31 @@ export default function ContactHero() {
                     label={"Email Address"}
                     value={"powerkickstkd2018@gmail.com"}
                 />
+
+                <ContactInformation
+                    label={"Facebook"}
+                    value={"powerkickstkd2018@gmail.com"}
+                />
+
+                <ContactInformation
+                    label={"Email Address"}
+                    value={"powerkickstkd2018@gmail.com"}
+                />
+
+                <ContactInformation
+                    label={"Facebook"}
+                    value={"powerkickstkd2018@gmail.com"}
+                />
+
+                <ContactInformation
+                    label={"Email Address"}
+                    value={"powerkickstkd2018@gmail.com"}
+                />
+
+                <ContactInformation
+                    label={"Facebook"}
+                    value={"powerkickstkd2018@gmail.com"}
+                />
             </div>
 
         </section>

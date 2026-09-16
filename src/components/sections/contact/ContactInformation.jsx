@@ -8,11 +8,9 @@ export default function ContactInformation({ label, value }) {
             <TextReveal
                 as="p"
                 type="words"
-                triggerOnScroll
-                scrollStart="top 85%"
-                className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] font-medium text-[#7F7F7F] w-[47%]"
-                duration={1.2}
-                delay={0.1}
+                className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] font-medium text-[#7F7F7F]"
+                duration={1}
+                delay={1.75}
                 stagger={0.07}
             >
                 {label}
@@ -21,11 +19,9 @@ export default function ContactInformation({ label, value }) {
             <TextReveal
                 as="h3"
                 type="words"
-                triggerOnScroll
-                scrollStart="top 85%"
                 className="text-[clamp(0.90rem,1.15vw,1.25rem)] leading-[0.9] font-bold pb-2"
-                duration={1.2}
-                delay={0.1}
+                duration={2}
+                delay={1.50}
                 stagger={0.07}
             >
                 {value}
