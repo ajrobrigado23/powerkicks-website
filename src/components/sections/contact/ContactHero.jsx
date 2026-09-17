@@ -39,27 +39,27 @@ export default function ContactHero() {
 
                 <ContactInformation
                     label={"Facebook"}
-                    value={"powerkickstkd2018@gmail.com"}
+                    value={"Powerkicks Taekwondo"}
                 />
 
                 <ContactInformation
-                    label={"Email Address"}
-                    value={"powerkickstkd2018@gmail.com"}
+                    label={"Business Address"}
+                    value={"NIA Road, 210 Bucandala III, Imus, 4103 Cavite"}
                 />
 
                 <ContactInformation
-                    label={"Facebook"}
-                    value={"powerkickstkd2018@gmail.com"}
+                    label={"Instagram"}
+                    value={"@powerkickstkd"}
                 />
 
                 <ContactInformation
-                    label={"Email Address"}
-                    value={"powerkickstkd2018@gmail.com"}
+                    label={"Contact number"}
+                    value={"+63912-345-6789"}
                 />
 
                 <ContactInformation
-                    label={"Facebook"}
-                    value={"powerkickstkd2018@gmail.com"}
+                    label={"Tiktok"}
+                    value={"Powerkicks Taekwondo"}
                 />
             </div>
 
