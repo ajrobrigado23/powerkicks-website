@@ -71,7 +71,7 @@ export default function GalleryJourney() {
                 </div>
 
                 {/* 3rd row */}
-                <div className="col-span-6">
+                <div className="col-span-12 phone:col-span-6">
                     {/* picture */}
                     <SchedulePicture
                         src={thirdImage.src}
@@ -80,7 +80,7 @@ export default function GalleryJourney() {
                         centerPercentage={thirdImage.centerPercentage}
                     />
                 </div>
-                <div className="col-span-6">
+                <div className="col-span-12 phone:col-span-6">
                     {/* picture */}
                     <SchedulePicture
                         src={fourthImage.src}
@@ -102,7 +102,7 @@ export default function GalleryJourney() {
                 </div>
 
                 {/* 5th row */}
-                <div className="col-span-6">
+                <div className="col-span-12 phone:col-span-6">
                     {/* picture */}
                     <SchedulePicture
                         src={sixthImage.src}
@@ -111,7 +111,7 @@ export default function GalleryJourney() {
                         centerPercentage={sixthImage.centerPercentage}
                     />
                 </div>
-                <div className="col-span-6 row-span-2">
+                <div className="col-span-12 row-span-1 phone:col-span-6 phone:row-span-2">
                     {/* picture */}
                     <SchedulePicture
                         src={seventhImage.src}
@@ -121,7 +121,7 @@ export default function GalleryJourney() {
                     />
                 </div>
 
-                <div className="col-span-6">
+                <div className="col-span-12 phone:col-span-6">
                     {/* picture */}
                     <SchedulePicture
                         src={eightImage.src}
