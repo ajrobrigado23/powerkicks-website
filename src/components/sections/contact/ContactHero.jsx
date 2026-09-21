@@ -9,7 +9,7 @@ export default function ContactHero() {
                 <TextReveal
                     as="h1"
                     type="letters"
-                    className="uppercase text-[clamp(4rem,16vw,24rem)] font-bold tracking-[-0.02em] leading-none whitespace-nowrap text-white"
+                    className="uppercase text-[clamp(3.25rem,16vw,24rem)] font-bold tracking-[-0.02em] leading-none whitespace-nowrap text-white"
                     duration={2.50}
                     stagger={0.07}
                 >
@@ -21,7 +21,7 @@ export default function ContactHero() {
                 <TextReveal
                     as="p"
                     type="words"
-                    className="text-[clamp(1rem,1.25vw,1.75rem)] leading-[0.9] font-light"
+                    className="text-[clamp(0.70rem,1.25vw,1.75rem)] leading-[0.9] font-light"
                     triggerOnScroll
                     duration={1.2}
                     delay={1.25}
@@ -31,7 +31,7 @@ export default function ContactHero() {
                 </TextReveal>
             </div>
 
-            <div className="col-span-6 grid grid-cols-2 gap-x-10 gap-y-10">
+            <div className="col-span-12 mt-20 grid grid-cols-2 gap-x-10 gap-y-10 tablet:col-span-6 tablet:mt-0">
                 <ContactInformation
                     label={"Email Address"}
                     value={"powerkickstkd2018@gmail.com"}
