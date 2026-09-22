@@ -128,7 +128,7 @@ export default function NavBar({
         gsap.fromTo(
             [".nav-text-inner", ".nav-button-inner"],
             {
-                yPercent: 100,
+                yPercent: 110,
             },
             {
                 yPercent: 0,

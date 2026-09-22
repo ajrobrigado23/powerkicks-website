@@ -31,7 +31,7 @@ export default function ContactHero() {
                 </TextReveal>
             </div>
 
-            <div className="col-span-12 mt-20 grid grid-cols-2 gap-x-10 gap-y-10 tablet:col-span-6 tablet:mt-0">
+            <div className="col-span-12 mt-12 grid grid-cols-2 gap-x-10 gap-y-10 tablet:col-span-6 tablet:mt-0">
                 <ContactInformation
                     label={"Email Address"}
                     value={"powerkickstkd2018@gmail.com"}
