@@ -10,18 +10,18 @@ export default function Schedule() {
     const { firstContainerRef, secondContainerRef, navScrolled } = useScrollNavbar();
 
     return (
-        <>
-            <header ref={firstContainerRef} className="relative w-full tablet:h-screen tablet:overflow-hidden bg-black">
+        <div className="min-h-screen bg-black">
+            <header ref={firstContainerRef} className="relative w-full tablet:h-screen tablet:overflow-hidden">
                 <NavBar navScrolled={navScrolled} isBlack={true}></NavBar>
                 <ScheduleHero ref={secondContainerRef}></ScheduleHero>
             </header>
 
-            <main className="bg-black">
+            <main>
                 <ScheduleGallery></ScheduleGallery>
                 <PowerkicksMarqueeSection backgroundColorBlack={true} textIsBlack={false}/>
             </main>
 
             <Footer/>
-        </>
+        </div>
     );
 }
