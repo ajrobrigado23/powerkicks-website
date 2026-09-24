@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import LiftZoomImage from "../../ui/LiftZoomImage.jsx";
+import LiftZoomImage from "../../animations/LiftZoomImage.jsx";
 
 export default function SchedulePicture({
                                             src,
