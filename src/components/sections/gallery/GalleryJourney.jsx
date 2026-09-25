@@ -85,6 +85,7 @@ export default function GalleryJourney() {
                     <SchedulePicture
                         src={fourthImage.src}
                         alt={fourthImage.alt}
+                        delay={0.25}
                         className="h-[500px] w-full py-2"
                         centerPercentage={fourthImage.centerPercentage}
                     />
