@@ -196,7 +196,13 @@ export default function NavBar({
                             >
                                 <div className="nav-text-reveal overflow-hidden">
                                     <div className="nav-text-inner">
-                                        <Logo isBlack={isBlack}></Logo>
+                                        <Link
+                                            to="/"
+                                            aria-label="Go to Powerkicks homepage"
+                                            className="inline-flex"
+                                        >
+                                            <Logo isBlack={isBlack} />
+                                        </Link>
                                     </div>
                                 </div>
                             </h1>
