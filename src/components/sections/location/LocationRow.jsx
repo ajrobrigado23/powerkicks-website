@@ -26,7 +26,7 @@ const LocationRow = forwardRef(function LocationRow(
                 >
                     {location.title}
                 </h3>
-                <p className={`font-normal tracking-[0.025rem] text-[clamp(0.50rem,1.5vw,0.65rem)] max-w-[15rem]
+                <p className={`font-normal tracking-[0.025rem] text-[clamp(0.50rem,1.5vw,0.65rem)] max-w-[20rem]
                         ${!hasActiveHover && "text-black"}
                         ${hasActiveHover && isActive && "text-black"}
                         ${hasActiveHover && !isActive && "text-black/50"}

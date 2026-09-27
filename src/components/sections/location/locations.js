@@ -15,7 +15,7 @@ export const locations = [
         id: 2,
         image: robinsonGenTri,
         title: "Robinson General Trias",
-        address: "KM 30 Emilio Aguinaldo Highway, Bo. Burol, Dasmariñas, Cavite",
+        address: "A. Soriano Highway, EPZA-Bacao Diversion Road, Barangay Tejero, General Trias, Cavite",
         description:
             "Train in a structured environment with coaches focused on discipline, consistency, and student growth.",
     },
@@ -23,7 +23,7 @@ export const locations = [
         id: 3,
         image: imusMainGym,
         title: "Imus Bucandala Main Gym",
-        address: "KM 30 Emilio Aguinaldo Highway, Bo. Burol, Dasmariñas, Cavite",
+        address: "Abundant Harvest 210, Bucandala 3 Imus, Cavite (Near Imus National Highschool)",
         description:
             "A supportive training space for beginners and competitive students who want strong fundamentals.",
     },
