@@ -78,3 +78,18 @@ export const scheduleImages = [
         centerPercentage: "20%",
     },
 ];
+
+export const scheduleAddress = [
+    {
+        name: "Waltermart Dasmarinas",
+        address:"KM 30 Emilio Aguinaldo Highway, Bo. Burol, Dasmariñas, Cavite"
+    },
+    {
+        name: "Robinson General Trias",
+        address:"A. Soriano Highway, EPZA-Bacao Diversion Road, Barangay Tejero, General Trias, Cavite"
+    },
+    {
+        name: "Imus Bucandala Gym",
+        address:"Abundant Harvest 210, Bucandala 3 Imus, Cavite (Near Imus National Highschool)"
+    },
+];

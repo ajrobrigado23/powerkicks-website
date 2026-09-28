@@ -1,6 +1,6 @@
 import SchedulePicture from "./SchedulePicture.jsx";
 import TextReveal from "../../animations/TextReveal.jsx";
-import { scheduleImages } from "./schedule.js"
+import { scheduleImages, scheduleAddress } from "./schedule.js"
 import TrainingScheduleDetails from "./TrainingScheduleDetails.jsx";
 
 export default function ScheduleGallery() {
@@ -97,7 +97,7 @@ export default function ScheduleGallery() {
                     delay={0.1}
                     stagger={0.07}
                 >
-                    Waltermart Dasmarinas
+                    { scheduleAddress[0].name }
                 </TextReveal>
                 {/* header */}
                 <TextReveal
@@ -110,7 +110,7 @@ export default function ScheduleGallery() {
                     delay={0.1}
                     stagger={0.07}
                 >
-                    Km. 30, Emilio Aguinaldo Highway, Barangay Burol, Dasmariñas City, Cavite, 4114, Philippines
+                    { scheduleAddress[0].address }
                 </TextReveal>
             </div>
             <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
@@ -153,7 +153,7 @@ export default function ScheduleGallery() {
                     delay={0.1}
                     stagger={0.07}
                 >
-                    Robinson General Trias
+                    { scheduleAddress[1].name }
                 </TextReveal>
                 {/* header */}
                 <TextReveal
@@ -161,12 +161,12 @@ export default function ScheduleGallery() {
                     type="words"
                     triggerOnScroll
                     scrollStart="top 85%"
-                    className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] font-medium text-[#7F7F7F] w-[47%]"
+                    className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] font-medium text-[#7F7F7F] w-[65%]"
                     duration={1.2}
                     delay={0.1}
                     stagger={0.07}
                 >
-                    Km. 30, Emilio Aguinaldo Highway, Barangay Burol, Dasmariñas City, Cavite, 4114, Philippines
+                    { scheduleAddress[1].address }
                 </TextReveal>
             </div>
             <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
@@ -218,7 +218,7 @@ export default function ScheduleGallery() {
                     delay={0.1}
                     stagger={0.07}
                 >
-                    Imus Bucandala Main Gym
+                    { scheduleAddress[2].name }
                 </TextReveal>
                 {/* header */}
                 <TextReveal
@@ -226,12 +226,12 @@ export default function ScheduleGallery() {
                     type="words"
                     triggerOnScroll
                     scrollStart="top 85%"
-                    className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] font-medium text-[#7F7F7F] w-[47%]"
+                    className="text-[clamp(0.50rem,1vw,0.60rem)] leading-[0.9] font-medium text-[#7F7F7F] w-[55%]"
                     duration={1.2}
                     delay={0.1}
                     stagger={0.07}
                 >
-                    Km. 30, Emilio Aguinaldo Highway, Barangay Burol, Dasmariñas City, Cavite, 4114, Philippines
+                    { scheduleAddress[2].address }
                 </TextReveal>
             </div>
             <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
