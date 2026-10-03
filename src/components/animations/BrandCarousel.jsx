@@ -12,53 +12,126 @@ const brands = [
 
 export default function BrandCarousel() {
 
+    // Reference to the outer carousel container.
+    // This is mainly used as the scope for useGSAP().
     const containerRef = useRef(null);
+
+    // Reference to the inner track that contains all the logos.
+    // GSAP will move this element horizontally.
     const trackRef = useRef(null);
 
     useGSAP(() => {
+
+        // Get the actual DOM element from the track ref.
         const track = trackRef.current;
+
+        // Stop if the track element doesn't exist yet.
         if (!track) return;
 
+        // Find every image inside the track.
+        // We need to wait for these images before calculating
+        // the total width of the carousel.
         const images = track.querySelectorAll("img");
+
+        // Keeps track of how many images have finished loading.
         let loaded = 0;
 
+        // Starts the infinite horizontal carousel animation.
         const startAnimation = () => {
+
+            /*
+             * The brands array is rendered 4 times:
+             *
+             * [brands][brands][brands][brands]
+             *
+             * Since the track contains four identical sets,
+             * dividing scrollWidth by 4 gives us the width
+             * of ONE complete set of logos.
+             */
             const singleWidth = track.scrollWidth / 4;
 
-            gsap.fromTo(track,
-                        { x: 0 },
-                        {
-                            x: -singleWidth,
-                            duration: 30,
-                            ease: "none",
-                            repeat: -1,  // ✅ no recursion, no drift
-                        }
+            gsap.fromTo(
+                track,
+
+                // Starting position.
+                {
+                    x: 0
+                },
+
+                // Ending position.
+                {
+                    // Move the track exactly one set of logos to the left.
+                    x: -singleWidth,
+
+                    // How long one complete movement takes.
+                    duration: 30,
+
+                    // Linear movement.
+                    // This prevents the carousel from speeding up or slowing down.
+                    ease: "none",
+
+                    // Repeat forever.
+                    repeat: -1
+                }
             );
         };
 
-        // No images edge case
+        /*
+         * If there are no images, there is nothing to wait for.
+         * Start the animation immediately.
+         */
         if (images.length === 0) {
             startAnimation();
             return;
         }
 
-        // Wait for all images to load before measuring width
+        /*
+         * Wait until ALL images have loaded before starting
+         * the animation.
+         *
+         * This is important because image dimensions affect
+         * track.scrollWidth.
+         *
+         * If we measured the width before the images loaded,
+         * scrollWidth could be incorrect.
+         */
         images.forEach((img) => {
+
+            // If the image has already loaded before this code runs,
+            // count it immediately.
             if (img.complete) {
                 loaded++;
-                if (loaded === images.length) startAnimation();
+
+                // Start only after every image is ready.
+                if (loaded === images.length) {
+                    startAnimation();
+                }
+
             } else {
+
+                // If the image hasn't loaded yet,
+                // wait for its load event.
                 img.addEventListener("load", () => {
+
                     loaded++;
-                    if (loaded === images.length) startAnimation();
+
+                    // Once the final image loads, start the carousel.
+                    if (loaded === images.length) {
+                        startAnimation();
+                    }
                 });
             }
         });
 
-    }, { scope: containerRef });
+    }, {
+                // Limits GSAP's selector scope to this component.
+                // For example, ".track" queries would only search
+                // inside containerRef.
+                scope: containerRef
+            });
 
 
-    return(
+    return (
         <>
             <div className="flex flex-col items-center justify-center">
                 <div
@@ -70,10 +143,27 @@ export default function BrandCarousel() {
                         WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)"
                     }}
                 >
-                    <div ref={trackRef} className="flex w-max will-change-transform">
+                    <div ref={trackRef} className="flex w-max">
+                        {
+                            /*
+                             * Repeat the brands array 4 times.
+                             *
+                             * Original:
+                             * [1 2 3 4 5]
+                             *
+                             * Becomes:
+                             * [1 2 3 4 5] [1 2 3 4 5]
+                             * [1 2 3 4 5] [1 2 3 4 5]
+                             *
+                             * This creates enough content for the infinite
+                             * scrolling illusion.
+                             */
+                        }
+
                         {[...brands, ...brands, ...brands, ...brands].map((brand, i) => (
-                            <div key={i} className="flex items-center justify-center px-10 h-full opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
-                                <img src={brand.logo} alt={brand.name} className="h-14 object-contain" />
+                            <div key={i}
+                                 className="flex items-center justify-center px-10 h-full opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300">
+                                <img src={brand.logo} alt={brand.name} className="h-14 object-contain"/>
                             </div>
                         ))}
                     </div>

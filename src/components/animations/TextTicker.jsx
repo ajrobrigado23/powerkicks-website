@@ -16,7 +16,8 @@ export default function TextTicker({ children, textIsBlack, right }) {
         if (!track)
             return;
 
-        const totalWidth = track.scrollWidth / 2; // Half because we duplicated items
+        // Half because we duplicated items
+        const totalWidth = track.scrollWidth / 2;
 
 
         // Start from the correct position depending on direction
