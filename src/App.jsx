@@ -1,4 +1,4 @@
-import SmoothScrollProvider from "./components/layout/SmoothScrollProvider.jsx";
+import SmoothScrollProvider from "./components/animations/SmoothScrollProvider.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Schedule from "./pages/Schedule.jsx";

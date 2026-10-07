@@ -18,21 +18,25 @@ const MENU_ITEMS = [
 
 export default function NavBar({
                                    navScrolled,
-                                   isBlack = false }) {
+                                   isBlack = false,
+                               }) {
 
     const navigationRef = useRef(null);
     const toggleButtonRef = useRef(null);
     const closeButtonRef = useRef(null);
+
     const [menuOpen, setMenuOpen] = useState(false);
-    // Dropdown navigation
+
+    // References used by the mobile menu animation and focus management.
     const dropdownRef = useRef(null);
     const menuItemsRef = useRef([]);
     const hasOpenedRef = useRef(false);
+
+    // Shared ID for the mobile menu's accessibility attributes.
     const menuId = "mobile-menu";
 
     useEffect(() => {
-        if (!menuOpen)
-            return undefined;
+        if (!menuOpen) return undefined;
 
         const onKeyDown = (event) => {
             if (event.key === "Escape") {
@@ -40,20 +44,30 @@ export default function NavBar({
             }
         };
 
+        // Allow the mobile menu to be dismissed with the Escape key.
         document.addEventListener("keydown", onKeyDown);
-        return () => document.removeEventListener("keydown", onKeyDown);
+
+        return () => {
+            document.removeEventListener("keydown", onKeyDown);
+        };
     }, [menuOpen]);
 
     useEffect(() => {
         if (menuOpen) {
+            // Prevent background scrolling while the mobile menu is open.
             document.body.style.overflow = "hidden";
+
+            // Move focus into the open menu for keyboard accessibility.
             closeButtonRef.current?.focus();
+
             return () => {
                 document.body.style.overflow = "";
             };
         }
 
         document.body.style.overflow = "";
+
+        // Restore focus to the menu trigger after closing the menu.
         if (hasOpenedRef.current) {
             toggleButtonRef.current?.focus();
         }
@@ -61,69 +75,69 @@ export default function NavBar({
         return undefined;
     }, [menuOpen]);
 
-    // Animation for the burger menu (dropdown on open/ close)
     useGSAP(() => {
-
-        // add gsap context (New animations are freshly created)
         const ctx = gsap.context(() => {
             if (menuOpen) {
                 hasOpenedRef.current = true;
-                gsap.set(dropdownRef.current, { pointerEvents: "auto" });
 
-                // Reveal panel top to bottom
+                // Enable interaction only after the menu begins opening.
+                gsap.set(dropdownRef.current, {
+                    pointerEvents: "auto",
+                });
+
+                // Reveal the menu panel vertically.
                 gsap.fromTo(
                     dropdownRef.current,
                     {
-                        clipPath: "inset(0% 0 100% 0)"
+                        clipPath: "inset(0% 0 100% 0)",
                     },
-
                     {
                         clipPath: "inset(0% 0 0% 0)",
                         duration: 1,
-                        ease: "power4.inOut"
+                        ease: "power4.inOut",
                     }
                 );
 
-                // Stagger menu items using the curtain and mask animation
+                // Stagger menu items into view after the panel starts opening.
                 gsap.fromTo(
                     menuItemsRef.current.filter(Boolean),
                     {
                         y: "100%",
-                        opacity: 1
+                        opacity: 1,
                     },
-                    // starts fully below the mask
                     {
                         y: "0%",
                         opacity: 1,
                         duration: 0.7,
                         stagger: 0.1,
                         ease: "power4.out",
-                        delay: 0.6
+                        delay: 0.6,
                     }
                 );
             } else {
-
                 if (!hasOpenedRef.current) return;
 
-                // Then panel clips back up
+                // Reverse the panel reveal before disabling interaction.
                 gsap.to(dropdownRef.current, {
                     clipPath: "inset(0% 0 100% 0)",
                     duration: 0.7,
                     ease: "power4.inOut",
                     delay: 0.2,
                     onComplete: () => {
-                        gsap.set(dropdownRef.current, { pointerEvents: "none" });
-                    }
+                        gsap.set(dropdownRef.current, {
+                            pointerEvents: "none",
+                        });
+                    },
                 });
             }
         }, dropdownRef.current);
 
-        // reset DOM to original state (kill animations)
         return () => ctx.revert();
+    }, {
+                dependencies: [menuOpen],
+            });
 
-    }, { dependencies: [menuOpen] });
-
-    // Reveal navbar text and button on page load with a staggered slide-up animation
+    // Reveal the desktop navbar content when the navigation mounts.
     useGSAP(() => {
         gsap.fromTo(
             [".nav-text-inner", ".nav-button-inner"],
@@ -138,7 +152,9 @@ export default function NavBar({
                 delay: 0.25,
             }
         );
-    }, { scope: navigationRef });
+    }, {
+                scope: navigationRef,
+            });
 
     const handleToggle = () => {
         setMenuOpen((prev) => !prev);
@@ -146,13 +162,14 @@ export default function NavBar({
 
     const getLinkProps = (item) => {
         if (!item.external) return {};
+
         return {
             target: "_blank",
-            rel: "noreferrer noopener"
+            rel: "noreferrer noopener",
         };
     };
 
-    // reusable link container
+    // Normalize internal and external navigation links into one reusable renderer.
     const renderMenuLink = (item, onClick) => {
         if (item.to) {
             return (
