@@ -8,14 +8,17 @@ import { testimonials } from "./testimonials.js";
 export default function TestimonialSection() {
 
     const [currentPage, setCurrentPage] = useState(0);
-    // Track how many testimonial cards should be shown per page based on screen size
+
+    // Number of testimonial cards displayed per page based on viewport width.
     const [cardsPerPage, setCardsPerPage] = useState(3);
 
-    // calculate the total pages
+    // Derive the number of available carousel pages from the current card count.
     const totalPages = Math.ceil(testimonials.length / cardsPerPage);
-    // keep the carousel page index within the available page range (prevent it going below 0)
+
+    // Clamp the active page to the valid range when the page count changes.
     const safeCurrentPage = Math.max(0, Math.min(currentPage, totalPages - 1));
-    // disabled variables
+
+    // Disable navigation when the carousel reaches either boundary.
     const isPrevDisabled = safeCurrentPage === 0;
     const isNextDisabled = safeCurrentPage === totalPages - 1;
 
@@ -31,16 +34,19 @@ export default function TestimonialSection() {
             }
         };
 
+        // Set the initial card count before listening for viewport changes.
         updateCardsPerPage();
 
         window.addEventListener("resize", updateCardsPerPage);
 
+        // Remove the listener when the component unmounts.
         return () => window.removeEventListener("resize", updateCardsPerPage);
 
     }, []);
 
     const nextSlide = () => {
 
+        // Prevent advancing beyond the final carousel page.
         if (safeCurrentPage === totalPages - 1)
             return;
 
@@ -48,6 +54,8 @@ export default function TestimonialSection() {
     };
 
     const prevSlide = () => {
+
+        // Prevent navigating before the first carousel page.
         if (safeCurrentPage === 0)
             return
         setCurrentPage(currentPage => currentPage - 1);
