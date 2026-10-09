@@ -37,6 +37,15 @@ export default function GalleryJourney() {
                             <br/>
                             Training Journey
                         </h3>
+                        <p className="absolute bottom-5 left-10 z-20 text-[clamp(0.65rem,1vw,0.75rem)] tracking-wider font-medium uppercase text-white">
+                            Powerkicks
+                        </p>
+
+
+                        <p className="absolute bottom-5 right-10 z-20 text-[clamp(0.65rem,1vw,0.75rem)] tracking-wider font-medium uppercase text-white">
+                            2026
+                        </p>
+
                     </div>
                 </div>
 
