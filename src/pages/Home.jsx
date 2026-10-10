@@ -18,6 +18,8 @@ const Home = () => {
     const logoSectionRef = useRef(null);
 
     const [navScrolled, setNavScrolled] = useState(false);
+
+    // Keep navbar state synchronized for ScrollTrigger callbacks.
     const navScrolledRef = useRef(false);
 
     useGSAP(() => {
@@ -85,6 +87,7 @@ const Home = () => {
             });
         };
 
+        // Hide the initial navbar as the header scrolls out of view.
         const trigger1 = ScrollTrigger.create({
                                                   trigger: header,
                                                   start: "top top",
@@ -93,12 +96,14 @@ const Home = () => {
                                                       hideTopNav();
                                                   },
                                                   onLeaveBack: () => {
+                                                      // Restore the initial navbar only when returning to the page top.
                                                       if (window.scrollY <= 10) {
                                                           showTopNav();
                                                       }
                                                   },
                                               });
 
+        // Switch navbar variants when the brand section reaches the viewport threshold.
         const trigger2 = ScrollTrigger.create({
                                                   trigger: logoSection,
                                                   start: "top 10%",
@@ -110,9 +115,11 @@ const Home = () => {
                                                   },
                                               });
 
+        // Recalculate trigger positions when the layout changes.
         const onResize = () => ScrollTrigger.refresh();
         window.addEventListener("resize", onResize);
 
+        // Remove scroll triggers and listeners when the page unmounts.
         return () => {
             trigger1.kill();
             trigger2.kill();
@@ -134,7 +141,11 @@ const Home = () => {
                 <LocationSection />
                 <TestimonialSection />
                 <FAQSection />
-                <PowerkicksMarqueeSection backgroundColorBlack={true} textIsBlack={false}/>
+
+                <PowerkicksMarqueeSection
+                    backgroundColorBlack={true}
+                    textIsBlack={false}
+                />
             </main>
 
             <Footer />
