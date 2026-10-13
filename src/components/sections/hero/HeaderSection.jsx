@@ -7,7 +7,7 @@ export default function HeroSection() {
 
     const sectionRef = useRef(null);
 
-    // Opening animation for the hero section contents
+    // Coordinate the hero entrance animation within this section.
     useGSAP(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({
@@ -16,6 +16,7 @@ export default function HeroSection() {
                                          },
                                      });
 
+            // Resolve animation targets within the hero section.
             const eyebrow = sectionRef.current.querySelector(".hero-eyebrow");
             const headingLines = sectionRef.current.querySelectorAll(".hero-line-inner");
             const paragraph = sectionRef.current.querySelector(".home-para");
@@ -23,8 +24,11 @@ export default function HeroSection() {
             const video = sectionRef.current.querySelector(".hero-video");
             const bottomItems = sectionRef.current.querySelectorAll(".hero-bottom-item");
 
+            /*
+            * Overlap the entrance animations to create a cohesive sequence,
+            * with the video establishing the visual before the content appears.
+            */
             tl
-                // Slight video scale for premium feel
                 .from(video, {
                     opacity: 0,
                     scale: 1.04,
@@ -33,21 +37,18 @@ export default function HeroSection() {
                     ease: "power3.out",
                 }, 0)
 
-                // Eyebrow
                 .from(eyebrow, {
                     opacity: 0,
                     y: 18,
                     duration: 0.5,
                 }, "-=0.8")
 
-                // Headline line reveals
                 .from(headingLines, {
                     yPercent: 100,
                     duration: 0.9,
                     stagger: 0.12,
                 }, "-=0.35")
 
-                // Paragraph + button
                 .from([paragraph, button], {
                     opacity: 0,
                     y: 18,
@@ -56,7 +57,6 @@ export default function HeroSection() {
                     ease: "power3.out",
                 }, "-=0.35")
 
-                // Bottom row
                 .from(bottomItems, {
                     opacity: 0,
                     y: 14,
@@ -67,6 +67,7 @@ export default function HeroSection() {
 
         }, sectionRef);
 
+        // Revert animation styles and restore the DOM when the context is cleaned up.
         return () => ctx.revert();
 
     }, { scope: sectionRef });
@@ -76,7 +77,7 @@ export default function HeroSection() {
             ref={sectionRef}
             className="relative grid min-h-screen w-full grid-cols-1 grid-rows-[auto_auto_auto_auto] tablet:h-screen tablet:grid-cols-[1fr_1.5fr] tablet:grid-rows-[auto_1fr_auto]"
         >
-            {/* Headline overlay */}
+            {/* Primary headline and schedule call to action */}
             <div className="row-start-1 col-start-1 z-20 pt-25 pb-5 px-10 tablet:absolute tablet:left-10 tablet:top-[22vh] tablet:p-0">
                 <div className="w-full tablet:w-max">
                     <p className="hero-eyebrow mb-1 text-sm font-semibold text-[#7F7F7F]">
@@ -104,7 +105,7 @@ export default function HeroSection() {
                 </div>
             </div>
 
-            {/* Left content */}
+            {/* Supporting copy describing Powerkicks' training approach */}
             <div className="relative z-10 row-start-3 col-start-1 px-10 pt-5 tablet:row-start-2 tablet:col-start-1 tablet:self-end tablet:pb-[8.50rem] min-[1300px]:pb-30">
                 <p className="home-para w-full text-[clamp(0.85rem,1.2vw,1rem)] font-medium tracking-[0.025rem] tablet:max-w-md">
                     Powerkicks is a certified taekwondo training center recognized by the Philippine Taekwondo
@@ -112,7 +113,7 @@ export default function HeroSection() {
                 </p>
             </div>
 
-            {/* Right video */}
+            {/* Background video and gradient overlays */}
             <div
                 className="
                     relative row-start-2 col-start-1 min-h-[300px]
@@ -134,7 +135,7 @@ export default function HeroSection() {
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-linear-to-b from-black/55 to-transparent" />
             </div>
 
-            {/* Bottom text */}
+            {/* Supplementary location and organizational affiliation details */}
             <div className="row-start-4 flex items-end justify-between px-10 pt-[2rem] pb-2 text-[8px] font-semibold tracking-[0.025rem] tablet:pt-5 tablet:row-start-3 tablet:col-span-2 max-[650px]:hidden">
                 <div className="hero-bottom-item">
                     <p className="text-[#7F7F7F]">Located at</p>
