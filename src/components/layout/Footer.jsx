@@ -43,7 +43,7 @@ export default function Footer({backgroundColorBlack=true, textColorWhite=true})
                     <div className="w-full max-w-[220px] text-left">
                         <h4 className="text-[clamp(0.90rem,1.5vw,1.50rem)] font-semibold pb-2">Contact Us</h4>
                         <p className="text-[#7F7F7F] text-[clamp(0.80rem,1.2vw,0.90rem)] font-medium tracking-[0.025rem]">+639-19-826-2504</p>
-                        <p className="text-[#7F7F7F] text-[clamp(0.80rem,1.2vw,0.90rem)] font-medium tracking-[0.025rem]">powerkicks@gmail.com</p>
+                        <p className="text-[#7F7F7F] text-[clamp(0.80rem,1.2vw,0.90rem)] font-medium tracking-[0.025rem]">powerkickstkd2018@gmail.com</p>
                     </div>
                 </div>
 
