@@ -27,12 +27,12 @@ export default function GalleryJourney() {
                         />
 
                         {/* Dark filter */}
-                        <div className="absolute inset-0 z-10 bg-black/50" />
+                        <div className="absolute inset-0 z-10 bg-black/50"/>
 
                         {/* Text */}
                         <h3 className="absolute top-10 left-10 z-20 text-white text-[clamp(2rem,6vw,10rem)] leading-[1] font-semibold uppercase">
                             Our
-                            <br />
+                            <br/>
                             Step-by-Step
                             <br/>
                             Training Journey
@@ -176,8 +176,9 @@ export default function GalleryJourney() {
                         duration={1.2}
                         stagger={0.025}
                     >
-                        Our mission is to help students grow through disciplined taekwondo training building confidence,
-                        focus, respect, and strength that extends beyond the mat.
+                        Our vision is to become a leading Taekwondo community that develops not only skilled martial
+                        artists but also confident, disciplined, and responsible individuals who inspire others and make
+                        a positive impact in society.
                     </TextReveal>
                 </div>
 
