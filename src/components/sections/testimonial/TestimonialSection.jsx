@@ -61,7 +61,7 @@ export default function TestimonialSection() {
         setCurrentPage(currentPage => currentPage - 1);
     };
 
-    return(
+    return (
         <section className="w-full px-10 pt-[2rem] pb-[2rem]">
             <div className="flex flex-col min-[700px]:gap-15 tablet:gap-20">
                 {/* Header */}
@@ -83,8 +83,8 @@ export default function TestimonialSection() {
                         Achievements
                     </p>
                     <p className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] min-[700px]:max-w-md tablet:max-w-2xl">
-                        If you're looking for disciplined, experienced, and high-quality taekwondo coaches
-                        you're in the right place. </p>
+                        More than medals and victories, our success is measured by the lives we shape. Discover the
+                        stories and experiences behind the Powerkicks journey. </p>
                 </div>
                 {/* Testimonial Section */}
                 <div className="grid grid-cols-1 items-stretch min-[1200px]:grid-cols-[72px_3fr_1fr]">
@@ -109,23 +109,26 @@ export default function TestimonialSection() {
                     >
                         {
                             // create 2 empty items because totalPages is 2 - [undefined, undefined]
-                            Array.from({ length: totalPages }).map((_, index) => (
-                            <p
-                                key={index}
-                                className={safeCurrentPage === index
-                                    ? "text-[clamp(0.85rem,1.5vw,1.50rem)]"
-                                    : "text-xs text-[#7F7F7F]"
-                                }
-                            >
-                                {
-                                    // padStart(2, "0") makes it always 2 digits:
-                                    String(index + 1).padStart(2, "0") // 01
-                                }
-                            </p>
-                        ))}
+                            Array.from({length: totalPages})
+                                .map((_, index) => (
+                                    <p
+                                        key={index}
+                                        className={safeCurrentPage === index
+                                            ? "text-[clamp(0.85rem,1.5vw,1.50rem)]"
+                                            : "text-xs text-[#7F7F7F]"
+                                        }
+                                    >
+                                        {
+                                            // padStart(2, "0") makes it always 2 digits:
+                                            String(index + 1)
+                                                .padStart(2, "0") // 01
+                                        }
+                                    </p>
+                                ))}
                     </div>
                     {/* Column 2 */}
-                    <div className="col-start-1 relative flex h-full border border-black/20 overflow-x-hidden min-[1200px]:border-l-0 min-[1200px]:col-start-2">
+                    <div
+                        className="col-start-1 relative flex h-full border border-black/20 overflow-x-hidden min-[1200px]:border-l-0 min-[1200px]:col-start-2">
                         <TestimonialCarousel
                             currentPage={safeCurrentPage}
                             testimonials={testimonials}
@@ -133,7 +136,8 @@ export default function TestimonialSection() {
                         />
 
                         {/* Buttons section */}
-                        <div className="absolute bottom-10 left-6 flex gap-8 text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
+                        <div
+                            className="absolute bottom-10 left-6 flex gap-8 text-[clamp(0.75rem,1.5vw,0.85rem)] font-semibold">
                             {/* Prev Button */}
                             <button
                                 type="button"
@@ -142,9 +146,9 @@ export default function TestimonialSection() {
                                 className={`
                                             m-0 inline-flex p-0 uppercase
                                             ${isPrevDisabled
-                                                                    ? "cursor-not-allowed text-[#7F7F7F]"
-                                                                    : "cursor-pointer text-black"
-                                                                }
+                                    ? "cursor-not-allowed text-[#7F7F7F]"
+                                    : "cursor-pointer text-black"
+                                }
                                         `}
                                 aria-label="Show previous testimonials"
                             >
@@ -164,9 +168,9 @@ export default function TestimonialSection() {
                                 className={`
                                             m-0 inline-flex p-0 uppercase
                                             ${isNextDisabled
-                                                                    ? "cursor-not-allowed text-[#7F7F7F]"
-                                                                    : "cursor-pointer text-black"
-                                                                }
+                                    ? "cursor-not-allowed text-[#7F7F7F]"
+                                    : "cursor-pointer text-black"
+                                }
                                         `}
                                 aria-label="Show next testimonials"
                             >
@@ -197,10 +201,12 @@ export default function TestimonialSection() {
                     <img
                         className="block object-contain w-5 h-5"
                         src={quotesImg}
-                        alt="quotes" />
-                    <p className="tracking-[0.025rem] text-[clamp(0.45rem,1vw,0.65rem)] font-medium">Strong body. Strong mind. Strong life</p>
+                        alt="quotes"/>
+                    <p className="tracking-[0.025rem] text-[clamp(0.45rem,1vw,0.65rem)] font-medium">Strong body. Strong
+                        mind. Strong life</p>
                 </div>
-                <p className="uppercase tracking-[0.025rem] font-semibold text-[clamp(0.45rem,1vw,0.65rem)]">Powerkicks Taekwondo</p>
+                <p className="uppercase tracking-[0.025rem] font-semibold text-[clamp(0.45rem,1vw,0.65rem)]">Powerkicks
+                    Taekwondo</p>
             </div>
 
         </section>
