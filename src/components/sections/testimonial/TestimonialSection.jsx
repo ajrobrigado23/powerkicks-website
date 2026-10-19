@@ -83,8 +83,8 @@ export default function TestimonialSection() {
                         Achievements
                     </p>
                     <p className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] min-[700px]:max-w-md tablet:max-w-2xl">
-                        More than medals and victories, our success is measured by the lives we shape. Discover the
-                        stories and experiences behind the Powerkicks journey. </p>
+                        More than medals and victories, our success is measured by the lives we shape. Discover our
+                        students’ stories and experiences throughout their Powerkicks journey.</p>
                 </div>
                 {/* Testimonial Section */}
                 <div className="grid grid-cols-1 items-stretch min-[1200px]:grid-cols-[72px_3fr_1fr]">

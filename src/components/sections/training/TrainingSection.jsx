@@ -66,8 +66,8 @@ export default function TrainingSection() {
             {/* Training philosophy */}
             <div className="row-start-2 col-start-1 pt-[6rem]">
                 <p className="max-w-[18rem] font-semibold text-[clamp(0.75rem,1.25vw,0.90rem)]">
-                    Powerkicks (noun) -
-                    Modern taekwondo training built on discipline, focus, and growth.
+                    Beyond the Mat —
+                    discipline that shapes who you become.
                 </p>
             </div>
 
