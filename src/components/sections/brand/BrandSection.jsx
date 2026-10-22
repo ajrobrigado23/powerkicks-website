@@ -1,4 +1,17 @@
-import BrandCarousel from "../../animations/BrandCarousel.jsx";
+import BrandCarousel from "./BrandCarousel.jsx";
+
+const brands = [
+    { name: "kukkiwon", logo: "/logo/kukkiwon.png" },
+    { name: "pta", logo: "/logo/pta-logo-black.png" },
+    { name: "robinson", logo: "/logo/robinson-logo.png" },
+    { name: "waltermart", logo: "/logo/waltermart-logo.png" },
+    { name: "world taekwondo", logo: "/logo/world-taekwondo.png" },
+    { name: "district imus", logo: "/logo/district-logo.png" },
+    { name: "shift", logo: "/logo/shift-logo.png" },
+    { name: "kix", logo: "/logo/kix-logo.png" },
+    { name: "kwon", logo: "/logo/kwon-logo.png" },
+    { name: "adidas", logo: "/logo/adidas-logo.png" },
+];
 
 export default function BrandSection() {
     return (
@@ -26,7 +39,7 @@ export default function BrandSection() {
                         structured training, certified standards, and consistent athlete development. </p>
                 </div>
                 {/* Brand Carousel */}
-                <BrandCarousel></BrandCarousel>
+                <BrandCarousel brands={brands}></BrandCarousel>
             </div>
         </section>
     )

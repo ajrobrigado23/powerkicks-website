@@ -2,15 +2,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const brands = [
-    { name: "kukkiwon", logo: "/logo/kukkiwon.png" },
-    { name: "pta", logo: "/logo/pta-logo-black.png" },
-    { name: "robinson", logo: "/logo/robinson-logo.png" },
-    { name: "waltermart", logo: "/logo/waltermart-logo.png" },
-    { name: "world taekwondo", logo: "/logo/world-taekwondo.png" }
-];
-
-export default function BrandCarousel() {
+export default function BrandCarousel({ brands }) {
     // Scope GSAP to the carousel instance.
     const containerRef = useRef(null);
 
@@ -105,7 +97,7 @@ export default function BrandCarousel() {
                             <img
                                 src={brand.logo}
                                 alt={brand.name}
-                                className="h-14 object-contain"
+                                className="h-16 object-contain"
                             />
                         </div>
                     ))}
