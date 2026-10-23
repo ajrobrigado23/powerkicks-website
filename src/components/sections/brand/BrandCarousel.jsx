@@ -72,7 +72,7 @@ export default function BrandCarousel({ brands }) {
             });
 
     return (
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center pt-[2rem]">
             <div
                 ref={containerRef}
                 className="w-5/6 overflow-hidden"
@@ -97,7 +97,7 @@ export default function BrandCarousel({ brands }) {
                             <img
                                 src={brand.logo}
                                 alt={brand.name}
-                                className="h-16 object-contain"
+                                className="h-20 object-contain"
                             />
                         </div>
                     ))}

@@ -15,7 +15,7 @@ const brands = [
 
 export default function BrandSection() {
     return (
-        <section className="w-full px-10 pt-[4rem] pb-[6rem]">
+        <section className="w-full px-10 pt-[4rem] pb-[8rem]">
             <div className="flex flex-col min-[700px]:gap-15 tablet:gap-20">
                 <div className="text-[clamp(3rem,5vw,4.5rem)] leading-[0.9] font-bold pb-6">
                     <p className="mb-1 text-sm font-semibold text-[#7F7F7F]">Partners / Affiliation</p>
@@ -35,12 +35,14 @@ export default function BrandSection() {
                         Recognized by
                     </p>
                     <p className="font-medium max-w-full tracking-[0.025rem] text-[clamp(0.85rem,1.5vw,1rem)] min-[700px]:max-w-md tablet:max-w-2xl">
-                        Powerkicks is aligned with recognized national and international organizations, ensuring
-                        structured training, certified standards, and consistent athlete development. </p>
+                        Our commitment to excellence is reflected in the brands we trust and our affiliations with
+                        recognized Taekwondo organizations, supporting quality training, established standards, and the
+                        growth of every student.
+                    </p>
                 </div>
                 {/* Brand Carousel */}
                 <BrandCarousel brands={brands}></BrandCarousel>
             </div>
         </section>
-    )
+    );
 }
