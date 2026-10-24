@@ -43,8 +43,9 @@ export default function ScheduleGallery() {
                     delay={1.25}
                     stagger={0.025}
                 >
-                    Powerkicks is aligned with recognized national and international organizations, ensuring structured
-                    training,{" "}<span className="text-[#7F7F7F]">certified standards, and consistent athlete development.</span>
+                    Explore Taekwondo training schedules at all Powerkicks branches: Imus Bucandala Gym, Robinsons
+                    General Trias, Waltermart Dasmariñas, and The District Imus.<span className="text-[#7F7F7F]">Find the right location and schedule to
+                    begin your Taekwondo journey.</span>
                 </TextReveal>
             </div>
             {/* 2nd Row */}
@@ -97,7 +98,7 @@ export default function ScheduleGallery() {
                     delay={0.1}
                     stagger={0.07}
                 >
-                    { scheduleAddress[0].name }
+                    {scheduleAddress[0].name}
                 </TextReveal>
                 {/* header */}
                 <TextReveal
@@ -110,10 +111,11 @@ export default function ScheduleGallery() {
                     delay={0.1}
                     stagger={0.07}
                 >
-                    { scheduleAddress[0].address }
+                    {scheduleAddress[0].address}
                 </TextReveal>
             </div>
-            <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
+            <div
+                className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
                     className="flex flex-wrap justify-between gap-x-6 gap-y-6"
@@ -153,7 +155,7 @@ export default function ScheduleGallery() {
                     delay={0.1}
                     stagger={0.07}
                 >
-                    { scheduleAddress[1].name }
+                    {scheduleAddress[1].name}
                 </TextReveal>
                 {/* header */}
                 <TextReveal
@@ -166,10 +168,11 @@ export default function ScheduleGallery() {
                     delay={0.1}
                     stagger={0.07}
                 >
-                    { scheduleAddress[1].address }
+                    {scheduleAddress[1].address}
                 </TextReveal>
             </div>
-            <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
+            <div
+                className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
                     className="flex flex-wrap justify-between gap-y-6"
@@ -218,7 +221,7 @@ export default function ScheduleGallery() {
                     delay={0.1}
                     stagger={0.07}
                 >
-                    { scheduleAddress[2].name }
+                    {scheduleAddress[2].name}
                 </TextReveal>
                 {/* header */}
                 <TextReveal
@@ -231,10 +234,11 @@ export default function ScheduleGallery() {
                     delay={0.1}
                     stagger={0.07}
                 >
-                    { scheduleAddress[2].address }
+                    {scheduleAddress[2].address}
                 </TextReveal>
             </div>
-            <div className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
+            <div
+                className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
                     className="flex flex-wrap justify-between gap-x-6 gap-y-6"
