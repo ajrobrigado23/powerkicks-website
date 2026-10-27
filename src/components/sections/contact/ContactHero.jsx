@@ -4,20 +4,20 @@ import ContactInformation from "./ContactInformation.jsx";
 export default function ContactHero() {
 
     return(
-        <section className="grid grid-cols-12 px-10 pt-[10rem] w-full">
+        <section className="grid grid-cols-12 px-10 pt-[8rem] pb-[2rem] w-full">
             <div className="col-span-12 text-white">
                 <TextReveal
                     as="h1"
                     type="letters"
-                    className="uppercase text-[clamp(3.25rem,16vw,24rem)] font-bold tracking-[-0.02em] leading-none whitespace-nowrap text-white"
+                    className="font-humane uppercase text-[clamp(3.25rem,34vw,24rem)] font-bold leading-none text-white"
                     duration={2.50}
                     stagger={0.07}
                 >
-                    Contact
+                    Contact us
                 </TextReveal>
             </div>
 
-            <div className="col-span-6">
+            <div className="col-span-6 tablet:-mt-[6rem]">
                 <TextReveal
                     as="p"
                     type="words"
@@ -31,7 +31,7 @@ export default function ContactHero() {
                 </TextReveal>
             </div>
 
-            <div className="col-span-12 mt-12 grid grid-cols-2 gap-x-10 gap-y-10 tablet:col-span-6 tablet:mt-0">
+            <div className="col-span-12 mt-12 grid grid-cols-2 gap-x-10 gap-y-10 tablet:col-span-6 tablet:-mt-[6rem]">
                 <ContactInformation
                     label={"Email Address"}
                     value={"powerkickstkd2018@gmail.com"}
