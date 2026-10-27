@@ -22,9 +22,8 @@ export default function ContactHero() {
                     as="p"
                     type="words"
                     className="text-[clamp(0.70rem,1.25vw,1.75rem)] leading-[0.9] font-light"
-                    triggerOnScroll
                     duration={1.2}
-                    delay={1.25}
+                    delay={1}
                     stagger={0.025}
                 >
                     For any enquiries, or just to say hello, get in touch and contact us.
