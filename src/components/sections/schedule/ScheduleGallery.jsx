@@ -44,7 +44,7 @@ export default function ScheduleGallery() {
                     stagger={0.025}
                 >
                     Explore Taekwondo training schedules at all Powerkicks branches: Imus Bucandala Gym, Robinsons
-                    General Trias, Waltermart Dasmariñas, and The District Imus.<span className="text-[#7F7F7F]">Find the right location and schedule to
+                    General Trias, Waltermart Dasmariñas, and The District Imus.<span className="text-[#7F7F7F]">{" "}Find the right location and schedule to
                     begin your Taekwondo journey.</span>
                 </TextReveal>
             </div>

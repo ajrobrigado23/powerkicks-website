@@ -1,6 +1,6 @@
 import TextReveal from "../../animations/TextReveal.jsx";
 
-export default function ScheduleDay({ children, day }) {
+export default function ScheduleDay({ children, day, category }) {
 
     return (
         <>
@@ -9,7 +9,7 @@ export default function ScheduleDay({ children, day }) {
                 type="words"
                 triggerOnScroll
                 scrollStart="top 85%"
-                className="font-semibold text-[clamp(0.90rem,1.25vw, 1.15rem)] leading-[0.9] pt-2 pb-2 text-[#9F9F9F] uppercase min-[550px]:pb-4"
+                className="font-semibold text-[clamp(0.90rem,1.25vw, 1.15rem)] leading-[0.9] py-2 text-[#9F9F9F] uppercase"
                 duration={1.2}
                 delay={0.2}
                 stagger={0.07}
@@ -40,7 +40,7 @@ export default function ScheduleDay({ children, day }) {
                 delay={0.3}
                 stagger={0.09}
             >
-                All Belt Categories (from White Belt to Black Belt)
+                {category}
             </TextReveal>
 
         </>

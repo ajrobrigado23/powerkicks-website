@@ -25,6 +25,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Thursday"
+                                category={"All belt categories (from White Belt to Black Belt)"}
                             >
                                 5:00<span className="text-sm font-light">pm</span> - 7:00<span className="text-sm font-light">pm</span>
                             </ScheduleDay>
@@ -34,6 +35,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Saturday"
+                                category={"All belt categories (from White Belt to Black Belt)"}
                             >
                                 5:00<span className="text-sm font-light">pm</span> - 7:00<span className="text-sm font-light">pm</span>
                             </ScheduleDay>
@@ -43,6 +45,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Sunday"
+                                category={"All belt categories (from White Belt to Black Belt)"}
                             >
                                 4:00<span className="text-sm font-light">pm</span> - 6:00<span className="text-sm font-light">pm</span>
                             </ScheduleDay>
@@ -59,6 +62,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Saturday"
+                                category={"All belt categories (from White Belt to Black Belt)"}
                             >
                                 11:30<span className="text-sm font-light">am</span> - 2:30<span className="text-sm font-light">pm</span>
                             </ScheduleDay>
@@ -68,6 +72,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         <div className="flex flex-col min-w-[120px] mr-[10%] min-[751px]:mr-0 min-[1246px]:mr-[25%]">
                             <ScheduleDay
                                 day="Sunday"
+                                category={"All belt categories (from White Belt to Black Belt)"}
                             >
                                 11:30<span className="text-sm font-light">am</span> - 2:30<span className="text-sm font-light">pm</span>
                             </ScheduleDay>
@@ -84,6 +89,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Monday"
+                                category={"All belt categories (from White Belt to Black Belt)"}
                             >
                                 5:00<span className="text-sm font-light">pm</span> - 7:00<span className="text-sm font-light">pm</span>
                             </ScheduleDay>
@@ -93,6 +99,7 @@ export default function TrainingScheduleDetails({ className, location }) {
                         <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Wednesday"
+                                category={"All belt categories (from White Belt to Black Belt)"}
                             >
                                 5:00<span className="text-sm font-light">pm</span> - 7:00<span className="text-sm font-light">pm</span>
                             </ScheduleDay>
@@ -102,8 +109,14 @@ export default function TrainingScheduleDetails({ className, location }) {
                         <div className="flex flex-col min-w-[120px]">
                             <ScheduleDay
                                 day="Friday"
+                                category={"Novice category starting from White Belt to Blue Belt"}
                             >
                                 5:00<span className="text-sm font-light">pm</span> - 7:00<span className="text-sm font-light">pm</span>
+                            </ScheduleDay>
+                            <ScheduleDay
+                                category={"Advance category starting from Red Belt to Black Belt"}
+                            >
+                                7:30<span className="text-sm font-light">pm</span> - 9:30<span className="text-sm font-light">pm</span>
                             </ScheduleDay>
                         </div>
                     </>
