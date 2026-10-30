@@ -7,13 +7,40 @@ import { Link } from "react-router-dom";
 import Logo from "../ui/Logo.jsx";
 
 const MENU_ITEMS = [
-  { label: "Gallery", href: "/gallery" },
-  { label: "Schedule", to: "/schedule" },
-  { label: "Contact", href: "/contact" },
-  { label: "Facebook", href: "https://facebook.com", external: true },
-  { label: "Instagram", href: "https://instagram.com", external: true },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms of Service", href: "/terms-of-service" }
+    {
+        label: "News",
+        href: "/news"
+    },
+    {
+        label: "Gallery",
+        href: "/gallery"
+    },
+    {
+        label: "Schedule",
+        to: "/schedule"
+    },
+    {
+        label: "Contact",
+        href: "/contact"
+    },
+    {
+        label: "Facebook",
+        href: "https://facebook.com",
+        external: true
+    },
+    {
+        label: "Instagram",
+        href: "https://instagram.com",
+        external: true
+    },
+    {
+        label: "Privacy Policy",
+        href: "/privacy-policy"
+    },
+    {
+        label: "Terms of Service",
+        href: "/terms-of-service"
+    }
 ];
 
 export default function NavBar({
@@ -229,7 +256,7 @@ export default function NavBar({
                                     navScrolled && "hidden"
                                 }`}
                             >
-                                {MENU_ITEMS.slice(0, 3).map((item) => (
+                                {MENU_ITEMS.slice(0, 4).map((item) => (
                                     <li key={item.label} className="nav-text-reveal overflow-hidden">
                                         <div className="nav-text-inner">
                                             <SlideUpText>
@@ -291,7 +318,7 @@ export default function NavBar({
             >
                 <div className="grid grid-cols-2 grid-rows-[auto_1fr_auto] p-8 h-full">
                     <ul className="col-start-1 row-start-2 flex flex-col justify-center font-bold tracking-tight text-5xl gap-1 uppercase">
-                        {MENU_ITEMS.slice(0, 3).map((item, i) => (
+                        {MENU_ITEMS.slice(0, 4).map((item, i) => (
                             <li
                                 key={item.label}
                                 className="overflow-hidden self-start"
@@ -314,8 +341,8 @@ export default function NavBar({
 
                     <div className="col-start-1 row-start-3 flex flex-col uppercase text-sm font-semibold gap-8">
                         <ul>
-                            {MENU_ITEMS.slice(3, 5).map((item, i) => {
-                                const currentLength = 3 + i;
+                            {MENU_ITEMS.slice(4).map((item, i) => {
+                                const currentLength = 4 + i;
                                 return (
                                     <li className="overflow-hidden" key={item.label}>
                                         <div
@@ -336,8 +363,8 @@ export default function NavBar({
                         </ul>
 
                         <ul>
-                            {MENU_ITEMS.slice(5).map((item, i) => {
-                                const currentLength = 5 + i;
+                            {MENU_ITEMS.slice(6).map((item, i) => {
+                                const currentLength = 6 + i;
                                 return (
                                     <li className="overflow-hidden" key={item.label}>
                                         <div
