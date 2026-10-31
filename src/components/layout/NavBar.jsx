@@ -12,12 +12,12 @@ const MENU_ITEMS = [
         href: "/news"
     },
     {
-        label: "Gallery",
-        href: "/gallery"
-    },
-    {
         label: "Schedule",
         to: "/schedule"
+    },
+    {
+        label: "Gallery",
+        href: "/gallery"
     },
     {
         label: "Contact",
