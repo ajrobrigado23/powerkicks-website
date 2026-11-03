@@ -53,40 +53,12 @@ export default function ScheduleGallery() {
                 <SchedulePicture
                     src={secondImage.src}
                     alt={secondImage.alt}
-                    className="h-[500px] w-full"
+                    className="h-[600px] w-full"
                     centerPercentage={secondImage.centerPercentage}
                 />
             </div>
-            {/* 3rd Row */}
-            <div className="col-span-12 pr-0 phone:col-span-6 phone:pr-2">
-                <SchedulePicture
-                    src={thirdImage.src}
-                    alt={thirdImage.alt}
-                    className="h-[500px] w-full"
-                    centerPercentage={thirdImage.centerPercentage}
-                />
-            </div>
-            <div className="col-span-12 pt-4 pl-0 phone:col-span-6 phone:pl-2 phone:pt-0">
-                <SchedulePicture
-                    src={fourImage.src}
-                    alt={fourImage.alt}
-                    className="h-[500px] w-full"
-                    centerPercentage={fourImage.centerPercentage}
-                    delay={0.3}
-                />
-            </div>
-            {/* 4th row */}
-            <div className="col-span-12 pt-4">
-                <SchedulePicture
-                    src={firstImage.src}
-                    alt={firstImage.alt}
-                    className="ml-auto h-full w-full overflow-hidden"
-                    centerPercentage={firstImage.centerPercentage}
-                />
-            </div>
-
-            {/* 5th row */}
-            <div className="col-span-12 pt-[2rem] min-[751px]:col-span-5 min-[751px]:pt-[9rem]">
+            {/* 3rd row */}
+            <div className="col-span-12 pt-[2rem] min-[751px]:col-span-5 min-[751px]:pt-[4rem]">
                 {/* header */}
                 <TextReveal
                     as="h3"
@@ -115,15 +87,41 @@ export default function ScheduleGallery() {
                 </TextReveal>
             </div>
             <div
-                className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
+                className="col-span-12 pt-[4rem] min-[751px]:col-span-7 min-[751px]:pt-[4rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
                     className="flex flex-wrap justify-between gap-x-6 gap-y-6"
                     location={scheduleAddress[0].id}
                 />
             </div>
+            {/* 4th Row */}
+            <div className="col-span-12 pr-0 phone:col-span-6">
+                <SchedulePicture
+                    src={thirdImage.src}
+                    alt={thirdImage.alt}
+                    className="h-[500px] w-full"
+                    centerPercentage={thirdImage.centerPercentage}
+                />
+            </div>
+            <div className="col-span-12 pr-0 phone:col-span-6">
 
-            {/* 6th row */}
+            </div>
+
+            <div className="col-span-12 pr-0 phone:col-span-5">
+
+            </div>
+
+            <div className="col-span-12 phone:col-span-7 phone:pt-4">
+                <SchedulePicture
+                    src={fourImage.src}
+                    alt={fourImage.alt}
+                    className="h-[500px] w-full"
+                    centerPercentage={fourImage.centerPercentage}
+                    delay={0.3}
+                />
+            </div>
+
+            {/* -------------REFORMAT-------- 5th row */}
             <div className="col-span-12 pt-0 pl-0 min-[751px]:pt-4 min-[751px]:col-span-4 min-[751px]:pr-2">
                 <SchedulePicture
                     src={fiveImage.src}
