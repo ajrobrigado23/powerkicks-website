@@ -97,7 +97,7 @@ export default function BrandCarousel({ brands }) {
                             <img
                                 src={brand.logo}
                                 alt={brand.name}
-                                className="h-20 object-contain"
+                                className="h-25 object-contain"
                             />
                         </div>
                     ))}
