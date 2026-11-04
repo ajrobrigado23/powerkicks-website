@@ -94,6 +94,7 @@ export default function ScheduleGallery() {
                     location={scheduleAddress[0].id}
                 />
             </div>
+
             {/* 4th Row */}
             <div className="col-span-12 pr-0 phone:col-span-6">
                 <SchedulePicture
@@ -103,11 +104,12 @@ export default function ScheduleGallery() {
                     centerPercentage={thirdImage.centerPercentage}
                 />
             </div>
-            <div className="col-span-12 pr-0 phone:col-span-6">
+            <div className="col-span-12 phone:col-span-6">
 
             </div>
 
-            <div className="col-span-12 pr-0 phone:col-span-5">
+            {/* 5th row */}
+            <div className="col-span-12 phone:col-span-5">
 
             </div>
 
@@ -121,26 +123,7 @@ export default function ScheduleGallery() {
                 />
             </div>
 
-            {/* -------------REFORMAT-------- 5th row */}
-            <div className="col-span-12 pt-0 pl-0 min-[751px]:pt-4 min-[751px]:col-span-4 min-[751px]:pr-2">
-                <SchedulePicture
-                    src={fiveImage.src}
-                    alt={fiveImage.alt}
-                    className="h-[600px] w-full"
-                    centerPercentage={fiveImage.centerPercentage}
-                />
-            </div>
-            <div className="col-span-12 pt-4 pl-0 pb-2 min-[751px]:col-span-8 min-[751px]:pl-2">
-                <SchedulePicture
-                    src={sevenImage.src}
-                    alt={sevenImage.alt}
-                    className="h-[600px] w-full"
-                    centerPercentage={sevenImage.centerPercentage}
-                    delay={0.3}
-                />
-            </div>
-
-            {/* 7th row */}
+            {/* 6th row */}
             <div className="col-span-12 pt-[2rem] min-[751px]:col-span-5 min-[751px]:pt-[9rem]">
                 {/* header */}
                 <TextReveal
@@ -178,8 +161,31 @@ export default function ScheduleGallery() {
                 />
             </div>
 
+            {/* 7th row */}
+            <div className="col-span-12 phone:col-span-5">
+
+            </div>
+            <div className="col-span-12 pt-4 pl-0 pb-2 min-[751px]:col-span-7 min-[751px]:pl-2">
+                <SchedulePicture
+                    src={sevenImage.src}
+                    alt={sevenImage.alt}
+                    className="h-[600px] w-full"
+                    centerPercentage={sevenImage.centerPercentage}
+                    delay={0.3}
+                />
+            </div>
+
             {/* 8th row */}
-            <div className="col-span-4 pr-2">
+            <div className="col-span-12 pt-0 pl-0 min-[751px]:pt-4 min-[751px]:col-span-5 min-[751px]:pr-2 min-[751px]:-mt-[12rem]">
+                <SchedulePicture
+                    src={fiveImage.src}
+                    alt={fiveImage.alt}
+                    className="h-[600px] w-full"
+                    centerPercentage={fiveImage.centerPercentage}
+                />
+            </div>
+
+            <div className="col-span-7 pl-2 pt-2">
                 <SchedulePicture
                     src={nineImage.src}
                     alt={nineImage.alt}
@@ -188,7 +194,9 @@ export default function ScheduleGallery() {
                     horizontalPosition="left"
                 />
             </div>
-            <div className="col-span-8 pl-2">
+
+            {/* 9th row */}
+            <div className="col-span-5 pr-2 -mt-[10.5rem]">
                 <SchedulePicture
                     src={eightImage.src}
                     alt={eightImage.alt}
@@ -197,16 +205,12 @@ export default function ScheduleGallery() {
                     delay={0.3}
                 />
             </div>
-            <div className="col-span-12 pt-4">
-                <SchedulePicture
-                    src={sixImage.src}
-                    alt={sixImage.alt}
-                    className="h-full w-full"
-                    centerPercentage={sixImage.centerPercentage}
-                />
+
+            <div className="col-span-7">
+
             </div>
 
-            {/* 9th row */}
+            {/* 10th row */}
             <div className="col-span-12 pt-[2rem] min-[751px]:col-span-5 min-[751px]:pt-[9rem]">
                 {/* header */}
                 <TextReveal
@@ -244,7 +248,7 @@ export default function ScheduleGallery() {
                 />
             </div>
 
-            {/* 10th row */}
+            {/* 11th row */}
             <div className="col-span-12 pt-4 pr-0 min-[751px]:col-span-4 min-[751px]:pr-2">
                 <SchedulePicture
                     src={tenthImage.src}
@@ -263,7 +267,7 @@ export default function ScheduleGallery() {
                 />
             </div>
 
-            {/* 11th row */}
+            {/* 12th row */}
             <div className="col-span-5">
 
             </div>
