@@ -243,7 +243,7 @@ export default function ScheduleGallery() {
                 className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
-                    className="flex flex-wrap justify-between gap-x-6 gap-y-6"
+                    className="flex flex-wrap justify-between gap-x-6 gap-y-12"
                     location={scheduleAddress[2].id}
                 />
             </div>
@@ -257,7 +257,7 @@ export default function ScheduleGallery() {
                     centerPercentage={tenthImage.centerPercentage}
                 />
             </div>
-            <div className="col-span-12 pt-4 pl-0 min-[751px]:col-span-8 min-[751px]:pl-2">
+            <div className="col-span-12 pt-4 pl-0 min-[751px]:col-span-8 min-[751px]:pl-2 min-[751px]:mt-[10rem]">
                 <SchedulePicture
                     src={eleventhImage.src}
                     alt={eleventhImage.alt}
