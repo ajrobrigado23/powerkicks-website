@@ -243,7 +243,7 @@ export default function ScheduleGallery() {
                 className="col-span-12 pt-[4rem] pb-[2rem] min-[751px]:col-span-7 min-[751px]:pt-[9rem] min-[751px]:pb-[4rem]">
                 {/* paragraph */}
                 <TrainingScheduleDetails
-                    className="flex flex-wrap justify-between gap-x-6 gap-y-12"
+                    className="flex flex-wrap justify-between gap-x-6 gap-y-10"
                     location={scheduleAddress[2].id}
                 />
             </div>

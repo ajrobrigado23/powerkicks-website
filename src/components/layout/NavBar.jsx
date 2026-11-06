@@ -5,43 +5,7 @@ import {useGSAP} from "@gsap/react";
 import Button from "../ui/Button.jsx";
 import { Link } from "react-router-dom";
 import Logo from "../ui/Logo.jsx";
-
-const MENU_ITEMS = [
-    {
-        label: "News",
-        href: "/news"
-    },
-    {
-        label: "Schedule",
-        to: "/schedule"
-    },
-    {
-        label: "Gallery",
-        href: "/gallery"
-    },
-    {
-        label: "Contact",
-        href: "/contact"
-    },
-    {
-        label: "Facebook",
-        href: "https://facebook.com",
-        external: true
-    },
-    {
-        label: "Instagram",
-        href: "https://instagram.com",
-        external: true
-    },
-    {
-        label: "Privacy Policy",
-        href: "/privacy-policy"
-    },
-    {
-        label: "Terms of Service",
-        href: "/terms-of-service"
-    }
-];
+import { MENU_ITEMS } from "../../data/navigation.js";
 
 export default function NavBar({
                                    navScrolled,
