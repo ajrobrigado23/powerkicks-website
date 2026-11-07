@@ -1,134 +1,26 @@
 import SlideUpText from "../animations/SlideUpText.jsx";
-import { useEffect, useRef, useState } from "react";
+import {useCallback, useId, useRef, useState} from "react";
 import{ gsap } from "gsap";
 import {useGSAP} from "@gsap/react";
 import Button from "../ui/Button.jsx";
 import { Link } from "react-router-dom";
 import Logo from "../ui/Logo.jsx";
 import { MENU_ITEMS } from "../../data/navigation.js";
+import MenuOverlay from "./MenuOverlay.jsx";
 
 export default function NavBar({
                                    navScrolled,
                                    isBlack = false,
                                }) {
-
     const navigationRef = useRef(null);
-    const toggleButtonRef = useRef(null);
-    const closeButtonRef = useRef(null);
+    const menuButtonRef = useRef(null);
 
     const [menuOpen, setMenuOpen] = useState(false);
 
-    // References used by the mobile menu animation and focus management.
-    const dropdownRef = useRef(null);
-    const menuItemsRef = useRef([]);
-    const hasOpenedRef = useRef(false);
+    // Unique ID for the navigation overlay.
+    const menuId = useId();
 
-    // Shared ID for the mobile menu's accessibility attributes.
-    const menuId = "mobile-menu";
-
-    useEffect(() => {
-        if (!menuOpen) return undefined;
-
-        const onKeyDown = (event) => {
-            if (event.key === "Escape") {
-                setMenuOpen(false);
-            }
-        };
-
-        // Allow the mobile menu to be dismissed with the Escape key.
-        document.addEventListener("keydown", onKeyDown);
-
-        return () => {
-            document.removeEventListener("keydown", onKeyDown);
-        };
-    }, [menuOpen]);
-
-    useEffect(() => {
-        if (menuOpen) {
-            // Prevent background scrolling while the mobile menu is open.
-            document.body.style.overflow = "hidden";
-
-            // Move focus into the open menu for keyboard accessibility.
-            closeButtonRef.current?.focus();
-
-            return () => {
-                document.body.style.overflow = "";
-            };
-        }
-
-        document.body.style.overflow = "";
-
-        // Restore focus to the menu trigger after closing the menu.
-        if (hasOpenedRef.current) {
-            toggleButtonRef.current?.focus();
-        }
-
-        return undefined;
-    }, [menuOpen]);
-
-    useGSAP(() => {
-        const ctx = gsap.context(() => {
-            if (menuOpen) {
-                hasOpenedRef.current = true;
-
-                // Enable interaction only after the menu begins opening.
-                gsap.set(dropdownRef.current, {
-                    pointerEvents: "auto",
-                });
-
-                // Reveal the menu panel vertically.
-                gsap.fromTo(
-                    dropdownRef.current,
-                    {
-                        clipPath: "inset(0% 0 100% 0)",
-                    },
-                    {
-                        clipPath: "inset(0% 0 0% 0)",
-                        duration: 1,
-                        ease: "power4.inOut",
-                    }
-                );
-
-                // Stagger menu items into view after the panel starts opening.
-                gsap.fromTo(
-                    menuItemsRef.current.filter(Boolean),
-                    {
-                        y: "100%",
-                        opacity: 1,
-                    },
-                    {
-                        y: "0%",
-                        opacity: 1,
-                        duration: 0.7,
-                        stagger: 0.1,
-                        ease: "power4.out",
-                        delay: 0.6,
-                    }
-                );
-            } else {
-                if (!hasOpenedRef.current) return;
-
-                // Reverse the panel reveal before disabling interaction.
-                gsap.to(dropdownRef.current, {
-                    clipPath: "inset(0% 0 100% 0)",
-                    duration: 0.7,
-                    ease: "power4.inOut",
-                    delay: 0.2,
-                    onComplete: () => {
-                        gsap.set(dropdownRef.current, {
-                            pointerEvents: "none",
-                        });
-                    },
-                });
-            }
-        }, dropdownRef.current);
-
-        return () => ctx.revert();
-    }, {
-                dependencies: [menuOpen],
-            });
-
-    // Reveal the desktop navbar content when the navigation mounts.
+    // Reveal the navbar content when the navbar mounts.
     useGSAP(() => {
         gsap.fromTo(
             [".nav-text-inner", ".nav-button-inner"],
@@ -147,10 +39,17 @@ export default function NavBar({
                 scope: navigationRef,
             });
 
+    // Toggle the navigation overlay.
     const handleToggle = () => {
         setMenuOpen((prev) => !prev);
     };
 
+    // Close the navigation overlay.
+    const closeMenu = useCallback(() => {
+        setMenuOpen(false);
+    }, []);
+
+    // External link attributes.
     const getLinkProps = (item) => {
         if (!item.external) return {};
 
@@ -160,11 +59,14 @@ export default function NavBar({
         };
     };
 
-    // Normalize internal and external navigation links into one reusable renderer.
+    // Render internal and external navigation links.
     const renderMenuLink = (item, onClick) => {
-        if (item.to) {
+        if (!item.external) {
             return (
-                <Link to={item.to} onClick={onClick}>
+                <Link
+                    to={item.to ?? item.href}
+                    onClick={onClick}
+                >
                     {item.label}
                 </Link>
             );
@@ -179,7 +81,7 @@ export default function NavBar({
                 {item.label}
             </a>
         );
-    };
+    }
 
     return(
         <>
@@ -254,7 +156,7 @@ export default function NavBar({
                                         ? "text-black px-[0.70rem] py-[0.65rem] bg-[#dee2e6] rounded-4xl"
                                         : "hidden"
                                 }`}
-                                ref={toggleButtonRef}
+                                ref={menuButtonRef}
                                 onClick={handleToggle}
                                 aria-label="Toggle menu"
                                 aria-expanded={menuOpen}
@@ -270,98 +172,13 @@ export default function NavBar({
             </nav>
 
             {/* Dropdown section */}
-            <div
-                ref={dropdownRef}
+            <MenuOverlay
                 id={menuId}
-                className="grid fixed top-0 left-0 min-w-full h-screen bg-black z-50 text-white pointer-events-none"
-                style={{ clipPath: "inset(0% 0 100% 0)" }}
-                role="dialog"
-                aria-modal="true"
-                aria-label="Mobile navigation menu"
-                aria-hidden={!menuOpen}
-            >
-                <div className="grid grid-cols-2 grid-rows-[auto_1fr_auto] p-8 h-full">
-                    <ul className="col-start-1 row-start-2 flex flex-col justify-center font-bold tracking-tight text-5xl gap-1 uppercase">
-                        {MENU_ITEMS.slice(0, 4).map((item, i) => (
-                            <li
-                                key={item.label}
-                                className="overflow-hidden self-start"
-                            >
-                                <div
-                                    ref={(el) => (menuItemsRef.current[i] = el)}
-                                    className="opacity-0 translate-y-full"
-                                >
-                                    <SlideUpText>
-                                        {renderMenuLink(item, () => setMenuOpen(false))}
-                                    </SlideUpText>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <div className="col-start-1 row-start-1 flex">
-                        <p className="font-bold uppercase text-2xl">Powerkicks</p>
-                    </div>
-
-                    <div className="col-start-1 row-start-3 flex flex-col uppercase text-sm font-semibold gap-8">
-                        <ul>
-                            {MENU_ITEMS.slice(4).map((item, i) => {
-                                const currentLength = 4 + i;
-                                return (
-                                    <li className="overflow-hidden" key={item.label}>
-                                        <div
-                                            ref={(el) => (menuItemsRef.current[currentLength] = el)}
-                                            className="opacity-0 translate-y-full"
-                                        >
-                                            <a
-                                                href={item.href}
-                                                onClick={() => setMenuOpen(false)}
-                                                {...getLinkProps(item)}
-                                            >
-                                                {item.label}
-                                            </a>
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-
-                        <ul>
-                            {MENU_ITEMS.slice(6).map((item, i) => {
-                                const currentLength = 6 + i;
-                                return (
-                                    <li className="overflow-hidden" key={item.label}>
-                                        <div
-                                            ref={(el) => (menuItemsRef.current[currentLength] = el)}
-                                            className="opacity-0 translate-y-full"
-                                        >
-                                            <a
-                                                href={item.href}
-                                                onClick={() => setMenuOpen(false)}
-                                                {...getLinkProps(item)}
-                                            >
-                                                {item.label}
-                                            </a>
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-
-                    <div className="col-start-2 row-start-1 row-span-3 flex justify-end items-start">
-                        <button
-                            ref={closeButtonRef}
-                            onClick={handleToggle}
-                            aria-label="Close menu"
-                            className="cursor-pointer"
-                        >
-                            <span className="font-bold text-sm uppercase">Close</span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
+                isOpen={menuOpen}
+                onClose={closeMenu}
+                triggerRef={menuButtonRef}
+                items={MENU_ITEMS}
+            />
         </>
     );
 }
