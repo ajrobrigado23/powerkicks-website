@@ -177,8 +177,8 @@ export default function MenuOverlay({
                     <ul className="
                         flex flex-col
                         font-bold uppercase tracking-tight
-                        text-[clamp(2rem,5vw,4rem)]
-                        leading-none
+                        text-5xl
+                        leading-tight
                     ">
                         {items.slice(0, 4).map((item, index) =>
                                                    renderMenuItem(item, index)
