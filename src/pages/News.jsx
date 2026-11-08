@@ -4,11 +4,13 @@ export default function News() {
 
     return (
         <>
-            <NewsNavbar></NewsNavbar>
+            <section className="bg-black w-full h-screen">
+                <NewsNavbar></NewsNavbar>
 
-            <main>
+                <main>
 
-            </main>
+                </main>
+            </section>
         </>
     );
 }
