@@ -35,9 +35,7 @@ export default function NavBar({
                 delay: 0.25,
             }
         );
-    }, {
-                scope: navigationRef,
-            });
+    },{scope: navigationRef});
 
     // Toggle the navigation overlay.
     const handleToggle = () => {

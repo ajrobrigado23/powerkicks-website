@@ -4,7 +4,7 @@ import Home from "./pages/Home.jsx";
 import Schedule from "./pages/Schedule.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Contact from "./pages/Contact.jsx";
-import News from "./components/news/News.jsx";
+import News from "./pages/News.jsx";
 
 /*
     IMPORTANT TIPS - (When using React + GSAP)

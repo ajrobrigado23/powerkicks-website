@@ -1,4 +1,8 @@
 export default function NewsNavbar() {
 
-    return null;
+    return (
+        <nav>
+
+        </nav>
+    );
 }
