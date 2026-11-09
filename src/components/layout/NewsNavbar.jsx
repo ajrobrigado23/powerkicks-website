@@ -16,7 +16,7 @@ export default function NewsNavbar() {
 
     return (
         <nav className="py-4 bg-transparent">
-            <div className="flex justify-between ml-8">
+            <div className="flex items-center justify-between ml-8">
                 <Link
                     to="/"
                     aria-label="Go to Powerkicks homepage"
@@ -25,9 +25,9 @@ export default function NewsNavbar() {
                     <Logo isBlack={true} />
                 </Link>
 
-                <div className="flex gap-2">
+                <div className="flex gap-6">
                     <Button
-                        className="flex items-center justify-center font-bold tracking-wider text-sm uppercase"
+                        className="flex h-10 items-center justify-center font-bold tracking-wider leading-none text-sm uppercase"
                         padding="px-4"
                         backgroundColor="bg-[#B91C1C]"
                     >
@@ -36,7 +36,7 @@ export default function NewsNavbar() {
 
                     {/* Menu Button */}
                     <Button
-                        className="flex flex-col justify-center items-center gap-1 me-8 cursor-pointer text-black px-[0.70rem] py-[0.65rem] bg-[#dee2e6] rounded-4xl"
+                        className="flex flex-col justify-center items-center h-10 me-8 cursor-pointer text-white"
                         ref={menuButtonRef}
                         onClick={handleToggle}
                         aria-label="Toggle menu"
