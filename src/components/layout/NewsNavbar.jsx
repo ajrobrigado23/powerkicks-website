@@ -1,27 +1,18 @@
 import {Link} from "react-router-dom";
 import Logo from "../ui/Logo.jsx";
 import Button from "../ui/Button.jsx";
-import {useCallback, useId, useRef, useState} from "react";
+import useNavigationMenu from "../../hooks/useNavigationMenu.js";
 
 
 export default function NewsNavbar() {
 
-    const menuButtonRef = useRef(null);
-
-    const [menuOpen, setMenuOpen] = useState(false);
-
-    // Unique ID for the navigation overlay.
-    const menuId = useId();
-
-    // Toggle the navigation overlay.
-    const handleToggle = () => {
-        setMenuOpen((prev) => !prev);
-    };
-
-    // Close the navigation overlay.
-    const closeMenu = useCallback(() => {
-        setMenuOpen(false);
-    }, []);
+    const {
+        menuButtonRef,
+        menuOpen,
+        menuId,
+        handleToggle,
+        closeMenu,
+    } = useNavigationMenu();
 
     return (
         <nav className="py-4 bg-transparent">

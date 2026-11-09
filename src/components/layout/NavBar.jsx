@@ -1,5 +1,5 @@
 import SlideUpText from "../animations/SlideUpText.jsx";
-import {useCallback, useId, useRef, useState} from "react";
+import {useRef} from "react";
 import{ gsap } from "gsap";
 import {useGSAP} from "@gsap/react";
 import Button from "../ui/Button.jsx";
@@ -7,18 +7,21 @@ import { Link } from "react-router-dom";
 import Logo from "../ui/Logo.jsx";
 import { MENU_ITEMS } from "../../data/navigation.js";
 import MenuOverlay from "./MenuOverlay.jsx";
+import useNavigationMenu from "../../hooks/useNavigationMenu.js";
 
 export default function NavBar({
                                    navScrolled,
                                    isBlack = false,
                                }) {
     const navigationRef = useRef(null);
-    const menuButtonRef = useRef(null);
 
-    const [menuOpen, setMenuOpen] = useState(false);
-
-    // Unique ID for the navigation overlay.
-    const menuId = useId();
+    const {
+        menuButtonRef,
+        menuOpen,
+        menuId,
+        handleToggle,
+        closeMenu,
+    } = useNavigationMenu();
 
     // Reveal the navbar content when the navbar mounts.
     useGSAP(() => {
@@ -36,16 +39,6 @@ export default function NavBar({
             }
         );
     },{scope: navigationRef});
-
-    // Toggle the navigation overlay.
-    const handleToggle = () => {
-        setMenuOpen((prev) => !prev);
-    };
-
-    // Close the navigation overlay.
-    const closeMenu = useCallback(() => {
-        setMenuOpen(false);
-    }, []);
 
     // External link attributes.
     const getLinkProps = (item) => {
