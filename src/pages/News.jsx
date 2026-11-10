@@ -54,7 +54,7 @@ export default function News() {
                 <section className="
                     relative flex h-[45dvh]
                     items-center overflow-hidden
-                    bg-[#F3D525]
+                    bg-[#FBC352]
                     lg:h-full lg:min-h-0
                 ">
                     {/* Text ticker */}
