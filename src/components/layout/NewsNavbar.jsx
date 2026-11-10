@@ -18,7 +18,7 @@ export default function NewsNavbar() {
 
     return (
         <>
-            <nav className="py-4 bg-transparent">
+            <nav className="fixed top-0 left-0 w-full z-40 py-2 bg-transparent">
                 <div className="flex items-center justify-between ml-8">
                     <Link
                         to="/"
