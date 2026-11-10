@@ -13,6 +13,7 @@ export default function NavBar({
                                    navScrolled,
                                    isBlack = false,
                                }) {
+    
     const navigationRef = useRef(null);
 
     const {
