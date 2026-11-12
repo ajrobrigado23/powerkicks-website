@@ -1,4 +1,5 @@
 import NewsNavbar from "../components/layout/NewsNavbar.jsx";
+import NewsScrollColumn from "../components/sections/news/NewsScrollColumn.jsx";
 
 // Temporary news data for the layout.
 const newsItems = [
@@ -42,7 +43,7 @@ export default function News() {
             lg:h-dvh lg:overflow-hidden
         ">
 
-            <NewsNavbar />
+            <NewsNavbar/>
 
             <main className="
                 grid flex-1 grid-cols-1
@@ -74,22 +75,9 @@ export default function News() {
                 </section>
 
                 {/* Right column - 40% */}
-                <section
-                    data-lenis-prevent
-                    className="
-                        min-h-0 bg-[#171717]
-                        px-6 py-10
-                        lg:overflow-y-auto
-                        lg:overscroll-contain
-                        lg:px-10
-                    "
-                >
+                <NewsScrollColumn>
                     <div className="mb-12">
-                        <h1 className="
-                            text-[clamp(2.5rem,4vw,5rem)]
-                            font-bold uppercase
-                            leading-none
-                        ">
+                        <h1 className="text-[clamp(2.5rem,4vw,5rem)] font-bold uppercase leading-none">
                             Latest News
                         </h1>
 
@@ -104,36 +92,22 @@ export default function News() {
                         {newsItems.map((news) => (
                             <article
                                 key={news.id}
-                                className="
-                                    border-b border-white/20
-                                    py-8 first:pt-0
-                                "
+                                className="border-b border-white/20 py-8 first:pt-0"
                             >
-                                <p className="
-                                    mb-4 text-xs
-                                    font-semibold uppercase
-                                    tracking-widest text-gray-400
-                                ">
+                                <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-400">
                                     {news.category}
                                 </p>
 
-                                <h2 className="
-                                    text-[clamp(1.5rem,2.5vw,3rem)]
-                                    font-semibold leading-tight
-                                ">
+                                <h2 className="text-[clamp(1.5rem,2.5vw,3rem)] font-semibold leading-tight">
                                     {news.title}
                                 </h2>
 
-                                <p className="
-                                    mt-4 text-sm
-                                    leading-relaxed text-gray-400
-                                ">
+                                <p className="mt-4 text-sm leading-relaxed text-gray-400">
                                     {news.description}
                                 </p>
-                            </article>
-                        ))}
+                            </article>))}
                     </div>
-                </section>
+                </NewsScrollColumn>
 
             </main>
         </div>
