@@ -1,5 +1,6 @@
 import NewsNavbar from "../components/layout/NewsNavbar.jsx";
 import NewsScrollColumn from "../components/sections/news/NewsScrollColumn.jsx";
+import TextTicker from "../components/animations/TextTicker.jsx";
 
 // Temporary news data for the layout.
 const newsItems = [
@@ -59,6 +60,10 @@ export default function News() {
                     lg:h-full lg:min-h-0
                 ">
                     {/* Text ticker */}
+                    <TextTicker
+                        textClassName="font-humane font-bold mx-7 text-[28rem] leading-none tracking-[0.075rem]">
+                            Powerkicks
+                    </TextTicker>
 
                     <div className="
                         absolute bottom-8 left-10
