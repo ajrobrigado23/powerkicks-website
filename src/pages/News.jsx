@@ -53,29 +53,27 @@ export default function News() {
             ">
 
                 {/* Left column - 60% */}
-                <section className="
-                    relative flex h-[45dvh]
-                    items-center overflow-hidden
-                    bg-[#FBC352]
-                    lg:h-full lg:min-h-0
-                ">
+                <section className="relative flex h-[45dvh] flex-col overflow-hidden bg-[#FBC352] lg:h-full lg:min-h-0">
                     {/* Text ticker */}
-                    <TextTicker
-                        textClassName="font-humane font-bold mx-7 text-[28rem] leading-none tracking-[0.075rem]">
+                    <div className="mt-18 -mb-[3rem]">
+                        <TextTicker
+                            textClassName="font-humane font-bold mx-7 text-[35rem] leading-none tracking-[0.075rem]">
                             Powerkicks
-                    </TextTicker>
+                        </TextTicker>
+                    </div>
 
-                    <div className="
-                        absolute bottom-8 left-10
-                        text-black
-                    ">
-                        <p className="
-                            text-xs font-semibold
-                            uppercase tracking-widest
-                        ">
-                            More than kicks.
-                            Built on discipline.
-                        </p>
+                    <div className="text-white flex justify-between px-10">
+                        <h5>Top news</h5>
+
+                        <div className="w-[70%]">
+                            <p> Our mission is to help students grow through disciplined taekwondo training building
+                                confidence, focus, respect, and strength that extends beyond the mat.</p>
+                        </div>
+
+                        <div>
+                            {/* white space */}
+                        </div>
+
                     </div>
                 </section>
 
