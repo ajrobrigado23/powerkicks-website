@@ -8,7 +8,7 @@ const DURATION = 180;
 // Number of repeated content groups rendered in the track.
 const REPEAT_COUNT = 6;
 
-export default function TextTicker({ children, textIsBlack, right }) {
+export default function TextTicker({ children, textClassName="", textIsBlack, right }) {
 
     // Scope for GSAP selectors and component-level animation cleanup.
     const containerRef = useRef(null);
@@ -73,10 +73,10 @@ export default function TextTicker({ children, textIsBlack, right }) {
                 {[...items, ...items].map((item, i) => (
                     <span
                         key={i}
-                        className="mx-7 shrink-0 text-[8rem] leading-none min-[700px]:text-[10rem] min-[900px]:text-[12rem] tracking-[0.075rem] font-semibold"
+                        className={textClassName}
                     >
-                    {item}
-                </span>
+                        {item}
+                    </span>
                 ))}
             </div>
         </div>
