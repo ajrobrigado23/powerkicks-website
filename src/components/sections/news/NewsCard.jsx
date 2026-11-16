@@ -14,11 +14,11 @@ export default function NewsCard() {
             {/* News title */}
             <div>
                 <h4
-                    className="text-[clamp(1rem,1.50vw,2rem)] font-semibold">
+                    className="text-[clamp(1rem,1.50vw,2rem)] font-medium">
                     Powerkicks Taekwondo won 1st runner up in 2026 Cavite Taekwondo Championship
                 </h4>
                 {/* Description */}
-                <p className="py-4">
+                <p className="py-4 text-[#7F7F7F]">
                     Our mission is to help students grow through disciplined taekwondo training building confidence, focus,
                     respect, and strength that extends beyond the mat.</p>
             </div>
