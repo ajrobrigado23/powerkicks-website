@@ -9,7 +9,7 @@ export default function SlideUpText({
                                         isButton,
                                         isArrowRight,
                                         isArrowLeft,
-                                        disabled=false }) {
+                                        disabled= false }) {
 
     const containerRef = useRef(null);
 

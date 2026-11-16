@@ -1,6 +1,7 @@
 import NewsNavbar from "../components/layout/NewsNavbar.jsx";
 import NewsScrollColumn from "../components/sections/news/NewsScrollColumn.jsx";
 import TextTicker from "../components/animations/TextTicker.jsx";
+import NewsCard from "../components/sections/news/NewsCard.jsx";
 
 // Temporary news data for the layout.
 const newsItems = [
@@ -79,15 +80,13 @@ export default function News() {
 
                 {/* Right column - 40% */}
                 <NewsScrollColumn>
+                    {/* Latest news */}
                     <div className="mt-18 mb-12">
-                        <h1 className="text-[clamp(2.5rem,4vw,5rem)] leading-none">
+                        <h2 className="text-[clamp(2.5rem,4vw,5rem)] leading-none">
                             Recent News
-                        </h1>
+                        </h2>
 
-                        <p className="mt-4 text-sm text-gray-400">
-                            The latest stories, competitions,
-                            and updates from Powerkicks Taekwondo.
-                        </p>
+                        <NewsCard/>
                     </div>
 
                     {/* News list */}
