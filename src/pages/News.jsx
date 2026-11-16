@@ -79,9 +79,9 @@ export default function News() {
 
                 {/* Right column - 40% */}
                 <NewsScrollColumn>
-                    <div className="mb-12">
-                        <h1 className="text-[clamp(2.5rem,4vw,5rem)] font-bold uppercase leading-none">
-                            Latest News
+                    <div className="mt-18 mb-12">
+                        <h1 className="text-[clamp(2.5rem,4vw,5rem)] leading-none">
+                            Recent News
                         </h1>
 
                         <p className="mt-4 text-sm text-gray-400">
