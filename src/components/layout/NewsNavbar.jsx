@@ -18,8 +18,8 @@ export default function NewsNavbar() {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 w-full z-40 py-2 bg-transparent">
-                <div className="flex items-center justify-between mx-8">
+            <nav className="fixed inset-x-0 top-0 z-40 bg-transparent px-8 py-2">
+                <div className="flex items-center justify-between">
                     <Link
                         to="/"
                         aria-label="Go to Powerkicks homepage"
@@ -37,9 +37,8 @@ export default function NewsNavbar() {
                             Get Free Trial
                         </Button>
 
-                        {/* Menu Button */}
                         <Button
-                            className="flex flex-col justify-center items-center h-10 me-8 cursor-pointer text-white"
+                            className="flex h-10 cursor-pointer flex-col items-center justify-center text-white"
                             ref={menuButtonRef}
                             onClick={handleToggle}
                             aria-label="Toggle menu"
