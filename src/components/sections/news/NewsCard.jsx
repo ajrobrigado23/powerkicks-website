@@ -14,7 +14,7 @@ export default function NewsCard() {
             {/* News title */}
             <div>
                 <h4
-                    className="text-[clamp(1rem,1.50vw,2rem)] font-medium">
+                    className="text-[clamp(1rem,1.75vw,2rem)] font-medium">
                     Powerkicks Taekwondo won 1st runner up in 2026 Cavite Taekwondo Championship
                 </h4>
                 {/* Description */}
@@ -24,12 +24,12 @@ export default function NewsCard() {
             </div>
 
             {/* Read Article */}
-            <div className="flex justify-end">
-                <button>
+            <div className="flex justify-end pt-2">
+                <button className="uppercase font-semibold">
                     <SlideUpText
                         isArrowRight={true}
                     >
-                        Next
+                        Read more
                     </SlideUpText>
                 </button>
             </div>

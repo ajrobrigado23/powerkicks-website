@@ -82,11 +82,16 @@ export default function News() {
                 <NewsScrollColumn>
                     {/* Latest news */}
                     <div className="mt-18 mb-12">
-                        <h2 className="text-[clamp(2.5rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-none">
+                        <h2 className="text-[clamp(2.5rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-none mb-2">
                             Recent News
                         </h2>
 
-                        <NewsCard/>
+                        <div className="flex flex-col gap-6">
+                            <NewsCard/>
+
+                            <NewsCard/>
+                        </div>
+
                     </div>
 
                     {/* News list */}
