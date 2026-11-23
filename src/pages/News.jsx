@@ -62,7 +62,7 @@ export default function News() {
                     </div>
 
                     {/* News list */}
-                    <div className="flex flex-col">
+                    <div className="flex">
                         <NewsList></NewsList>
                     </div>
                 </NewsScrollColumn>

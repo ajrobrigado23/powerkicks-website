@@ -36,11 +36,11 @@ const newsItems = [
 export default function NewsList() {
 
     return (
-        <>
+        <div className="flex flex-wrap gap-6">
             {newsItems.map((news) => (
                 <article
                     key={news.id}
-                    className="border-b border-white/20 py-8 first:pt-0"
+                    className="flex-1 basis-[200px] min-w-0 py-8"
                 >
                     <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-400">
                         {news.category}
@@ -53,7 +53,8 @@ export default function NewsList() {
                     <p className="mt-4 text-sm leading-relaxed text-gray-400">
                         {news.description}
                     </p>
-                </article>))}
-        </>
+                </article>
+            ))}
+        </div>
     );
 }
