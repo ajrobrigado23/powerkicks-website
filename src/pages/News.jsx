@@ -25,7 +25,7 @@ export default function News() {
                     {/* Text ticker */}
                     <div className="mt-18 -mb-[3rem]">
                         <TextTicker
-                            textClassName="font-humane font-bold mx-7 text-[35rem] leading-none tracking-[0.075rem]">
+                            textClassName="font-humane font-bold mx-7 text-[clamp(28rem,35vw,35rem)] min-[1245px]:text-[clamp(6rem,38vw,40rem)] leading-none tracking-[0.075rem]">
                             Powerkicks
                         </TextTicker>
                     </div>
