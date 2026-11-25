@@ -3,8 +3,36 @@ import NewsScrollColumn from "../components/sections/news/NewsScrollColumn.jsx";
 import TextTicker from "../components/animations/TextTicker.jsx";
 import NewsCard from "../components/sections/news/NewsCard.jsx";
 import NewsList from "../components/sections/news/NewsList.jsx";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function News() {
+
+    // Add these animations ScrollTrigger pinning, overlapping sections, or stacked sections on scroll.
+    const leftColumnRef = useRef(null);
+    const rightColumnRef = useRef(null);
+
+    useGSAP(() => {
+        const mm = gsap.matchMedia();
+
+        mm.add("(width < 64rem) and (prefers-reduced-motion: no-preference)", () => {
+            ScrollTrigger.create({
+                                     trigger: leftColumnRef.current,
+                                     start: "top top",
+                                     endTrigger: rightColumnRef.current,
+                                     end: "top top",
+                                     pin: true,
+                                     pinSpacing: false,
+                                     invalidateOnRefresh: true,
+                                     // markers: true,
+                                 });
+        });
+
+        return () => mm.revert();
+    }, []);
+
     return (
         <div className="
             flex min-h-dvh flex-col
@@ -15,13 +43,16 @@ export default function News() {
             <NewsNavbar/>
 
             <main className="
-                grid flex-1 grid-cols-1
+                flex-1
+                lg:grid
                 lg:min-h-0
                 lg:grid-cols-[60%_40%]
             ">
 
                 {/* Left column - 60% */}
-                <section className="relative flex h-[45dvh] flex-col overflow-hidden bg-[#FBC352] lg:h-full lg:min-h-0">
+                <section
+                    ref={leftColumnRef}
+                    className="relative z-0 flex h-dvh w-full flex-col overflow-hidden bg-[#FBC352] lg:h-full lg:min-h-0">
                     {/* Text ticker */}
                     <div className="mt-18 -mb-[3rem]">
                         <TextTicker
@@ -46,26 +77,33 @@ export default function News() {
                 </section>
 
                 {/* Right column - 40% */}
-                <NewsScrollColumn>
-                    {/* Latest news */}
-                    <div className="mt-18 mb-12">
-                        <h2 className="text-[clamp(2.5rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-none mb-2">
-                            Recent News
-                        </h2>
+                <section
+                    ref={rightColumnRef}
+                    className="
+                                relative z-10
+                                min-h-dvh bg-black
+                                lg:contents
+                               "
+                >
+                    <NewsScrollColumn>
+                        {/* Latest news */}
+                        <div className="mt-18 mb-12">
+                            <h2 className="text-[clamp(2.5rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-none mb-2">
+                                Recent News
+                            </h2>
 
-                        <div className="flex flex-col gap-6">
-                            <NewsCard/>
-
-                            <NewsCard/>
+                            <div className="flex flex-col gap-6">
+                                <NewsCard />
+                                <NewsCard />
+                            </div>
                         </div>
 
-                    </div>
-
-                    {/* News list */}
-                    <div className="flex">
-                        <NewsList></NewsList>
-                    </div>
-                </NewsScrollColumn>
+                        {/* News list */}
+                        <div className="flex">
+                            <NewsList />
+                        </div>
+                    </NewsScrollColumn>
+                </section>
 
             </main>
         </div>
