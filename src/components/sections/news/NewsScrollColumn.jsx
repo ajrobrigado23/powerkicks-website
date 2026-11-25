@@ -57,7 +57,7 @@ export default function NewsScrollColumn({ children }) {
             ref={wrapperRef}
             data-lenis-prevent={isDesktop ? "" : undefined}
             className="
-                min-h-0 bg-[#171717]
+                min-h-0
                 lg:overflow-y-auto
                 lg:overscroll-contain
             "

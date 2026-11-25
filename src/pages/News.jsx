@@ -14,21 +14,76 @@ export default function News() {
     const leftColumnRef = useRef(null);
     const rightColumnRef = useRef(null);
 
+    // ScrollTrigger pinning + scrub - Pins the outer section while animating its inner content vertically.
+    const newsContentRef = useRef(null);
+
     useGSAP(() => {
         const mm = gsap.matchMedia();
 
-        mm.add("(width < 64rem) and (prefers-reduced-motion: no-preference)", () => {
-            ScrollTrigger.create({
-                                     trigger: leftColumnRef.current,
-                                     start: "top top",
-                                     endTrigger: rightColumnRef.current,
-                                     end: "top top",
-                                     pin: true,
-                                     pinSpacing: false,
-                                     invalidateOnRefresh: true,
-                                     // markers: true,
-                                 });
-        });
+        mm.add(
+            "(width < 64rem) and (prefers-reduced-motion: no-preference)",
+            () => {
+                const leftColumn = leftColumnRef.current;
+                const rightColumn = rightColumnRef.current;
+                const newsContent = newsContentRef.current;
+
+                const getScrollDistance = () =>
+                    Math.max(
+                        0,
+                        newsContent.scrollHeight - rightColumn.clientHeight
+                    );
+
+                // First animation: Overlapping section reveal.
+                ScrollTrigger.create({
+                                         id: "powerkicks-reveal",
+                                         trigger: leftColumn,
+                                         start: "top top",
+                                         endTrigger: rightColumn,
+                                         end: "top top",
+                                         pin: leftColumn,
+                                         pinSpacing: false,
+                                         invalidateOnRefresh: true,
+                                         refreshPriority: 1,
+                                     });
+
+                // Second animation: Pin the news section
+                // while scrolling its inner content.
+                gsap.to(newsContent, {
+                    y: () => -getScrollDistance(),
+                    ease: "none",
+
+                    scrollTrigger: {
+                        id: "news-scroll",
+                        trigger: rightColumn,
+                        start: "top top",
+                        end: () => `+=${Math.max(1, getScrollDistance())}`,
+                        pin: rightColumn,
+                        pinSpacing: true,
+                        scrub: true,
+                        anticipatePin: 1,
+                        invalidateOnRefresh: true,
+                        markers: true,
+
+                        onRefresh: (self) => {
+                            console.log({
+                                            start: self.start,
+                                            end: self.end,
+                                            contentHeight: newsContent.scrollHeight,
+                                            sectionHeight: rightColumn.clientHeight,
+                                            scrollDistance: getScrollDistance(),
+                                        });
+                        },
+
+                        onEnter: () => {
+                            console.log("News section pinned");
+                        },
+
+                    },
+                });
+
+                ScrollTrigger.refresh();
+            }
+        );
 
         return () => mm.revert();
     }, []);
@@ -82,27 +137,34 @@ export default function News() {
                     className="
                                 relative z-10
                                 min-h-dvh bg-black
+                                motion-safe:max-lg:h-dvh
+                                motion-safe:max-lg:overflow-hidden
                                 lg:contents
                                "
                 >
-                    <NewsScrollColumn>
-                        {/* Latest news */}
-                        <div className="mt-18 mb-12">
-                            <h2 className="text-[clamp(2.5rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-none mb-2">
-                                Recent News
-                            </h2>
+                    <div
+                        ref={newsContentRef}
+                        className="flow-root lg:contents"
+                    >
+                        <NewsScrollColumn>
+                            {/* Latest news */}
+                            <div className="mt-18 mb-12">
+                                <h2 className="text-[clamp(2.5rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-none mb-2">
+                                    Recent News
+                                </h2>
 
-                            <div className="flex flex-col gap-6">
-                                <NewsCard />
-                                <NewsCard />
+                                <div className="flex flex-col gap-6">
+                                    <NewsCard />
+                                    <NewsCard />
+                                </div>
                             </div>
-                        </div>
 
-                        {/* News list */}
-                        <div className="flex">
-                            <NewsList />
-                        </div>
-                    </NewsScrollColumn>
+                            {/* News list */}
+                            <div className="flex">
+                                <NewsList />
+                            </div>
+                        </NewsScrollColumn>
+                    </div>
                 </section>
 
             </main>
