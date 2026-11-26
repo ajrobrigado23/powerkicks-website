@@ -62,22 +62,7 @@ export default function News() {
                         scrub: true,
                         anticipatePin: 1,
                         invalidateOnRefresh: true,
-                        markers: true,
-
-                        onRefresh: (self) => {
-                            console.log({
-                                            start: self.start,
-                                            end: self.end,
-                                            contentHeight: newsContent.scrollHeight,
-                                            sectionHeight: rightColumn.clientHeight,
-                                            scrollDistance: getScrollDistance(),
-                                        });
-                        },
-
-                        onEnter: () => {
-                            console.log("News section pinned");
-                        },
-
+                        // markers: true,
                     },
                 });
 
