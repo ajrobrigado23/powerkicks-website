@@ -97,7 +97,7 @@ export default function News() {
                     <div className="mt-18 -mb-[3rem]">
                         <TextTicker
                             textClassName="font-humane font-bold mx-7 text-[clamp(28rem,35vw,35rem)] min-[1245px]:text-[clamp(6rem,38vw,40rem)] leading-none tracking-[0.075rem]">
-                            Powerkicks
+                            Beyond the mat
                         </TextTicker>
                     </div>
 
@@ -134,9 +134,9 @@ export default function News() {
                         <NewsScrollColumn>
                             {/* Latest news */}
                             <div className="mt-18 mb-12">
-                                <h2 className="text-[clamp(2.5rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-none mb-2">
-                                    Recent News
-                                </h2>
+                                <h3 className="text-[clamp(3.50rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-[-0.04em] mb-2 lg:text-[clamp(2rem,3.50vw,5rem)]">
+                                    The Latest News
+                                </h3>
 
                                 <div className="flex flex-col gap-6">
                                     <NewsCard />
@@ -145,7 +145,10 @@ export default function News() {
                             </div>
 
                             {/* News list */}
-                            <div className="flex">
+                            <div className="flex flex-col">
+                                <h3 className="text-[clamp(3.50rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-[-0.04em] mb-2 lg:text-[clamp(2rem,3.50vw,5rem)]">
+                                    September 2026
+                                </h3>
                                 <NewsList />
                             </div>
                         </NewsScrollColumn>
