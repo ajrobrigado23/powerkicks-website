@@ -5,6 +5,7 @@ import Schedule from "./pages/Schedule.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import Contact from "./pages/Contact.jsx";
 import News from "./pages/News.jsx";
+import NewsArticle from "./pages/NewsArticle.jsx";
 
 /*
     IMPORTANT TIPS - (When using React + GSAP)
@@ -21,6 +22,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/news" element={<News />} />
+                    <Route path="/news/:slug" element={<NewsArticle />} />
                     <Route path="/schedule" element={<Schedule />} />
                     <Route path="/gallery" element={<Gallery/>} />
                     <Route path="/contact" element={<Contact/>} />

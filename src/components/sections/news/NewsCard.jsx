@@ -1,7 +1,7 @@
 import SlideUpText from "../../animations/SlideUpText.jsx";
 import galleryImgOne from "../../../assets/images/gallery-images/IMG_7550.JPG";
 
-export default function NewsCard() {
+export default function NewsCard({ title, description }) {
 
     return (
         <article>
@@ -11,16 +11,15 @@ export default function NewsCard() {
                 className="py-4"
                 alt="Powerkicks news image"/>
 
-            {/* News title */}
+            {/* News */}
             <div>
+                {/* Title */}
                 <h4
                     className="text-[clamp(1rem,1.75vw,2rem)] font-medium">
-                    Powerkicks Taekwondo won 1st runner up in 2026 Cavite Taekwondo Championship
+                    { title }
                 </h4>
                 {/* Description */}
-                <p className="py-4 text-[#7F7F7F]">
-                    Our mission is to help students grow through disciplined taekwondo training building confidence, focus,
-                    respect, and strength that extends beyond the mat.</p>
+                <p className="py-4 text-[#7F7F7F]">{description}</p>
             </div>
 
             {/* Read Article */}

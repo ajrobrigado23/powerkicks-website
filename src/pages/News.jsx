@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { newsItems } from "../data/news.js";
 
 export default function News() {
 
@@ -139,8 +140,14 @@ export default function News() {
                                 </h3>
 
                                 <div className="flex flex-col gap-6">
-                                    <NewsCard />
-                                    <NewsCard />
+                                    <NewsCard
+                                        title={newsItems[0].title}
+                                        description={newsItems[0].description}
+                                    />
+                                    <NewsCard
+                                        title={newsItems[0].title}
+                                        description={newsItems[0].description}
+                                    />
                                 </div>
                             </div>
 
