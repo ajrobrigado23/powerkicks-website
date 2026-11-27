@@ -134,7 +134,7 @@ export default function News() {
                         <NewsScrollColumn>
                             {/* Latest news */}
                             <div className="mt-18 mb-12">
-                                <h3 className="text-[clamp(3.50rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-[-0.04em] mb-2 lg:text-[clamp(2rem,3.50vw,5rem)]">
+                                <h3 className="text-[clamp(3.50rem,4vw,5rem)] font-medium leading-[-0.04em] mb-2 lg:text-[clamp(2rem,3.50vw,5rem)]">
                                     The Latest News
                                 </h3>
 
@@ -146,7 +146,7 @@ export default function News() {
 
                             {/* News list */}
                             <div className="flex flex-col">
-                                <h3 className="text-[clamp(3.50rem,4vw,5rem)] text-[#7F7F7F] font-medium leading-[-0.04em] mb-2 lg:text-[clamp(2rem,3.50vw,5rem)]">
+                                <h3 className="text-[clamp(3.50rem,4vw,5rem)] font-medium leading-[-0.04em] mb-2 lg:text-[clamp(2rem,3.50vw,5rem)]">
                                     September 2026
                                 </h3>
                                 <NewsList />
